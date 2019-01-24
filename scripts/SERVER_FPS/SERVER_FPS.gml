@@ -1,0 +1,1 @@
+#macro SERVER_FPS 20
