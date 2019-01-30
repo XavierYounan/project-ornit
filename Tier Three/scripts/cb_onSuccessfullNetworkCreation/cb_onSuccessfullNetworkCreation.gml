@@ -1,0 +1,1 @@
+fConsoleAddMessage("Server created sucessfully")

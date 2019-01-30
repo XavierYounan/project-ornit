@@ -1,0 +1,1 @@
+draw_text(10,40,"Server time is : " + string(current_time))

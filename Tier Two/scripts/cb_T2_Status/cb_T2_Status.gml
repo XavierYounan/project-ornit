@@ -1,0 +1,1 @@
+show_error("Server should not be recieving Major Server Connection information",true)
