@@ -11,4 +11,4 @@ state = state.empty
 
 m_coordinateArray = []
 
-//sam is a fag
+//sam is not a fag
