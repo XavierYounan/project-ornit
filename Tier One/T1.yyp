@@ -618,7 +618,7 @@
             "Key": "86fe5be3-b6c2-4a8f-a208-bde70f7a3a5f",
             "Value": {
                 "id": "74bb7ba3-7751-4a34-87a4-7b4e76a94458",
-                "resourcePath": "scripts\\cb_T2_Positions\\cb_T2_Positions.yy",
+                "resourcePath": "scripts\\cb_T2_OtherPosition\\cb_T2_OtherPosition.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -852,6 +852,14 @@
                 "id": "10470449-8cd6-4915-b3c8-f4769943b578",
                 "resourcePath": "views\\b800747e-e649-4ac6-bd26-957184feb5f6.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "b9faa207-668c-418e-bd5b-c81ece33b465",
+            "Value": {
+                "id": "35894351-1853-48c6-aa09-3ab201a42583",
+                "resourcePath": "scripts\\cb_T2_SelfPosition\\cb_T2_SelfPosition.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1231,6 +1239,7 @@
         "a4356892-4872-49a1-87d8-2ec82527385d",
         "366ff946-8d45-4c6f-8993-883380233cc8",
         "86fe5be3-b6c2-4a8f-a208-bde70f7a3a5f",
+        "b9faa207-668c-418e-bd5b-c81ece33b465",
         "2c2e1961-8d8d-4a50-815e-0d50a322ff48",
         "c4958957-783c-4297-ab5e-a1909ea4a881",
         "1c78918b-490c-4ebf-ab75-78c035c0373f",
