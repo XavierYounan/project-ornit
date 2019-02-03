@@ -8,5 +8,7 @@ enum state
 
 state = state.empty
 
+latest_acknowleged_packet = [0,0,0]
+isLocal = false;
 
 m_coordinateArray = []
