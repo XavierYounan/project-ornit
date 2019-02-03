@@ -10,6 +10,3 @@ state = state.empty
 
 
 m_coordinateArray = []
-
-
-//david is gay

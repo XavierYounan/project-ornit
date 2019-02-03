@@ -16,18 +16,20 @@
 	enum PacketId { pos_update = 0, death_notification }
 	gnet_packet_layout_create(PacketId.death_notification, buffer_u8);
 */
-
+			
 enum PACKET_IDENTIFIER
 {
 	T1_KEYS = 1,	
-	T2_POSITION,
+	T2_OTHER_POSITION,
+	T2_SELF_POSITION,
 	T1_READY_UP,
 	T2_READY_UP,
 	T2_SEND_TIME
 }
 
 gnet_packet_layout_create(PACKET_IDENTIFIER.T1_KEYS,cb_T1_Imputs,buffer_s8,buffer_s8,buffer_u64)
-gnet_packet_layout_create(PACKET_IDENTIFIER.T2_POSITION,cb_T2_Positions,buffer_s32,buffer_s32,buffer_u8)
+gnet_packet_layout_create(PACKET_IDENTIFIER.T2_OTHER_POSITION,cb_T2_OtherPosition,buffer_s32,buffer_s32,buffer_u8)
+gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SELF_POSITION,cb_T2_SelfPosition,buffer_s32,buffer_s32,buffer_u8,buffer_u64)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_READY_UP,cb_T2_StateUpdate,buffer_bool)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T1_READY_UP,cb_T1_ReadyUp,buffer_bool)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SEND_TIME,cb_T2_Time,buffer_u64)
