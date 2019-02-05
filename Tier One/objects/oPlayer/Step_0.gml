@@ -1,7 +1,84 @@
 if(isLocal)
 {
-	x = latest_acknowleged_packet[0]
-	y = latest_acknowleged_packet[1]
+	var _unreadListSize = array_length_1d(m_unreadImputs)
+	
+	var _x = latest_acknowleged_packet[0]
+	var _y = latest_acknowleged_packet[1]
+	
+	for (var i = _unreadListSize; i >= 0; i--)
+	{
+		var _currentImput = m_unreadImputs;
+		
+		hsp = _currentImput[0] * walksp;
+		vMove = _currentImput[1];
+		
+		vsp += grv;
+
+		//Jump
+		if (place_meeting(x,y+1,oWall)) && (vMove = 1)
+		{
+			vsp = -jump_speed	
+		}
+
+
+		//Horisontal collision
+		if (place_meeting(x+hsp,y,oWall))
+		{
+			while (!place_meeting(x+sign(hsp),y,oWall))
+			{
+				x += sign(hsp);	
+			}
+			hsp = 0;
+		}
+		x += hsp;
+
+		//Vertical collision
+		if (place_meeting(x,y+vsp,oWall))
+		{
+			while (!place_meeting(x,y+sign(vsp),oWall))
+			{
+				y += sign(vsp);	
+			}
+			vsp = 0;
+		}
+		y += vsp;
+
+		var _bulletsTouching;
+		_bulletsTouching = instance_place(x, y, oBullet);
+		if (_bulletsTouching != noone)
+		{   
+			hp -= O_Client.bulletDamage;
+			with (oBullet) instance_destroy();
+		}
+
+		/*
+		  //Animation
+		if (!place_meeting(x,y+1,oWall))
+		{
+			sprite_index = sPlayerAir;
+			image_speed = 0;
+			if (sign(vsp) > 0) image_index = 1; else image_index = 0;
+		}
+		else
+		{
+			image_speed = 1;
+			if (hsp == 0)
+			{
+				sprite_index = sPlayer;	
+			}
+			else
+			{
+				sprite_index = sPlayerRun;	
+			}
+		}
+
+		*/
+
+		if (hsp != 0) image_xscale = sign(hsp);
+		
+		
+	}
+	
 
 }
 else
