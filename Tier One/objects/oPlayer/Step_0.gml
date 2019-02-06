@@ -1,13 +1,13 @@
 if(isLocal)
 {
-	var _unreadListSize = array_length_1d(m_unreadImputs)
+	var _unreadListSize = array_length_1d(O_ClientManager.m_unreadImputs)
 	
 	var _x = latest_acknowleged_packet[0]
 	var _y = latest_acknowleged_packet[1]
 	
 	for (var i = _unreadListSize; i >= 0; i--)
 	{
-		var _currentImput = m_unreadImputs;
+		var _currentImput = O_ClientManager.m_unreadImputs;
 		
 		hsp = _currentImput[0] * walksp;
 		vMove = _currentImput[1];
