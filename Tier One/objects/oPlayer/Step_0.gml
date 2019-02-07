@@ -30,7 +30,7 @@ if(isLocal)
 			}
 			hsp = 0;
 		}
-		x += hsp;
+		_x += hsp;
 
 		//Vertical collision
 		if (place_meeting(x,y+vsp,oWall))
@@ -41,7 +41,7 @@ if(isLocal)
 			}
 			vsp = 0;
 		}
-		y += vsp;
+		_y += vsp;
 
 		var _bulletsTouching;
 		_bulletsTouching = instance_place(x, y, oBullet);
@@ -78,6 +78,8 @@ if(isLocal)
 		
 		
 	}
+	x = _x
+	y = _y
 	
 
 }
