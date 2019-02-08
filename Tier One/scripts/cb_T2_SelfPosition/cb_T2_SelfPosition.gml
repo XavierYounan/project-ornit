@@ -20,6 +20,7 @@ if (_client == noone)
 		m_PlayerId = _clientId
 		isLocal = true;
 		latest_acknowleged_packet = [_x,_y,_lastRecievedPacket] //update most recent position knowledge	
+		_client = fGetClientById(_clientId)
 	}
 }
 
@@ -30,6 +31,14 @@ with (_client)
 	if (_lastRecievedPacket > latest_acknowleged_packet) //make sure most recent server update
 	{
 		latest_acknowleged_packet = [_x,_y,_lastRecievedPacket] //update most recent position knowledge		
-		O_ClientManager.m_unreadImputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadImputs,2,_lastRecievedPacket) //cull unread imput array
+		O_ClientManager.m_unreadImputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadImputs,2,_lastRecievedPacket) //cull unread imput array	
 	}
 }
+
+fConsoleAddMessage("UnreadImputSize " + string(array_length_1d(O_ClientManager.m_unreadImputs))
+/* not reall necessary is unreadable without new line
+var _str = "Time: " + string(oServerTime.m_serverTime) + " Unread Imput String: " + string(O_ClientManager.m_unreadImputs) + "\n"
+var fname = file_text_open_append(working_directory + "test.txt");
+file_text_write_string(fname, _str);
+file_text_close(fname)
+*/

@@ -1,13 +1,14 @@
 if(isLocal)
 {
-	var _unreadListSize = array_length_1d(O_ClientManager.m_unreadImputs)
+	var _unreadList = O_ClientManager.m_unreadImputs
+	var _unreadListSize = array_length_1d(_unreadList)
 	
 	var _x = latest_acknowleged_packet[0]
 	var _y = latest_acknowleged_packet[1]
 	
-	for (var i = _unreadListSize; i >= 0; i--)
+	for (var i = _unreadListSize - 1; i >= 0; i--)
 	{
-		var _currentImput = O_ClientManager.m_unreadImputs;
+		var _currentImput = _unreadList[i];
 		
 		hsp = _currentImput[0] * walksp;
 		vMove = _currentImput[1];
@@ -43,6 +44,7 @@ if(isLocal)
 		}
 		_y += vsp;
 
+		/*
 		var _bulletsTouching;
 		_bulletsTouching = instance_place(x, y, oBullet);
 		if (_bulletsTouching != noone)
@@ -51,6 +53,8 @@ if(isLocal)
 			with (oBullet) instance_destroy();
 		}
 
+		*/
+		
 		/*
 		  //Animation
 		if (!place_meeting(x,y+1,oWall))
