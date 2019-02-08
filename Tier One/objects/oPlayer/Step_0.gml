@@ -6,6 +6,9 @@ if(isLocal)
 	var _x = latest_acknowleged_packet[0]
 	var _y = latest_acknowleged_packet[1]
 	
+	
+	fConsoleAddMessage("UnreadImputSize " + string(array_length_1d(O_ClientManager.m_unreadImputs)))
+	
 	for (var i = _unreadListSize - 1; i >= 0; i--)
 	{
 		var _currentImput = _unreadList[i];
@@ -82,8 +85,15 @@ if(isLocal)
 		
 		
 	}
+	
+	
+	
 	x = _x
 	y = _y
+	
+	var Realy = latest_acknowleged_packet[1]
+	var _yDiff = (Realy - _y)
+	fConsoleAddMessage("Y Difference is " + string(_yDiff))
 	
 
 }
