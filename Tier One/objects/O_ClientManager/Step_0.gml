@@ -20,8 +20,9 @@ if (instance_exists(oT2))
 	{
 		var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,oServerTime.m_serverTime);
 		gnet_packet_send_to_id(_packet,_T2Id);
-		m_unreadImputs = fArrayAppend(m_unreadImputs,[_hsp,_vsp,oServerTime.m_serverTime]);
-		m_imputPacketSent += 1
+		m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
+		m_unreadImputs[0] = [_hsp,_vsp,oServerTime.m_serverTime];
+		m_imputPacketSent += 1;
 	}
 }
 else
