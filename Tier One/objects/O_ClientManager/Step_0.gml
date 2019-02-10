@@ -7,6 +7,33 @@ var _keyRight = keyboard_check(ord("D"))
 var _hsp = _keyRight - _keyLeft
 var _vsp = _keyUp - _keyDown
 
+if _vsp && _hsp
+{
+	var _str = "Jumping and running\r\n"
+	var fname = file_text_open_append(working_directory + "test.txt");
+	file_text_write_string(fname, _str);
+	file_text_close(fname)
+}
+else
+{
+	if _hsp
+	{
+		var _str = "running\r\n"
+		var fname = file_text_open_append(working_directory + "test.txt");
+		file_text_write_string(fname, _str);
+		file_text_close(fname)
+	}
+	else
+	{
+			if _vsp
+		{
+			var _str = "Jumping \r\n"
+			var fname = file_text_open_append(working_directory + "test.txt");
+			file_text_write_string(fname, _str);
+			file_text_close(fname)
+		}
+	}
+}
 		
 if (instance_exists(oT2))
 {

@@ -18,11 +18,9 @@ else
 {
 	with (_client)
 	{
-		if (_packetNumber > m_latestRecievedPacket) //drop older packets
-		{
-			hsp = _hMove * walksp;
-			vMove = _vMove;
-			m_latestRecievedPacket = _packetNumber
-		}
+		hsp = _hMove * walksp;
+		vMove = _vMove;
+		m_latestRecievedPacket = _packetNumber
+
 	}
 }

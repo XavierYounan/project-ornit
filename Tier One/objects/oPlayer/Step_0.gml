@@ -7,8 +7,6 @@ if(isLocal)
 	var _y = latest_acknowleged_packet[1]
 	
 	
-	fConsoleAddMessage("UnreadImputSize " + string(array_length_1d(O_ClientManager.m_unreadImputs)))
-	
 	for (var i = _unreadListSize - 1; i >= 0; i--)
 	{
 		var _currentImput = _unreadList[i];
@@ -93,7 +91,14 @@ if(isLocal)
 	
 	var Realy = latest_acknowleged_packet[1]
 	var _yDiff = (Realy - _y)
-	fConsoleAddMessage("Y Difference is " + string(_yDiff))
+	
+
+var _str = "Y Difference is " + string(_yDiff) + "\r\n\r\n"
+var fname = file_text_open_append(working_directory + "test.txt");
+file_text_write_string(fname, _str);
+file_text_close(fname)
+
+
 	
 
 }
