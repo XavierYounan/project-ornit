@@ -6,15 +6,30 @@ if(isLocal)
 	var _x = latest_acknowleged_packet[0]
 	var _y = latest_acknowleged_packet[1]
 	
-	
 	for (var i = _unreadListSize - 1; i >= 0; i--)
 	{
 		var _currentImput = _unreadList[i];
 		
-		hsp = _currentImput[0] * walksp;
+		if (i = _unreadListSize - 1)
+		{
+			var _lastFrameTime = latest_acknowleged_packet[2]	
+		}
+		else
+		{
+			var _unpack = _unreadList[i+1]
+			var _lastFrameTime = _unpack[2]	
+		}
+		
+		var _thisFrameTime = _currentImput[2]
+		var _millisecondDelta = _thisFrameTime - _lastFrameTime
+		
+		var _deltaTime = _millisecondDelta / 1000
+		
+		hsp = _currentImput[0] * walksp * _deltaTime;
+		
 		vMove = _currentImput[1];
 		
-		vsp += grv;
+		vsp += grv * _deltaTime;
 
 		//Jump
 		if (place_meeting(x,y+1,oWall)) && (vMove = 1)
