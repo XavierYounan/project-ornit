@@ -18,9 +18,7 @@ else
 {
 	with (_client)
 	{
-		hsp = _hMove * walksp;
-		vMove = _vMove;
-		m_latestRecievedPacket = _packetNumber
-
+		m_imputLog = fArrayMoveBack(m_imputLog,1)
+		m_imputLog[0] = [_hMove,_vMove,_packetNumber]
 	}
 }

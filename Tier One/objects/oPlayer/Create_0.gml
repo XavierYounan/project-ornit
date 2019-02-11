@@ -19,8 +19,8 @@ vMove = 0
 
 hsp = 0;
 vsp = 0;
-grv = 0.3;
-walksp = 4;
+grv = 18;
+walksp = 240;
 jump_speed = 7;
 hasControl = true;
 

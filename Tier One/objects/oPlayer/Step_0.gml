@@ -104,15 +104,15 @@ if(isLocal)
 	x = _x
 	y = _y
 	
-	var Realy = latest_acknowleged_packet[1]
-	var _yDiff = (Realy - _y)
+/*
+var Realy = latest_acknowleged_packet[1]
+var _yDiff = (Realy - _y)
 	
-
 var _str = "Y Difference is " + string(_yDiff) + "\r\n\r\n"
 var fname = file_text_open_append(working_directory + "test.txt");
 file_text_write_string(fname, _str);
 file_text_close(fname)
-
+*/
 
 	
 
