@@ -6,17 +6,30 @@ if(isLocal)
 	var _x = latest_acknowleged_packet[0]
 	var _y = latest_acknowleged_packet[1]
 	
-	
-	fConsoleAddMessage("UnreadImputSize " + string(array_length_1d(O_ClientManager.m_unreadImputs)))
-	
 	for (var i = _unreadListSize - 1; i >= 0; i--)
 	{
 		var _currentImput = _unreadList[i];
 		
-		hsp = _currentImput[0] * walksp;
+		if (i = _unreadListSize - 1)
+		{
+			var _lastFrameTime = latest_acknowleged_packet[2]	
+		}
+		else
+		{
+			var _unpack = _unreadList[i+1]
+			var _lastFrameTime = _unpack[2]	
+		}
+		
+		var _thisFrameTime = _currentImput[2]
+		var _millisecondDelta = _thisFrameTime - _lastFrameTime
+		
+		var _deltaTime = _millisecondDelta / 1000
+		
+		hsp = _currentImput[0] * walksp * _deltaTime;
+		
 		vMove = _currentImput[1];
 		
-		vsp += grv;
+		vsp += grv * _deltaTime;
 
 		//Jump
 		if (place_meeting(x,y+1,oWall)) && (vMove = 1)
@@ -89,11 +102,18 @@ if(isLocal)
 	
 	
 	x = _x
-	y = _y
+	y = latest_acknowleged_packet[1]
 	
-	var Realy = latest_acknowleged_packet[1]
-	var _yDiff = (Realy - _y)
-	fConsoleAddMessage("Y Difference is " + string(_yDiff))
+/*
+var Realy = latest_acknowleged_packet[1]
+var _yDiff = (Realy - _y)
+	
+var _str = "Y Difference is " + string(_yDiff) + "\r\n\r\n"
+var fname = file_text_open_append(working_directory + "test.txt");
+file_text_write_string(fname, _str);
+file_text_close(fname)
+*/
+
 	
 
 }

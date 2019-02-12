@@ -3,8 +3,8 @@ vMove = 0
 
 hsp = 0;
 vsp = 0;
-grv = 0.3;
-walksp = 4;
+grv = 18;
+walksp = 240 ;
 jump_speed = 7;
 hasControl = true;
 
@@ -24,12 +24,9 @@ y = room_height/2
 m_x = x
 m_y = y
 
-m_latestRecievedPacket = 0
-
-var _tempArray = [0,0,0,current_time] //oth update, usually sent by player
+var _tempArray = [0,0,current_time] //oth update, usually sent by player
 m_imputLog[0] = _tempArray
-
-m_imputLogLimit = 64 //max number of entries imput log saves
+m_lastProcessedImput = _tempArray
 
 enum state 
 {

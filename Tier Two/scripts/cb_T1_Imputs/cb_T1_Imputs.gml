@@ -18,11 +18,7 @@ else
 {
 	with (_client)
 	{
-		if (_packetNumber > m_latestRecievedPacket) //drop older packets
-		{
-			hsp = _hMove * walksp;
-			vMove = _vMove;
-			m_latestRecievedPacket = _packetNumber
-		}
+		m_imputLog = fArrayMoveBack(m_imputLog,1)
+		m_imputLog[0] = [_hMove,_vMove,_packetNumber]
 	}
 }
