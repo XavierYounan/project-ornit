@@ -102,7 +102,7 @@ if(isLocal)
 	
 	
 	x = _x
-	y = _y
+	y = latest_acknowleged_packet[1]
 	
 /*
 var Realy = latest_acknowleged_packet[1]

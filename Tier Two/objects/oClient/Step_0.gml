@@ -1,15 +1,15 @@
-var _str = "Imput Log is " + string(m_imputLog) + "\r\n\r\n"
-var fname = file_text_open_append(working_directory + "test.txt");
-file_text_write_string(fname, _str);
-file_text_close(fname)
-
 
 switch state
 {
 	case state.readyUp:
 	{
-		m_lastProcessedImput = m_imputLog[0]
-		m_imputLog = []
+		var _arraySize = array_length_1d(m_imputLog)
+		
+		if (_arraySize)
+		{
+			m_lastProcessedImput = m_imputLog[0]
+			m_imputLog = []
+		}
 		
 		#region //Ready Up
 		if (m_framesTillUpdate = 0)
@@ -37,6 +37,7 @@ switch state
 			
 		for (var i = _arraySize - 1; i >= 0; i--)
 		{
+			
 			var _currentImput = m_imputLog[i];
 		
 			if (i = _arraySize - 1)
@@ -55,11 +56,7 @@ switch state
 			var _deltaTime = _millisecondDelta / 1000;
 			
 			#endregion
-		#region //Clear imput log
-			m_lastProcessedImput = m_imputLog[_arraySize-1]
-		
-			m_imputLog = []
-		#endregion
+
 		#region //apply imputs and gravity
 	
 			hsp = _currentImput[0] * walksp * _deltaTime;
@@ -140,6 +137,16 @@ switch state
 		#endregion
 		}
 		
+		#region //clear imput log
+		
+		if (_arraySize > 0)
+		{
+		m_lastProcessedImput = m_imputLog[0]
+		m_imputLog = []
+		}
+		
+		#endregion
+		
 		if (m_framesTillUpdate = 0)
 		{
 			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION,x,y,m_ClientId)
@@ -152,6 +159,7 @@ switch state
 		}
 		
 		m_framesTillUpdate --;
+
 
 		break;
 	}
@@ -168,3 +176,5 @@ if (m_updatePing = true)
 }
 
 #endregion
+
+
