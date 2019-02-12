@@ -32,29 +32,29 @@ if(isLocal)
 		vsp += grv * _deltaTime;
 
 		//Jump
-		if (place_meeting(x,y+1,oWall)) && (vMove = 1)
+		if (place_meeting(_x,_y+1,oWall)) && (vMove = 1)
 		{
 			vsp = -jump_speed	
 		}
 
 
 		//Horisontal collision
-		if (place_meeting(x+hsp,y,oWall))
+		if (place_meeting(_x+hsp,_y,oWall))
 		{
-			while (!place_meeting(x+sign(hsp),y,oWall))
+			while (!place_meeting(_x+sign(hsp),_y,oWall))
 			{
-				x += sign(hsp);	
+				_x += sign(hsp);	
 			}
 			hsp = 0;
 		}
 		_x += hsp;
 
 		//Vertical collision
-		if (place_meeting(x,y+vsp,oWall))
+		if (place_meeting(_x,_y+vsp,oWall))
 		{
-			while (!place_meeting(x,y+sign(vsp),oWall))
+			while (!place_meeting(_x,_y+sign(vsp),oWall))
 			{
-				y += sign(vsp);	
+				_y += sign(vsp);	
 			}
 			vsp = 0;
 		}
@@ -102,7 +102,7 @@ if(isLocal)
 	
 	
 	x = _x
-	y = latest_acknowleged_packet[1]
+	y = _y
 		
 
 }
