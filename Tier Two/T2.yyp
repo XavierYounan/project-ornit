@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "0d99368d-4328-4733-b12a-2998e89962bc",
+            "Value": {
+                "id": "794ae6ac-d219-4bb1-868b-2f833980931f",
+                "resourcePath": "sprites\\sGun\\sGun.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0fd67fd1-2a26-42d9-881e-66ef7185c69b",
             "Value": {
                 "id": "ab390382-aeae-4f66-ac42-76c6baf0cdd5",
