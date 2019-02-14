@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "0d436488-bc51-4379-a90d-1edd876466ac",
+            "Value": {
+                "id": "b355b732-8cdf-4c6c-8c52-166e426fb901",
+                "resourcePath": "objects\\oNinja\\oNinja.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0d99368d-4328-4733-b12a-2998e89962bc",
             "Value": {
                 "id": "794ae6ac-d219-4bb1-868b-2f833980931f",
@@ -743,6 +751,14 @@
             }
         },
         {
+            "Key": "98dc3d82-7c36-48f1-aceb-54b096236075",
+            "Value": {
+                "id": "63274d0e-ceae-49b8-8f34-b3daf907f090",
+                "resourcePath": "sprites\\sNinja\\sNinja.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9ace0f1c-94d4-4c54-a962-46f5b3e4ff14",
             "Value": {
                 "id": "4f2286ff-b02e-436b-87b4-e17b4ca29cc8",
@@ -1079,6 +1095,14 @@
             }
         },
         {
+            "Key": "df9c97fe-8c47-457f-ac25-cdd27242d6a8",
+            "Value": {
+                "id": "7d95a255-7e51-4eca-94b2-daaa58e7fb67",
+                "resourcePath": "scripts\\cb_T1_SelfPlayerInfo\\cb_T1_SelfPlayerInfo.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e317ff85-a4ce-4e0e-807f-cc24c77eab93",
             "Value": {
                 "id": "db6c2824-9473-402b-b943-c2f65d5f96b7",
@@ -1325,6 +1349,7 @@
         "f11cd65c-a82b-4989-ac64-197fa43c0215",
         "3090fcb0-271a-4901-8e82-556113a5d2c2",
         "dd7386b6-152f-4462-923e-98ddfbc19124",
+        "df9c97fe-8c47-457f-ac25-cdd27242d6a8",
         "c5a38e72-bf28-4ad7-9307-80fe08cf69d4",
         "20ff15c3-d787-4677-9168-79f5e7e3ee6d",
         "e8085ba7-eee4-4159-b9a2-41eadd4185bb",

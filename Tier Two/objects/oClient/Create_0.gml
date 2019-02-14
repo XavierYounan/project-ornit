@@ -38,9 +38,18 @@ enum state
 
 state = state.readyUp
 
-
 m_updateFrequency = 20
 m_FPS = game_get_speed(gamespeed_fps)
 m_updateFrequencyFrames = m_FPS/m_updateFrequency
 
 m_framesTillUpdate = 0
+
+enum character
+{
+	null,
+	ninja,
+	gunner
+}
+
+m_username = ""
+m_character = character.null
