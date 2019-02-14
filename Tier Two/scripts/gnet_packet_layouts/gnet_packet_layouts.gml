@@ -29,6 +29,7 @@ enum PACKET_IDENTIFIER
 	T2_SEND_TIME,
 	T1_SELF_PLAYER_INFO,
 	T2_PLAYER_INFO
+	T2_
 	
 }
 
@@ -40,6 +41,8 @@ gnet_packet_layout_create(PACKET_IDENTIFIER.T1_READY_UP,cb_T1_ReadyUp,buffer_boo
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SEND_TIME,cb_T2_Time,buffer_u64)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T1_SELF_PLAYER_INFO,cb_T1_SelfPlayerInfo,buffer_string,buffer_u8)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_PLAYER_INFO,cb_T2_PlayerInfo,buffer_u8,buffer_u8,buffer_string)
+
+
 
 
 enum MAJOR_PACKET_IDENTIFIERS

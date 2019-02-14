@@ -391,6 +391,14 @@
             }
         },
         {
+            "Key": "5ab193a2-8451-4b1d-b4c8-8bf0a3003625",
+            "Value": {
+                "id": "c9c3d0ce-7ac3-4960-b75f-822d70f25ba5",
+                "resourcePath": "scripts\\cb_T2_PlayerInfo\\cb_T2_PlayerInfo.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5ec850fa-1e3a-4a62-91c3-fc3f903357b4",
             "Value": {
                 "id": "8a8943ed-b8af-4f4e-acd8-dd71b74c789a",
@@ -1175,6 +1183,14 @@
             }
         },
         {
+            "Key": "f80df75d-b757-4180-a011-aef728967d9c",
+            "Value": {
+                "id": "f6670bc4-ab04-409d-9d3d-972839eff151",
+                "resourcePath": "scripts\\cb_T1_SelfPlayerInfo\\cb_T1_SelfPlayerInfo.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f8667509-391c-49aa-bfb8-aacfc1d0f8c7",
             "Value": {
                 "id": "88c3907a-cb05-4c83-b6c3-54ec8d1f7e7b",
@@ -1283,6 +1299,8 @@
         "2c2e1961-8d8d-4a50-815e-0d50a322ff48",
         "c4958957-783c-4297-ab5e-a1909ea4a881",
         "1c78918b-490c-4ebf-ab75-78c035c0373f",
+        "f80df75d-b757-4180-a011-aef728967d9c",
+        "5ab193a2-8451-4b1d-b4c8-8bf0a3003625",
         "dc041280-73ee-4122-93f1-b05b8dc6a7b4",
         "68058913-0ffc-4cae-9bc0-0e02a4bb64a9",
         "38492690-c498-4f68-badb-215b04c4aa61",

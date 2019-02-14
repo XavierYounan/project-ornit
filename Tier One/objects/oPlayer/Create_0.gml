@@ -2,18 +2,27 @@ enum state
 {
 	playing,
 	dead,
-	empty,
-	readyUp
+	loading,
+	readyUp,
 }
 
-state = state.empty
+state = state.playing
+
+
+enum character
+{
+	null,
+	ninja,
+	gunner
+}
+
+m_username = ""
+m_character = character.null
 
 latest_acknowleged_packet = [0,0,0]
 isLocal = false;
 
 m_coordinateArray = []
-
-
 
 vMove = 0
 
@@ -26,3 +35,5 @@ hasControl = true;
 
 hp = 100;
 bulletDamage = 5;
+
+

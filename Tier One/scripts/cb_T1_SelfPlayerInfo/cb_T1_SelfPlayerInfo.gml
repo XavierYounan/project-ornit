@@ -1,0 +1,1 @@
+show_error("T1 shoudl not be recieving player info packets send by itself or other T1's",true)

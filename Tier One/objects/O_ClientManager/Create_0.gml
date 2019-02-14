@@ -41,3 +41,27 @@ with (timeManager)
 m_imputPacketSent = 1 //the first imput packet is already defined by the server 
 
 m_unreadImputs = []
+
+enum state
+{
+	loading,
+	playing,
+	error
+}
+
+
+enum character
+{
+	null,
+	ninja,
+	gunner
+}
+
+m_username = "Big Chungus"
+m_character = character.ninja
+
+//loading functions
+m_repeatTimes = 10
+m_repeatFrequency = game_get_speed(gamespeed_fps)
+m_timeLeft = m_repeatFrequency
+m_repeatLeft = m_repeatTimes
