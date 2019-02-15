@@ -18,6 +18,10 @@ else
 {
 	with (_client)
 	{
+		if (state = state.loading)
+		{
+			state = state.playing	
+		}
 		m_imputLog = fArrayMoveBack(m_imputLog,1)
 		m_imputLog[0] = [_hMove,_vMove,_packetNumber]
 	}
