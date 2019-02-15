@@ -52,7 +52,7 @@ enum state
 
 enum character
 {
-	null,
+	nil,
 	ninja,
 	gunner
 }
