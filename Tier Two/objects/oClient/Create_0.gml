@@ -47,13 +47,13 @@ m_framesTillUpdate = 0
 
 enum character
 {
-	null,
+	nil,
 	ninja,
 	gunner
 }
 
 m_username = ""
-m_character = character.null
+m_character = character.nil
 
 //loading functions
 m_repeatTimes = 10
