@@ -14,10 +14,7 @@ var _client = fGetClientById(_player)
 //if doesnt exist create a new player TODO: when player connect should be created
 if (_client == noone)
 {
-	with (instance_create_depth(x,y,10,oPlayer))
-	{
-		m_PlayerId = _player;
-	}
+	show_error("Recieving position packets for a client that hasnt been created",true)
 }
 else
 {

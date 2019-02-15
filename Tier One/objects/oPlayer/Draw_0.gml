@@ -1,12 +1,12 @@
-switch (state)
+switch (playerState)
 {
-	case state.empty:
+	case LOADING:
 	{
 		draw_text(x,y,"Loading")
 		
 		break;
 	}
-	case state.playing:
+	case PLAYING:
 	{
 		
 		draw_text(x,y,"Playing")

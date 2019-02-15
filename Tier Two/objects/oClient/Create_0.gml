@@ -32,15 +32,31 @@ enum state
 {
 	playing,
 	dead,
-	empty,
-	readyUp
+	loading,
+	readyUp,
+	error
 }
 
-state = state.readyUp
-
+state = state.loading
 
 m_updateFrequency = 20
 m_FPS = game_get_speed(gamespeed_fps)
 m_updateFrequencyFrames = m_FPS/m_updateFrequency
 
 m_framesTillUpdate = 0
+
+enum character
+{
+	nil,
+	ninja,
+	gunner
+}
+
+m_username = ""
+m_character = character.nil
+
+//loading functions
+m_repeatTimes = 10
+m_repeatFrequency = game_get_speed(gamespeed_fps)
+m_timeLeft = m_repeatFrequency
+m_repeatLeft = m_repeatTimes

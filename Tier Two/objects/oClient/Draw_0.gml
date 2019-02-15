@@ -1,7 +1,7 @@
 draw_set_colour(c_white)
 switch (state)
 {
-	case state.empty:
+	case state.loading:
 	{
 		draw_text(x,y,"Loading")
 		break;

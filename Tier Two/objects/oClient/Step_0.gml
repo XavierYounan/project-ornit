@@ -1,6 +1,38 @@
 
 switch state
 {
+	case state.loading:
+	{
+		m_timeLeft --
+		
+		if (m_timeLeft <= 0)
+		{
+			m_timeLeft = m_repeatFrequency
+			m_repeatLeft --
+			
+			with(oClient)
+			{
+				if (other.m_ClientId = m_ClientId)
+				{
+					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_LOCAL_PLAYER_INFO,m_ClientId,m_character,m_username)	
+					gnet_packet_send_to_id(_packet,m_ClientId)
+				}
+				else
+				{
+					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_PLAYER_INFO,m_ClientId,m_character,m_username)
+					gnet_packet_send_to_id(packet,other.m_ClientId)
+				}
+			}
+			
+			if (m_repeatLeft <=0)
+			{
+				f_ConsoleAddMessage("Never Recieved Clients Information!")
+				state = state.error
+			}	
+		}
+		break;
+	}	
+	
 	case state.readyUp:
 	{
 		var _arraySize = array_length_1d(m_imputLog)

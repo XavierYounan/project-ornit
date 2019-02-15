@@ -1,19 +1,22 @@
-enum state 
-{
-	playing,
-	dead,
-	empty,
-	readyUp
-}
+PLAYING = 0
+DEAD = 1
+LOADING = 2
+READYUP = 3
 
-state = state.empty
+
+NULL = 0
+NINJA = 1
+GUNNER = 2
+
+playerState = LOADING
+
+m_username = ""
+m_character = NULL
 
 latest_acknowleged_packet = [0,0,0]
 isLocal = false;
 
 m_coordinateArray = []
-
-
 
 vMove = 0
 
@@ -26,3 +29,5 @@ hasControl = true;
 
 hp = 100;
 bulletDamage = 5;
+
+
