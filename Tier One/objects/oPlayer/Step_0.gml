@@ -1,11 +1,12 @@
-switch State
+switch playerState
 {
-	case State.loading:
+	case LOADING:
 	{
+		
 		break;
 	}
 	
-	case State.playing:
+	case PLAYING:
 	{
 		#region //game code
 		if(isLocal)
@@ -156,3 +157,4 @@ switch State
 		break;
 	}
 }
+

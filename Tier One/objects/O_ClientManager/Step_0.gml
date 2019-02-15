@@ -1,7 +1,8 @@
-switch state
+switch managerState
 {
-	case state.loading:
+	case LOADING:
 	{
+		#region //every 1 seccond send packet identifiers
 		m_timeLeft --
 		
 		if (m_timeLeft <= 0)
@@ -20,7 +21,7 @@ switch state
 				}
 				else
 				{
-					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_SELF_PLAYER_INFO,m_username,m_character)
+					var packet = gnet_packet_build(PACKET_IDENTIFIER.T1_SELF_PLAYER_INFO,m_username,m_character)
 					gnet_packet_send_to_id(packet,_T2Id)
 				}
 			}
@@ -37,11 +38,11 @@ switch state
 				state = state.error
 			}	
 		}
-
+		#endregion
 	break;
 	}
 	
-	case state.playing:
+	case PLAYING:
 	{
 		#region //send imputs
 		var _keyUp = keyboard_check(ord("W"))

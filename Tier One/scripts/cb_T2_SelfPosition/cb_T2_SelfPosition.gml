@@ -15,39 +15,21 @@ var _client = fGetClientById(_clientId)
 //if doesnt exist create a new player TODO: when player connect should be created
 if (_client == noone)
 {
-	with (instance_create_depth(x,y,10,oPlayer))
-	{
-		m_PlayerId = _clientId
-		isLocal = true;
-		latest_acknowleged_packet = [_x,_y,_lastRecievedPacket] //update most recent position knowledge	
-		_client = fGetClientById(_clientId)
-	}
+	show_error("Recieving position packets for self even tho not created",true)
 }
 
 
 with (_client) 
 {
-	if !(isLocal)
+	if (isLocal)
 	{
-		isLocal = true; //make local
 		if (_lastRecievedPacket > latest_acknowleged_packet[2]) //make sure most recent server update
 		{
 			latest_acknowleged_packet = [_x,_y,_lastRecievedPacket] //update most recent position knowledge	
 		
-			//var fname = file_text_open_append(working_directory + "UnreadImputs.txt");
-		
-			//var _str = "Current Unread Imput List is" + string(O_ClientManager.m_unreadImputs)  + "\r\n"
-			//file_text_write_string(fname, _str);
-		
-			//var _str = "Last Recieved Packet is " + string(latest_acknowleged_packet) + "\r\n"
-			//file_text_write_string(fname, _str);
-		
 			O_ClientManager.m_unreadImputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadImputs,2,_lastRecievedPacket) //cull unread imput array
-		
-			//var _str = "New unread Imput Array is " + string(O_ClientManager.m_unreadImputs) + "\r\n\r\n"
-			//file_text_write_string(fname, _str);
-			//file_text_close(fname)
-	}
+
+		}
 	}
 }
 

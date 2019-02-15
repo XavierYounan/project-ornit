@@ -1,22 +1,17 @@
-enum State 
-{
-	playing,
-	dead,
-	loading,
-	readyUp,
-}
+PLAYING = 0
+DEAD = 1
+LOADING = 2
+READYUP = 3
 
-state = State.loading
 
-enum characters
-{
-	nil,
-	ninja,
-	gunner
-}
+NULL = 0
+NINJA = 1
+GUNNER = 2
+
+playerState = LOADING
 
 m_username = ""
-m_character = characters.nil
+m_character = NULL
 
 latest_acknowleged_packet = [0,0,0]
 isLocal = false;

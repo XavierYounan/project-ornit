@@ -42,23 +42,21 @@ m_imputPacketSent = 1 //the first imput packet is already defined by the server
 
 m_unreadImputs = []
 
-enum state
-{
-	loading,
-	playing,
-	error
-}
 
+PLAYING = 0
+LOADING = 1
+ERROR = 3
 
-enum character
-{
-	nil,
-	ninja,
-	gunner
-}
+managerState = LOADING
+
+NULL = 0
+NINJA = 1
+GUNNER = 2
+
+m_character = GUNNER
 
 m_username = "Big Chungus"
-m_character = character.ninja
+
 
 //loading functions
 m_repeatTimes = 10
