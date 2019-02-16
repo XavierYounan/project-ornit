@@ -12,6 +12,8 @@ playerState = LOADING
 
 m_username = ""
 m_character = NULL
+oCharacter = undefined
+
 
 latest_acknowleged_packet = [0,0,0]
 isLocal = false;

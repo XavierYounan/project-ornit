@@ -15,4 +15,8 @@ with (instance_create_depth(0,0,0,oPlayer))
 	m_username = _username
 	m_character = _character
 	playerState = PLAYING
+	if (oCharacter = undefined)
+	{
+		oCharacter = instance_create_depth(0,0,0,oNinja)
+	}
 }
