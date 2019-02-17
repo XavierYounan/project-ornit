@@ -40,12 +40,12 @@ switch playerState
 		
 				vMove = _currentImput[1];
 		
-				//vsp += grv * _deltaTime;
+				vsp += grv * _deltaTime;
 
 				//Jump
 				if (place_meeting(_x,_y+1,oWall)) && (vMove = 1)
 				{
-					//vsp = -jump_speed	
+					vsp = -jump_speed	
 				}
 
 
@@ -71,6 +71,7 @@ switch playerState
 					vsp = 0;
 				}
 				_y += vsp;
+				
 				
 
 				/*
