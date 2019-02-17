@@ -55,6 +55,8 @@ enum character
 m_username = ""
 m_character = character.nil
 
+oCharacter = undefined
+
 //loading functions
 m_repeatTimes = 10
 m_repeatFrequency = game_get_speed(gamespeed_fps)

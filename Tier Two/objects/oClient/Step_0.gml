@@ -106,6 +106,7 @@ switch state
 		#endregion
 		#region //Collossions
 
+			
 			//Horisontal collision
 			if (place_meeting(x+hsp,y,oWall))
 			{
@@ -169,6 +170,9 @@ switch state
 		#endregion
 		}
 		
+		oCharacter.x = x
+		oCharacter.y = y
+		
 		#region //clear imput log
 		
 		if (_arraySize > 0)
@@ -179,7 +183,7 @@ switch state
 		
 		#endregion
 		
-		if (m_framesTillUpdate = 0)
+		if (m_framesTillUpdate <= 0)
 		{
 			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION,x,y,m_ClientId)
 			gnet_packet_send_to_list_exclude(_packet,global.T1_CONNECTION_ID_LIST,[m_ClientId])

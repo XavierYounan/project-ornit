@@ -18,7 +18,7 @@ with (instance_create_depth(0,0,0,oPlayer))
 	
 	if (oCharacter = undefined)
 	{
-		oCharacter = instance_create_depth(0,0,0,oNinja)
+		oCharacter = instance_create_depth(0,0,-101,oNinja)
 	}
 }
 

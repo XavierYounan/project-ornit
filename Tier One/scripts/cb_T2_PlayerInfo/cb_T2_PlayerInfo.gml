@@ -17,6 +17,6 @@ with (instance_create_depth(0,0,0,oPlayer))
 	playerState = PLAYING
 	if (oCharacter = undefined)
 	{
-		oCharacter = instance_create_depth(0,0,0,oNinja)
+		oCharacter = instance_create_depth(0,0,-100,oNinja)
 	}
 }
