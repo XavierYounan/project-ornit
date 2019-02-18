@@ -10,7 +10,7 @@ with (instance_create_depth(0,0,0,oPlayer))
 {
 	m_PlayerId = _clientId
 	isLocal = true
-	latest_acknowleged_packet = [0,0,oServerTime.m_serverTime] //update most recent position knowledge	
+	latest_acknowleged_packet = [0,0,oServerTime.m_serverTime,0,0] //update most recent position knowledge	
 	_client = fGetClientById(_clientId)
 	m_username = _username
 	m_character = _character
@@ -18,7 +18,12 @@ with (instance_create_depth(0,0,0,oPlayer))
 	
 	if (oCharacter = undefined)
 	{
-		oCharacter = instance_create_depth(0,0,-101,oNinja)
+		oCharacter = instance_create_depth(0,0,-100,oNinja)
+	}
+	
+	if (oCharacterLast = undefined)
+	{
+		oCharacterLast = instance_create_depth(0,0,-100,oNinja)
 	}
 }
 

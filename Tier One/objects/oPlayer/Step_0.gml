@@ -16,6 +16,10 @@ switch playerState
 	
 			var _x = latest_acknowleged_packet[0]
 			var _y = latest_acknowleged_packet[1]
+			var _hsp = latest_acknowleged_packet[3]
+			var _vsp = latest_acknowleged_packet[4]
+			
+			
 	
 			for (var i = _unreadListSize - 1; i >= 0; i--)
 			{
@@ -36,41 +40,41 @@ switch playerState
 		
 				var _deltaTime = _millisecondDelta / 1000
 		
-				hsp = _currentImput[0] * walksp * _deltaTime;
+				_hsp = _currentImput[0] * walksp * _deltaTime;
 		
 				vMove = _currentImput[1];
 		
-				vsp += grv * _deltaTime;
+				_vsp += grv * _deltaTime;
 
 				//Jump
 				if (place_meeting(_x,_y+1,oWall)) && (vMove = 1)
 				{
-					vsp = -jump_speed	
+					_vsp = -jump_speed	
 				}
 
 
 				//Horisontal collision
-				if (place_meeting(_x+hsp,_y,oWall))
+				if (place_meeting(_x+_hsp,_y,oWall))
 				{
-					while (!place_meeting(_x+sign(hsp),_y,oWall))
+					while (!place_meeting(_x+sign(_hsp),_y,oWall))
 					{
-						_x += sign(hsp);	
+						_x += sign(_hsp);	
 					}
-					hsp = 0;
+					_hsp = 0;
 				}
-				_x += hsp;
+				_x += _hsp;
 
 				//Vertical collision
 				
-				if (place_meeting(_x,_y+vsp,oWall))
+				if (place_meeting(_x,_y+_vsp,oWall))
 				{
-					while (!place_meeting(_x,_y+sign(vsp),oWall))
+					while (!place_meeting(_x,_y+sign(_vsp),oWall))
 					{
-						_y += sign(vsp);	
+						_y += sign(_vsp);	
 					}
-					vsp = 0;
+					_vsp = 0;
 				}
-				_y += vsp;
+				_y += _vsp;
 				
 				
 
@@ -108,7 +112,7 @@ switch playerState
 
 				*/
 
-				if (hsp != 0) image_xscale = sign(hsp);
+				if (_hsp != 0) image_xscale = sign(_hsp);
 		
 		
 			}
@@ -120,6 +124,9 @@ switch playerState
 			
 			oCharacter.x = x
 			oCharacter.y = y
+			
+			oCharacterLast.x = latest_acknowleged_packet[0]
+			oCharacterLast.y =  latest_acknowleged_packet[1]
 
 		
 
