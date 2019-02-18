@@ -34,13 +34,3 @@ with (_client)
 		}
 	}
 }
-
-
-
-/* not reall necessary is unreadable without new line
-var _str = "Time: " + string(oServerTime.m_serverTime) + " Unread Imput String: " + string(O_ClientManager.m_unreadImputs) + "\r\n\r\n"
-var fname = file_text_open_append(working_directory + "test.txt");
-file_text_write_string(fname, _str);
-file_text_close(fname)
-*/
-

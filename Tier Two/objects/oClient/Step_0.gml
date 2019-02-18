@@ -130,17 +130,6 @@ switch state
 			y += vsp;
 			
 		#endregion
-		#region //Bullet Collosion
-
-			var _bulletsTouching;
-			_bulletsTouching = instance_place(x, y, oBullet);
-			if (_bulletsTouching != noone)
-			{   
-				hp -= O_Client.bulletDamage;
-				with (oBullet) instance_destroy();
-			}
-			
-		#endregion
 		#region //Animation
 
 			/*
