@@ -1,5 +1,5 @@
 {
-    "id": "0d436488-bc51-4379-a90d-1edd876466ac",
+    "id": "51a93b63-e3b9-4b7f-94b4-5d845124faf0",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "oNinja",
@@ -24,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "98dc3d82-7c36-48f1-aceb-54b096236075",
+    "spriteId": "c82ce39f-d448-4ee3-8efb-0ccffbf5efa5",
     "visible": true
 }

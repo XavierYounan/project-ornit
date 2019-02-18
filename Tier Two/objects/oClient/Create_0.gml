@@ -3,9 +3,9 @@ vMove = 0
 
 hsp = 0;
 vsp = 0;
-grv = 18;
+grv = 24;
 walksp = 240 ;
-jump_speed = 7;
+jump_speed = 15;
 hasControl = true;
 
 hp = 100;
@@ -54,6 +54,8 @@ enum character
 
 m_username = ""
 m_character = character.nil
+
+oCharacter = undefined
 
 //loading functions
 m_repeatTimes = 10

@@ -7,6 +7,8 @@ var _x = _receivedData[0]; //buffer_s32
 var _y = _receivedData[1]; //buffer_s32
 var _clientId = _receivedData[2] //buffer_u8
 var _lastRecievedPacket = _receivedData[3] //buffer_u64
+var _hsp = _receivedData[4] //buffer_s16
+var _vsp = _receivedData[5] //buffer_s16
 
 var _client = fGetClientById(_clientId)
 
@@ -25,20 +27,10 @@ with (_client)
 	{
 		if (_lastRecievedPacket > latest_acknowleged_packet[2]) //make sure most recent server update
 		{
-			latest_acknowleged_packet = [_x,_y,_lastRecievedPacket] //update most recent position knowledge	
+			latest_acknowleged_packet = [_x,_y,_lastRecievedPacket,_hsp,_vsp] //update most recent position knowledge	
 		
 			O_ClientManager.m_unreadImputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadImputs,2,_lastRecievedPacket) //cull unread imput array
 
 		}
 	}
 }
-
-
-
-/* not reall necessary is unreadable without new line
-var _str = "Time: " + string(oServerTime.m_serverTime) + " Unread Imput String: " + string(O_ClientManager.m_unreadImputs) + "\r\n\r\n"
-var fname = file_text_open_append(working_directory + "test.txt");
-file_text_write_string(fname, _str);
-file_text_close(fname)
-*/
-

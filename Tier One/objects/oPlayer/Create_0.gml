@@ -12,8 +12,8 @@ playerState = LOADING
 
 m_username = ""
 m_character = NULL
+oCharacter = undefined
 
-latest_acknowleged_packet = [0,0,0]
 isLocal = false;
 
 m_coordinateArray = []
@@ -22,9 +22,11 @@ vMove = 0
 
 hsp = 0;
 vsp = 0;
-grv = 18;
+
+grv = 24;
+
 walksp = 240;
-jump_speed = 7;
+jump_speed = 15;
 hasControl = true;
 
 hp = 100;

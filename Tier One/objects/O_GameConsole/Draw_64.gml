@@ -12,3 +12,6 @@ for (var i = _listSize - 1; i > -1; i--)
 	
 }
 draw_set_alpha(1)
+
+
+draw_text(32, 32, "FPS = " + string(fps_real));
