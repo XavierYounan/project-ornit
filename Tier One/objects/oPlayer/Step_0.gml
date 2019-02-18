@@ -123,12 +123,7 @@ switch playerState
 			y = _y
 			
 			oCharacter.x = x
-			oCharacter.y = y
-			
-			oCharacterLast.x = latest_acknowleged_packet[0]
-			oCharacterLast.y =  latest_acknowleged_packet[1]
-
-		
+			oCharacter.y = y		
 
 		}
 		else

@@ -20,9 +20,4 @@ with (instance_create_depth(0,0,0,oPlayer))
 	{
 		oCharacter = instance_create_depth(0,0,-100,oNinja)
 	}
-	
-	if (oCharacterLast = undefined)
-	{
-		oCharacterLast = instance_create_depth(0,0,-100,oNinja)
-	}
 }
