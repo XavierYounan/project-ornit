@@ -55,7 +55,14 @@ enum character
 m_username = ""
 m_character = character.nil
 
-oCharacter = undefined
+//define charcter
+CHARACTER = 0
+
+//Define Ninja Items
+GUN = 1
+
+//let there be no assigned player yet
+itemList[CHARACTER] = undefined
 
 //loading functions
 m_repeatTimes = 10

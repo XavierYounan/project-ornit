@@ -159,8 +159,8 @@ switch state
 		#endregion
 		}
 		
-		oCharacter.x = x
-		oCharacter.y = y
+		itemList[CHARACTER].x = x
+		itemList[CHARACTER].y = y
 		
 		#region //clear imput log
 		

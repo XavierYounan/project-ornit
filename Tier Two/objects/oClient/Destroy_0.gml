@@ -1,6 +1,6 @@
-if (oCharacter != undefined)
+if (itemList[CHARACTER] != undefined)
 {
-	instance_destroy(oCharacter)
+	instance_destroy(itemList[CHARACTER])
 }
 
 instance_destroy(self)
