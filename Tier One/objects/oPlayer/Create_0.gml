@@ -12,7 +12,15 @@ playerState = LOADING
 
 m_username = ""
 m_character = NULL
-oCharacter = undefined
+
+//define character
+CHARACTER = 0
+
+//NINJA ITEMS
+NINJAGUN = 1
+
+itemList[CHARACTER] = undefined
+
 
 isLocal = false;
 

@@ -121,9 +121,9 @@ switch playerState
 	
 			x = _x
 			y = _y
-			
-			oCharacter.x = x
-			oCharacter.y = y		
+					
+			itemList[CHARACTER].x = x		
+			itemList[CHARACTER].y = y		
 
 		}
 		else
