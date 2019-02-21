@@ -59,7 +59,7 @@ m_character = character.nil
 CHARACTER = 0
 
 //Define Ninja Items
-GUN = 1
+NINJAGUN = 1
 
 //let there be no assigned player yet
 itemList[CHARACTER] = undefined

@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "09c90244-2b21-40e6-a23f-9c7b4a2e3c90",
+            "Value": {
+                "id": "03e70865-27a5-47f1-a57b-93df6ff2f1c2",
+                "resourcePath": "objects\\oNinjaGun\\oNinjaGun.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0d436488-bc51-4379-a90d-1edd876466ac",
             "Value": {
                 "id": "b355b732-8cdf-4c6c-8c52-166e426fb901",

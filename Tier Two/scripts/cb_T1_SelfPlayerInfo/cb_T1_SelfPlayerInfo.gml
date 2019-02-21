@@ -15,6 +15,7 @@ with (_client)
 	if (itemList[CHARACTER] = undefined)
 	{
 		itemList[CHARACTER] = instance_create_depth(0,0,-100,oNinja)
+		itemList[NINJAGUN] = instance_create_depth(0,0,-101,oNinjaGun)
 	}
 }
 

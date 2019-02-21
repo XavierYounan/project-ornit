@@ -162,6 +162,12 @@ switch state
 		itemList[CHARACTER].x = x
 		itemList[CHARACTER].y = y
 		
+		with (itemList[NINJAGUN])
+		{
+			x = other.x;
+			y = other.y;
+		}
+		
 		#region //clear imput log
 		
 		if (_arraySize > 0)

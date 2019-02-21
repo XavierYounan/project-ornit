@@ -119,11 +119,18 @@ switch playerState
 	
 	
 	
-			x = _x
-			y = _y
+			x = _x;
+			y = _y;
 					
-			itemList[CHARACTER].x = x		
-			itemList[CHARACTER].y = y		
+			itemList[CHARACTER].x = x;
+			itemList[CHARACTER].y = y;
+			
+			with (itemList[NINJAGUN])
+			{
+				x = other.x;
+				y = other.y;
+				image_angle = point_direction(x,y,mouse_x,mouse_y)
+			}
 
 		}
 		else
