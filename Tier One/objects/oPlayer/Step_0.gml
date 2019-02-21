@@ -1,6 +1,6 @@
 switch playerState
 {
-	case LOADING:
+	case RECIEVINGINFO:
 	{
 		
 		break;
@@ -130,6 +130,7 @@ switch playerState
 				x = other.x;
 				y = other.y;
 				image_angle = point_direction(x,y,mouse_x,mouse_y)
+				O_ClientManager.m_gunAngle = image_angle
 			}
 
 		}

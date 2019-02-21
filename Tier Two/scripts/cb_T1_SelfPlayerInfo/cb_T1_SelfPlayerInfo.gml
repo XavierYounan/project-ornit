@@ -12,10 +12,7 @@ with (_client)
 	m_username = _username
 	m_character = _character
 	
-	if (itemList[CHARACTER] = undefined)
-	{
-		itemList[CHARACTER] = instance_create_depth(0,0,-100,oNinja)
-		itemList[NINJAGUN] = instance_create_depth(0,0,-101,oNinjaGun)
-	}
+	state = state.sendingInfo
+	
 }
 

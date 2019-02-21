@@ -1,6 +1,6 @@
 switch managerState
 {
-	case LOADING:
+	case SENDINGINFO:
 	{
 		#region //every 1 seccond send packet identifiers
 		m_timeLeft --
@@ -35,7 +35,7 @@ switch managerState
 			if (m_repeatLeft <=0)
 			{
 				fConsoleAddMessage("Never Recieved Updated Self Info")
-				state = state.error
+				managerState = ERROR
 			}	
 		}
 		#endregion
@@ -64,7 +64,7 @@ switch managerState
 			}
 			else
 			{
-				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,oServerTime.m_serverTime);
+				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,oServerTime.m_serverTime,round(m_gunAngle));
 				gnet_packet_send_to_id(_packet,_T2Id);
 				m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
 				m_unreadImputs[0] = [_hsp,_vsp,oServerTime.m_serverTime];

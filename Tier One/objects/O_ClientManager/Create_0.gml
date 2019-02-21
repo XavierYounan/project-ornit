@@ -44,16 +44,18 @@ m_unreadImputs = []
 
 
 PLAYING = 0
-LOADING = 1
+SENDINGINFO = 1
 ERROR = 3
 
-managerState = LOADING
+managerState = SENDINGINFO
 
 NULL = 0
 NINJA = 1
 GUNNER = 2
 
 m_character = GUNNER
+
+m_gunAngle = 0
 
 m_username = "Big Chungus"
 

@@ -1,6 +1,6 @@
 PLAYING = 0
 DEAD = 1
-LOADING = 2
+RECIEVINGINFO = 2
 READYUP = 3
 
 
@@ -8,7 +8,7 @@ NULL = 0
 NINJA = 1
 GUNNER = 2
 
-playerState = LOADING
+playerState = RECIEVINGINFO
 
 m_username = ""
 m_character = NULL

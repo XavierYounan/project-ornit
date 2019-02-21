@@ -33,7 +33,7 @@ enum PACKET_IDENTIFIER
 	
 }
 
-gnet_packet_layout_create(PACKET_IDENTIFIER.T1_KEYS,cb_T1_Imputs,buffer_s8,buffer_s8,buffer_u64)
+gnet_packet_layout_create(PACKET_IDENTIFIER.T1_KEYS,cb_T1_Imputs,buffer_s8,buffer_s8,buffer_u64,buffer_u16)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_OTHER_POSITION,cb_T2_OtherPosition,buffer_s32,buffer_s32,buffer_u8)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SELF_POSITION,cb_T2_SelfPosition,buffer_s32,buffer_s32,buffer_u8,buffer_u64,buffer_s16,buffer_s16)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_READY_UP,cb_T2_StateUpdate,buffer_bool)

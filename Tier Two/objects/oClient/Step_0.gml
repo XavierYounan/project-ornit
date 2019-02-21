@@ -1,7 +1,13 @@
 
 switch state
 {
-	case state.loading:
+	case state.waitingForInfo:
+	{
+		//do nothing just wait untill recieve info then state will be set to sending
+		break;
+	}
+	
+	case state.sendingInfo:
 	{
 		m_timeLeft --
 		
@@ -156,11 +162,17 @@ switch state
 			*/
 
 			if (hsp != 0) image_xscale = sign(hsp);
+			
+			itemList[NINJAGUN].image_angle = _currentImput[3]
+			
 		#endregion
 		}
 		
-		itemList[CHARACTER].x = x
-		itemList[CHARACTER].y = y
+		with (itemList[CHARACTER])
+		{
+			x = other.x;
+			y = other.y;
+		}
 		
 		with (itemList[NINJAGUN])
 		{
