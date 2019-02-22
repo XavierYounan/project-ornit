@@ -21,7 +21,6 @@ NINJAGUN = 1
 
 itemList[CHARACTER] = undefined
 
-
 isLocal = false;
 
 m_coordinateArray = []

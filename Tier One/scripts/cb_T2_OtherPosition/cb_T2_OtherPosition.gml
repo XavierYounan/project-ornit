@@ -14,7 +14,7 @@ var _client = fGetClientById(_player)
 //if doesnt exist create a new player TODO: when player connect should be created
 if (_client == noone)
 {
-	show_error("Recieving position packets for a client that hasnt been created",true)
+	//disregard
 }
 else
 {

@@ -22,11 +22,12 @@ switch state
 				{
 					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_LOCAL_PLAYER_INFO,m_ClientId,m_character,m_username)	
 					gnet_packet_send_to_id(_packet,m_ClientId)
+					f_ConsoleAddMessage("Sent Local Player Info to " + string(m_ClientId))
 				}
 				else
 				{
 					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_PLAYER_INFO,m_ClientId,m_character,m_username)
-					gnet_packet_send_to_id(packet,other.m_ClientId)
+					gnet_packet_send_to_id(_packet,other.m_ClientId)
 				}
 			}
 			
@@ -193,7 +194,7 @@ switch state
 		if (m_framesTillUpdate <= 0)
 		{
 			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION,x,y,m_ClientId)
-			gnet_packet_send_to_list_exclude(_packet,global.T1_CONNECTION_ID_LIST,[m_ClientId])
+			gnet_packet_send_to_list_exclude(_packet,global.T1_CONNECTION_ID_LOADED_IN_LIST,[m_ClientId])
 			
 			var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SELF_POSITION,x,y,m_ClientId,m_lastProcessedImput[2],hsp,vsp)
 			gnet_packet_send_to_id(packet,m_ClientId)
