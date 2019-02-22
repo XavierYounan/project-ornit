@@ -127,7 +127,7 @@ switch playerState
 			
 			with (itemList[NINJAGUN])
 			{
-				x = other.x + sign(hsp) * 5;
+				x = other.x;
 				y = other.y - 20;
 				image_angle = point_direction(x,y,mouse_x,mouse_y)
 				O_ClientManager.m_gunAngle = image_angle
@@ -171,7 +171,7 @@ switch playerState
 						
 						with (itemList[NINJAGUN])
 						{
-								x = other.x + sign(hsp) * 5;
+								x = other.x;
 								y = other.y - 20;
 								image_angle = ga0 + (ga1 - ga0) * (render_timestamp - t0) / (t1 - t0);
 						}
