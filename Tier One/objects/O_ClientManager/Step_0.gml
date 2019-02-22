@@ -39,7 +39,7 @@ switch managerState
 			}	
 		}
 		#endregion
-	break;
+		break;
 	}
 	
 	case PLAYING:
@@ -64,11 +64,11 @@ switch managerState
 			}
 			else
 			{
-				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,oServerTime.m_serverTime,round(m_gunAngle));
+				var _gunAngle = round(m_gunAngle)
+				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,oServerTime.m_serverTime,_gunAngle);
 				gnet_packet_send_to_id(_packet,_T2Id);
 				m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
-				m_unreadImputs[0] = [_hsp,_vsp,oServerTime.m_serverTime];
-				m_imputPacketSent += 1;
+				m_unreadImputs[0] = [_hsp,_vsp,oServerTime.m_serverTime,_gunAngle];
 			}
 		}
 		else
@@ -76,7 +76,8 @@ switch managerState
 			fConsoleAddMessage("T2 is dead : " + string(oServerTime.m_serverTime))
 		}
 
-		#endregion
+		#endregion 
+		break;
 	}
 	
 }
