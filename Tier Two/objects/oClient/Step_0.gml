@@ -28,6 +28,8 @@ switch state
 				{
 					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_PLAYER_INFO,m_ClientId,m_character,m_username)
 					gnet_packet_send_to_id(_packet,other.m_ClientId)
+					f_ConsoleAddMessage("Sent other Player Info to " + string(other.m_ClientId))
+					
 				}
 			}
 			

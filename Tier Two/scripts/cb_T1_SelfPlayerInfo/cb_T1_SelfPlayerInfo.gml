@@ -13,6 +13,5 @@ with (_client)
 	m_character = _character
 	
 	state = state.sendingInfo
-	
 }
 
