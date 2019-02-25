@@ -22,12 +22,17 @@ switch state
 				{
 					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_LOCAL_PLAYER_INFO,m_ClientId,m_character,m_username)	
 					gnet_packet_send_to_id(_packet,m_ClientId)
-					f_ConsoleAddMessage("Sent Local Player Info to " + string(m_ClientId))
+					f_ConsoleAddMessage("Sent iformation about itself to " + string(m_ClientId))
 				}
 				else
 				{
 					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_PLAYER_INFO,m_ClientId,m_character,m_username)
 					gnet_packet_send_to_id(_packet,other.m_ClientId)	
+					f_ConsoleAddMessage("Sent the already connected players info to " + string(other.m_ClientId))
+					
+					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_PLAYER_INFO,other.m_ClientId,other.m_character,other.m_username)
+					gnet_packet_send_to_id(_packet,m_ClientId)
+					f_ConsoleAddMessage("Sent the newly connected players info to " + string(m_ClientId))
 				}
 			}
 			
