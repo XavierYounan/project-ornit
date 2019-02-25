@@ -12,9 +12,6 @@ with (_client)
 	m_username = _username
 	m_character = _character
 	
-	if (oCharacter = undefined)
-	{
-		oCharacter = instance_create_depth(0,0,-100,oNinja)
-	}
+	state = state.sendingInfo
 }
 

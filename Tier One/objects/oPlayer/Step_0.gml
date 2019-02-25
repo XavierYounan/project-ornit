@@ -1,6 +1,6 @@
 switch playerState
 {
-	case LOADING:
+	case RECIEVINGINFO:
 	{
 		
 		break;
@@ -119,11 +119,19 @@ switch playerState
 	
 	
 	
-			x = _x
-			y = _y
+			x = _x;
+			y = _y;
+					
+			itemList[CHARACTER].x = x;
+			itemList[CHARACTER].y = y;
 			
-			oCharacter.x = x
-			oCharacter.y = y		
+			with (itemList[NINJAGUN])
+			{
+				x = other.x;
+				y = other.y - 20;
+				image_angle = point_direction(x,y,mouse_x,mouse_y)
+				O_ClientManager.m_gunAngle = image_angle
+			}
 
 		}
 		else
@@ -151,12 +159,25 @@ switch playerState
 						var y0 = old_position[1];
 						var y1 = new_position[1];
 		
+						var ga0 = old_position[3];
+						var ga1 = new_position[3];
+						
 					    var t0 = old_position[2];
 					    var t1 = new_position[2];
 
 					    x = x0 + (x1 - x0) * (render_timestamp - t0) / (t1 - t0);
 		  
 						y = y0 + (y1 - y0) * (render_timestamp - t0) / (t1 - t0);
+						
+						with (itemList[NINJAGUN])
+						{
+								x = other.x;
+								y = other.y - 20;
+								image_angle = ga0 + (ga1 - ga0) * (render_timestamp - t0) / (t1 - t0);
+						}
+						
+						itemList[CHARACTER].x = x;
+						itemList[CHARACTER].y = y;
 				}
 			}
 		

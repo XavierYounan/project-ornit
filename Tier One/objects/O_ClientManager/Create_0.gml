@@ -19,7 +19,7 @@ else
 	show_debug_message("Port = " + string(global.gnet_myPort))	
 }
 
-result = gnet_connect("127.0.0.1",3001)
+result = gnet_connect("127.0.0.1",3001) 
 fConsoleAddMessage(string(result))
 if (result[0] == null)
 {
@@ -44,16 +44,18 @@ m_unreadImputs = []
 
 
 PLAYING = 0
-LOADING = 1
+SENDINGINFO = 1
 ERROR = 3
 
-managerState = LOADING
+managerState = SENDINGINFO
 
 NULL = 0
 NINJA = 1
 GUNNER = 2
 
 m_character = GUNNER
+
+m_gunAngle = 0
 
 m_username = "Big Chungus"
 
