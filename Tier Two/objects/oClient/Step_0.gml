@@ -183,7 +183,7 @@ switch state
 		with (itemList[NINJAGUN])
 		{
 			x = other.x;
-			y = other.y;
+			y = other.y - 20;
 		}
 		
 		#region //clear imput log
