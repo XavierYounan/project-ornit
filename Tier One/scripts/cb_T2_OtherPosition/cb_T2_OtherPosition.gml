@@ -15,7 +15,7 @@ var _client = fGetClientById(_player)
 //if doesnt exist create a new player TODO: when player connect should be created
 if (_client == noone)
 {
-	//disregard
+	fConsoleAddMessage("Recieved Position packet but could not find associated player. Are they loaded in?")
 }
 else
 {

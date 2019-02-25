@@ -21,4 +21,5 @@ with (instance_create_depth(0,0,0,oPlayer))
 		itemList[CHARACTER] = instance_create_depth(0,0,-100,oNinja)
 		itemList[NINJAGUN] = instance_create_depth(0,0,-101,oNinjaGun)
 	}
+	
 }

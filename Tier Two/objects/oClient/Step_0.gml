@@ -198,8 +198,9 @@ switch state
 		
 		if (m_framesTillUpdate <= 0)
 		{
-			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION,x,y,m_ClientId)
-			gnet_packet_send_to_list_exclude(_packet,global.T1_CONNECTION_ID_LOADED_IN_LIST,[m_ClientId])
+			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION,x,y,m_ClientId,itemList[NINJAGUN].image_angle)
+			gnet_packet_send_to_list_exclude(_packet,global.T1_CONNECTION_ID_LIST,[m_ClientId])
+			
 			
 			var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SELF_POSITION,x,y,m_ClientId,m_lastProcessedImput[2],hsp,vsp)
 			gnet_packet_send_to_id(packet,m_ClientId)
