@@ -31,4 +31,5 @@ m_ClientUpdateSpreader = instance_create_depth(-10,-10,0,oClientUpdateSpreader)
 //create connection type lists
 global.T3_CONNECTION_ID_LIST = []
 global.T1_CONNECTION_ID_LIST = []
+global.T1_CONNECTION_ID_LOADED_IN_LIST = []
 global.SPECTATOR_ID_LIST = [] //TODO create spectator functionality

@@ -13,6 +13,7 @@ if (instance_exists(oT3))
 	{
 		f_ConsoleAddMessage("Client " + string(_connectionId) + " has disconnected")
 		global.T1_CONNECTION_ID_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LIST,_connectionId)
+		global.T1_CONNECTION_ID_LOADED_IN_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LOADED_IN_LIST,_connectionId)
 
 	}
 }
@@ -20,6 +21,7 @@ else
 {
 	f_ConsoleAddMessage("Client " + string(_connectionId) + " has disconnected") //TODO shut down server
 	global.T1_CONNECTION_ID_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LIST,_connectionId)
+	global.T1_CONNECTION_ID_LOADED_IN_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LOADED_IN_LIST,_connectionId)
 }
 
 var disconnectedClient = fGetClientById(_connectionId)

@@ -703,6 +703,14 @@
             }
         },
         {
+            "Key": "8e639800-5a2c-439b-b85f-1781cd4a133f",
+            "Value": {
+                "id": "ab555674-6cc0-4ea4-8c60-dff9678d01e1",
+                "resourcePath": "objects\\oNinjaGun\\oNinjaGun.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "90df1347-0d18-46d2-bbeb-89eb133b0a5e",
             "Value": {
                 "id": "ae8d2d50-79c9-465e-b537-31c27a725881",
@@ -828,6 +836,14 @@
                 "id": "88243191-3c79-4348-b379-919173df3f8e",
                 "resourcePath": "views\\a9485b18-3fda-4bcd-8f90-9c23cee1865e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ab57af8e-74b5-4a1a-a97d-b69fcebc7437",
+            "Value": {
+                "id": "dd9232e2-fe8a-44d4-9232-4b0dfe9d2fac",
+                "resourcePath": "sprites\\sNinjaGun\\sNinjaGun.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
