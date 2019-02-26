@@ -100,7 +100,6 @@ switch state
 			var _deltaTime = _millisecondDelta / 1000;
 			
 			#endregion
-
 		#region //apply imputs and gravity
 	
 			hsp = _currentImput[0] * walksp * _deltaTime;
@@ -142,35 +141,10 @@ switch state
 			y += vsp;
 			
 		#endregion
-		#region //Animation
-
-			/*
-			  //Animation
-			if (!place_meeting(x,y+1,oWall))
-			{
-				sprite_index = sPlayerAir;
-				image_speed = 0;
-				if (sign(vsp) > 0) image_index = 1; else image_index = 0;
-			}
-			else
-			{
-				image_speed = 1;
-				if (hsp == 0)
-				{
-					sprite_index = sPlayer;	
-				}
-				else
-				{
-					sprite_index = sPlayerRun;	
-				}
-			}
-
-			*/
-
-			if (hsp != 0) image_xscale = sign(hsp);
+		#region //Gun Angle
 			
-			itemList[NINJAGUN].image_angle = _currentImput[3]
-			
+			itemList[NINJAGUN].image_angle = point_direction(x,y,_currentImput[3],_currentImput[4])
+		
 		#endregion
 		}
 		

@@ -6,7 +6,9 @@ var _receivedData  = argument1;
 var _hMove = _receivedData[0]; //buffer_s8
 var _vMove = _receivedData[1]; //buffer_s8
 var _packetNumber = _receivedData[2] //buffer_u64 packet number
-var _gunDir = _receivedData[3] //buffer_u16
+var _mouseX = _receivedData[4] //buffer_u16
+var _mouseY = _receivedData[5] //buffer_u16
+var _mouseLeftClicked = _receivedData[6] //buffer_bool
 
 var _client = fGetClientById(_connectionId)
 
@@ -27,8 +29,7 @@ else
 			global.T1_CONNECTION_ID_LOADED_IN_LIST = fArrayAppend(global.T1_CONNECTION_ID_LOADED_IN_LIST,_connectionId)
 		}
 
-		
 		m_imputLog = fArrayMoveBack(m_imputLog,1)
-		m_imputLog[0] = [_hMove,_vMove,_packetNumber,_gunDir]
+		m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false] //last is is processed
 	}
 }
