@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "oNinja",
     "eventList": [
-        
+        {
+            "id": "ea803dbe-a4f1-4edf-9cab-872e25acefe0",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "0d436488-bc51-4379-a90d-1edd876466ac"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
