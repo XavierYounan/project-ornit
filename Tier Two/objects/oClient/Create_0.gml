@@ -24,7 +24,7 @@ y = room_height/2
 m_x = x
 m_y = y
 
-var _tempArray = [0,0,current_time,0] //oth update, usually sent by player
+var _tempArray = [0,0,current_time,0,0,0,false] //oth update, usually sent by player
 m_imputLog[0] = _tempArray
 m_lastProcessedImput = _tempArray
 

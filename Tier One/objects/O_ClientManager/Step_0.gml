@@ -53,6 +53,7 @@ switch managerState
 		var _hsp = _keyRight - _keyLeft
 		var _vsp = _keyUp - _keyDown
 
+		var _mouseLeftClicked = mouse_check_button(mb_left)
 	
 		if (instance_exists(oT2))
 		{
@@ -65,7 +66,7 @@ switch managerState
 			else
 			{
 				var _gunAngle = round(m_gunAngle)
-				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,oServerTime.m_serverTime,_gunAngle);
+				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,oServerTime.m_serverTime,mouse_x,mouse_y,_mouseLeftClicked);
 				gnet_packet_send_to_id(_packet,_T2Id);
 				m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
 				m_unreadImputs[0] = [_hsp,_vsp,oServerTime.m_serverTime,_gunAngle];
