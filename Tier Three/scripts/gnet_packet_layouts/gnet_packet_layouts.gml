@@ -39,7 +39,7 @@ gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SEND_TIME,cb_T2_Time,buffer_u64)
 
 enum MAJOR_PACKET_IDENTIFIERS
 {
-	T2_STATUS = 10,	
+	T2_STATUS = 20,	
 
 }
 
