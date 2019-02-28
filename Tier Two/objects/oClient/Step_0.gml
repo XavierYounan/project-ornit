@@ -145,18 +145,16 @@ switch state
 			
 			itemList[NINJAGUN].image_angle = point_direction(x,y,_currentImput[3],_currentImput[4])
 			
-			if ((_currentImput[5]) && (_currentImput[6])) //if mouse left clicked and this frame hasnt been processed yet
+			if ((_currentImput[5]) && (!_currentImput[6])) //if mouse left clicked and this frame hasnt been processed yet
 			{
 				//create bullet
 				with(instance_create_depth(x,y - 40,-102,oNinjaBullet))
 				{
-					direction = itemList[NINJAGUN].image_angle	
+					direction = other.itemList[other.NINJAGUN].image_angle	
 				}
 				
-				f_ConsoleAddMessage("Created a bullet")
-				
 				//set frame to processed
-				m_imputLog[i] = [_currentImput[0],_currentImput[1],_currentImput[2],_currentImput[3],_currentImput[4],_currentImput[4],true]
+				m_imputLog[i] = [_currentImput[0],_currentImput[1],_currentImput[2],_currentImput[3],_currentImput[4],_currentImput[5],true]
 			}
 			
 		

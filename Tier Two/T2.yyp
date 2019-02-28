@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "28f47268-6ff3-44e1-8122-840aabec4ebd",
+            "Value": {
+                "id": "1abab915-8b7a-4eee-a315-09efa5aa1a20",
+                "resourcePath": "objects\\oRestart\\oRestart.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "29200892-91f8-4594-aca7-8623bb57bcdf",
             "Value": {
                 "id": "c17431b4-3b8b-4db7-b193-2db5fa8d8fde",
