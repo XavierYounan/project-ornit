@@ -151,6 +151,7 @@ switch state
 				with(instance_create_depth(x,y - 40,-102,oNinjaBullet))
 				{
 					direction = other.itemList[other.NINJAGUN].image_angle	
+					image_angle = direction - 90
 				}
 				
 				//set frame to processed
