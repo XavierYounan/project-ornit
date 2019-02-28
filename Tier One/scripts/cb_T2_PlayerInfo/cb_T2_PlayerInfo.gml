@@ -6,7 +6,6 @@ var _clientId = _receivedData[0] //buffer_u8
 var _character = _receivedData[1]; //buffer_u8
 var _username = _receivedData[2]; //buffer_string
 
-fConsoleAddMessage("Received Player info which was " + string(_receivedData))
 
 with (instance_create_depth(0,0,0,oPlayer))
 {
