@@ -70,3 +70,7 @@ m_repeatTimes = 10
 m_repeatFrequency = game_get_speed(gamespeed_fps)
 m_timeLeft = m_repeatFrequency
 m_repeatLeft = m_repeatTimes
+
+
+fireRate = 1 //per seccond
+canShoot = true
