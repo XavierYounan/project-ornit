@@ -28,8 +28,7 @@ enum PACKET_IDENTIFIER
 	T1_SELF_PLAYER_INFO,
 	T2_PLAYER_INFO,
 	T2_LOCAL_PLAYER_INFO,
-	T2_OBJECT_HIT_LOCAL,
-	T2_OBJECT_HIT
+	T2_CREATE_BULLET
 }
 
 gnet_packet_layout_create(PACKET_IDENTIFIER.T1_KEYS,cb_T1_Imputs,buffer_s8,buffer_s8,buffer_u64,buffer_u16,buffer_u16,buffer_bool)
@@ -41,4 +40,4 @@ gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SEND_TIME,cb_T2_Time,buffer_u64)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T1_SELF_PLAYER_INFO,cb_T1_SelfPlayerInfo,buffer_string,buffer_u8)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_PLAYER_INFO,cb_T2_PlayerInfo,buffer_u8,buffer_u8,buffer_string)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_LOCAL_PLAYER_INFO,cb_T2_LocalPlayerInfo,buffer_u8,buffer_u8,buffer_string)
-
+gnet_packet_layout_create(PACKET_IDENTIFIER.T2_CREATE_BULLET,cb_T2_CreateBullet,buffer_u8,buffer_s32,buffer_s32,buffer_u16)
