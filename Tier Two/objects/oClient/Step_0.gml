@@ -143,7 +143,7 @@ switch state
 		#endregion
 		#region //Gun Angle
 			
-			itemList[NINJAGUN].image_angle = point_direction(x,y,_currentImput[3],_currentImput[4])
+			itemList[NINJAGUN].image_angle = point_direction(x,y - 40,_currentImput[3],_currentImput[4])
 			
 			if ((_currentImput[5]) && (!_currentImput[6]) && (canShoot)) //if mouse left clicked and this frame hasnt been processed yet and can shoot
 			{
@@ -155,6 +155,9 @@ switch state
 				{
 					direction = other.itemList[other.NINJAGUN].image_angle	
 					image_angle = direction - 90
+					
+					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,other.m_ClientId,x,y,direction)
+					gnet_packet_send_to_id(buff,other.m_ClientId)
 				}
 				
 				//set frame to processed

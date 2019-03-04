@@ -743,6 +743,14 @@
             }
         },
         {
+            "Key": "8c7a5e4b-698d-4a45-875c-5f52587c0a0b",
+            "Value": {
+                "id": "9a134fb3-dfee-4c53-9520-b3b0fc630d06",
+                "resourcePath": "scripts\\cb_T2_CreateBullet\\cb_T2_CreateBullet.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8cad5a6a-833a-4e69-acb0-00b197e2b5ce",
             "Value": {
                 "id": "fb7123ee-4c5e-4af3-bde2-9015cbf95cd0",
@@ -1416,6 +1424,7 @@
         "df9c97fe-8c47-457f-ac25-cdd27242d6a8",
         "fa5e2c9e-eb72-4856-a9a7-77634c7c1c18",
         "f882e365-d19c-4417-8028-f1638eb22fda",
+        "8c7a5e4b-698d-4a45-875c-5f52587c0a0b",
         "c5a38e72-bf28-4ad7-9307-80fe08cf69d4",
         "20ff15c3-d787-4677-9168-79f5e7e3ee6d",
         "e8085ba7-eee4-4159-b9a2-41eadd4185bb",
