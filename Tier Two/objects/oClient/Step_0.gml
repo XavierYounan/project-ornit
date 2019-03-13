@@ -3,7 +3,9 @@ switch state
 {
 	case state.dead:
 	{
-		f_ConsoleAddMessage("You Died")
+		var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_STATE_UPDATE,m_ClientId,t1state_DEAD)
+		gnet_packet_send_all(_packet)
+		
 		break;
 	}
 	case state.waitingForInfo:
@@ -163,7 +165,8 @@ switch state
 					creator = other.m_ClientId 
 					
 					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,other.m_ClientId,x,y,direction)
-					gnet_packet_send_to_id(buff,other.m_ClientId)
+					gnet_packet_send_all(buff)
+					f_ConsoleAddMessage("Sent create a bullet packet")
 				}
 				
 				//set frame to processed
