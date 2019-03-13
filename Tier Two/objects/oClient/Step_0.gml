@@ -1,6 +1,11 @@
 
 switch state
 {
+	case state.dead:
+	{
+		f_ConsoleAddMessage("You Died")
+		break;
+	}
 	case state.waitingForInfo:
 	{
 		//do nothing just wait untill recieve info then state will be set to sending
@@ -178,6 +183,12 @@ switch state
 		{
 			x = other.x;
 			y = other.y - 20;
+		}
+		
+		if (hp <= 0)
+		{
+			state = state.dead
+			break;
 		}
 		
 		#region //clear imput log
