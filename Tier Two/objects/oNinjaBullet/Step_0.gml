@@ -1,22 +1,15 @@
-if (hitDelay >= 0)
+if(place_meeting(x,y,oWall))
 {
-	hitDelay --
+	instance_destroy(self)	
 }
-else
+
+_colInst = instance_place(x,y,oClient)
+
+if (_colInst != noone) && (_colInst.m_ClientId != creator) 
 {
-	if(place_meeting(x,y,oWall))
+	with (_colInst)
 	{
-		instance_destroy(self)	
-	}
-
-	_colInst = instance_place(x,y,oClient)
-
-	if(_colInst != noone)
-	{
-		with (_colInst)
-		{
-			hp -= bulletDamage;
-			instance_destroy(other)
-		}
+		hp -= bulletDamage;
+		instance_destroy(other)
 	}
 }
