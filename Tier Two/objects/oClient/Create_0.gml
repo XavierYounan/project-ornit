@@ -80,5 +80,5 @@ m_timeLeft = m_repeatFrequency
 m_repeatLeft = m_repeatTimes
 
 
-fireRate = 1 //per seccond
+fireRate = 7 //per seccond
 canShoot = true
