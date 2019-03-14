@@ -18,8 +18,8 @@ m_roundTripTime = 0 //Ping
 
 m_imputLog = []
 
-x = room_width/2
-y = room_height/2
+x = 796
+y = 366
 
 m_x = x
 m_y = y
