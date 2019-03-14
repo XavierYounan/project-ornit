@@ -7,11 +7,10 @@ var _x = _receivedData[1]; //buffer_s32
 var _y = _receivedData[2]; //buffer_s32
 var _direction = _receivedData[3] //buffer_u16
 
-var _client = fGetClientById(_clientId)
-
 with(instance_create_depth(_x,_y,-103,oNinjaArrow))
 {
 	direction = _direction	
 	image_angle = direction-90
-	creator = _client
+	creator = _clientId
+	fConsoleAddMessage("Created Bullet with id " + string(_clientId))
 }

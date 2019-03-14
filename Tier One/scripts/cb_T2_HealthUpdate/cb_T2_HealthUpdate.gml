@@ -9,4 +9,3 @@ var _client = fGetClientById(_clientId)
 
 _client.hp = _health
 
-fConsoleAddMessage("Recieved health update : " + string(_receivedData))
