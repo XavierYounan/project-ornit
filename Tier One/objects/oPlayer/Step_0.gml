@@ -1,5 +1,14 @@
 switch playerState
 {
+	case DEAD:
+	{
+		if isLocal
+		{
+		fConsoleAddMessage("YOU LOOSE")
+		}
+		
+		break;
+	}
 	case RECIEVINGINFO:
 	{
 		

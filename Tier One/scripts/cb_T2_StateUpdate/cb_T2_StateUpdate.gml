@@ -3,10 +3,13 @@
 var _connectionId  = argument0;
 var _receivedData  = argument1;
 
-var _state = _receivedData[0];
+var _clientId = _receivedData[0]; //buffer_u8
+var _state = _receivedData[1]; //buffer_u8
 
-//Loop through every player, set state to playing
-with(oPlayer)
+var _client = fGetClientById(_clientId)
+
+if (_client) != noone
 {
-	state = _state
+	_client.playerState = _state
+	fConsoleAddMessage("made " + string(_client) + " into the state of " + string(_receivedData))
 }

@@ -175,14 +175,6 @@
             }
         },
         {
-            "Key": "1bb1d58b-8050-4081-bd93-1735901d4c45",
-            "Value": {
-                "id": "fb250078-956e-4e1a-bfa9-ae867380852f",
-                "resourcePath": "rooms\\rLocalLobby\\rLocalLobby.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "1d6894b3-8020-44d3-a1e3-649d7f5c84cc",
             "Value": {
                 "id": "4eb4a4a2-974b-4384-8257-b6366906d03d",

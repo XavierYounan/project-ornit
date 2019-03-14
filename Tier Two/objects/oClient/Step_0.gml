@@ -3,7 +3,8 @@ switch state
 {
 	case state.dead:
 	{
-		f_ConsoleAddMessage("You Died")
+		var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_STATE_UPDATE,m_ClientId,t1state_DEAD)
+		gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
 		break;
 	}
 	case state.waitingForInfo:
@@ -163,7 +164,8 @@ switch state
 					creator = other.m_ClientId 
 					
 					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,other.m_ClientId,x,y,direction)
-					gnet_packet_send_to_id(buff,other.m_ClientId)
+					gnet_packet_send_to_list(buff,global.T1_CONNECTION_ID_LOADED_IN_LIST)
+					f_ConsoleAddMessage("Sent create a bullet packet to " + string(global.T1_CONNECTION_ID_LOADED_IN_LIST))
 				}
 				
 				//set frame to processed
@@ -207,6 +209,8 @@ switch state
 			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION,x,y,m_ClientId,itemList[NINJAGUN].image_angle)
 			gnet_packet_send_to_list_exclude(_packet,global.T1_CONNECTION_ID_LIST,[m_ClientId])
 			
+			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_HEALTH_UPDATE,m_ClientId,round(hp))
+			gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
 			
 			var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SELF_POSITION,x,y,m_ClientId,m_lastProcessedImput[2],hsp,vsp)
 			gnet_packet_send_to_id(packet,m_ClientId)

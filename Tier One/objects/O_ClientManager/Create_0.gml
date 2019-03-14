@@ -19,7 +19,7 @@ else
 	show_debug_message("Port = " + string(global.gnet_myPort))	
 }
 
-result = gnet_connect("127.0.0.1",3001) 
+result = gnet_connect(global.IP,global.PORT) 
 fConsoleAddMessage(string(result))
 if (result[0] == null)
 {
