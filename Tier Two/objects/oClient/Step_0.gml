@@ -165,8 +165,8 @@ switch state
 					creator = other.m_ClientId 
 					
 					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,other.m_ClientId,x,y,direction)
-					gnet_packet_send_all(buff)
-					f_ConsoleAddMessage("Sent create a bullet packet")
+					gnet_packet_send_to_list(buff,global.T1_CONNECTION_ID_LOADED_IN_LIST)
+					f_ConsoleAddMessage("Sent create a bullet packet to " + string(global.T1_CONNECTION_ID_LOADED_IN_LIST))
 				}
 				
 				//set frame to processed
