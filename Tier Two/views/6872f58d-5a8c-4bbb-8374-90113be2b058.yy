@@ -1,10 +1,10 @@
 {
-    "id": "19315b41-3e96-49a1-9a20-f6cc4377e0d9",
+    "id": "6872f58d-5a8c-4bbb-8374-90113be2b058",
     "modelName": "GMFolder",
     "mvc": "1.1",
-    "name": "19315b41-3e96-49a1-9a20-f6cc4377e0d9",
+    "name": "6872f58d-5a8c-4bbb-8374-90113be2b058",
     "children": [
-        "7069907b-9b7a-4830-8e25-a493977f7623"
+        "925a7f1b-9050-4403-a002-8bea479ca311"
     ],
     "filterType": "GMScript",
     "folderName": "Maps",

@@ -1,19 +1,10 @@
 {
-    "id": "28769ede-3024-43c6-bdcb-a7dcedd4b40d",
+    "id": "09cc2346-e5a6-46b5-bce4-993a5bbeefe0",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oMapLoader",
+    "name": "oRespawn",
     "eventList": [
-        {
-            "id": "07c6061b-d95f-449d-93cb-f563becc49ee",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "28769ede-3024-43c6-bdcb-a7dcedd4b40d"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
@@ -33,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "00000000-0000-0000-0000-000000000000",
-    "visible": false
+    "spriteId": "819369c2-973e-4bfd-8415-ddac9c53ef7e",
+    "visible": true
 }

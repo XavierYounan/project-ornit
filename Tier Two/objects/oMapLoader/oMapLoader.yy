@@ -1,18 +1,18 @@
 {
-    "id": "28769ede-3024-43c6-bdcb-a7dcedd4b40d",
+    "id": "f02ed4c9-7b52-4553-9560-123178988f6d",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "oMapLoader",
     "eventList": [
         {
-            "id": "07c6061b-d95f-449d-93cb-f563becc49ee",
+            "id": "e7eb82d6-8048-40d8-a47b-fe02636a4183",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "28769ede-3024-43c6-bdcb-a7dcedd4b40d"
+            "m_owner": "f02ed4c9-7b52-4553-9560-123178988f6d"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
