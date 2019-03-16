@@ -4,7 +4,7 @@ depthMin = -1000
 lookDistance = 100000
 
 xResolution = 1024
-xResolution = 768
+xResolution = 1024
  
 var vm = matrix_build_lookat(x,y,depthMin,x,y,0,false,true,false);
 var pm = matrix_build_projection_ortho(xResolution,xResolution,0,lookDistance);

@@ -7,8 +7,8 @@ switch state
 		
 		if (localPlayer != noone)
 		{
-			xTo = x = other.x + (mouse_x - other.x)/4 
-			yTo = y = other.y + (mouse_x - other.x)/4 
+			xTo = localPlayer.x + (mouse_x - other.x)/4 
+			yTo = localPlayer.y + (mouse_y - other.y)/4 
 		}
 		else
 		{
