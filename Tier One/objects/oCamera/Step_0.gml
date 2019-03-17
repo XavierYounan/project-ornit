@@ -13,6 +13,11 @@ switch state
 		else
 		{
 			state = CAMERA_STATE.SHOW_FULL_MAP	
+			
+			with (oRespawn)
+			{
+				state = RESPAWN_STATE.CLICKABLE
+			}
 		}
 		
 		//Dont let it go outside
@@ -34,6 +39,13 @@ switch state
 		//Dont let it go outside
 		x = clamp(x,xResolution/2,room_width - xResolution/2)
 		y = clamp(y,yResolution/2,room_height - yResolution/2)
+		
+		with (oRespawn)
+		{
+			state = RESPAWN_STATE.INACTIVE
+			buttonState = BUTTON_STATE.NOTHING
+		}
+			
 		
 		//Set the state
 		state = CAMERA_STATE.FOLLOW_PLAYER
