@@ -27,6 +27,20 @@ switch playerState
 	
 	case PLAYING:
 	{
+	if isLocal
+	{
+		with(oCamera)
+		{
+			if state = CAMERA_STATE.SHOW_FULL_MAP
+			{
+				state = CAMERA_STATE.FOLLOW_PLAYER_CREATE
+				with (oRespawn)
+				{
+					state = RESPAWN_STATE.INACTIVE
+				}	
+			}
+		}
+	}
 		#region //game code
 		if(isLocal)
 		{

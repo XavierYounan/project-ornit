@@ -14,7 +14,8 @@ if position_meeting(_x,_y,oRespawn)
 		hp = 100
 		x  = _x 
 		y = _y
-		m_imputLog = [0,0,current_time,0,0,0,false]
+		m_imputLog = []
+		m_imputLog[0] = [0,0,current_time,0,0,0,false]
 		
 		middleRoom = [room_width/2,room_height/2]
 		
@@ -26,5 +27,10 @@ if position_meeting(_x,_y,oRespawn)
 			x += xMoveDir
 			y += yMoveDir
 		}
+		
+		state = state.playing
+		
+		var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_STATE_UPDATE,_connectionId,t1state_PLAYING)
+		gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
 	}
 }
