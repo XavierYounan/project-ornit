@@ -999,6 +999,14 @@
             }
         },
         {
+            "Key": "af513a00-b3d2-4b39-80e1-33dfd1be1c2e",
+            "Value": {
+                "id": "e556f4f7-5a87-4bae-bf41-82e9a6ff93f9",
+                "resourcePath": "scripts\\cb_T1_RequestRespawn\\cb_T1_RequestRespawn.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b2a3fafa-6cff-41f9-91b2-6f18a544e57f",
             "Value": {
                 "id": "f799a1ea-dca7-4e62-b8f3-2c0ebdc69035",
@@ -1498,6 +1506,7 @@
         "8c7a5e4b-698d-4a45-875c-5f52587c0a0b",
         "3090fcb0-271a-4901-8e82-556113a5d2c2",
         "f11099ce-40b9-4da9-b660-5c359e1700ef",
+        "af513a00-b3d2-4b39-80e1-33dfd1be1c2e",
         "c5a38e72-bf28-4ad7-9307-80fe08cf69d4",
         "20ff15c3-d787-4677-9168-79f5e7e3ee6d",
         "e8085ba7-eee4-4159-b9a2-41eadd4185bb",

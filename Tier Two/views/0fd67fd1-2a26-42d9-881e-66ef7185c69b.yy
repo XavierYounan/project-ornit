@@ -14,7 +14,8 @@
         "f882e365-d19c-4417-8028-f1638eb22fda",
         "8c7a5e4b-698d-4a45-875c-5f52587c0a0b",
         "3090fcb0-271a-4901-8e82-556113a5d2c2",
-        "f11099ce-40b9-4da9-b660-5c359e1700ef"
+        "f11099ce-40b9-4da9-b660-5c359e1700ef",
+        "af513a00-b3d2-4b39-80e1-33dfd1be1c2e"
     ],
     "filterType": "GMScript",
     "folderName": "T1\/2 level communication",

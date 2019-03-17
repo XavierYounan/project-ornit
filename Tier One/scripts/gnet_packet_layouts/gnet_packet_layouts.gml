@@ -29,7 +29,8 @@ enum PACKET_IDENTIFIER
 	T2_LOCAL_PLAYER_INFO,
 	T2_CREATE_BULLET,
 	T2_HEALTH_UPDATE,
-	T2_STATE_UPDATE
+	T2_STATE_UPDATE,
+	T1_REQUEST_RESPAWN
 }
 
 gnet_packet_layout_create(PACKET_IDENTIFIER.T1_KEYS,cb_T1_Imputs,buffer_s8,buffer_s8,buffer_u64,buffer_u16,buffer_u16,buffer_bool)
@@ -40,6 +41,7 @@ gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SEND_TIME,cb_T2_Time,buffer_u64)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T1_SELF_PLAYER_INFO,cb_T1_SelfPlayerInfo,buffer_string,buffer_u8)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_PLAYER_INFO,cb_T2_PlayerInfo,buffer_u8,buffer_u8,buffer_string)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_LOCAL_PLAYER_INFO,cb_T2_LocalPlayerInfo,buffer_u8,buffer_u8,buffer_string)
-gnet_packet_layout_create(PACKET_IDENTIFIER.T2_CREATE_BULLET,cb_T2_CreateBullet,buffer_u8,buffer_s32,buffer_s32,buffer_u16) //user,x,y,dir
-gnet_packet_layout_create(PACKET_IDENTIFIER.T2_HEALTH_UPDATE,cb_T2_HealthUpdate,buffer_u8,buffer_u8) //user,health
-gnet_packet_layout_create(PACKET_IDENTIFIER.T2_STATE_UPDATE,cb_T2_StateUpdate,buffer_u8,buffer_u8) //user.state
+gnet_packet_layout_create(PACKET_IDENTIFIER.T2_CREATE_BULLET,cb_T2_CreateBullet,buffer_u8,buffer_s32,buffer_s32,buffer_u16)
+gnet_packet_layout_create(PACKET_IDENTIFIER.T2_HEALTH_UPDATE,cb_T2_HealthUpdate,buffer_u8,buffer_u8)
+gnet_packet_layout_create(PACKET_IDENTIFIER.T2_STATE_UPDATE,cb_T2_StateUpdate,buffer_u8,buffer_u8) 
+gnet_packet_layout_create(PACKET_IDENTIFIER.T1_REQUEST_RESPAWN,cb_T1_RequestRespawn,buffer_u32,buffer_u32)
