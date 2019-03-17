@@ -1090,7 +1090,7 @@
             "Key": "bdd46542-291f-4cc7-84a7-8a8c2dc6f045",
             "Value": {
                 "id": "a5c23cac-c460-4a91-b21c-382f963c4ac5",
-                "resourcePath": "scripts\\teleport\\teleport.yy",
+                "resourcePath": "scripts\\command_tp\\command_tp.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1107,6 +1107,14 @@
             "Value": {
                 "id": "1169b948-180c-445e-983e-2da5ae0a819a",
                 "resourcePath": "scripts\\FOLDER_Callbacks\\FOLDER_Callbacks.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c2dd617a-1d32-4507-b848-4aee49a035cf",
+            "Value": {
+                "id": "024a38d3-58bf-4ce9-9ac2-f20569e42a0f",
+                "resourcePath": "scripts\\command_hp\\command_hp.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1570,7 +1578,8 @@
         "925a7f1b-9050-4403-a002-8bea479ca311",
         "33b9da43-d53e-4ce4-835b-d5e5cbcf683c",
         "21e9e9cb-3dba-4802-970e-83bca0756485",
-        "bdd46542-291f-4cc7-84a7-8a8c2dc6f045"
+        "bdd46542-291f-4cc7-84a7-8a8c2dc6f045",
+        "c2dd617a-1d32-4507-b848-4aee49a035cf"
     ],
     "tutorial": ""
 }
