@@ -18,6 +18,17 @@ with (instance_create_depth(0,0,0,oPlayer))
 	m_character = _character
 	playerState = PLAYING
 	
+	
+	with (oCamera)
+	{
+		localPlayer = other.id //make the camera follow the local player
+		xTo = x = other.x + (mouse_x - other.x)/4 //snap x xoords
+		yTo = y = other.y + (mouse_y - other.y)/4 //snap y coords
+		state = CAMERA_STATE.FOLLOW_PLAYER_CREATE
+		
+	}
+	oCamera.localPlayer = id
+	
 	if (itemList[CHARACTER] = undefined)
 	{
 		itemList[CHARACTER] = instance_create_depth(0,0,-100,oNinja)

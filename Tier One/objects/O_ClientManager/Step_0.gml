@@ -24,12 +24,7 @@ switch managerState
 					var packet = gnet_packet_build(PACKET_IDENTIFIER.T1_SELF_PLAYER_INFO,m_username,m_character)
 					gnet_packet_send_to_id(packet,_T2Id)
 				}
-			}
-			else
-			{
-				fConsoleAddMessage("T2 is dead : " + string(oServerTime.m_serverTime))
-			}
-			
+			}		
 
 			
 			if (m_repeatLeft <=0)
