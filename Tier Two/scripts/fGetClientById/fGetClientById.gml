@@ -5,6 +5,7 @@ var _clientId = argument0
 
 with (oClient)
 {
-	if(m_ClientId == _clientId) return id;	
+	if(m_ClientId == _clientId) 
+	return id;	
 }
 return noone;

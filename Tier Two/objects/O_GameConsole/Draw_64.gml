@@ -32,7 +32,8 @@ switch controllerState
 		
 		if (keyboard_check_pressed(vk_enter))
 		{
-			controllerState = controllerState.normal	
+			controllerState = controllerState.normal
+			f_ConsoleAddMessage(string(runCommand(keyboard_string)))
 			m_string = ""
 		}
 		
