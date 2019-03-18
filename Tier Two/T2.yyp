@@ -991,6 +991,14 @@
             }
         },
         {
+            "Key": "a7a35d65-17ba-4b1a-8393-8107c418321c",
+            "Value": {
+                "id": "0586ea25-9bd6-4f37-ab4c-c90f2a0e50ed",
+                "resourcePath": "scripts\\dropped_packets_log\\dropped_packets_log.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "3e5a4411-8e68-47fd-95a7-19cf77ea5251",
@@ -1587,7 +1595,8 @@
         "33b9da43-d53e-4ce4-835b-d5e5cbcf683c",
         "21e9e9cb-3dba-4802-970e-83bca0756485",
         "bdd46542-291f-4cc7-84a7-8a8c2dc6f045",
-        "c2dd617a-1d32-4507-b848-4aee49a035cf"
+        "c2dd617a-1d32-4507-b848-4aee49a035cf",
+        "a7a35d65-17ba-4b1a-8393-8107c418321c"
     ],
     "tutorial": ""
 }
