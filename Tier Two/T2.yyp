@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "000b7106-1380-429c-ab45-1fb2b5f21388",
+            "Value": {
+                "id": "9acca9fb-a0c3-4ade-8665-f4e6d25bb607",
+                "resourcePath": "views\\000b7106-1380-429c-ab45-1fb2b5f21388.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "01c3d4c4-651b-487a-9f56-a4d27742ad06",
             "Value": {
                 "id": "e8bec71a-86ed-4a88-bc9c-7d28e3e3a41e",
@@ -271,14 +279,6 @@
             }
         },
         {
-            "Key": "2e85e52e-14cc-40d9-ab46-422013716998",
-            "Value": {
-                "id": "343fe0ae-fa93-4a8e-a559-0a3da2faf04a",
-                "resourcePath": "objects\\oBullet\\oBullet.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "3061e183-0fe6-411e-9cfe-c465840c0905",
             "Value": {
                 "id": "c016157e-46bd-42f9-8297-f1efe5e4b5f7",
@@ -316,6 +316,14 @@
                 "id": "4279fbcd-1a6e-4a91-b593-e5fa8c87089d",
                 "resourcePath": "scripts\\stringSplitter\\stringSplitter.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "358bee66-72d0-4dd9-8fc9-729cce9f7edf",
+            "Value": {
+                "id": "9dd66925-48f1-40c2-b182-b0f3cd5b9eac",
+                "resourcePath": "objects\\pInvisibleForNetworkDebug\\pInvisibleForNetworkDebug.yy",
+                "resourceType": "GMObject"
             }
         },
         {
