@@ -919,6 +919,14 @@
             }
         },
         {
+            "Key": "9e532e9b-bd55-4628-a0a4-a57ce6f6c46c",
+            "Value": {
+                "id": "9a2fa3b8-f58c-49ca-8b7f-a4092394f7bb",
+                "resourcePath": "scripts\\cb_T2_PlayerDisconnect\\cb_T2_PlayerDisconnect.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9ee2f5ac-ff0e-4a9f-bf4b-91a0370c9896",
             "Value": {
                 "id": "d2216a70-433c-4f33-bfb6-d18a924f101d",
@@ -1579,6 +1587,7 @@
         "3090fcb0-271a-4901-8e82-556113a5d2c2",
         "f11099ce-40b9-4da9-b660-5c359e1700ef",
         "af513a00-b3d2-4b39-80e1-33dfd1be1c2e",
+        "9e532e9b-bd55-4628-a0a4-a57ce6f6c46c",
         "c5a38e72-bf28-4ad7-9307-80fe08cf69d4",
         "20ff15c3-d787-4677-9168-79f5e7e3ee6d",
         "e8085ba7-eee4-4159-b9a2-41eadd4185bb",

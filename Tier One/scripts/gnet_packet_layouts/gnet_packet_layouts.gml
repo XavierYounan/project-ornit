@@ -30,7 +30,8 @@ enum PACKET_IDENTIFIER
 	T2_CREATE_BULLET,
 	T2_HEALTH_UPDATE,
 	T2_STATE_UPDATE,
-	T1_REQUEST_RESPAWN
+	T1_REQUEST_RESPAWN,
+	T2_PLAYER_DISCONNECT
 }
 
 gnet_packet_layout_create(PACKET_IDENTIFIER.T1_KEYS,cb_T1_Imputs,buffer_s8,buffer_s8,buffer_u64,buffer_u16,buffer_u16,buffer_bool)
@@ -45,3 +46,4 @@ gnet_packet_layout_create(PACKET_IDENTIFIER.T2_CREATE_BULLET,cb_T2_CreateBullet,
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_HEALTH_UPDATE,cb_T2_HealthUpdate,buffer_u8,buffer_u8)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_STATE_UPDATE,cb_T2_StateUpdate,buffer_u8,buffer_u8) 
 gnet_packet_layout_create(PACKET_IDENTIFIER.T1_REQUEST_RESPAWN,cb_T1_RequestRespawn,buffer_u32,buffer_u32)
+gnet_packet_layout_create(PACKET_IDENTIFIER.T2_PLAYER_DISCONNECT,cb_T2_PlayerDisconnect,buffer_u8)

@@ -1,8 +1,14 @@
-if(place_meeting(x,y,oWall))
+if (hitDelay < 0)
 {
-	instance_destroy(self)	
+	if(place_meeting(x,y,oWall))
+	{
+		instance_destroy(self)	
+	}
 }
-
+else
+{
+	hitDelay--	
+}	
 _colInst = instance_place(x,y,oClient)
 
 if (_colInst != noone) && (_colInst.m_ClientId != creator) 

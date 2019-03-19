@@ -1,2 +1,2 @@
 hitDelay = 5
-speed = 10
+speed = 15
