@@ -57,6 +57,28 @@ switch(debugMode)
 		break;
 	}
 	
+	case DEBUG_MODES.DROPPED_PACKETS:
+	{
+		draw_set_color(c_white);
+		draw_set_alpha(1);
+		
+		var _listSize = ds_list_size(droppedPacketsList);
+		var _yAnchor = window_get_height() - 10; //CHANGE TO VARIABLE PIXELS FROM LEFT
+		var _spacing = 30; //CHANGE TO FONT HEIGHT PLUS GAP
+
+		draw_set_colour(c_white)
+		for (var i = _listSize - 1; i > -1; i--)
+		{
+			//unpack array
+			var array = droppedPacketsList[| i];
+			
+			var str = string_build("Packet Type: {}, Recieved from connection id {}, Recieved Data {}", array[|1], array[|2], array[|3])
+			draw_text(10, _yAnchor - ((_listSize - i) * _spacing),str);
+		}
+		break;
+		
+	}
+		
 	case DEBUG_MODES.NOTHING:
 	{
 		

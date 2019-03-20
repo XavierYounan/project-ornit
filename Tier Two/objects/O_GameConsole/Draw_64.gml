@@ -23,6 +23,12 @@ switch controllerState
 		break;	
 	}
 	
+	case controllerState.notDisplayingMessages:
+	{
+		//dont do anything
+		break;	
+	}
+	
 	case controllerState.typing:
 	{		
 		var _yAnchor = window_get_height() - 20; //CHANGE TO VARIABLE PIXELS FROM LEFT

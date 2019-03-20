@@ -25,6 +25,7 @@ else
 	f_ConsoleAddMessage("Client " + string(_connectionId) + " has disconnected") //TODO shut down server
 	global.T1_CONNECTION_ID_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LIST,_connectionId)
 	global.T1_CONNECTION_ID_LOADED_IN_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LOADED_IN_LIST,_connectionId)
+	
 	var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_PLAYER_DISCONNECT,_connectionId)
 	gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
 }

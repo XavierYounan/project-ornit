@@ -4,8 +4,17 @@ if (!assert_singleton()) { return; }
 
 enum DEBUG_MODES
 {
-	NOTHING,
-	CONNECTION_INFO //make sure this one is at the end, add above
+	NOTHING = 1,
+	CONNECTION_INFO,
+	DROPPED_PACKETS
 }
 
-debugMode = DEBUG_MODES.CONNECTION_INFO
+debugMode = DEBUG_MODES.NOTHING
+
+//dropped packets variables
+droppedPacketsList = []
+droppedPacketsMaxMessages = 20
+
+
+
+
