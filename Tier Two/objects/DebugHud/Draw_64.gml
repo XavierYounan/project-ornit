@@ -10,6 +10,12 @@ switch(debugMode)
 {
 	case DEBUG_MODES.CONNECTION_INFO:
 	{
+		draw_set_color(c_white);
+		draw_set_alpha(1);
+		draw_set_halign(fa_right)
+		draw_text(room_width-textBuffer,room_height - textBuffer,"DEBUG MODE: CONNECTION INFO")
+		draw_set_halign(fa_left)
+		
 		#region Connection Info Drawing
 		draw_set_color(c_white);
 		for (var i = 0; i < instance_number(Connection); i++)
@@ -49,11 +55,9 @@ switch(debugMode)
 		}
 		#endregion
 	
-		//make sure 	
-		draw_set_halign(fa_right);
-		draw_text(room_width - 10, 10, "Bytes Per Second: "   + string(NetworkManager.m_AverageBytesPerSecond));
-		draw_text(room_width - 10, 40, "Packets Per Second: " + string(NetworkManager.m_AveragePacketsPerSecond));
-		draw_set_halign(fa_left);
+		draw_text(connectionInfoX,10 + ( i++ * ySpacing), "Bytes Per Second: "   + string(NetworkManager.m_AverageBytesPerSecond));
+		draw_text(connectionInfoX,10 + ( i++ * ySpacing), "Packets Per Second: " + string(NetworkManager.m_AveragePacketsPerSecond));
+
 		break;
 	}
 	
@@ -61,6 +65,9 @@ switch(debugMode)
 	{
 		draw_set_color(c_white);
 		draw_set_alpha(1);
+		draw_set_halign(fa_right)
+		draw_text(200,220,"DEBUG MODE: DROPPED PACKETS")
+		draw_set_halign(fa_left)
 		
 		var _listSize = ds_list_size(droppedPacketsList);
 		var _yAnchor = window_get_height() - 10; //CHANGE TO VARIABLE PIXELS FROM LEFT
@@ -81,7 +88,11 @@ switch(debugMode)
 		
 	case DEBUG_MODES.NOTHING:
 	{
-		
+		draw_set_color(c_white);
+		draw_set_alpha(1);
+		draw_set_halign(fa_right)
+		draw_text(200,220,"DEBUG MODE: NOTHING")
+		draw_set_halign(fa_left)
 	break;
 	}
 }

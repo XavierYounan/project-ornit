@@ -12,8 +12,11 @@ enum DEBUG_MODES
 debugMode = DEBUG_MODES.NOTHING
 
 //dropped packets variables
-droppedPacketsList = []
+droppedPacketsList = ds_list_create()
 droppedPacketsMaxMessages = 20
+
+//draw in top right 
+textBuffer = 10
 
 
 
