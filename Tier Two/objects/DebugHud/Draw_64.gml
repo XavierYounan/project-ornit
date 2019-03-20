@@ -13,7 +13,7 @@ switch(debugMode)
 		draw_set_color(c_white);
 		draw_set_alpha(1);
 		draw_set_halign(fa_right)
-		draw_text(room_width-textBuffer,room_height - textBuffer,"DEBUG MODE: CONNECTION INFO")
+		draw_text(1024,textBuffer,"DEBUG MODE: CONNECTION INFO")
 		draw_set_halign(fa_left)
 		
 		#region Connection Info Drawing
@@ -66,7 +66,7 @@ switch(debugMode)
 		draw_set_color(c_white);
 		draw_set_alpha(1);
 		draw_set_halign(fa_right)
-		draw_text(200,220,"DEBUG MODE: DROPPED PACKETS")
+		draw_text(1024,textBuffer,"DEBUG MODE: DROPPED PACKETS")
 		draw_set_halign(fa_left)
 		
 		var _listSize = ds_list_size(droppedPacketsList);
@@ -91,7 +91,7 @@ switch(debugMode)
 		draw_set_color(c_white);
 		draw_set_alpha(1);
 		draw_set_halign(fa_right)
-		draw_text(200,220,"DEBUG MODE: NOTHING")
+		draw_text(1024,textBuffer,"DEBUG MODE: NOTHING")
 		draw_set_halign(fa_left)
 	break;
 	}
