@@ -239,6 +239,14 @@
             }
         },
         {
+            "Key": "236d7981-338a-4b6e-8653-95742fa109b3",
+            "Value": {
+                "id": "974cbb1c-1d25-4159-88b7-3ba0479cf389",
+                "resourcePath": "objects\\oCamera\\oCamera.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "25a63194-2349-4c3a-9008-c93720c18c65",
             "Value": {
                 "id": "5e66a8d6-a632-48fb-99f3-e77adf04262d",
@@ -1012,6 +1020,14 @@
                 "id": "3e5a4411-8e68-47fd-95a7-19cf77ea5251",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "a96bd220-864a-40b2-ac18-50ed7b04dafe",
+            "Value": {
+                "id": "31181358-4103-4c32-803d-2169910bcda3",
+                "resourcePath": "views\\a96bd220-864a-40b2-ac18-50ed7b04dafe.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
