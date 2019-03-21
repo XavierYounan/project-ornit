@@ -13,7 +13,6 @@ var _vsp = _receivedData[5] //buffer_s16
 var _client = fGetClientById(_clientId)
 
 
-
 //if doesnt exist create a new player TODO: when player connect should be created
 if (_client == noone)
 {

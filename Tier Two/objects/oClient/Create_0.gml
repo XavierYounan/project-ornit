@@ -82,3 +82,5 @@ m_repeatLeft = m_repeatTimes
 
 fireRate = 7 //per seccond
 canShoot = true
+
+displayingHitbox = false //for the debug hud

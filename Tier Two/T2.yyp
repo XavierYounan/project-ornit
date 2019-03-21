@@ -719,6 +719,14 @@
             }
         },
         {
+            "Key": "778534e7-2432-4b18-a95a-07fed2809453",
+            "Value": {
+                "id": "dc41e5ac-0e48-4d61-befd-2be39978e4c2",
+                "resourcePath": "objects\\oDisplayHitboxes\\oDisplayHitboxes.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "78ab128e-8739-4b8c-844b-3076c84b68c5",
             "Value": {
                 "id": "bd422415-e647-4dbe-a61c-3b20d29fca8c",

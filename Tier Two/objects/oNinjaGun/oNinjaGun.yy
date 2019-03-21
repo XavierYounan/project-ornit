@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "oNinjaGun",
     "eventList": [
-        
+        {
+            "id": "90db3f53-c2b4-43dc-a25c-113823c287d0",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 8,
+            "m_owner": "09c90244-2b21-40e6-a23f-9c7b4a2e3c90"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
