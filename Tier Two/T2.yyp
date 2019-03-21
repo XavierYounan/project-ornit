@@ -551,14 +551,6 @@
             }
         },
         {
-            "Key": "60bab9f2-20b1-4852-b523-fe3adf3c62ef",
-            "Value": {
-                "id": "4e832507-167c-4dae-8701-31061d598ecf",
-                "resourcePath": "datafiles_yy\\Rooms\\TEST.sav.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "616ed391-d8a3-44a0-8064-6057e58fa23b",
             "Value": {
                 "id": "cc50eee0-9fea-4b73-b46d-e8486718443d",
@@ -732,6 +724,14 @@
                 "id": "bd422415-e647-4dbe-a61c-3b20d29fca8c",
                 "resourcePath": "scripts\\log_error\\log_error.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7902590b-9339-44dd-b340-3d483f3eed74",
+            "Value": {
+                "id": "b0e90e80-9d02-4611-85ac-d28eccc71eb3",
+                "resourcePath": "datafiles_yy\\Rooms\\TEST.sav.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
