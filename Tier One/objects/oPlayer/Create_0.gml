@@ -38,7 +38,3 @@ hasControl = true;
 
 hp = 100;
 bulletDamage = 5;
-
-
-origin = [32,63]
-
