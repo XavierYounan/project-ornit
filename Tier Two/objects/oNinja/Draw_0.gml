@@ -1,4 +1,4 @@
-if !(displayingHitbox)
+if !(showingHitbox)
 {
 	draw_self()
 }

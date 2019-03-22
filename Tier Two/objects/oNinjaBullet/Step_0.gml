@@ -19,12 +19,3 @@ if (_colInst != noone) && (_colInst.m_ClientId != creator)
 		instance_destroy(other)
 	}
 }
-
-if (displayingHitbox)
-{
-	image_index = 1	
-}
-else
-{
-	image_index = 0	
-}

@@ -1,1 +1,1 @@
-displayingHitbox = false
+showingHitbox = false

@@ -127,6 +127,22 @@
             }
         },
         {
+            "Key": "1376a3b5-9f11-4d3e-ab99-963544e06b2d",
+            "Value": {
+                "id": "653b07cc-450b-4aa6-8deb-be2ab40df32c",
+                "resourcePath": "views\\1376a3b5-9f11-4d3e-ab99-963544e06b2d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "13ff864d-6ba1-4944-8974-88eae442eb83",
+            "Value": {
+                "id": "9f66a9e5-4ae7-46cc-91ee-fd1874107048",
+                "resourcePath": "objects\\pDisplayHitboxes\\pDisplayHitboxes.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1649defe-e22e-49ef-9ce1-161c0b710c00",
             "Value": {
                 "id": "0dfdccb9-844c-4ffe-ac2c-2681c55845aa",

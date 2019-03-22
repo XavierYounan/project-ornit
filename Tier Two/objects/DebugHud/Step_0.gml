@@ -21,7 +21,10 @@ if( keyboard_check_pressed( vk_f1))
 		case DEBUG_MODES.DROPPED_PACKETS:
 		{
 			//for other
-			hitboxDisplayer = instance_create_depth(0,0,0,oDisplayHitboxes)
+			with (pDisplayHitboxes)
+			{
+				showingHitbox = true	
+			}
 		
 			//for itself
 			with(pInvisibleForNetworkDebug)
@@ -45,7 +48,10 @@ if( keyboard_check_pressed( vk_f1))
 			debugMode = DEBUG_MODES.CONNECTION_INFO
 		
 			//for itslef
-			instance_destroy(hitboxDisplayer)
+			with (pDisplayHitboxes)
+			{
+				showingHitbox = false	
+			}
 			
 			with(pInvisibleForNetworkDebug)
 			{
