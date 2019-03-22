@@ -7,7 +7,8 @@ m_messageList = ds_list_create();
 enum controllerState
 {
 	typing,
-	normal
+	normal,
+	notDisplayingMessages
 }
 
 controllerState = controllerState.normal

@@ -1,0 +1,1 @@
+showingHitbox = false //eventually change the sprite 

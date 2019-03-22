@@ -11,12 +11,12 @@
             var scriptIndex = asset_get_index(array[0]);	//fidn the asset index of the command
             if (script_exists(scriptIndex))					//check the command exists
             {
-                return  string(script_execute(scriptIndex, array));		//run the commadn and return as a string
+                script_execute(scriptIndex, array);		//run the commadn and return as a string
             }
             else
             {
 				array[0] = string_delete(array[0],1,string_length("command_"))
-                return  "Unknown command " + string(array[0]);			//if the command cannot be round reurn unknown
+                f_ConsoleAddMessage("Unknown command " + string(array[0]));			//if the command cannot be round reurn unknown
             }
         }
     }

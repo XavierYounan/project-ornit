@@ -1,1 +1,1 @@
-show_error("Server should not be recieving client data sent by itself",false)
+dropped_packets_log("cb_T2_OtherPosition",argument0,argument1)

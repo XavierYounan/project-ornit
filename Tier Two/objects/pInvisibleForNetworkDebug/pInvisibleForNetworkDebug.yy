@@ -1,10 +1,19 @@
 {
-    "id": "2e85e52e-14cc-40d9-ab46-422013716998",
+    "id": "358bee66-72d0-4dd9-8fc9-729cce9f7edf",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oBullet",
+    "name": "pInvisibleForNetworkDebug",
     "eventList": [
-        
+        {
+            "id": "ba16ca36-fb7d-4068-9fba-08bdec19c8fd",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "358bee66-72d0-4dd9-8fc9-729cce9f7edf"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

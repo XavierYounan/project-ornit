@@ -23,6 +23,12 @@ switch controllerState
 		break;	
 	}
 	
+	case controllerState.notDisplayingMessages:
+	{
+		//dont do anything
+		break;	
+	}
+	
 	case controllerState.typing:
 	{		
 		var _yAnchor = window_get_height() - 20; //CHANGE TO VARIABLE PIXELS FROM LEFT
@@ -33,7 +39,7 @@ switch controllerState
 		if (keyboard_check_pressed(vk_enter))
 		{
 			controllerState = controllerState.normal
-			f_ConsoleAddMessage(string(runCommand(keyboard_string)))
+			runCommand(keyboard_string)
 			m_string = ""
 		}
 		

@@ -1,1 +1,1 @@
-show_error("Recieved Self Position Update /n Should not be recieving self position updates as T2 server /n (The one who sends these updates", false)
+dropped_packets_log("cb_T2_SelfPosition",argument0,argument1)

@@ -26,4 +26,3 @@ with(oClient)
 	_frameCount = fArrayAppend(_frameCount,m_framesTillUpdate)
 }
 
-f_ConsoleAddMessage("Update frequencys reset, now equal to : " + string(_frameCount))

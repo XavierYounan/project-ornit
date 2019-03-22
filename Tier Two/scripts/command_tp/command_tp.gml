@@ -38,10 +38,10 @@ if (_client != noone)
 			x += xMoveDir
 			y += yMoveDir
 		}
-		return "Teleported player " + string(_clientId) + " to (" + string(x) + "," + string(y) + ")"
+		f_ConsoleAddMessage("Teleported player " + string(_clientId) + " to (" + string(x) + "," + string(y) + ")")
 	}
 }
 else
 {
-	return "Could not find a player with the id of " + string(_clientId) + " _client is " + string(_client) //-4 is noone btw
+	f_ConsoleAddMessage("Could not find a player with the id of " + string(_clientId) + " _client is " + string(_client)) //-4 is noone btw
 }
