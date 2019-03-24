@@ -24,9 +24,9 @@ y = 366
 m_x = x
 m_y = y
 
-var _tempArray = [0,0,current_time,0,0,0,false] //oth update, usually sent by player
-m_imputLog[0] = _tempArray
-m_lastProcessedImput = _tempArray
+m_imputLog = []
+m_lastProcessedImput = undefined
+
 
 enum state 
 {

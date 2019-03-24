@@ -767,6 +767,14 @@
             }
         },
         {
+            "Key": "836c3d77-5855-4d2a-a708-1f785de69390",
+            "Value": {
+                "id": "6db99b04-01c0-48b0-8d55-3f2e9adcbaf7",
+                "resourcePath": "scripts\\ImputEnums\\ImputEnums.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "84f47b42-ec8b-42c4-afc9-0d8684543345",
             "Value": {
                 "id": "cbc6ce1f-731d-4e0d-89f1-e42df9b4fc30",
@@ -1625,6 +1633,7 @@
         "197c4af6-79b3-46b9-9dd3-a5480ab95514",
         "a7a35d65-17ba-4b1a-8393-8107c418321c",
         "dd45aa60-26b3-4c28-a0fe-cbfdd8b01afc",
+        "836c3d77-5855-4d2a-a708-1f785de69390",
         "925a7f1b-9050-4403-a002-8bea479ca311",
         "33b9da43-d53e-4ce4-835b-d5e5cbcf683c",
         "21e9e9cb-3dba-4802-970e-83bca0756485",
