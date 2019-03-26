@@ -59,6 +59,7 @@ m_gunAngle = 0
 
 m_username = "Big Chungus"
 
+packet_number = 0 //keeps count for sever reconsiliation
 
 //loading functions
 m_repeatTimes = 10

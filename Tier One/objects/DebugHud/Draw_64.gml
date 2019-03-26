@@ -4,6 +4,16 @@ var connectionInfoX = 10;
 var dataStructsX = window_get_width() / 2;
 var ySpacing        = 15;
 
+if( instance_exists( oCamera))
+{
+	var cameraWidth = oCamera.cameraWidth	
+}
+else
+{
+	var cameraWidth = 1048	
+}
+
+
 var str, inst;
 
 switch(debugMode)
@@ -13,7 +23,7 @@ switch(debugMode)
 		draw_set_color(c_white);
 		draw_set_alpha(1);
 		draw_set_halign(fa_right)
-		draw_text(1048,textBuffer,"DEBUG MODE: CONNECTION_INFO")
+		draw_text(cameraWidth,textBuffer,"DEBUG MODE: CONNECTION_INFO")
 		draw_set_halign(fa_left)
 		
 		#region Connection Info Drawing		

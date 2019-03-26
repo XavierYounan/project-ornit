@@ -93,6 +93,10 @@ switch state
 				{
 					var _lastFrameTime = m_lastProcessedImput[IMPUTLIST.TIME_RECIEVED]
 				}
+				else
+				{
+					var _lastFrameTime = current_time - 50 //50 is 1/20 of a seccond AKA 20 FPS
+				}
 			}
 			else
 			{
@@ -168,7 +172,8 @@ switch state
 				}
 				
 				//set frame to processed
-				m_imputLog[i] = [_currentImput[IMPUTLIST.HORISONTAL_KEYS],_currentImput[IMPUTLIST.VERTICAL_KEYS],_currentImput[IMPUTLIST.],_currentImput[3],_currentImput[4],_currentImput[5],true,_currentImput[IMPUTLIST.TIME_RECIEVED]]
+				var arr = [_currentImput[IMPUTLIST.HORISONTAL_KEYS], _currentImput[IMPUTLIST.VERTICAL_KEYS],_currentImput[IMPUTLIST.PACKET_NUMBER],_currentImput[IMPUTLIST.MOUSE_X],_currentImput[IMPUTLIST.MOUSE_Y],_currentImput[IMPUTLIST.MOUSE_LEFT_CLICKED],true,_currentImput[IMPUTLIST.TIME_RECIEVED] ]
+				m_imputLog[i] = arr
 			}
 			
 		
