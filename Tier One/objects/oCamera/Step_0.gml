@@ -33,8 +33,9 @@ switch state
 	case CAMERA_STATE.FOLLOW_PLAYER_CREATE:
 	{
 		//change projection to zoom in
-		global.cameraWidth = global.cameraHeight = xResolution
-		var pm = matrix_build_projection_ortho(global.cameraWidth,global.cameraHeight,depthMin,lookDistance);
+		global.cameraWidth = 1920
+		global.cameraHeight = 1080
+		var pm = matrix_build_projection_ortho(global.cameraWidth,global.cameraHeight,0,lookDistance);
 		camera_set_proj_mat(global.camera,pm);
 		
 		//Dont let it go outside

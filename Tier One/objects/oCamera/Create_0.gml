@@ -25,10 +25,9 @@ lookDistance = 100000
 
 global.cameraWidth = xResolution
 global.cameraHeight = xResolution
-//yResolution = 768
  
 var vm = matrix_build_lookat(x,y,depthMin,x,y,0,false,true,false);
-var pm = matrix_build_projection_ortho(global.cameraWidth,global.cameraHeight,depthMin,lookDistance);
+var pm = matrix_build_projection_ortho(global.cameraWidth,global.cameraHeight,0,lookDistance);
 
 camera_set_view_mat(global.camera,vm);
 camera_set_proj_mat(global.camera,pm);
