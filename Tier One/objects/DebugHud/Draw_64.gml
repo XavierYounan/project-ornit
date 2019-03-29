@@ -3,10 +3,12 @@
 //import camera variables if camera exists
 if(instance_exists(oCamera))
 {
-	var cameraX = global.cameraX;
-	var cameraY = global.cameraY;
-	var cameraWidth = global.cameraWidth;
-	var cameraHeight = global.cameraHeight;
+	var cameraX = camera_get_view_x(oCamera.camera);
+	var cameraY = camera_get_view_y(oCamera.camera);
+	var cameraWidth = camera_get_view_x(oCamera.camera);
+	var cameraHeight = camera_get_view_y(oCamera.camera);
+	
+	window_get_x()
 }
 else
 {
@@ -16,8 +18,8 @@ else
 	var cameraHeight = 0;
 }
 
+
 var xSpacing		= 10;
-var connectionInfoX	= xSpacing + cameraX;
 var ySpacing		= 15;
 
 var str, inst;
@@ -40,7 +42,7 @@ switch(debugMode)
 																inst.ip, 
 																inst.port, 
 																global.ENUM_NAME_CONNECTION_STATE[inst.connectionState]);
-			draw_text(connectionInfoX, 10 + (i * ySpacing), str);	
+			draw_text(cameraX + xSpacing, 10 + (i * ySpacing), str);	
 		}
 
 		i += 2; // Spacing
@@ -52,7 +54,7 @@ switch(debugMode)
 			var _connId = NetworkManager.m_connectionMap[? key];
 	
 			str = key + " | " + string(_connId);
-			draw_text(connectionInfoX, 10 + (i++ * ySpacing), str);	
+			draw_text(cameraX + xSpacing, 10 + (i++ * ySpacing), str);	
 		
 			key = ds_map_find_next(NetworkManager.m_connectionMap, key);
 		}
@@ -66,7 +68,7 @@ switch(debugMode)
 				str = string_build("Slot [{}] = {} | Ping: {} | Last Update: {}", a, _inst, _inst.ping, _inst.lastUpdate);
 			else
 				str = string_build("Slot [{}] = {} | Ping: 0", a, _inst);
-			draw_text(connectionInfoX, 10 + (i++ * ySpacing), str);	
+			draw_text(cameraX + xSpacing, 10 + (i++ * ySpacing), str);	
 		}
 		
 		draw_text(cameraX + xSpacing, ySpacing, "Bytes Per Second: "   + string(NetworkManager.m_AverageBytesPerSecond));

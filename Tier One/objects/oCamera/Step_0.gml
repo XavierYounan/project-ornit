@@ -21,11 +21,11 @@ switch state
 		}
 		
 		//Dont let it go outside
-		x = clamp(x,global.cameraWidth/2,room_width - global.cameraWidth/2)
-		y = clamp(y,global.cameraHeight/2,room_height - global.cameraHeight/2)
+		x = clamp(x,cameraWidth/2,room_width - cameraWidth/2)
+		y = clamp(y,cameraHeight/2,room_height - cameraHeight/2)
 		
 		var vm = matrix_build_lookat(x,y,depthMin,x,y,0,false,true,false);
-		camera_set_view_mat(global.camera,vm);
+		camera_set_view_mat(camera,vm);
 
 		break;
 	}
@@ -33,9 +33,9 @@ switch state
 	case CAMERA_STATE.FOLLOW_PLAYER_CREATE:
 	{
 		//change projection to zoom in
-		global.cameraWidth = 1920
-		global.cameraHeight = 1080
-		var pm = matrix_build_projection_ortho(global.cameraWidth,global.cameraHeight,0,lookDistance);
+		cameraWidth = 1920
+		cameraHeight = 1080
+		var pm = matrix_build_projection_ortho(cameraWidth,cameraHeight,0,lookDistance);
 		camera_set_proj_mat(global.camera,pm);
 		
 		//Dont let it go outside
@@ -57,17 +57,14 @@ switch state
 	case CAMERA_STATE.SHOW_FULL_MAP:
 	{
 		var vm = matrix_build_lookat(room_width/2,room_height/2,depthMin,room_width/2,room_height/2,0,false,true,false);
-		global.cameraWidth = room_width
-		global.cameraHeight = room_height
-		var pm = matrix_build_projection_ortho(global.cameraWidth,global.cameraHeight,0,lookDistance);
+		cameraWidth = room_width
+		cameraHeight = room_height
+		var pm = matrix_build_projection_ortho(cameraWidth,cameraHeight,0,lookDistance);
 		
-		camera_set_view_mat(global.camera,vm);
-		camera_set_proj_mat(global.camera,pm);
+		camera_set_view_mat(camera,vm);
+		camera_set_proj_mat(camera,pm);
 		
 		break;
 	}
 	
 }
-
-global.cameraX = x - global.cameraWidth/2
-global.cameraY = y - global.cameraHeight/2
