@@ -1,18 +1,24 @@
 /// @description Draw Gui Info
 
-var connectionInfoX = 10;
-var dataStructsX = window_get_width() / 2;
-var ySpacing        = 15;
-
-if( instance_exists( oCamera))
+//import camera variables if camera exists
+if(instance_exists(oCamera))
 {
-	var cameraWidth = oCamera.cameraWidth	
+	var cameraX = global.cameraX;
+	var cameraY = global.cameraY;
+	var cameraWidth = global.cameraWidth;
+	var cameraHeight = global.cameraHeight;
 }
 else
 {
-	var cameraWidth = 1048	
+	var cameraX = 0;
+	var cameraY = 0;
+	var cameraWidth = 0;
+	var cameraHeight = 0;
 }
 
+var xSpacing		= 10;
+var connectionInfoX	= xSpacing + cameraX;
+var ySpacing		= 15;
 
 var str, inst;
 
@@ -20,14 +26,13 @@ switch(debugMode)
 {
 	case DEBUG_MODES.CONNECTION_INFO:
 	{	
-		draw_set_color(c_white);
-		draw_set_alpha(1);
+		#region DebugMode Drawing
 		draw_set_halign(fa_right)
-		draw_text(cameraWidth,textBuffer,"DEBUG MODE: CONNECTION_INFO")
+		draw_text(cameraX + cameraWidth - xSpacing,ySpacing,"DEBUG MODE: CONNECTION_INFO")
 		draw_set_halign(fa_left)
+		#endregion
 		
 		#region Connection Info Drawing		
-		draw_set_color(c_white);
 		for (var i = 0; i < instance_number(Connection); i++)
 		{
 			inst = instance_find(Connection, i);
@@ -63,33 +68,31 @@ switch(debugMode)
 				str = string_build("Slot [{}] = {} | Ping: 0", a, _inst);
 			draw_text(connectionInfoX, 10 + (i++ * ySpacing), str);	
 		}
-		#endregion
-	
-		draw_set_halign(fa_right);
-		draw_text(room_width - 10, 10, "Bytes Per Second: "   + string(NetworkManager.m_AverageBytesPerSecond));
-		draw_text(room_width - 10, 40, "Packets Per Second: " + string(NetworkManager.m_AveragePacketsPerSecond));
-		draw_set_halign(fa_left);
+		
+		draw_text(cameraX + xSpacing, ySpacing, "Bytes Per Second: "   + string(NetworkManager.m_AverageBytesPerSecond));
+		draw_text(cameraX + xSpacing, 4 * ySpacing, "Packets Per Second: " + string(NetworkManager.m_AveragePacketsPerSecond));
 
+		#endregion
 		break;	
 	}
 	
 	case DEBUG_MODES.CONSOLE:
 	{
-		draw_set_color(c_white);
-		draw_set_alpha(1);
+		#region DebugMode Drawing
 		draw_set_halign(fa_right)
-		draw_text(cameraWidth - textBuffer,textBuffer,"DEBUG MODE: CONSOLE")
+		draw_text(cameraX + cameraWidth - xSpacing,ySpacing,"DEBUG MODE: CONSOLE")
 		draw_set_halign(fa_left)
+		#endregion
 		break;
 	}
 	
 	case DEBUG_MODES.HITBOXES:
 	{
-		draw_set_color(c_white);
-		draw_set_alpha(1);
+		#region DebugMode Drawing
 		draw_set_halign(fa_right)
-		draw_text(cameraWidth - textBuffer,textBuffer,"DEBUG MODE: HITBOXES")
+		draw_text(cameraX + cameraWidth - xSpacing,ySpacing,"DEBUG MODE: HITBOXES")
 		draw_set_halign(fa_left)
+		#endregion
 		break;
 	}
 }
