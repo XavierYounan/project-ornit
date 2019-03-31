@@ -4,6 +4,7 @@ if( keyboard_check_pressed( vk_f1))
 	{
 		case DEBUG_MODES.CONSOLE:
 		{
+			#region Console code
 			//Console destroy event
 			O_GameConsole.displayingText = false
 			
@@ -15,11 +16,14 @@ if( keyboard_check_pressed( vk_f1))
 			{
 				showingHitbox = true	
 			}
+			
+			#endregion
 			break;
 		}
 
 		case DEBUG_MODES.HITBOXES:
 		{
+			#region Hitboxes code
 			//Hitboxes distroy event
 			with (pDisplayHitboxes)
 			{
@@ -32,20 +36,40 @@ if( keyboard_check_pressed( vk_f1))
 			//Connection info create event
 			//nothing yet
 		
+			#endregion
 			break;
 		}
 		
 		case DEBUG_MODES.CONNECTION_INFO:
 		{
+			#region Connection info code
 			//Connection info
 			//nothing yet
+			
+			//switch the state
+			debugMode = DEBUG_MODES.DROPPED_PACKETS
+			
+			//dropped Packets create event
+			droppedPacketLog.displayingText = true
+			
+			#endregion
+			break;	
+		}
+		
+		case DEBUG_MODES.DROPPED_PACKETS:
+		{
+			#region Dropped packets code
+			//dropped Packets destroy event
+			droppedPacketLog.displayingText = false
 			
 			//switch the state
 			debugMode = DEBUG_MODES.CONSOLE
 			
 			//Console create event
 			O_GameConsole.displayingText = true
-			break;	
+			
+			#endregion
+			break;
 		}
 	}
 }

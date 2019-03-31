@@ -29,7 +29,14 @@ with (_client)
 			latest_acknowleged_packet = [_x,_y,_lastRecievedPacket,_hsp,_vsp] //update most recent position knowledge	
 		
 			O_ClientManager.m_unreadImputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadImputs,2,_lastRecievedPacket) //cull unread imput array
-
+		}
+		else
+		{
+			var str = string_build	(	"Last ack packet was {} recieved packet was {}, DROPPED",
+										latest_acknowleged_packet[2],
+										_lastRecievedPacket
+									)				
+			console_log_dropped_packet("cb_T2_SelfPosition",_connectionId,_receivedData,str)	
 		}
 	}
 }

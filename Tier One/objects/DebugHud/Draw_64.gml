@@ -97,6 +97,16 @@ switch(debugMode)
 		#endregion
 		break;
 	}
+	
+	case DEBUG_MODES.DROPPED_PACKETS:
+	{
+		#region DroppedPacket Drawing
+		draw_set_halign(fa_right)
+		draw_text(cameraX + cameraWidth - xSpacing,ySpacing,"DEBUG MODE: DROPPED_PACKETS")
+		draw_set_halign(fa_left)
+		#endregion
+		break;
+	}
 }
 
 

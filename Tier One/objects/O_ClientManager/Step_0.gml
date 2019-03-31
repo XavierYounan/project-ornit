@@ -65,7 +65,7 @@ switch managerState
 				gnet_packet_send_to_id(_packet,_T2Id);
 				packet_number ++
 				m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
-				m_unreadImputs[0] = [_hsp,_vsp,oServerTime.m_serverTime,_gunAngle];
+				m_unreadImputs[0] = [_hsp,_vsp,packet_number,_gunAngle];
 			}
 		}
 		else

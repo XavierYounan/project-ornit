@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "050b2119-c6d4-4e0c-8c5e-939719a66595",
+            "Value": {
+                "id": "b49cc0f1-20d5-4e49-b47b-4375225291d1",
+                "resourcePath": "objects\\oDroppedPacketLog\\oDroppedPacketLog.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "064a6fad-5cf2-4dc8-ac47-24ccffce2f4e",
             "Value": {
                 "id": "819db2bc-1db0-490c-b6f6-fcf3feceebb0",
@@ -1335,6 +1343,14 @@
             }
         },
         {
+            "Key": "ec985c51-ff40-4ae1-a9c3-a22830fbb600",
+            "Value": {
+                "id": "bb7d79f7-2dfb-4605-9a66-1499d6b69249",
+                "resourcePath": "scripts\\console_log_dropped_packet\\console_log_dropped_packet.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "efc4e0a1-054d-42fc-809f-ca44f877fda0",
             "Value": {
                 "id": "0e597800-c117-4403-9201-c11805a5da99",
@@ -1524,6 +1540,7 @@
         "75191693-536d-45c6-bff7-2e45e8cc5731",
         "9aad4bef-c898-46ab-96a1-c3e1a7d69592",
         "be858763-e0ea-4fbe-b230-e855d787fbc0",
+        "ec985c51-ff40-4ae1-a9c3-a22830fbb600",
         "7069907b-9b7a-4830-8e25-a493977f7623"
     ],
     "tutorial": ""

@@ -2,6 +2,8 @@ switch state
 {
 	case CAMERA_STATE.FOLLOW_PLAYER:
 	{
+		#region Follow the player
+		
 		x += (xTo - x)/25
 		y += (yTo - y)/25
 		
@@ -26,36 +28,45 @@ switch state
 		
 		var vm = matrix_build_lookat(x,y,depthMin,x,y,0,false,true,false);
 		camera_set_view_mat(camera,vm);
-
+		
+		#endregion
 		break;
 	}
 	
 	case CAMERA_STATE.FOLLOW_PLAYER_CREATE:
 	{
+		#region Create event for following the player
 		//change projection to zoom in
-		cameraWidth = 1920
-		cameraHeight = 1080
+		cameraWidth = 1920;
+		cameraHeight = 1080;
 		var pm = matrix_build_projection_ortho(cameraWidth,cameraHeight,0,lookDistance);
-		camera_set_proj_mat(global.camera,pm);
+		camera_set_proj_mat(camera,pm);
+		
+		x = localPlayer.x;
+		y = localPlayer.y;
 		
 		//Dont let it go outside
-		x = clamp(x,xResolution/2,room_width - xResolution/2)
-		y = clamp(y,yResolution/2,room_height - yResolution/2)
+		x = clamp(x,xResolution/2,room_width - xResolution/2);
+		y = clamp(y,yResolution/2,room_height - yResolution/2);
 		
 		with (oRespawn)
 		{
-			state = RESPAWN_STATE.INACTIVE
-			buttonState = BUTTON_STATE.NOTHING
+			state = RESPAWN_STATE.INACTIVE;
+			buttonState = BUTTON_STATE.NOTHING;
 		}
 			
 		
 		//Set the state
-		state = CAMERA_STATE.FOLLOW_PLAYER
+		state = CAMERA_STATE.FOLLOW_PLAYER;
+		
+		#endregion
 		break;	
 	}
 	
 	case CAMERA_STATE.SHOW_FULL_MAP:
 	{
+		#region show full map
+		
 		var vm = matrix_build_lookat(room_width/2,room_height/2,depthMin,room_width/2,room_height/2,0,false,true,false);
 		cameraWidth = room_width
 		cameraHeight = room_height
@@ -64,6 +75,7 @@ switch state
 		camera_set_view_mat(camera,vm);
 		camera_set_proj_mat(camera,pm);
 		
+		#endregion
 		break;
 	}
 	
