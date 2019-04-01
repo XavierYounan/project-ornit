@@ -7,10 +7,7 @@
 
 with(oDroppedPacketLog)
 {
-	ds_list_add(m_droppedPacketList,[argument0,argument1,argument2,argument3]);
-	
-	if (ds_list_size(m_droppedPacketList) > m_maxMessages)
-	{
-		ds_list_delete(m_droppedPacketList,0);	
-	}
+	m_droppedPacketList = fArrayMoveBack(m_droppedPacketList,1);
+	m_droppedPacketList[0] = [argument0,argument1,argument2,argument3];
+	m_droppedPacketList = fArrayTrim(m_droppedPacketList,m_maxMessages);
 }

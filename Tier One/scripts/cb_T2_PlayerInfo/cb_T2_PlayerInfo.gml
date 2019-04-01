@@ -10,7 +10,7 @@ var _username = _receivedData[2]; //buffer_string
 with (instance_create_depth(0,0,0,oPlayer))
 {
 	m_PlayerId = _clientId
-	latest_acknowleged_packet = [0,0,0,0] //update most recent position knowledge	
+	latest_acknowleged_packet = [0,0,0,0,0,current_time] //update most recent position knowledge	
 	m_username = _username
 	m_character = _character
 	playerState = PLAYING

@@ -7,8 +7,6 @@ if(instance_exists(oCamera))
 	var cameraY = camera_get_view_y(oCamera.camera);
 	var cameraWidth = camera_get_view_x(oCamera.camera);
 	var cameraHeight = camera_get_view_y(oCamera.camera);
-	
-	window_get_x()
 }
 else
 {
@@ -17,6 +15,11 @@ else
 	var cameraWidth = 0;
 	var cameraHeight = 0;
 }
+
+var bottom = window_get_height()
+var right = window_get_width()
+var top = window_get_x()
+var left = window_get_y()
 
 
 var xSpacing		= 10;
@@ -30,7 +33,7 @@ switch(debugMode)
 	{	
 		#region DebugMode Drawing
 		draw_set_halign(fa_right)
-		draw_text(cameraX + cameraWidth - xSpacing,ySpacing,"DEBUG MODE: CONNECTION_INFO")
+		draw_text(right - xSpacing,ySpacing,"DEBUG MODE: CONNECTION_INFO")
 		draw_set_halign(fa_left)
 		#endregion
 		
@@ -82,7 +85,7 @@ switch(debugMode)
 	{
 		#region DebugMode Drawing
 		draw_set_halign(fa_right)
-		draw_text(cameraX + cameraWidth - xSpacing,ySpacing,"DEBUG MODE: CONSOLE")
+		draw_text(right - xSpacing,ySpacing,"DEBUG MODE: CONSOLE")
 		draw_set_halign(fa_left)
 		#endregion
 		break;
@@ -92,7 +95,7 @@ switch(debugMode)
 	{
 		#region DebugMode Drawing
 		draw_set_halign(fa_right)
-		draw_text(cameraX + cameraWidth - xSpacing,ySpacing,"DEBUG MODE: HITBOXES")
+		draw_text(right - xSpacing,ySpacing,"DEBUG MODE: HITBOXES")
 		draw_set_halign(fa_left)
 		#endregion
 		break;
@@ -102,7 +105,7 @@ switch(debugMode)
 	{
 		#region DroppedPacket Drawing
 		draw_set_halign(fa_right)
-		draw_text(cameraX + cameraWidth - xSpacing,ySpacing,"DEBUG MODE: DROPPED_PACKETS")
+		draw_text(right - xSpacing,ySpacing,"DEBUG MODE: DROPPED_PACKETS")
 		draw_set_halign(fa_left)
 		#endregion
 		break;
