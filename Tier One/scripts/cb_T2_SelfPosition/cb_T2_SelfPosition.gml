@@ -26,7 +26,7 @@ with (_client)
 	{
 		if (_lastRecievedPacket > latest_acknowleged_packet[2]) //make sure most recent server update
 		{
-			latest_acknowleged_packet = [_x,_y,_lastRecievedPacket,_hsp,_vsp] //update most recent position knowledge	
+			latest_acknowleged_packet = [_x,_y,_lastRecievedPacket,_hsp,_vsp,current_time] //update most recent position knowledge	
 		
 			O_ClientManager.m_unreadImputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadImputs,2,_lastRecievedPacket) //cull unread imput array
 		}

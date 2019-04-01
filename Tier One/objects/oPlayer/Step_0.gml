@@ -47,12 +47,10 @@ switch playerState
 			var _unreadList = O_ClientManager.m_unreadImputs
 			var _unreadListSize = array_length_1d(_unreadList)
 	
-			var _x = latest_acknowleged_packet[0]
-			var _y = latest_acknowleged_packet[1]
-			var _hsp = latest_acknowleged_packet[3]
-			var _vsp = latest_acknowleged_packet[4]
-			
-			
+			var _x = latest_acknowleged_packet[0];
+			var _y = latest_acknowleged_packet[1];
+			var _hsp = latest_acknowleged_packet[3];
+			var _vsp = latest_acknowleged_packet[4];			
 	
 			for (var i = _unreadListSize - 1; i >= 0; i--)
 			{
@@ -60,7 +58,7 @@ switch playerState
 		
 				if (i = _unreadListSize - 1)
 				{
-					var _lastFrameTime = latest_acknowleged_packet[2]	
+					var _lastFrameTime = latest_acknowleged_packet[5]	
 				}
 				else
 				{
@@ -68,7 +66,7 @@ switch playerState
 					var _lastFrameTime = _unpack[2]	
 				}
 		
-				var _thisFrameTime = _currentImput[2]
+				var _thisFrameTime = _currentImput[4]
 				var _millisecondDelta = _thisFrameTime - _lastFrameTime
 		
 				var _deltaTime = _millisecondDelta / 1000
