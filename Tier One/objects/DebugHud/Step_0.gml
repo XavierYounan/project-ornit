@@ -62,6 +62,23 @@ if( keyboard_check_pressed( vk_f1))
 			//dropped Packets destroy event
 			droppedPacketLog.displayingText = false
 			
+			//Switch the state
+			debugMode = DEBUG_MODES.SERVER_TIME
+			
+			//Server time create event
+			with(oServerTime) {showDebug = true;}
+			
+			#endregion
+			break;
+		}
+		
+		case DEBUG_MODES.SERVER_TIME:
+		{
+			#region Server time code
+			
+			//Server time destroy event
+			with(oServerTime) {showDebug = false;}
+			
 			//switch the state
 			debugMode = DEBUG_MODES.CONSOLE
 			
