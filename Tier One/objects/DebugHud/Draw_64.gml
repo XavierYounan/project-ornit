@@ -18,8 +18,8 @@ else
 
 var bottom = window_get_height()
 var right = window_get_width()
-var top = window_get_x()
-var left = window_get_y()
+var top = 0
+var left = 0
 
 
 var xSpacing		= 10;
@@ -110,6 +110,34 @@ switch(debugMode)
 		#endregion
 		break;
 	}
+	
+	case DEBUG_MODES.SERVER_TIME:
+	{
+		#region DroppedPacket Drawing
+		draw_set_halign(fa_right)
+		draw_text(right - xSpacing,ySpacing,"DEBUG MODE: SERVER_TIME")
+		draw_set_halign(fa_left)
+		#endregion
+		break;
+	}
+	
+	case DEBUG_MODES.UNREAD_PACKETS:
+	{
+		#region DroppedPacket Drawing
+		
+		//Draw the mode
+		draw_set_halign(fa_right)
+		draw_text(right - xSpacing,ySpacing,"DEBUG MODE: SERVER_TIME")
+		draw_set_halign(fa_left)
+		
+		
+		
+		
+		
+		#endregion
+		break;
+	}
 }
+
 
 
