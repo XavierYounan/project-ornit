@@ -42,7 +42,6 @@ m_imputPacketSent = 1 //the first imput packet is already defined by the server
 
 m_unreadImputs = []
 
-
 PLAYING = 0
 SENDINGINFO = 1
 ERROR = 3

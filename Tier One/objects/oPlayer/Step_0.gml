@@ -63,7 +63,7 @@ switch playerState
 				else
 				{
 					var _unpack = _unreadList[i+1]
-					var _lastFrameTime = _unpack[2]	
+					var _lastFrameTime = _unpack[4]	
 				}
 		
 				var _thisFrameTime = _currentImput[4]

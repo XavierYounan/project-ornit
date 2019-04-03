@@ -140,13 +140,13 @@ switch(debugMode)
 		}
 		draw_text(left + xSpacing,top + ySpacing, "Last server imput is : " + string(lastKnown))
 		
-		
 		//fetch and draw the unread imputs
 		var unreadImputs = O_ClientManager.m_unreadImputs
 		var arraySize = array_length_1d(unreadImputs)
-		for(i = 0; i > arraySize;i++)
+		
+		for(i = 0; i < arraySize; i++)
 		{
-			draw_text(left + xSpacing,top + ((i + 2) * ySpacing),string(m_unreadImputs[i]))
+			draw_text(left + xSpacing,top + ((i + 2) * ySpacing),string(unreadImputs[i]))
 		}
 		
 		#endregion
