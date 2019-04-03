@@ -5,6 +5,8 @@ view_enabled = true;
 xResolution = display_get_width()/2
 yResolution = display_get_height()/2
 
+cameraWidth = xResolution
+
 //Make view 0 visible
 view_set_visible(0, true);
 
@@ -21,11 +23,11 @@ camera = camera_create();
 depthMin = -1000
 lookDistance = 100000
 
-//xResolution = 1024
-//yResolution = 768
+cameraWidth = xResolution
+cameraHeight = xResolution
  
 var vm = matrix_build_lookat(x,y,depthMin,x,y,0,false,true,false);
-var pm = matrix_build_projection_ortho(xResolution,yResolution,0,lookDistance);
+var pm = matrix_build_projection_ortho(cameraWidth,cameraHeight,0,lookDistance);
 
 camera_set_view_mat(camera,vm);
 camera_set_proj_mat(camera,pm);

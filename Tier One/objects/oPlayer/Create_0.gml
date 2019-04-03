@@ -40,3 +40,4 @@ hp = 100;
 bulletDamage = 5;
 
 showingHitbox = false
+

@@ -87,27 +87,14 @@ switch state
 			
 			var _currentImput = m_imputLog[i];
 		
-			if (i = _arraySize - 1)
-			{
-				var _lastFrameTime = m_lastProcessedImput[2]	
-			}
-			else
-			{
-				var _unpack = m_imputLog[i+1];
-				var _lastFrameTime = _unpack[2]	;
-			}
-			
-			var _thisFrameTime = _currentImput[2];
-			var _millisecondDelta = _thisFrameTime - _lastFrameTime;
-		
-			var _deltaTime = _millisecondDelta / 1000;
+			var _deltaTime = _currentImput[IMPUTLIST.DELTA_TIME]
 			
 			#endregion
 		#region //apply imputs and gravity
 	
-			hsp = _currentImput[0] * walksp * _deltaTime;
+			hsp = _currentImput[IMPUTLIST.HORISONTAL_KEYS] * walksp * _deltaTime;
 		
-			vMove = _currentImput[1];
+			vMove = _currentImput[IMPUTLIST.VERTICAL_KEYS];
 		
 			vsp += grv * _deltaTime;
 			
@@ -146,9 +133,9 @@ switch state
 		#endregion
 		#region //Gun Angle
 			
-			itemList[NINJAGUN].image_angle = point_direction(x,y - 20,_currentImput[3],_currentImput[4])
+			itemList[NINJAGUN].image_angle = point_direction(x,y - 20,_currentImput[IMPUTLIST.MOUSE_X],_currentImput[IMPUTLIST.MOUSE_Y])
 			
-			if ((_currentImput[5]) && (!_currentImput[6]) && (canShoot)) //if mouse left clicked and this frame hasnt been processed yet and can shoot
+			if ((_currentImput[IMPUTLIST.MOUSE_LEFT_CLICKED]) && (!_currentImput[IMPUTLIST.PROCESSED]) && (canShoot)) //if mouse left clicked and this frame hasnt been processed yet and can shoot
 			{
 				
 				canShoot = false
@@ -165,7 +152,8 @@ switch state
 				}
 				
 				//set frame to processed
-				m_imputLog[i] = [_currentImput[0],_currentImput[1],_currentImput[2],_currentImput[3],_currentImput[4],_currentImput[5],true]
+				var arr = [_currentImput[IMPUTLIST.HORISONTAL_KEYS], _currentImput[IMPUTLIST.VERTICAL_KEYS],_currentImput[IMPUTLIST.PACKET_NUMBER],_currentImput[IMPUTLIST.MOUSE_X],_currentImput[IMPUTLIST.MOUSE_Y],_currentImput[IMPUTLIST.MOUSE_LEFT_CLICKED],true,_currentImput[IMPUTLIST.TIME_RECIEVED] ]
+				m_imputLog[i] = arr
 			}
 			
 		
