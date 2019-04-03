@@ -47,33 +47,20 @@ switch playerState
 			var _unreadList = O_ClientManager.m_unreadImputs
 			var _unreadListSize = array_length_1d(_unreadList)
 	
-			var _x = latest_acknowleged_packet[0];
-			var _y = latest_acknowleged_packet[1];
-			var _hsp = latest_acknowleged_packet[3];
-			var _vsp = latest_acknowleged_packet[4];			
+			var _x = latest_acknowleged_packet[LOCAL_LATEST_POSITION.X];
+			var _y = latest_acknowleged_packet[LOCAL_LATEST_POSITION.Y];
+			var _hsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.HSP];
+			var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];			
 	
 			for (var i = _unreadListSize - 1; i >= 0; i--)
 			{
 				var _currentImput = _unreadList[i];
 		
-				if (i = _unreadListSize - 1)
-				{
-					var _lastFrameTime = latest_acknowleged_packet[5]	
-				}
-				else
-				{
-					var _unpack = _unreadList[i+1]
-					var _lastFrameTime = _unpack[4]	
-				}
+				var _deltaTime = _currentImput[UNREAD_IMPUTS.DELTA_TIME]
 		
-				var _thisFrameTime = _currentImput[4]
-				var _millisecondDelta = _thisFrameTime - _lastFrameTime
+				_hsp = _currentImput[UNREAD_IMPUTS.HSP] * walksp * _deltaTime;
 		
-				var _deltaTime = _millisecondDelta / 1000
-		
-				_hsp = _currentImput[0] * walksp * _deltaTime;
-		
-				vMove = _currentImput[1];
+				vMove = _currentImput[UNREAD_IMPUTS.VSP];
 		
 				_vsp += grv * _deltaTime;
 
@@ -82,7 +69,6 @@ switch playerState
 				{
 					_vsp = -jump_speed	
 				}
-
 
 				//Horisontal collision
 				if (place_meeting(_x+_hsp,_y,oWall))

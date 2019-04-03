@@ -14,7 +14,8 @@ while (global.IP == "")
 	
 	if (_arrayLength != 4)
 	{
-		show_message("You are missing a section. Try again!. Your ip was " + string(tempIp) + " /n/r Doesnt seem right? Tell Xavier error code 2 and your ip")	
+		show_message("You are missing a section. Try again!. Your ip was " + string(tempIp) + "Doesnt seem right? Tell Xavier error code 2 and your ip")
+		break;
 	}
 	
 	for (var i = 0; i <= 3; i++)

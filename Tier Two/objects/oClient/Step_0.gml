@@ -87,27 +87,7 @@ switch state
 			
 			var _currentImput = m_imputLog[i];
 		
-			if (i = _arraySize - 1)
-			{
-				if (m_lastProcessedImput != undefined)
-				{
-					var _lastFrameTime = m_lastProcessedImput[IMPUTLIST.TIME_RECIEVED]
-				}
-				else
-				{
-					var _lastFrameTime = current_time - 50 //50 is 1/20 of a seccond AKA 20 FPS
-				}
-			}
-			else
-			{
-				var _unpack = m_imputLog[i+1];
-				var _lastFrameTime = _unpack[IMPUTLIST.TIME_RECIEVED]	;
-			}
-			
-			var _thisFrameTime = _currentImput[IMPUTLIST.TIME_RECIEVED];
-			var _millisecondDelta = _thisFrameTime - _lastFrameTime;
-		
-			var _deltaTime = _millisecondDelta / 1000;
+			var _deltaTime = _currentImput[IMPUTLIST.DELTA_TIME]
 			
 			#endregion
 		#region //apply imputs and gravity

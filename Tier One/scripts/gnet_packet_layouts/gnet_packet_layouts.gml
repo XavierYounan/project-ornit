@@ -34,7 +34,7 @@ enum PACKET_IDENTIFIER
 	T2_PLAYER_DISCONNECT
 }
 
-gnet_packet_layout_create(PACKET_IDENTIFIER.T1_KEYS,cb_T1_Imputs,buffer_s8,buffer_s8,buffer_u64,buffer_u16,buffer_u16,buffer_bool)
+gnet_packet_layout_create(PACKET_IDENTIFIER.T1_KEYS,cb_T1_Imputs,buffer_s8,buffer_s8,buffer_u64,buffer_u16,buffer_u16,buffer_bool,buffer_f16)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_OTHER_POSITION,cb_T2_OtherPosition,buffer_s32,buffer_s32,buffer_u8,buffer_u16)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SELF_POSITION,cb_T2_SelfPosition,buffer_s32,buffer_s32,buffer_u8,buffer_u64,buffer_s16,buffer_s16)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T1_READY_UP,cb_T1_ReadyUp,buffer_bool)

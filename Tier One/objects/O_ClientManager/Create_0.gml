@@ -65,3 +65,21 @@ m_repeatTimes = 10
 m_repeatFrequency = game_get_speed(gamespeed_fps)
 m_timeLeft = m_repeatFrequency
 m_repeatLeft = m_repeatTimes
+
+
+enum UNREAD_IMPUTS
+{
+	HSP = 0,
+	VSP,
+	PACKET_NUMBER,
+	GUN_ANGLE,
+	DELTA_TIME
+}
+
+enum LOCAL_LATEST_POSITION
+{
+	X = 0,
+	Y,
+	HSP,
+	VSP,
+}
