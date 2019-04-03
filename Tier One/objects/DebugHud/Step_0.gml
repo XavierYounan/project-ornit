@@ -80,6 +80,23 @@ if( keyboard_check_pressed( vk_f1))
 			with(oServerTime) {showDebug = false;}
 			
 			//switch the state
+			debugMode = DEBUG_MODES.UNREAD_PACKETS
+			
+			//unread Packets Create event_action
+			//nothing
+			
+			#endregion
+			break;
+		}
+		
+		case DEBUG_MODES.UNREAD_PACKETS:
+		{
+			#region Server time code
+			
+			//unread_packets destroy event destroy event
+			//nothing
+			
+			//switch the state
 			debugMode = DEBUG_MODES.CONSOLE
 			
 			//Console create event

@@ -126,13 +126,28 @@ switch(debugMode)
 		#region DroppedPacket Drawing
 		
 		//Draw the mode
-		draw_set_halign(fa_right)
-		draw_text(right - xSpacing,ySpacing,"DEBUG MODE: SERVER_TIME")
-		draw_set_halign(fa_left)
+		draw_set_halign(fa_right);
+		draw_text(right - xSpacing,ySpacing,"DEBUG MODE: SERVER_TIME");
+		draw_set_halign(fa_left);
+		
+		//fetch and draw the last know imput
+		with(oPlayer)
+		{
+			if(isLocal)
+			{
+				var lastKnown = latest_acknowleged_packet;
+			}
+		}
+		draw_text(left + xSpacing,top + ySpacing, "Last server imput is : " + string(lastKnown))
 		
 		
-		
-		
+		//fetch and draw the unread imputs
+		var unreadImputs = O_ClientManager.m_unreadImputs
+		var arraySize = array_length_1d(unreadImputs)
+		for(i = 0; i > arraySize;i++)
+		{
+			draw_text(left + xSpacing,top + ((i + 2) * ySpacing),string(m_unreadImputs[i]))
+		}
 		
 		#endregion
 		break;
