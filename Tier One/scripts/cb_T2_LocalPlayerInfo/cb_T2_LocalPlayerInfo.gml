@@ -10,29 +10,35 @@ fConsoleAddMessage("Received Local Player info which was " + string(_receivedDat
 
 with (instance_create_depth(0,0,0,oPlayer))
 {
-	m_PlayerId = _clientId
+	m_PlayerId = _clientId	
+	playerState = PLAYER_STATE.PLAYING
 	isLocal = true
-	latest_acknowleged_packet = [0,0,0,0,0,current_time] //update most recent position knowledge	
-	_client = fGetClientById(_clientId)
-	m_username = _username
-	m_character = _character
-	playerState = PLAYING
 	
+	switch _character
+	{
+		case CHARACTER_LIST.NINJA:
+		{
+			hero = instance_create_depth(0,0,-100,oNinja)
+			hero.itemList[NINJA_ITEMS.GUN] = instance_create_depth(0,0,-101,oNinjaGun)
+			break;	
+		}
+	}
+	
+	with (hero)
+	{
+		isLocal = true
+		latest_acknowleged_packet = [0,0,0,0,0,current_time] //update most recent position knowledge
+		parent = other.id
+		m_username = _username
+		m_character = _character
+	}
 	
 	with (oCamera)
 	{
 		localPlayer = other.id //make the camera follow the local player
-		xTo = x = other.x + (mouse_x - other.x)/4 //snap x xoords
-		yTo = y = other.y + (mouse_y - other.y)/4 //snap y coords
-		state = CAMERA_STATE.FOLLOW_PLAYER_CREATE
-		
-	}
-	oCamera.localPlayer = id
-	
-	if (itemList[CHARACTER] = undefined)
-	{
-		itemList[CHARACTER] = instance_create_depth(0,0,-100,oNinja)
-		itemList[NINJAGUN] = instance_create_depth(0,0,-101,oNinjaGun)
+		xTo = x = other.hero.x + (mouse_x - other.hero.x)/4 //snap x xoords
+		yTo = y = other.hero.y + (mouse_y - other.hero.y)/4 //snap y coords
+		state = CAMERA_STATE.FOLLOW_PLAYER_CREATE	
 	}
 }
 

@@ -6,19 +6,27 @@ var _clientId = _receivedData[0] //buffer_u8
 var _character = _receivedData[1]; //buffer_u8
 var _username = _receivedData[2]; //buffer_string
 
-
 with (instance_create_depth(0,0,0,oPlayer))
 {
 	m_PlayerId = _clientId
-	latest_acknowleged_packet = [0,0,0,0,0,current_time] //update most recent position knowledge	
-	m_username = _username
-	m_character = _character
-	playerState = PLAYING
+	playerState = PLAYER_STATE.PLAYING
+	isLocal = false
 	
-	if (itemList[CHARACTER] = undefined)
+	switch (_character)
 	{
-		itemList[CHARACTER] = instance_create_depth(0,0,-100,oNinja)
-		itemList[NINJAGUN] = instance_create_depth(0,0,-101,oNinjaGun)
+		case CHARACTER_LIST.NINJA:
+		{
+			hero = instance_create_depth(0,0,-100,oNinja)
+			hero.itemList[NINJA_ITEMS.GUN] = instance_create_depth(0,0,-101,oNinjaGun)
+			break;
+		}
 	}
 	
+	with(hero)
+	{
+		isLocal = false
+		latest_acknowleged_packet = [0,0,0,0,0,current_time] //update most recent position knowledge	
+		m_username = _username
+		m_character = _character
+	}
 }

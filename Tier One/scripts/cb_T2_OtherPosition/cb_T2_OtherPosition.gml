@@ -20,7 +20,7 @@ if (_client == noone)
 else
 {
 	//update players x and y coords
-	with (_client)
+	with (_client.hero)
 	{
 		var _array = [_x,_y,_timePacketRecieved,_gunDir]
 		m_coordinateArray = fArrayMoveBack(m_coordinateArray,1)

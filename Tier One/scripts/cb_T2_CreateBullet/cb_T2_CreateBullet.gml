@@ -12,5 +12,4 @@ with(instance_create_depth(_x,_y,-103,oNinjaArrow))
 	direction = _direction	
 	image_angle = direction-90
 	creator = _clientId
-	fConsoleAddMessage("Created Bullet with id " + string(_clientId))
 }

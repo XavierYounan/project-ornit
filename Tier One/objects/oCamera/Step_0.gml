@@ -9,8 +9,8 @@ switch state
 		
 		if (localPlayer != noone)
 		{
-			xTo = localPlayer.x + (mouse_x - other.x)/4 
-			yTo = localPlayer.y + (mouse_y - other.y)/4 
+			xTo = localPlayer.hero.x + (mouse_x - other.x)/4 
+			yTo = localPlayer.hero.y + (mouse_y - other.y)/4 
 		}
 		else
 		{
@@ -42,8 +42,8 @@ switch state
 		var pm = matrix_build_projection_ortho(cameraWidth,cameraHeight,0,lookDistance);
 		camera_set_proj_mat(camera,pm);
 		
-		x = localPlayer.x;
-		y = localPlayer.y;
+		x = localPlayer.hero.x;
+		y = localPlayer.hero.y;
 		
 		//Dont let it go outside
 		x = clamp(x,xResolution/2,room_width - xResolution/2);

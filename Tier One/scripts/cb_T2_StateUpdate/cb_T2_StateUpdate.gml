@@ -11,5 +11,4 @@ var _client = fGetClientById(_clientId)
 if (_client) != noone
 {
 	_client.playerState = _state
-	fConsoleAddMessage("made " + string(_client) + " into the state of " + string(_receivedData))
 }
