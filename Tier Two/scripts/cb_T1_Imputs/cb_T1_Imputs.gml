@@ -21,15 +21,26 @@ else
 {
 	with (_client)
 	{		
-		if (itemList[CHARACTER] = undefined)
+		if (state = state.sendingInfo)
 		{
-			itemList[CHARACTER] = instance_create_depth(0,0,-100,oNinja)
-			itemList[NINJAGUN] = instance_create_depth(0,0,-101,oNinjaGun)
-			state = state.playing
-			global.T1_CONNECTION_ID_LOADED_IN_LIST = fArrayAppend(global.T1_CONNECTION_ID_LOADED_IN_LIST,_connectionId)
+			state = state.dead
 		}
 
-		m_imputLog = fArrayMoveBack(m_imputLog,1)
-		m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime] 
+		switch (m_character)
+		{
+			case CHOSEN_CHARACTER.NINJA:
+			{
+				hero.m_imputLog = fArrayMoveBack(m_imputLog,1)
+				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]
+				break;	
+			}
+			
+			case CHOSEN_CHARACTER.MAGNET_BOI:
+			{
+				
+				break;	
+			}
+		}
+		 
 	}
 }

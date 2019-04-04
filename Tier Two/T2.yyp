@@ -399,6 +399,14 @@
             }
         },
         {
+            "Key": "438f7ff1-8051-4953-9b02-b851bf00d730",
+            "Value": {
+                "id": "a4cddbfb-c286-4c0b-9761-d6ef54fe17f5",
+                "resourcePath": "views\\438f7ff1-8051-4953-9b02-b851bf00d730.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "43bdeae2-98fa-42a5-bb99-a9cdefb4008f",
             "Value": {
                 "id": "726e3762-5be9-496a-a057-b07145abe3ef",
@@ -1039,6 +1047,14 @@
             }
         },
         {
+            "Key": "aa3881c0-ad9c-420c-84b0-1c42e4286796",
+            "Value": {
+                "id": "b83341c0-2e50-49b5-8fac-117d33b36fc3",
+                "resourcePath": "sprites\\sMagnetBoiHitbox\\sMagnetBoiHitbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "aa804718-1b9d-42d3-ad0c-b73241e0f7d4",
             "Value": {
                 "id": "d3cdfe48-f1f5-4579-9b92-a2565eaac759",
@@ -1343,6 +1359,14 @@
             }
         },
         {
+            "Key": "e657e910-fb47-420d-99f4-dd86094d97ef",
+            "Value": {
+                "id": "f0667ba9-e6f1-4b05-bcac-3869da9598b4",
+                "resourcePath": "scripts\\characterEnums\\characterEnums.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e6c28779-a482-4db5-a07c-67dd9297155a",
             "Value": {
                 "id": "e9d3a9d5-f359-4474-90c4-e92044dc42bf",
@@ -1431,6 +1455,14 @@
             }
         },
         {
+            "Key": "f43b242a-9c6d-4811-a206-b2f4d7e58425",
+            "Value": {
+                "id": "62fc37a9-fc52-4b5f-97b4-e6ddc741f8df",
+                "resourcePath": "views\\f43b242a-9c6d-4811-a206-b2f4d7e58425.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "f47b769a-4582-4d72-97ef-e88bf1f39f9c",
             "Value": {
                 "id": "55406792-155f-4b29-9c76-52999ae8c7ff",
@@ -1452,6 +1484,14 @@
                 "id": "ca969793-8876-41d0-bee7-d6d497974c04",
                 "resourcePath": "views\\f7879412-a21b-4d8c-bede-42ce576760d0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f7b8805a-2d0b-4d9a-9a83-7bfbcfe0536d",
+            "Value": {
+                "id": "c8c50840-1e4c-4072-bbf1-9ac1597b7a37",
+                "resourcePath": "objects\\oMagnetBoi\\oMagnetBoi.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1634,6 +1674,7 @@
         "a7a35d65-17ba-4b1a-8393-8107c418321c",
         "dd45aa60-26b3-4c28-a0fe-cbfdd8b01afc",
         "836c3d77-5855-4d2a-a708-1f785de69390",
+        "e657e910-fb47-420d-99f4-dd86094d97ef",
         "925a7f1b-9050-4403-a002-8bea479ca311",
         "33b9da43-d53e-4ce4-835b-d5e5cbcf683c",
         "21e9e9cb-3dba-4802-970e-83bca0756485",

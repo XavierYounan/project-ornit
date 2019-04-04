@@ -48,11 +48,14 @@ ERROR = 3
 
 managerState = SENDINGINFO
 
-NULL = 0
-NINJA = 1
-GUNNER = 2
+enum CHARACTER
+{
+	NULL,
+	NINJA,
+	MAGNET_BOI
+}
 
-m_character = GUNNER
+m_character = CHARACTER.NINJA
 
 m_gunAngle = 0
 

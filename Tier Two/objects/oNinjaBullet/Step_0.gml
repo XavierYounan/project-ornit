@@ -9,7 +9,8 @@ else
 {
 	hitDelay--	
 }	
-_colInst = instance_place(x,y,oClient)
+
+_colInst = instance_place(x,y,oNinja)
 
 if (_colInst != noone) && (_colInst.m_ClientId != creator) 
 {
