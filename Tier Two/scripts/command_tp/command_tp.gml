@@ -26,7 +26,6 @@ if (_client != noone)
 		y = _y
 	
 		m_imputLog = []
-		m_imputLog[0] = [0,0,current_time,0,0,0,false]
 		
 		middleRoom = [room_width/2,room_height/2]
 		

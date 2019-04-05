@@ -327,6 +327,14 @@
             }
         },
         {
+            "Key": "33cd29b6-3ec8-43b6-aa0e-78124b019fd4",
+            "Value": {
+                "id": "370038fb-0e8a-4cec-8358-1d891031fab7",
+                "resourcePath": "objects\\oLagger\\oLagger.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "358bee66-72d0-4dd9-8fc9-729cce9f7edf",
             "Value": {
                 "id": "9dd66925-48f1-40c2-b182-b0f3cd5b9eac",
@@ -419,6 +427,14 @@
             "Value": {
                 "id": "7fb88353-3663-4669-b0a3-077e9706e8fd",
                 "resourcePath": "views\\43fbc440-3921-4d59-aaeb-449f741a7718.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4491bfc1-eefe-481e-a8f1-4265da44fca2",
+            "Value": {
+                "id": "a9b57b1e-c34b-47dd-aedc-20258e4324d5",
+                "resourcePath": "views\\4491bfc1-eefe-481e-a8f1-4265da44fca2.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -1215,6 +1231,14 @@
             }
         },
         {
+            "Key": "c901a2f7-020c-4c2e-b39d-a0fb32cbdbde",
+            "Value": {
+                "id": "444f9ec2-123d-474b-80b1-bb86d651057b",
+                "resourcePath": "scripts\\add_lag\\add_lag.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c915e9f1-1583-4748-a41e-9dce8643431c",
             "Value": {
                 "id": "0dd4c55b-3295-4b77-a2d1-868f148b9afe",
@@ -1679,7 +1703,8 @@
         "33b9da43-d53e-4ce4-835b-d5e5cbcf683c",
         "21e9e9cb-3dba-4802-970e-83bca0756485",
         "bdd46542-291f-4cc7-84a7-8a8c2dc6f045",
-        "c2dd617a-1d32-4507-b848-4aee49a035cf"
+        "c2dd617a-1d32-4507-b848-4aee49a035cf",
+        "c901a2f7-020c-4c2e-b39d-a0fb32cbdbde"
     ],
     "tutorial": ""
 }

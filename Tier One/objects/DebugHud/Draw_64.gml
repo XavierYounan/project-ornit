@@ -45,7 +45,7 @@ switch(debugMode)
 																inst.ip, 
 																inst.port, 
 																global.ENUM_NAME_CONNECTION_STATE[inst.connectionState]);
-			draw_text(cameraX + xSpacing, 10 + (i * ySpacing), str);	
+			draw_text(xSpacing, 10 + (i * ySpacing), str);	
 		}
 
 		i += 2; // Spacing
@@ -57,7 +57,7 @@ switch(debugMode)
 			var _connId = NetworkManager.m_connectionMap[? key];
 	
 			str = key + " | " + string(_connId);
-			draw_text(cameraX + xSpacing, 10 + (i++ * ySpacing), str);	
+			draw_text(xSpacing, 10 + (i++ * ySpacing), str);	
 		
 			key = ds_map_find_next(NetworkManager.m_connectionMap, key);
 		}
@@ -71,11 +71,12 @@ switch(debugMode)
 				str = string_build("Slot [{}] = {} | Ping: {} | Last Update: {}", a, _inst, _inst.ping, _inst.lastUpdate);
 			else
 				str = string_build("Slot [{}] = {} | Ping: 0", a, _inst);
-			draw_text(cameraX + xSpacing, 10 + (i++ * ySpacing), str);	
+			draw_text(xSpacing, 10 + (i++ * ySpacing), str);	
 		}
+		i += 2; //Spacing 
 		
-		draw_text(cameraX + xSpacing, ySpacing, "Bytes Per Second: "   + string(NetworkManager.m_AverageBytesPerSecond));
-		draw_text(cameraX + xSpacing, 4 * ySpacing, "Packets Per Second: " + string(NetworkManager.m_AveragePacketsPerSecond));
+		draw_text(xSpacing, i++ *  ySpacing, "Bytes Per Second: "   + string(NetworkManager.m_AverageBytesPerSecond));
+		draw_text(xSpacing, i++ * ySpacing, "Packets Per Second: " + string(NetworkManager.m_AveragePacketsPerSecond));
 
 		#endregion
 		break;	
@@ -135,7 +136,7 @@ switch(debugMode)
 		{
 			if(isLocal)
 			{
-				var lastKnown = latest_acknowleged_packet;
+				var lastKnown = hero.latest_acknowleged_packet;
 			}
 		}
 		draw_text(left + xSpacing,top + ySpacing, "Last server imput is : " + string(lastKnown))
