@@ -15,86 +15,89 @@ switch playerState
 			var _hsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.HSP];
 			var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];			
 	
-			for (var i = _unreadListSize - 1; i >= 0; i--)
+			if (_unreadListSize != 0)
 			{
-				#region Loop through each unread imput and calucate a new position
-				var _currentImput = _unreadList[i];
-		
-				var _deltaTime = _currentImput[UNREAD_IMPUTS.DELTA_TIME]
-		
-				_hsp = _currentImput[UNREAD_IMPUTS.HSP] * walksp * _deltaTime;
-		
-				vMove = _currentImput[UNREAD_IMPUTS.VSP];
-		
-				_vsp += grv * _deltaTime;
-
-				//Jump
-				if (place_meeting(_x,_y+1,oWall)) && (vMove = 1)
+				for (var i = _unreadListSize - 1; i >= 0; i--)
 				{
-					_vsp = -jump_speed	
-				}
+					#region Loop through each unread imput and calucate a new position
+					var _currentImput = _unreadList[i];
+		
+					var _deltaTime = _currentImput[UNREAD_IMPUTS.DELTA_TIME]
+		
+					_hsp = _currentImput[UNREAD_IMPUTS.HSP] * walksp * _deltaTime;
+		
+					vMove = _currentImput[UNREAD_IMPUTS.VSP];
+		
+					_vsp += grv * _deltaTime;
 
-				//Horisontal collision
-				if (place_meeting(_x+_hsp,_y,oWall))
-				{
-					while (!place_meeting(_x+sign(_hsp),_y,oWall))
+					//Jump
+					if (place_meeting(_x,_y+1,oWall)) && (vMove = 1)
 					{
-						_x += sign(_hsp);	
+						_vsp = -jump_speed	
 					}
-					_hsp = 0;
-				}
-				_x += _hsp;
 
-				//Vertical collision
-				
-				if (place_meeting(_x,_y+_vsp,oWall))
-				{
-					while (!place_meeting(_x,_y+sign(_vsp),oWall))
+					//Horisontal collision
+					if (place_meeting(_x+_hsp,_y,oWall))
 					{
-						_y += sign(_vsp);	
+						while (!place_meeting(_x+sign(_hsp),_y,oWall))
+						{
+							_x += sign(_hsp);	
+						}
+						_hsp = 0;
 					}
-					_vsp = 0;
-				}
-				_y += _vsp;
-				
-				
+					_x += _hsp;
 
-				/*
-				var _bulletsTouching;
-				_bulletsTouching = instance_place(x, y, oBullet);
-				if (_bulletsTouching != noone)
-				{   
-					hp -= O_Client.bulletDamage;
-					with (oBullet) instance_destroy();
-				}
-
-				*/
-		
-				/*
-				  //Animation
-				if (!place_meeting(x,y+1,oWall))
-				{
-					sprite_index = sPlayerAir;
-					image_speed = 0;
-					if (sign(vsp) > 0) image_index = 1; else image_index = 0;
-				}
-				else
-				{
-					image_speed = 1;
-					if (hsp == 0)
+					//Vertical collision
+				
+					if (place_meeting(_x,_y+_vsp,oWall))
 					{
-						sprite_index = sPlayer;	
+						while (!place_meeting(_x,_y+sign(_vsp),oWall))
+						{
+							_y += sign(_vsp);	
+						}
+						_vsp = 0;
+					}
+					_y += _vsp;
+				
+				
+
+					/*
+					var _bulletsTouching;
+					_bulletsTouching = instance_place(x, y, oBullet);
+					if (_bulletsTouching != noone)
+					{   
+						hp -= O_Client.bulletDamage;
+						with (oBullet) instance_destroy();
+					}
+
+					*/
+		
+					/*
+					  //Animation
+					if (!place_meeting(x,y+1,oWall))
+					{
+						sprite_index = sPlayerAir;
+						image_speed = 0;
+						if (sign(vsp) > 0) image_index = 1; else image_index = 0;
 					}
 					else
 					{
-						sprite_index = sPlayerRun;	
+						image_speed = 1;
+						if (hsp == 0)
+						{
+							sprite_index = sPlayer;	
+						}
+						else
+						{
+							sprite_index = sPlayerRun;	
+						}
 					}
+
+					*/
+
+					if (_hsp != 0) image_xscale = sign(_hsp);
+					#endregion
 				}
-
-				*/
-
-				if (_hsp != 0) image_xscale = sign(_hsp);
-				#endregion
 			}
 	
 			x = _x;
