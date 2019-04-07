@@ -64,6 +64,14 @@ switch managerState
 				var deltaTime = global.dt_steady
 				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);
 				gnet_packet_send_to_id(_packet,_T2Id);
+				
+				var _str = string_build("Sent T1 Keys away : {} {} {} {} {} {} {}",_hsp,_vsp,packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime)
+				
+				var _PacketErrorsFile
+				_PacketErrorsFile =  file_text_open_write(working_directory + "\packetErrors.txt");
+				file_text_write_string(_PacketErrorsFile,_str +  "/n/r/n/r")
+				file_text_close(_PacketErrorsFile);
+				
 				packet_number ++
 				m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
 				m_unreadImputs[0] = [_hsp,_vsp,packet_number,_gunAngle,deltaTime];

@@ -17,6 +17,7 @@
 	gnet_packet_layout_create(PacketId.death_notification, buffer_u8);
 */
 			
+			
 enum PACKET_IDENTIFIER
 {
 	T1_KEYS = 1,	

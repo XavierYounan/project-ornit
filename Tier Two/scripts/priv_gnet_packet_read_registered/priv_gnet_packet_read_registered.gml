@@ -4,6 +4,7 @@
 ///@param Buffer...
 
 var _packetId = argument0;
+
 var _buffer   = argument1;
 
 var _layoutData = m_packetLayoutMap[? _packetId];
@@ -47,6 +48,7 @@ for (var _i = 0; _i < array_length_1d(_data); _i++)
 	}
 	else
 	{
+		
 		_data[_i] = buffer_read(_buffer, _layoutData[_i]); // Read single data normally
 	}
 }
