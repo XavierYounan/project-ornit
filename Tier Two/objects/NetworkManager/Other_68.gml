@@ -12,13 +12,6 @@ var _protoId		= buffer_read(_buffer, buffer_u16);			// ProtocolId (Should always
 var _channel	    = buffer_read(_buffer, buffer_u8);			// Channel (NetChannel)
 var _packetId	    = buffer_read(_buffer, buffer_u8);			// PacketId
 
-var _PacketErrorsFile
-_PacketErrorsFile =  file_text_open_write(working_directory + "\packetErrors.txt");
-file_text_write_string(_PacketErrorsFile," Recieved Packet " + string(_packetId) + "/n/r")
-file_text_close(_PacketErrorsFile);
-
-
-
 // If it is an RPC we need to handle it differently
 if (_packetId == Gnet_PacketId.RPC)
 {
@@ -72,9 +65,3 @@ if (_connectionInst != null)
 	script_execute(_callback, _connectionInst.connectionId, received_data);
 else
 	script_execute(_callback, null, received_data);
-	
-	
-var _PacketErrorsFile
-_PacketErrorsFile =  file_text_open_write(working_directory + "\packetErrors.txt");
-file_text_write_string(_PacketErrorsFile,"NO fatal errors /n/r/n/r")
-file_text_close(_PacketErrorsFile);
