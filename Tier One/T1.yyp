@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "101f1fc9-a975-4991-a92c-11ae5d350afb",
+            "Value": {
+                "id": "ab80479c-bbb6-4e80-bd41-022b083c3293",
+                "resourcePath": "scripts\\TCP_packet_type_create\\TCP_packet_type_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1376a3b5-9f11-4d3e-ab99-963544e06b2d",
             "Value": {
                 "id": "653b07cc-450b-4aa6-8deb-be2ab40df32c",
@@ -479,6 +487,14 @@
             }
         },
         {
+            "Key": "595c6887-5050-42b0-81ac-2483e7a9f8e2",
+            "Value": {
+                "id": "7c205226-9abd-4106-8db7-4b49882a2309",
+                "resourcePath": "scripts\\packet_types\\packet_types.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5ab193a2-8451-4b1d-b4c8-8bf0a3003625",
             "Value": {
                 "id": "c9c3d0ce-7ac3-4960-b75f-822d70f25ba5",
@@ -532,6 +548,14 @@
                 "id": "3cfcd320-56c6-4bfe-bc13-f78afb003a68",
                 "resourcePath": "scripts\\gnet_disconnect_self\\gnet_disconnect_self.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6787c52e-139a-4d76-9e83-7ef2e88fc10c",
+            "Value": {
+                "id": "6affa999-a793-4220-822c-37296a621f48",
+                "resourcePath": "views\\6787c52e-139a-4d76-9e83-7ef2e88fc10c.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -676,6 +700,14 @@
                 "id": "b98a9c6f-615e-4164-abca-c571b849e11f",
                 "resourcePath": "scripts\\log_debug\\log_debug.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "77a6e3c2-0e14-4553-9829-2684eb3c14a3",
+            "Value": {
+                "id": "b878ccd8-d12f-440b-b49d-d7657da3ad03",
+                "resourcePath": "views\\77a6e3c2-0e14-4553-9829-2684eb3c14a3.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1231,11 +1263,27 @@
             }
         },
         {
+            "Key": "d635ba41-e8a0-4265-ab25-c523b2c48fed",
+            "Value": {
+                "id": "47a9a056-fddc-48cb-a640-4cc7a41d19b1",
+                "resourcePath": "scripts\\tcp_cb_T1_Info\\tcp_cb_T1_Info.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d643a2dd-b9ca-460c-9752-e6c0e8bf35af",
             "Value": {
                 "id": "0fbf4f6b-3c40-4f22-b322-0b262df65a5c",
                 "resourcePath": "views\\d643a2dd-b9ca-460c-9752-e6c0e8bf35af.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d6cb287a-6c6c-4377-8f6a-694116de6743",
+            "Value": {
+                "id": "431a89b7-7e15-4dc9-bd26-d2ea9a085546",
+                "resourcePath": "scripts\\packet_tcp_send\\packet_tcp_send.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1388,6 +1436,14 @@
                 "id": "9742454d-14ee-433f-8300-ddd79018217e",
                 "resourcePath": "views\\f182dcdd-71dd-4e88-9b6f-90fbdec53111.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f275c66d-508a-4190-a902-9b30a2b5542f",
+            "Value": {
+                "id": "07d68588-1174-48b8-8d10-018aa62f1d01",
+                "resourcePath": "objects\\TCP_manager\\TCP_manager.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1557,7 +1613,11 @@
         "9aad4bef-c898-46ab-96a1-c3e1a7d69592",
         "be858763-e0ea-4fbe-b230-e855d787fbc0",
         "ec985c51-ff40-4ae1-a9c3-a22830fbb600",
-        "7069907b-9b7a-4830-8e25-a493977f7623"
+        "7069907b-9b7a-4830-8e25-a493977f7623",
+        "d6cb287a-6c6c-4377-8f6a-694116de6743",
+        "595c6887-5050-42b0-81ac-2483e7a9f8e2",
+        "101f1fc9-a975-4991-a92c-11ae5d350afb",
+        "d635ba41-e8a0-4265-ab25-c523b2c48fed"
     ],
     "tutorial": ""
 }
