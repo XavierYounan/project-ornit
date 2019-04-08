@@ -32,4 +32,3 @@ with (_client)
 		state = state.sendingInfo
 	}
 }
-

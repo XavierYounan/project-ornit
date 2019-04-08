@@ -8,7 +8,7 @@
     "exportAction": 0,
     "exportDir": "",
     "fileName": "TEST.sav",
-    "filePath": "datafiles\\Rooms",
+    "filePath": "datafiles",
     "freeData": false,
     "origName": "",
     "overwrite": false,

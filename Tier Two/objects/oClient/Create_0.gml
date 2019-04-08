@@ -15,7 +15,7 @@ m_y = y
 
 m_imputLog = []
 
-m_lastProcessedImput = undefined
+m_lastProcessedImput = [0,0,0,0,0,0,0,0]
 
 enum state 
 {

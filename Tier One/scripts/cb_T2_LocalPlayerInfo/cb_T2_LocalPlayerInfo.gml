@@ -6,7 +6,6 @@ var _clientId = _receivedData[0]; //buffer_8
 var _character = _receivedData[1]; //buffer_u6
 var _username = _receivedData[2]; //buffer_string
 
-fConsoleAddMessage("Received Local Player info which was " + string(_receivedData))
 
 with (instance_create_depth(0,0,0,oPlayer))
 {
@@ -22,6 +21,13 @@ with (instance_create_depth(0,0,0,oPlayer))
 			hero.itemList[NINJA_ITEMS.GUN] = instance_create_depth(0,0,-101,oNinjaGun)
 			break;	
 		}
+		
+		default:
+		{
+			show_error("Recieved info about a player connecting. Character no " + string(_character) + " but that does not exist",true)
+			break;
+		}
+		
 	}
 	
 	with (hero)

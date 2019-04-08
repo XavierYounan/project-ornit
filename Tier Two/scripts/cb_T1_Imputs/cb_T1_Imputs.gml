@@ -20,12 +20,12 @@ if (_client == noone)
 else
 {
 	with (_client)
-	{		
+	{	
 		if (state = state.sendingInfo)
 		{
 			state = state.dead
 		}
-
+		
 		switch (m_character)
 		{
 			case CHOSEN_CHARACTER.NINJA:

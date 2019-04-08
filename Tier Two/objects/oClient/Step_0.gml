@@ -1,4 +1,3 @@
-
 switch state
 {
 	case state.dead:
@@ -62,7 +61,7 @@ switch state
 			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION,x,y,m_ClientId)
 			gnet_packet_send_to_list_exclude(_packet,global.T1_CONNECTION_ID_LIST,[m_ClientId])
 			
-			var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SELF_POSITION,x,y,m_ClientId,hero.m_lastProcessedImput[2])
+			var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SELF_POSITION,x,y,m_ClientId,m_lastProcessedImput[2])
 			gnet_packet_send_to_id(packet,m_ClientId)
 			
 			m_framesTillUpdate = m_updateFrequencyFrames + 1
@@ -85,7 +84,7 @@ switch state
 			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_HEALTH_UPDATE,m_ClientId,round(hero.hp))
 			gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
 			
-			var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SELF_POSITION,x,y,m_ClientId,hero.m_lastProcessedImput[2],hero.hsp,hero.vsp)
+			var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SELF_POSITION,x,y,m_ClientId,m_lastProcessedImput[2],hero.hsp,hero.vsp)
 			gnet_packet_send_to_id(packet,m_ClientId)
 			
 			m_framesTillUpdate = m_updateFrequencyFrames + 1

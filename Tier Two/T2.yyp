@@ -127,14 +127,6 @@
             }
         },
         {
-            "Key": "15c4e0d6-98a2-492e-82e5-52b7c84008b5",
-            "Value": {
-                "id": "ccbfd92f-0afa-4837-a4c9-f5a8555aaed2",
-                "resourcePath": "views\\15c4e0d6-98a2-492e-82e5-52b7c84008b5.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "18c96816-5cbe-4f2f-93df-041b9c006fa0",
             "Value": {
                 "id": "701b501e-fc82-4a51-8284-3aa653dc5193",
@@ -746,7 +738,7 @@
             "Key": "7902590b-9339-44dd-b340-3d483f3eed74",
             "Value": {
                 "id": "b0e90e80-9d02-4611-85ac-d28eccc71eb3",
-                "resourcePath": "datafiles_yy\\Rooms\\TEST.sav.yy",
+                "resourcePath": "datafiles_yy\\TEST.sav.yy",
                 "resourceType": "GMIncludedFile"
             }
         },
