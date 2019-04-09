@@ -4,9 +4,9 @@ if (!assert_singleton()) return;
 
 m_GameConsole = instance_create_depth(-10,-10,-100,O_GameConsole)
 
-MAX_PLAYERS = 1;
+global.MAX_PLAYERS = 2;
 
-var result = gnet_start_network(MAX_PLAYERS,PROTOCOL_ID,-1, "Client")
+var result = gnet_start_network(global.MAX_PLAYERS,PROTOCOL_ID,-1, "Client")
 
 if (!result)
 {
@@ -21,7 +21,10 @@ else
 
 result = gnet_connect(global.IP,global.PORT) 
 
-instance_create_depth(0,0,0,TCP_manager)
+with(instance_create_depth(0,0,0,TCP_manager))
+{
+	port = global.gnet_myPort	
+}
 
 fConsoleAddMessage(string(result))
 if (result[0] == null)

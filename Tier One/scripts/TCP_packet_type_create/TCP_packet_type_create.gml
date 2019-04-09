@@ -26,7 +26,7 @@ for (var _i = 0; _i < argument_count - 2; _i++)
 	_array[_i] = argument[_i + 2];
 }
 
-ds_map_add(TCP_manager.m_packetLayoutMap, argument[0], _array);
-ds_map_add(TCP_manager.m_packetCallbackMap, argument[0], argument[1]);	// Holds script to be executed
+ds_map_add(TCP_manager.packetLayoutMap, argument[0], _array);
+ds_map_add(TCP_manager.packetCallbackMap, argument[0], argument[1]);	// Holds script to be executed
 
 return _array;

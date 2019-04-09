@@ -863,6 +863,14 @@
             }
         },
         {
+            "Key": "8f7216df-4a39-4a6d-bdb6-c6f621f2d0ed",
+            "Value": {
+                "id": "9f832fa9-4e91-4aff-8960-40b12ed0961b",
+                "resourcePath": "views\\8f7216df-4a39-4a6d-bdb6-c6f621f2d0ed.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "90df1347-0d18-46d2-bbeb-89eb133b0a5e",
             "Value": {
                 "id": "ae8d2d50-79c9-465e-b537-31c27a725881",
@@ -979,6 +987,14 @@
             "Value": {
                 "id": "3ea980fe-5eef-4a07-baae-16f38a1f073e",
                 "resourcePath": "scripts\\gnet_OnRPCMessage\\gnet_OnRPCMessage.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a4adf565-b6f9-4aa7-a3f7-c18b254c051c",
+            "Value": {
+                "id": "641a4b33-ea10-42c2-98f2-3e15a8bd3658",
+                "resourcePath": "scripts\\TCP_connection_find_by_ip\\TCP_connection_find_by_ip.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1236,6 +1252,14 @@
                 "id": "77215985-314b-46e8-848f-23402a33b149",
                 "resourcePath": "scripts\\private_log_format\\private_log_format.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ce38a237-dae7-4a51-b34a-76291948e041",
+            "Value": {
+                "id": "96f550a7-110e-4d9c-b2ee-58c6f942ef72",
+                "resourcePath": "objects\\TCP_connection\\TCP_connection.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1617,7 +1641,8 @@
         "d6cb287a-6c6c-4377-8f6a-694116de6743",
         "595c6887-5050-42b0-81ac-2483e7a9f8e2",
         "101f1fc9-a975-4991-a92c-11ae5d350afb",
-        "d635ba41-e8a0-4265-ab25-c523b2c48fed"
+        "d635ba41-e8a0-4265-ab25-c523b2c48fed",
+        "a4adf565-b6f9-4aa7-a3f7-c18b254c051c"
     ],
     "tutorial": ""
 }
