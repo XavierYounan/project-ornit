@@ -34,7 +34,10 @@ else
 		}
 		else
 		{
-			instance_create_depth(0,0,0,TCP_manager)
+			with(instance_create_depth(0,0,0,TCP_manager))
+			{
+				server_socket = server_socket	
+			}
 			room_goto_next()
 		}
 	}
