@@ -991,14 +991,6 @@
             }
         },
         {
-            "Key": "a4adf565-b6f9-4aa7-a3f7-c18b254c051c",
-            "Value": {
-                "id": "641a4b33-ea10-42c2-98f2-3e15a8bd3658",
-                "resourcePath": "scripts\\TCP_connection_find_by_ip\\TCP_connection_find_by_ip.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "2f3aef11-e6cf-41f8-8397-5d31e1702c0f",
@@ -1641,8 +1633,7 @@
         "d6cb287a-6c6c-4377-8f6a-694116de6743",
         "595c6887-5050-42b0-81ac-2483e7a9f8e2",
         "101f1fc9-a975-4991-a92c-11ae5d350afb",
-        "d635ba41-e8a0-4265-ab25-c523b2c48fed",
-        "a4adf565-b6f9-4aa7-a3f7-c18b254c051c"
+        "d635ba41-e8a0-4265-ab25-c523b2c48fed"
     ],
     "tutorial": ""
 }

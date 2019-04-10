@@ -21,10 +21,8 @@ else
 
 result = gnet_connect(global.IP,global.PORT) 
 
-with(instance_create_depth(0,0,0,TCP_manager))
-{
-	port = global.gnet_myPort	
-}
+instance_create_depth(0,0,0,TCP_manager)
+
 
 fConsoleAddMessage(string(result))
 if (result[0] == null)
