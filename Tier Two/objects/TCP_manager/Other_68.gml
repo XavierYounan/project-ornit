@@ -12,9 +12,11 @@ switch type
 		var port = async_load[? "port"];
 		
 		instance.ip = ip
+		instance.port = port
 		instance.socket = socket
 			
 		ds_map_add(TCP_connectionsMap,socket,instance)	
+		
 		break;
 	}
 	
@@ -69,7 +71,7 @@ switch type
 		
 					if (connectionInst != null)
 					{
-						script_execute(callback, connectionInst.connectionId, unpackedData);
+						script_execute(callback, connectionInst.socket, unpackedData);
 					}
 					else
 					{

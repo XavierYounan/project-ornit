@@ -1,8 +1,8 @@
 {
-    "id": "df9c97fe-8c47-457f-ac25-cdd27242d6a8",
+    "id": "bc2e1409-9977-4d1c-a9f1-be6ac81636e8",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "cb_T1_SelfPlayerInfo",
+    "name": "tcp_cb_T1_Handshake",
     "IsCompatibility": false,
     "IsDnD": false
 }

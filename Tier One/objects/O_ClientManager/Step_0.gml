@@ -2,38 +2,7 @@ switch managerState
 {
 	case SENDINGINFO:
 	{
-		#region //every 1 seccond send packet identifiers
-		m_timeLeft --
-		
-		if (m_timeLeft <= 0)
-		{
-			m_timeLeft = m_repeatFrequency
-			m_repeatLeft --
-			
-			
-			if (instance_exists(oT2))
-			{
-				var _T2Id = oT2.m_connectionId
-
-				if (_T2Id = noone)
-				{
-					show_error("Could not send message to T2, connection id not defined",true)	
-				}
-				else
-				{
-					var packet = gnet_packet_build(PACKET_IDENTIFIER.T1_SELF_PLAYER_INFO,m_username,m_character)
-					gnet_packet_send_to_id(packet,_T2Id)
-				}
-			}		
-
-			
-			if (m_repeatLeft <=0)
-			{
-				fConsoleAddMessage("Never Recieved Updated Self Info")
-				managerState = ERROR
-			}	
-		}
-		#endregion
+		packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.T1_INFO,[m_username,m_character])
 		break;
 	}
 	

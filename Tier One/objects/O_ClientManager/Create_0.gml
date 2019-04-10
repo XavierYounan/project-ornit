@@ -23,6 +23,7 @@ result = gnet_connect(global.IP,global.PORT)
 
 instance_create_depth(0,0,0,TCP_manager)
 
+packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.HANDSHAKE,[global.gnet_myPort])
 
 fConsoleAddMessage(string(result))
 if (result[0] == null)

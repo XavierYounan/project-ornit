@@ -1495,14 +1495,6 @@
             }
         },
         {
-            "Key": "f80df75d-b757-4180-a011-aef728967d9c",
-            "Value": {
-                "id": "f6670bc4-ab04-409d-9d3d-972839eff151",
-                "resourcePath": "scripts\\cb_T1_SelfPlayerInfo\\cb_T1_SelfPlayerInfo.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "f8667509-391c-49aa-bfb8-aacfc1d0f8c7",
             "Value": {
                 "id": "88c3907a-cb05-4c83-b6c3-54ec8d1f7e7b",
@@ -1523,6 +1515,14 @@
             "Value": {
                 "id": "931c2e95-60f7-4227-b72c-2541af6d3b6f",
                 "resourcePath": "scripts\\gnet_rpc_execute\\gnet_rpc_execute.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "fad79523-a3ee-41f4-8d3e-e9a37f604217",
+            "Value": {
+                "id": "3c0d0b68-5ba3-4ab3-9571-40b8b4cb2d12",
+                "resourcePath": "scripts\\tcp_cb_T1_Handshake\\tcp_cb_T1_Handshake.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1611,7 +1611,6 @@
         "2c2e1961-8d8d-4a50-815e-0d50a322ff48",
         "c4958957-783c-4297-ab5e-a1909ea4a881",
         "1c78918b-490c-4ebf-ab75-78c035c0373f",
-        "f80df75d-b757-4180-a011-aef728967d9c",
         "5ab193a2-8451-4b1d-b4c8-8bf0a3003625",
         "b7698eba-0d08-4cc1-9fbd-566694276dd4",
         "0f9cc035-5214-4114-a479-d666ae02ce87",
@@ -1633,7 +1632,8 @@
         "d6cb287a-6c6c-4377-8f6a-694116de6743",
         "595c6887-5050-42b0-81ac-2483e7a9f8e2",
         "101f1fc9-a975-4991-a92c-11ae5d350afb",
-        "d635ba41-e8a0-4265-ab25-c523b2c48fed"
+        "d635ba41-e8a0-4265-ab25-c523b2c48fed",
+        "fad79523-a3ee-41f4-8d3e-e9a37f604217"
     ],
     "tutorial": ""
 }

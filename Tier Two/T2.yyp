@@ -1207,6 +1207,14 @@
             }
         },
         {
+            "Key": "bc2e1409-9977-4d1c-a9f1-be6ac81636e8",
+            "Value": {
+                "id": "4eda8a9c-e63a-4000-8704-50f69f70ace6",
+                "resourcePath": "scripts\\tcp_cb_T1_Handshake\\tcp_cb_T1_Handshake.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bc432fb2-e251-44d8-91b0-2e36529326ea",
             "Value": {
                 "id": "69353a20-3264-4471-82d5-8c14077d75d5",
@@ -1300,6 +1308,14 @@
                 "id": "99064262-f9e0-4653-84c0-932a57a55ad6",
                 "resourcePath": "views\\ca85230a-c5a9-4f77-af64-94fe442fe6f6.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "cab8e709-112f-4ff6-99e4-6b3ecd60dd2a",
+            "Value": {
+                "id": "992b3a91-e38b-413d-a54a-d0a3b1c238c4",
+                "resourcePath": "scripts\\TCP_get_clientId_from_socket\\TCP_get_clientId_from_socket.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1411,14 +1427,6 @@
             "Value": {
                 "id": "58bf172c-b74a-46b7-82a1-82ac6f3c59d6",
                 "resourcePath": "scripts\\FOLDER_Transport\\FOLDER_Transport.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "df9c97fe-8c47-457f-ac25-cdd27242d6a8",
-            "Value": {
-                "id": "7d95a255-7e51-4eca-94b2-daaa58e7fb67",
-                "resourcePath": "scripts\\cb_T1_SelfPlayerInfo\\cb_T1_SelfPlayerInfo.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1732,7 +1740,6 @@
         "7dd72427-bd18-4a5f-b94b-c2b242ebfedd",
         "f11cd65c-a82b-4989-ac64-197fa43c0215",
         "dd7386b6-152f-4462-923e-98ddfbc19124",
-        "df9c97fe-8c47-457f-ac25-cdd27242d6a8",
         "fa5e2c9e-eb72-4856-a9a7-77634c7c1c18",
         "f882e365-d19c-4417-8028-f1638eb22fda",
         "8c7a5e4b-698d-4a45-875c-5f52587c0a0b",
@@ -1764,7 +1771,9 @@
         "5bf2479f-3656-4cfa-8e20-4ef762880c33",
         "d6c23f86-7495-4b80-8e8e-5667067ab10d",
         "732933c1-c9f8-4350-a1e6-35f310a626b3",
-        "5787e006-b928-4d21-b4cb-7c16536b8c27"
+        "5787e006-b928-4d21-b4cb-7c16536b8c27",
+        "bc2e1409-9977-4d1c-a9f1-be6ac81636e8",
+        "cab8e709-112f-4ff6-99e4-6b3ecd60dd2a"
     ],
     "tutorial": ""
 }

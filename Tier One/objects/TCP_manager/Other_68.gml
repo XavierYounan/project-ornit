@@ -16,6 +16,8 @@ switch type
 		instance.socket = socket
 			
 		ds_map_add(TCP_connectionsMap,socket,instance)	
+		
+		fConsoleAddMessage("Recieved connection, socket is : " + string(socket))
 		break;
 	}
 	

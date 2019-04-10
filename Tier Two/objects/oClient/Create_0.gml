@@ -10,9 +10,6 @@ m_imputLog = []
 x = -10
 y = -10
 
-m_x = x
-m_y = y
-
 m_imputLog = []
 
 m_lastProcessedImput = [0,0,0,0,0,0,0,0]
