@@ -1,8 +1,8 @@
 {
-    "id": "9e532e9b-bd55-4628-a0a4-a57ce6f6c46c",
+    "id": "0e74454f-35b0-4c4c-93db-4d9ad1ac2623",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "cb_T2_PlayerDisconnect",
+    "name": "tcp_cb_T2_PlayerDisconnect",
     "IsCompatibility": false,
     "IsDnD": false
 }

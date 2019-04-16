@@ -13,4 +13,4 @@ packet_types() //init the different packet types
 global.TCP_INDENTIFER = 69 
 
 var instance = instance_create_depth(0,0,0,TCP_connection)
-ds_map_add(TCP_connectionsMap,T2_TCP_socket,instance)
+ds_map_add(TCP_connectionsMap,global.T2_TCP_socket,instance)
