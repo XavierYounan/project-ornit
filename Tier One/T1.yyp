@@ -327,6 +327,14 @@
             }
         },
         {
+            "Key": "323e56f5-18c7-42df-bffb-c059d7d5be15",
+            "Value": {
+                "id": "2a3d078b-a61f-4113-aecb-9d3a6364eb07",
+                "resourcePath": "scripts\\tcp_cb_T2_PlayerDisconnect\\tcp_cb_T2_PlayerDisconnect.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "366ff946-8d45-4c6f-8993-883380233cc8",
             "Value": {
                 "id": "b31712a6-4630-4d93-8ff9-b4e0f250223b",
@@ -1167,6 +1175,14 @@
             }
         },
         {
+            "Key": "bfcb5664-7092-409d-b793-71eae58572d5",
+            "Value": {
+                "id": "230bf832-ca8f-4379-b2cd-10d3ed6b24f8",
+                "resourcePath": "scripts\\tcp_cb_T1_Handshake\\tcp_cb_T1_Handshake.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c26bd2df-4164-432d-8e52-13cd3746ce83",
             "Value": {
                 "id": "4acbefbc-1aa7-401c-a78d-abe12ba0ce9c",
@@ -1244,14 +1260,6 @@
                 "id": "77215985-314b-46e8-848f-23402a33b149",
                 "resourcePath": "scripts\\private_log_format\\private_log_format.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "ce38a237-dae7-4a51-b34a-76291948e041",
-            "Value": {
-                "id": "96f550a7-110e-4d9c-b2ee-58c6f942ef72",
-                "resourcePath": "objects\\TCP_connection\\TCP_connection.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -1519,14 +1527,6 @@
             }
         },
         {
-            "Key": "fad79523-a3ee-41f4-8d3e-e9a37f604217",
-            "Value": {
-                "id": "3c0d0b68-5ba3-4ab3-9571-40b8b4cb2d12",
-                "resourcePath": "scripts\\tcp_cb_T1_Handshake\\tcp_cb_T1_Handshake.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "fc5bb234-5e8b-4fce-9fba-66404ea7cb37",
             "Value": {
                 "id": "216f39fc-8e16-4212-b185-064885259397",
@@ -1633,7 +1633,8 @@
         "595c6887-5050-42b0-81ac-2483e7a9f8e2",
         "101f1fc9-a975-4991-a92c-11ae5d350afb",
         "d635ba41-e8a0-4265-ab25-c523b2c48fed",
-        "fad79523-a3ee-41f4-8d3e-e9a37f604217"
+        "323e56f5-18c7-42df-bffb-c059d7d5be15",
+        "bfcb5664-7092-409d-b793-71eae58572d5"
     ],
     "tutorial": ""
 }

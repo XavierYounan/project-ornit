@@ -1,5 +1,5 @@
 {
-    "id": "fad79523-a3ee-41f4-8d3e-e9a37f604217",
+    "id": "bfcb5664-7092-409d-b793-71eae58572d5",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "tcp_cb_T1_Handshake",

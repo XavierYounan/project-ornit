@@ -11,11 +11,16 @@ switch type
 		var ip = async_load[? "ip"];
 		var port = async_load[? "port"];
 		
-		instance.ip = ip
-		instance.port = port
+		var UDP_connectionId = gnet_get_connection_id(ip,port)
+		
+
 		instance.socket = socket
+		instance.port = port
+		instance.ip = ip
+		
 			
 		ds_map_add(TCP_connectionsMap,socket,instance)	
+		ds_map_add(UDP_connectionIdMap,socket,UDP_connectionId)
 		
 		break;
 	}
@@ -26,6 +31,7 @@ switch type
 		var instance = TCP_connectionsMap[? socket]
 
 		ds_map_delete(TCP_connectionsMap,socket)
+		ds_map_delete(UDP_connectionIdMap,socket)
 		
 		instance_destroy(instance)
 		
@@ -62,16 +68,12 @@ switch type
 					}
 		
 					var callback = packetCallbackMap[? packetType]
+				
+					var connectionId = UDP_connectionIdMap[? socket];
 		
-		
-					var ip = async_load[? "ip"]
-					var port = async_load[? "port"]
-		
-					var connectionInst = priv_gnet_get_connection(ip, port);
-		
-					if (connectionInst != null)
+					if (connectionId != undefined)
 					{
-						script_execute(callback, connectionInst.socket, unpackedData);
+						script_execute(callback, connectionId, unpackedData);
 					}
 					else
 					{
