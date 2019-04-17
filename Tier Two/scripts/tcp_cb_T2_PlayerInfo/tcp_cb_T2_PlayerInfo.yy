@@ -1,8 +1,8 @@
 {
-    "id": "bfcb5664-7092-409d-b793-71eae58572d5",
+    "id": "1fa4b431-16a2-4e46-a588-654e5cf642d0",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "tcp_cb_T1_Handshake",
+    "name": "tcp_cb_T2_PlayerInfo",
     "IsCompatibility": false,
     "IsDnD": false
 }

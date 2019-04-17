@@ -1,15 +1,14 @@
-var socket = argument0
+var _connectionId = argument0
 var _recievedData = argument1
 
 var _username = _recievedData[0]
 var _character = _recievedData[1]
 
-var _connectionId = TCP_get_clientId_from_socket(socket)
 var client = fGetClientById(_connectionId)
 
 with(client)
 {
-	if (state != state.sendingInfo)
+	if (state == state.waitingForInfo)
 	{
 		m_username = _username
 		m_character = _character

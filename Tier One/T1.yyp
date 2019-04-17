@@ -1175,14 +1175,6 @@
             }
         },
         {
-            "Key": "bfcb5664-7092-409d-b793-71eae58572d5",
-            "Value": {
-                "id": "230bf832-ca8f-4379-b2cd-10d3ed6b24f8",
-                "resourcePath": "scripts\\tcp_cb_T1_Handshake\\tcp_cb_T1_Handshake.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "c26bd2df-4164-432d-8e52-13cd3746ce83",
             "Value": {
                 "id": "4acbefbc-1aa7-401c-a78d-abe12ba0ce9c",
@@ -1633,8 +1625,7 @@
         "595c6887-5050-42b0-81ac-2483e7a9f8e2",
         "101f1fc9-a975-4991-a92c-11ae5d350afb",
         "d635ba41-e8a0-4265-ab25-c523b2c48fed",
-        "323e56f5-18c7-42df-bffb-c059d7d5be15",
-        "bfcb5664-7092-409d-b793-71eae58572d5"
+        "323e56f5-18c7-42df-bffb-c059d7d5be15"
     ],
     "tutorial": ""
 }
