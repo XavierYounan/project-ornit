@@ -1,8 +1,8 @@
 {
-    "id": "c4958957-783c-4297-ab5e-a1909ea4a881",
+    "id": "4b3b5078-ddfd-4bba-bd02-8111536cd1ca",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "cb_T1_ReadyUp",
+    "name": "tcp_cb_T1_RequestRespawn",
     "IsCompatibility": false,
     "IsDnD": false
 }

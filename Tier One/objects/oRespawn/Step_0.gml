@@ -23,6 +23,21 @@ switch (state)
 							{
 								var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_REQUEST_RESPAWN,mouse_x,mouse_y)
 								gnet_packet_send_to_id(_packet,_T2Id)
+								
+								var localId = undefined
+								
+								with(oPlayer)
+								{
+									if isLocal
+									{
+										localId = m_ClientId
+									}
+								}
+								
+								if (localId != undefined)
+								{
+									packet_tcp_send(_T2Id,TCP_PACKETS.T1_REQUEST_RESPAWN,[localId,mouse_x,mouse_y])
+								}
 							}
 						}
 					}

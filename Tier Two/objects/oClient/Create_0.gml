@@ -18,7 +18,6 @@ enum state
 {
 	playing,
 	dead,
-	readyUp,
 	error,
 	waitingForInfo,
 	sendingInfo,
@@ -31,8 +30,6 @@ state = state.waitingForInfo
 t1state_PLAYING = 0
 t1state_DEAD = 1
 t1state_RECIEVINGINFO = 2
-t1state_READYUP = 3
-
 
 m_updateFrequency = 20
 m_FPS = game_get_speed(gamespeed_fps)

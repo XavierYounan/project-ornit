@@ -6,7 +6,7 @@ var _arr = [packetType,information]
 
 if (instance_exists(TCP_manager))
 {
-	var instance = TCP_manager.TCP_connectionsMap[? client]
+	var instance = TCP_manager.UDP_connectionIdMap[? client]
 	
 	if (instance != noone)
 	{

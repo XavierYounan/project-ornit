@@ -1,6 +1,5 @@
 //cb_T2_PlayerInfo
-var _connectionId  = argument0;
-var _receivedData  = argument1;
+var _receivedData  = argument0;
 
 var _clientId = _receivedData[0] //buffer_u8
 var _character = _receivedData[1]; //buffer_u8

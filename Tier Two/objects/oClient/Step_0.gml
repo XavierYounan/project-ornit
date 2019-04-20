@@ -2,9 +2,13 @@ switch state
 {
 	case state.dead:
 	{
-		#region Dead code
-		var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_STATE_UPDATE,m_ClientId,t1state_DEAD)
-		gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
+		#region Dead code		
+		var list = global.T1_CONNECTION_ID_LIST
+		var _arrSize = array_length_1d(list)
+		for(var i = 0; i < _arrSize; i++)
+		{
+			packet_tcp_send(list[i],TCP_PACKETS.T2_STATE_UPDATE,[m_ClientId,t1state_DEAD])
+		}
 		#endregion
 		break;
 	}
@@ -17,63 +21,24 @@ switch state
 	
 	case state.sendingInfo:
 	{
-		#region Send info
-		m_timeLeft --
-		
-		if (m_timeLeft <= 0)
+		#region Send info			
+		with(oClient)
 		{
-			m_timeLeft = m_repeatFrequency
-			m_repeatLeft --
-			
-			with(oClient)
-			{
-				if (other.m_ClientId = m_ClientId)
-				{
-					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_LOCAL_PLAYER_INFO,m_ClientId,m_character,m_username)	
-					gnet_packet_send_to_id(_packet,m_ClientId)
-				}
-				else
-				{
-					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_PLAYER_INFO,m_ClientId,m_character,m_username)
-					gnet_packet_send_to_id(_packet,other.m_ClientId)	
-					
-					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_PLAYER_INFO,other.m_ClientId,other.m_character,other.m_username)
-					gnet_packet_send_to_id(_packet,m_ClientId)
-				}
+			if (other.m_ClientId = m_ClientId)
+			{				
+				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_LOCAL_PLAYER_INFO,[m_ClientId,m_character,m_username])
 			}
-			
-			if (m_repeatLeft <=0)
-			{
-				f_ConsoleAddMessage("Never Recieved Clients Information!")
-				state = state.error
-			}	
+			else
+			{				
+				packet_tcp_send(other.m_ClientId,TCP_PACKETS.T2_PLAYER_INFO,[m_ClientId,m_character,m_username])
+					
+				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_PLAYER_INFO,[other.m_ClientId,other.m_character,other.m_username])
+			}
 		}
 		#endregion
-
 		break;
 	}	
-	
-	case state.readyUp:
-	{
-		#region Ready up		
-		if (m_framesTillUpdate = 0)
-		{
-			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION,x,y,m_ClientId)
-			gnet_packet_send_to_list_exclude(_packet,global.T1_CONNECTION_ID_LIST,[m_ClientId])
-			
-			var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SELF_POSITION,x,y,m_ClientId,m_lastProcessedImput[2])
-			gnet_packet_send_to_id(packet,m_ClientId)
-			
-			m_framesTillUpdate = m_updateFrequencyFrames + 1
-		}
 		
-		m_framesTillUpdate --;
-		break;
-		#endregion
-
-		
-	}
-	
 	case state.playing:
 	{		
 		if (m_framesTillUpdate <= 0)

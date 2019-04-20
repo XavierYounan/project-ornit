@@ -1,8 +1,8 @@
 {
-    "id": "3090fcb0-271a-4901-8e82-556113a5d2c2",
+    "id": "2b409c09-5491-464a-993c-d20b06648303",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "cb_T2_StateUpdate",
+    "name": "tcp_cb_T1_RequestRespawn",
     "IsCompatibility": false,
     "IsDnD": false
 }

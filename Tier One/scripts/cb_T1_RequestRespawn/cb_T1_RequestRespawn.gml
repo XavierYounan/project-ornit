@@ -1,1 +1,0 @@
-show_error("T1 should not be reciecing ready up messages from T1 or itself",true)
