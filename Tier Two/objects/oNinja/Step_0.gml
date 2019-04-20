@@ -2,20 +2,7 @@ serverState = parentClient.state
 
 switch(serverState)
 {
-	case state.readyUp:
-	{
-		#region Clear imput log and registar imputs as processed
-		var _arraySize = array_length_1d(m_imputLog)
-		
-		if (_arraySize)
-		{
-			m_lastProcessedImput = m_imputLog[0]
-			m_imputLog = []
-		}
-		#endregion
-		break;	
-	}
-	
+
 	case state.playing:
 	{
 		#region Playing code
