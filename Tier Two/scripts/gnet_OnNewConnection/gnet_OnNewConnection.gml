@@ -21,8 +21,6 @@ with (instance_create_depth(-100,-100,-100,oClient))
 }
 
 global.T1_CONNECTION_ID_LIST = fArrayAppend(global.T1_CONNECTION_ID_LIST,_connectionId)
-		
-packet_tcp_send()
 
 //reset update frequency
 oClientUpdateSpreader.alarm[0] = 0

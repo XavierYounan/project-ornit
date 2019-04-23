@@ -1,6 +1,4 @@
-if (socket == undefined) {return;}
-
-var listSize = ds_list_size(toSendList)
+var listSize = ds_list_size(to_send_list)
 
 for (var i = 0; i < listSize; i++)
 {
@@ -10,10 +8,10 @@ for (var i = 0; i < listSize; i++)
 	
 	buffer_write(buff,buffer_s8,global.TCP_INDENTIFER)
 
-	var arr =  toSendList[| i];
+	var arr =  to_send_list[| i];
 	
 	var packetType = arr[0]
-	var dataTypeArray = packetLayoutMap[? packetType]
+	var dataTypeArray = TCP_manager.packetLayoutMap[? packetType]
 	var dataTypeLength = array_length_1d(dataTypeArray)
 	
 	var information = arr[1]
@@ -38,4 +36,4 @@ for (var i = 0; i < listSize; i++)
 	buffer_delete(buff)
 }
 
-ds_list_clear(toSendList)
+ds_list_clear(to_send_list)

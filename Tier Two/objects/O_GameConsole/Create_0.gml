@@ -14,3 +14,5 @@ enum controllerState
 controllerState = controllerState.normal
 
 m_string = ""
+
+f_ConsoleAddMessage("O_GameConsole has been created")

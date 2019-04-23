@@ -1,4 +1,4 @@
-var client = argument0
+var socket = argument0
 var packetType = argument1
 var information = argument2
 
@@ -6,13 +6,13 @@ var _arr = [packetType,information]
 
 if (instance_exists(TCP_manager))
 {
-	var instance = TCP_manager.TCP_connectionsMap[? client]
-	
-	if (instance != noone)
+	var instance = TCP_manager.socket_instance_map[? socket]
+
+	if (instance != undefined)
 	{
 		with(instance)
 		{
-			ds_list_add(toSendList,_arr)	
+			ds_list_add(to_send_list,_arr)	
 		}
 	}
 	else

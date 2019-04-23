@@ -10,10 +10,7 @@ if (instance_exists(TCP_manager))
 	
 	if (instance != noone)
 	{
-		with(instance)
-		{
-			ds_list_add(toSendList,_arr)	
-		}
+		ds_list_add(instance.toSendList,_arr)	
 	}
 	else
 	{

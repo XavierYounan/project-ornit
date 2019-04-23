@@ -40,7 +40,7 @@ if (instance_exists(NetworkManager))
 
 var _managerInst = instance_create_depth(x, y, -1, NetworkManager);
 
-with (NetworkManager)
+with (_managerInst)
 {
 	priv_gnet_initialize(_maxConnections, _username);
 

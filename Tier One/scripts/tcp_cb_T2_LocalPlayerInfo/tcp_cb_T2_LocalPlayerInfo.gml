@@ -1,4 +1,8 @@
 //cb_T2_LocalPlayerInfo()
+
+
+fConsoleAddMessage("Recieved local player info")
+
 var _receivedData  = argument0;
 
 var _clientId = _receivedData[0]; //buffer_8

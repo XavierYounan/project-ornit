@@ -1,38 +1,38 @@
 {
-    "id": "bd18d813-a74d-41a0-b649-472139ad6a15",
+    "id": "2f406c28-f6f0-4d2c-a4c8-d95b5059617b",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "O_ClientManager",
+    "name": "TCP_connection",
     "eventList": [
         {
-            "id": "33a7f29e-7aaf-4b0c-a341-8c2edb703641",
+            "id": "d8b3544c-ac39-4cf6-9701-b3a6f282a1f4",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "bd18d813-a74d-41a0-b649-472139ad6a15"
+            "m_owner": "2f406c28-f6f0-4d2c-a4c8-d95b5059617b"
         },
         {
-            "id": "34f5f03f-4b91-4b7d-8139-d8b3842165c9",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 1,
-            "m_owner": "bd18d813-a74d-41a0-b649-472139ad6a15"
-        },
-        {
-            "id": "9395936a-a4f8-4c7d-b5ed-4eb6f0179e6f",
+            "id": "1858ed27-6c8f-4948-8844-62444a290b2b",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "bd18d813-a74d-41a0-b649-472139ad6a15"
+            "m_owner": "2f406c28-f6f0-4d2c-a4c8-d95b5059617b"
+        },
+        {
+            "id": "70fde94a-343e-47e4-939d-e46e4b8acef9",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 1,
+            "m_owner": "2f406c28-f6f0-4d2c-a4c8-d95b5059617b"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -49,36 +49,7 @@
     "physicsRestitution": 0.1,
     "physicsSensor": false,
     "physicsShape": 1,
-    "physicsShapePoints": [
-        {
-            "id": "57d61329-88c6-4a93-a412-5fe66edddef1",
-            "modelName": "GMPoint",
-            "mvc": "1.0",
-            "x": 0,
-            "y": 0
-        },
-        {
-            "id": "35664ba4-0ec4-41ee-8bf1-e3b82080103f",
-            "modelName": "GMPoint",
-            "mvc": "1.0",
-            "x": 32,
-            "y": 0
-        },
-        {
-            "id": "a21ec029-0863-4f1d-9ffd-88b3bffa7212",
-            "modelName": "GMPoint",
-            "mvc": "1.0",
-            "x": 32,
-            "y": 32
-        },
-        {
-            "id": "0e4bb32b-0b6d-4a40-ae05-33e8f75f6ab7",
-            "modelName": "GMPoint",
-            "mvc": "1.0",
-            "x": 0,
-            "y": 32
-        }
-    ],
+    "physicsShapePoints": null,
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,

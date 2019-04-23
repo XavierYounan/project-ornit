@@ -303,6 +303,14 @@
             }
         },
         {
+            "Key": "2f406c28-f6f0-4d2c-a4c8-d95b5059617b",
+            "Value": {
+                "id": "b2a2700a-4f30-4672-9e07-86401cd5b781",
+                "resourcePath": "objects\\TCP_connection\\TCP_connection.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "30e9ecde-97b2-485f-9820-4c5924d65269",
             "Value": {
                 "id": "0aabdc48-fcc3-43e2-b67f-e51c0095f0b1",

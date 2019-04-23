@@ -1,5 +1,4 @@
 ///@desc Init
-
 if (!assert_singleton()) return;
 
 m_GameConsole = instance_create_depth(-10,-10,-100,O_GameConsole)
@@ -24,6 +23,7 @@ result = gnet_connect(global.IP,global.PORT)
 instance_create_depth(0,0,0,TCP_manager)
 
 fConsoleAddMessage(string(result))
+
 if (result[0] == null)
 {
 	show_message(result[1]);

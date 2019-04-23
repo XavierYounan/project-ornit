@@ -1,6 +1,3 @@
-ip = undefined
-port = undefined
-
+socket = undefined
 toSendList = ds_list_create()
 
-UDP_connectionId = undefined
