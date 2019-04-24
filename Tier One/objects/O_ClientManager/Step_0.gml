@@ -2,8 +2,11 @@ switch managerState
 {
 	case SENDINGINFO:
 	{
-		packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.T1_INFO,[global.gnet_myPort,m_username,m_character])
-		fConsoleAddMessage("Sent info to server socket" + string(current_time))
+		if sent_tcp_info == false
+		{
+			packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.T1_INFO,[global.gnet_myPort,m_username,m_character])
+			sent_tcp_info = true;
+		}
 		break;
 	}
 	

@@ -53,6 +53,7 @@ switch type
 					var packetType = buffer_read(buffer,buffer_s8)
 		
 					var dataTypeArray = packetLayoutMap[? packetType]	
+					
 					var dataTypeSize = array_length_1d(dataTypeArray)
 		
 					var unpackedData = []

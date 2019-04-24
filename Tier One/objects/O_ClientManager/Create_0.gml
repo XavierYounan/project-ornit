@@ -66,13 +66,6 @@ m_username = "Big Chungus"
 
 packet_number = 0 //keeps count for sever reconsiliation
 
-//loading functions
-m_repeatTimes = 10
-m_repeatFrequency = game_get_speed(gamespeed_fps)
-m_timeLeft = m_repeatFrequency
-m_repeatLeft = m_repeatTimes
-
-
 enum UNREAD_IMPUTS
 {
 	HSP = 0,
@@ -89,3 +82,5 @@ enum LOCAL_LATEST_POSITION
 	HSP,
 	VSP,
 }
+
+sent_tcp_info = false

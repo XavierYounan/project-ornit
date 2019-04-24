@@ -32,7 +32,7 @@ for (var i = 0; i < listSize; i++)
 	}
 	
 	network_send_packet(socket,buff,buffer_tell(buff))
-	
+
 	buffer_delete(buff)
 }
 
