@@ -24,15 +24,19 @@ switch state
 		#region Send info			
 		with(oClient)
 		{
+			
 			if (other.m_ClientId = m_ClientId)
 			{				
 				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_LOCAL_PLAYER_INFO,[m_ClientId,m_character,m_username])
+				f_ConsoleAddMessage("Sent local player info!")
 			}
 			else
 			{				
 				packet_tcp_send(other.m_ClientId,TCP_PACKETS.T2_PLAYER_INFO,[m_ClientId,m_character,m_username])
-					
+				f_ConsoleAddMessage("Sent player info!")
+				
 				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_PLAYER_INFO,[other.m_ClientId,other.m_character,other.m_username])
+				f_ConsoleAddMessage("Sent player info!")
 			}
 		}
 		#endregion
@@ -57,6 +61,12 @@ switch state
 		
 		m_framesTillUpdate --;
 
+		break;
+	}
+	
+	default:
+	{
+		f_ConsoleAddMessage("I am default")
 		break;
 	}
 }

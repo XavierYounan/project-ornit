@@ -1,10 +1,11 @@
 //cb_T1_SelfPlayerInfo()
-var _receivedData  = argument0;
+var socket = argument0;
+var _receivedData  = argument1;
 
-var _clientId = _receivedData[0] //buffer_u8
-var _x = _receivedData[1]; //buffer_u32
-var _y = _receivedData[2]; //buffer_u32
+var _x = _receivedData[0]; //buffer_u32
+var _y = _receivedData[1]; //buffer_u32
 
+var _clientId = TCP_manager.UDP_connectionIdMap[? socket]
 var _client = fGetClientById(_clientId)
 
 if position_meeting(_x,_y,oRespawn)

@@ -1,10 +1,18 @@
-var _connectionId = argument0
+var socket = argument0
 var _recievedData = argument1
+var ip = argument2
 
-var _username = _recievedData[0]
-var _character = _recievedData[1]
+var port = _recievedData[4]; //buffer_u16 
+var _username = _recievedData[5] //buffer_string
+var _character = _recievedData[6] //buffer_u8
 
-var client = fGetClientById(_connectionId)
+var UDP_connectionId = gnet_get_connection_id(ip,port)
+		
+ds_map_add(TCP_manager.UDP_connectionIdMap,socket,UDP_connectionId)
+
+var client = fGetClientById(UDP_connectionId)
+
+f_ConsoleAddMessage("Recieved T1_Info")
 
 with(client)
 {
@@ -23,11 +31,8 @@ with(client)
 			hero = instance_create_depth(0,0,-100,oMagnetBoi)
 		}
 		
-		hero.clientId = _connectionId
 		hero.parentClient = client
 	
-		global.T1_CONNECTION_ID_LOADED_IN_LIST = fArrayAppend(global.T1_CONNECTION_ID_LOADED_IN_LIST,_connectionId)
-			
 		state = state.sendingInfo
 	}	
 }

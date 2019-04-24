@@ -1,6 +1,5 @@
 m_ClientId = noone;
 
-m_readyUp = false
 m_updatePing = true
 
 m_roundTripTime = 0 //Ping

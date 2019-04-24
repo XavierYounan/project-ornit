@@ -31,7 +31,7 @@ switch (state)
 								
 						if (localId != undefined)
 						{
-							packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.T1_REQUEST_RESPAWN,[localId,mouse_x,mouse_y])
+							packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.T1_REQUEST_RESPAWN,[mouse_x,mouse_y])
 							fConsoleAddMessage("Sent request respawn")
 						}	
 						else
