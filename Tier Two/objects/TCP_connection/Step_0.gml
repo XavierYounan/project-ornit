@@ -13,7 +13,7 @@ for (var i = 0; i < listSize; i++)
 	var arr =  toSendList[| i];
 	
 	var packetType = arr[0]
-	var dataTypeArray = packetLayoutMap[? packetType]
+	var dataTypeArray = TCP_manager.packetLayoutMap[? packetType]
 	var dataTypeLength = array_length_1d(dataTypeArray)
 	
 	var information = arr[1]

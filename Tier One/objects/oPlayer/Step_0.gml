@@ -2,6 +2,7 @@ switch playerState
 {
 	case PLAYER_STATE.DEAD:
 	{
+		fConsoleAddMessage("State is dead")
 		if isLocal
 		{
 			with(oCamera)
@@ -23,12 +24,13 @@ switch playerState
 	
 	case PLAYER_STATE.RECIEVING_INFO:
 	{
-		
+		fConsoleAddMessage("State is Recieving Info")
 		break;
 	}
 	
 	case PLAYER_STATE.PLAYING:
 	{
+		fConsoleAddMessage("State is Playing")
 		if isLocal
 		{
 			with oCamera

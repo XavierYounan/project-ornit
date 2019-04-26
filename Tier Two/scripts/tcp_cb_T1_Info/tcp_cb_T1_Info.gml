@@ -2,13 +2,13 @@ var socket = argument0
 var _recievedData = argument1
 var ip = argument2
 
-var port = _recievedData[4]; //buffer_u16 
-var _username = _recievedData[5] //buffer_string
-var _character = _recievedData[6] //buffer_u8
+var port = _recievedData[0]; //buffer_u16 
+var _username = _recievedData[1] //buffer_string
+var _character = _recievedData[2] //buffer_u8
 
 var UDP_connectionId = gnet_get_connection_id(ip,port)
 		
-ds_map_add(TCP_manager.UDP_connectionIdMap,socket,UDP_connectionId)
+ds_map_add(TCP_manager.UDP_connectionIdMap,UDP_connectionId,socket)
 
 var client = fGetClientById(UDP_connectionId)
 

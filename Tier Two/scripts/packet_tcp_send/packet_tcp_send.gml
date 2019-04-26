@@ -6,9 +6,10 @@ var _arr = [packetType,information]
 
 if (instance_exists(TCP_manager))
 {
-	var instance = TCP_manager.UDP_connectionIdMap[? client]
+	var socket = TCP_manager.UDP_connectionIdMap[? client]
+	var instance = TCP_manager.TCP_connectionsMap[? socket]
 	
-	if (instance != noone)
+	if (instance != undefined)
 	{
 		ds_list_add(instance.toSendList,_arr)	
 	}

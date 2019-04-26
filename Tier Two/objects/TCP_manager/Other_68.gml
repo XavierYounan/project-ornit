@@ -23,6 +23,7 @@ switch type
 	case network_type_disconnect:
 	{
 		var socket = async_load[? "socket"];
+		
 		var instance = TCP_connectionsMap[? socket]
 
 		ds_map_delete(TCP_connectionsMap,socket)
@@ -36,7 +37,7 @@ switch type
 	case network_type_data:
 	{
 		var socket = async_load[? "id"]
-
+				
 		var instance = TCP_connectionsMap[? socket]
 		
 		if (instance != undefined)
@@ -44,6 +45,8 @@ switch type
 			with(instance)
 			{
 				var buffer = async_load[? "buffer"]
+				
+				buffer_seek(buffer,buffer_seek_start,0)
 	
 				var _header = buffer_read(buffer,buffer_s8)
 				
@@ -52,7 +55,9 @@ switch type
 		
 					var packetType = buffer_read(buffer,buffer_s8)
 		
-					var dataTypeArray = packetLayoutMap[? packetType]	
+					var dataTypeArray = other.packetLayoutMap[? packetType]	
+					
+					f_ConsoleAddMessage("Packet layout is " + string(dataTypeArray))
 					
 					var dataTypeSize = array_length_1d(dataTypeArray)
 		
@@ -60,14 +65,20 @@ switch type
 		
 					for(var i = 0; i < dataTypeSize; i++)
 					{
-						unpackedData[i] = buffer_read(buffer,dataTypeSize[i])
+						unpackedData[i] = buffer_read(buffer,dataTypeArray[i])
 					}
 		
-					var callback = packetCallbackMap[? packetType]
+					var callback = other.packetCallbackMap[? packetType]
+					
+					f_ConsoleAddMessage("Callback is " + string(callback))
 					
 					var ip = async_load[? "ip"];
 					
 					script_execute(callback, socket, unpackedData,ip);
+				}
+				else
+				{
+					f_ConsoleAddMessage("Disregarded packet!, TCP_IDENTIFIER WRONG is " + string(_header))	
 				}
 			}
 		}
