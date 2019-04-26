@@ -21,7 +21,8 @@ switch state
 	
 	case state.sendingInfo:
 	{
-		#region Send info			
+		#region Send info	
+		
 		with(oClient)
 		{
 			
@@ -39,6 +40,9 @@ switch state
 				f_ConsoleAddMessage("Sent player info!")
 			}
 		}
+		
+		state = state.dead
+		
 		#endregion
 		break;
 	}	
@@ -66,7 +70,7 @@ switch state
 	
 	default:
 	{
-		f_ConsoleAddMessage("I am default")
+		f_ConsoleAddMessage("I am in default")
 		break;
 	}
 }

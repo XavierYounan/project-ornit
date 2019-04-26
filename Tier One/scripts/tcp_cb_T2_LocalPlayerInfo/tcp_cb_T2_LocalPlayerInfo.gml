@@ -12,7 +12,7 @@ var _username = _receivedData[2]; //buffer_string
 with (instance_create_depth(0,0,0,oPlayer))
 {
 	m_PlayerId = _clientId	
-	playerState = PLAYER_STATE.PLAYING
+	playerState = PLAYER_STATE.DEAD
 	isLocal = true
 	
 	switch _character

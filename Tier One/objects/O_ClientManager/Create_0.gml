@@ -46,7 +46,8 @@ m_imputPacketSent = 1 //the first imput packet is already defined by the server
 m_unreadImputs = []
 
 PLAYING = 0
-SENDINGINFO = 1
+DEAD = 1
+SENDINGINFO = 2
 ERROR = 3
 
 managerState = SENDINGINFO
