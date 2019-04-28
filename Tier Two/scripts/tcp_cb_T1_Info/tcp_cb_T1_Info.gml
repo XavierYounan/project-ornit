@@ -8,9 +8,15 @@ var _character = _recievedData[2] //buffer_u8
 
 var UDP_connectionId = gnet_get_connection_id(ip,port)
 		
-ds_map_add(TCP_manager.UDP_connectionIdMap,UDP_connectionId,socket)
+ds_map_add(TCP_manager.UDP_connectionIdMap,socket,UDP_connectionId)
+ds_map_add(TCP_manager.TCP_socketMap,UDP_connectionId,socket)
 
 var client = fGetClientById(UDP_connectionId)
+
+if (client == null)
+{
+	f_ConsoleAddMessage("Dropping T1 Info client does not exist!")	
+}
 
 f_ConsoleAddMessage("Recieved T1_Info")
 

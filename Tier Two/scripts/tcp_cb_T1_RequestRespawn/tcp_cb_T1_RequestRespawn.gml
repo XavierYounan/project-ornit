@@ -8,7 +8,9 @@ var _y = _receivedData[1]; //buffer_u32
 var _clientId = TCP_manager.UDP_connectionIdMap[? socket]
 var _client = fGetClientById(_clientId)
 
-if(_client == undefined)
+f_ConsoleAddMessage("Recieved Respawn request")
+
+if(_client == null)
 {
 	f_ConsoleAddMessage("Recieved a respawn request for an undefined client")	
 	return;
@@ -47,4 +49,6 @@ with(_client)
 	{
 		packet_tcp_send(list[i],TCP_PACKETS.T2_STATE_UPDATE,[_clientId,t1state_PLAYING])
 	}	
+	
+	f_ConsoleAddMessage("Completed the respawn request")
 }

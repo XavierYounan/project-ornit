@@ -57,8 +57,6 @@ switch type
 		
 					var dataTypeArray = other.packetLayoutMap[? packetType]	
 					
-					f_ConsoleAddMessage("Packet layout is " + string(dataTypeArray))
-					
 					var dataTypeSize = array_length_1d(dataTypeArray)
 		
 					var unpackedData = []
@@ -69,8 +67,6 @@ switch type
 					}
 		
 					var callback = other.packetCallbackMap[? packetType]
-					
-					f_ConsoleAddMessage("Callback is " + string(callback))
 					
 					var ip = async_load[? "ip"];
 					

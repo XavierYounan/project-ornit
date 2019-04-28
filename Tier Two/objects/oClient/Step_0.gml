@@ -2,6 +2,7 @@ switch state
 {
 	case state.dead:
 	{
+		f_ConsoleAddMessage("Dead")
 		#region Dead code		
 		var list = global.T1_CONNECTION_ID_LIST
 		var _arrSize = array_length_1d(list)
@@ -14,6 +15,7 @@ switch state
 	}
 	case state.waitingForInfo:
 	{
+		f_ConsoleAddMessage("Recieving info")
 		//do nothing just wait untill recieve info then state will be set to sending
 
 		break;
@@ -21,6 +23,7 @@ switch state
 	
 	case state.sendingInfo:
 	{
+		f_ConsoleAddMessage("sending info")
 		#region Send info	
 		
 		with(oClient)
@@ -49,6 +52,7 @@ switch state
 		
 	case state.playing:
 	{		
+		f_ConsoleAddMessage("Dead")
 		if (m_framesTillUpdate <= 0)
 		{
 			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION, x, y, m_ClientId, hero.itemList[NINJA_ITEMS.GUN].image_angle)
