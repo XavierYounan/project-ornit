@@ -1,6 +1,6 @@
 /// cb_T2_Positions()
 //@desc T2 sends positional informtion for player
-var _connectionId  = argument0;
+var _connectionId = argument0;
 var _receivedData  = argument1;
 
 var _x = _receivedData[0]; //buffer_s32
@@ -11,6 +11,8 @@ var _gunDir = _receivedData[3] //buffer_u16
 
 //Use connection id to find player
 var _client = fGetClientById(_player)
+
+fConsoleAddMessage("Recieved player positions other ")
 
 //if doesnt exist create a new player TODO: when player connect should be created
 if (_client == noone)
