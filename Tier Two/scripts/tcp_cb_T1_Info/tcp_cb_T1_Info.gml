@@ -30,6 +30,7 @@ with(client)
 		if(m_character = CHOSEN_CHARACTER.NINJA)
 		{
 			hero = instance_create_depth(0,0,-100,oNinja)
+			
 		}
 	
 		if(m_character = CHOSEN_CHARACTER.MAGNET_BOI)
@@ -38,6 +39,7 @@ with(client)
 		}
 		
 		hero.parentClient = client
+		hero.parentId = id
 	
 		state = state.sendingInfo
 	}	

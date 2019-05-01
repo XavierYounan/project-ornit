@@ -81,10 +81,6 @@ switch(serverState)
 					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,other.m_ClientId,x,y,direction)
 					gnet_packet_send_to_list(buff,global.T1_CONNECTION_ID_LOADED_IN_LIST)
 				}
-				
-				//set frame to processed
-				var arr = [_currentImput[IMPUTLIST.HORISONTAL_KEYS], _currentImput[IMPUTLIST.VERTICAL_KEYS],_currentImput[IMPUTLIST.PACKET_NUMBER],_currentImput[IMPUTLIST.MOUSE_X],_currentImput[IMPUTLIST.MOUSE_Y],_currentImput[IMPUTLIST.MOUSE_LEFT_CLICKED],true,_currentImput[IMPUTLIST.DELTA_TIME]]
-				m_imputLog[i] = arr
 			}
 			#endregion
 			#endregion
@@ -92,15 +88,15 @@ switch(serverState)
 				
 		if (hp <= 0)
 		{
-			state = state.dead
+			parentClient.state = state.dead
 		}
 		
 		#region //clear imput log
 		
 		if (_arraySize > 0)
-		{
-		m_lastProcessedImput = m_imputLog[0]
-		m_imputLog = []
+		{	
+			parentId.m_lastProcessedImput = m_imputLog[0]
+			m_imputLog = []
 		}
 		
 		#endregion

@@ -6,7 +6,6 @@ var _receivedData  = argument1;
 var _hMove = _receivedData[0]; //buffer_s8
 var _vMove = _receivedData[1]; //buffer_s8
 var _packetNumber = _receivedData[2] //buffer_u64 packet number
-f_ConsoleAddMessage("Recieved imputs, packet number: " + string(_packetNumber))
 var _mouseX = _receivedData[3] //buffer_u16
 var _mouseY = _receivedData[4] //buffer_u16
 var _mouseLeftClicked = _receivedData[5] //buffer_bool

@@ -26,8 +26,8 @@ if !position_meeting(_x,_y,oRespawn)
 with(_client)
 {
 	hp = 100
-	x  = _x 
-	y = _y
+	hero.x  = _x 
+	hero.y = _y
 	m_imputLog = []
 		
 	middleRoom = [room_width/2,room_height/2]
