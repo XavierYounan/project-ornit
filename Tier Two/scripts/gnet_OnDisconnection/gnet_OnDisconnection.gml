@@ -15,9 +15,12 @@ if (instance_exists(oT3))
 		global.T1_CONNECTION_ID_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LIST,_connectionId)
 		global.T1_CONNECTION_ID_LOADED_IN_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LOADED_IN_LIST,_connectionId)
 		
-		var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_PLAYER_DISCONNECT,_connectionId)
-		gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
-
+		var list = global.T1_CONNECTION_ID_LIST
+		var _arrSize = array_length_1d(list)
+		for(var i = 0; i < _arrSize; i++)
+		{
+			packet_tcp_send(list[i],TCP_PACKETS.T2_PLAYER_DISCONNECT,[_connectionId])
+		}
 	}
 }
 else
@@ -26,8 +29,12 @@ else
 	global.T1_CONNECTION_ID_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LIST,_connectionId)
 	global.T1_CONNECTION_ID_LOADED_IN_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LOADED_IN_LIST,_connectionId)
 	
-	var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_PLAYER_DISCONNECT,_connectionId)
-	gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
+	var list = global.T1_CONNECTION_ID_LIST
+	var _arrSize = array_length_1d(list)
+	for(var i = 0; i < _arrSize; i++)
+	{
+		packet_tcp_send(list[i],TCP_PACKETS.T2_PLAYER_DISCONNECT,[_connectionId])
+	}
 }
 
 var disconnectedClient = fGetClientById(_connectionId)

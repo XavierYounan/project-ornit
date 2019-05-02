@@ -10,20 +10,33 @@ switch (state)
 				{
 					if (mouse_check_button_released(mb_left))
 					{
-						buttonState = BUTTON_STATE.NOTHING						
-						if (instance_exists(oT2))
+						buttonState = BUTTON_STATE.NOTHING	
+			
+						var localId = undefined
+								
+						fConsoleAddMessage("There are " + string(instance_number(TCP_connection)) + " many instances")
+								
+						with(oPlayer)
 						{
-							var _T2Id = oT2.m_connectionId
-
-							if (_T2Id = noone)
+							if isLocal
 							{
-								show_error("Could not send message to T2, connection id not defined",true)	
+								localId = m_PlayerId
+								fConsoleAddMessage("local")
 							}
 							else
 							{
-								var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_REQUEST_RESPAWN,mouse_x,mouse_y)
-								gnet_packet_send_to_id(_packet,_T2Id)
+								fConsoleAddMessage("Not Local")	
 							}
+						}
+								
+						if (localId != undefined)
+						{
+							packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.T1_REQUEST_RESPAWN,[mouse_x,mouse_y])
+							fConsoleAddMessage("Sent request respawn")
+						}	
+						else
+						{
+							fConsoleAddMessage("Local id is undefined")	
 						}
 					}
 					

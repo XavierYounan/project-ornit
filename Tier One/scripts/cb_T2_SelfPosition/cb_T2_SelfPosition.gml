@@ -12,7 +12,6 @@ var _vsp = _receivedData[5] //buffer_s16
 
 var _client = fGetClientById(_clientId)
 
-
 //if doesnt exist create a new player TODO: when player connect should be created
 if (_client == noone)
 {
@@ -24,19 +23,31 @@ with (_client)
 {
 	if (isLocal)
 	{
-		if (_lastRecievedPacket > latest_acknowleged_packet[2]) //make sure most recent server update
+		with(hero)
 		{
-			latest_acknowleged_packet = [_x,_y,_hsp,_vsp] //update most recent position knowledge	
+			if (_lastRecievedPacket > latest_acknowleged_packet[2]) //make sure most recent server update
+			{
+				latest_acknowleged_packet = [_x,_y,_hsp,_vsp] //update most recent position knowledge	
 		
-			O_ClientManager.m_unreadImputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadImputs,2,_lastRecievedPacket) //cull unread imput array
+				O_ClientManager.m_unreadImputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadImputs,2,_lastRecievedPacket) //cull unread imput array
+				return;
+			}
+			else
+			{
+				var str = string_build	(	"Last ack packet was {} recieved packet was {}, DROPPED",
+											latest_acknowleged_packet[2],
+											_lastRecievedPacket
+										)				
+				console_log_dropped_packet("cb_T2_SelfPosition",_connectionId,_receivedData,str)
+				fConsoleAddMessage("Not the last recieved packet " + string(_lastRecievedPacket) + ":" + string(latest_acknowleged_packet[2]))
+				return;
+			}
 		}
-		else
-		{
-			var str = string_build	(	"Last ack packet was {} recieved packet was {}, DROPPED",
-										latest_acknowleged_packet[2],
-										_lastRecievedPacket
-									)				
-			console_log_dropped_packet("cb_T2_SelfPosition",_connectionId,_receivedData,str)	
-		}
+		fConsoleAddMessage("Couldnt find hero")
+	}
+	else
+	{
+		fConsoleAddMessage("Not Local")	
 	}
 }
+

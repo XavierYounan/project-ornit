@@ -1,43 +1,25 @@
-PLAYING = 0
-DEAD = 1
-RECIEVINGINFO = 2
-READYUP = 3
+enum PLAYER_STATE
+{
+	PLAYING,
+	DEAD,
+	RECIEVING_INFO,
+}
+
+playerState = PLAYER_STATE.RECIEVING_INFO
 
 
-NULL = 0
-NINJA = 1
-GUNNER = 2
+enum CHARACTER_LIST
+{
+	NULL,
+	NINJA,
+	GUNNER
+}
 
-playerState = RECIEVINGINFO
+m_character = CHARACTER_LIST.NULL
+
 
 m_username = ""
-m_character = NULL
+hero = undefined
 
-//define character
-CHARACTER = 0
-
-//NINJA ITEMS
-NINJAGUN = 1
-
-itemList[CHARACTER] = undefined
 
 isLocal = false;
-
-m_coordinateArray = []
-
-vMove = 0
-
-hsp = 0;
-vsp = 0;
-
-grv = 24;
-
-walksp = 240;
-jump_speed = 15;
-hasControl = true;
-
-hp = 100;
-bulletDamage = 5;
-
-showingHitbox = false
-

@@ -21,3 +21,4 @@ if (variable_global_exists("gnet_mySocket"))
 
 
 gnet_OnNetworkShutdown();
+

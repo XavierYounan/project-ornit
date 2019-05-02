@@ -9,9 +9,10 @@ else
 {
 	hitDelay--	
 }	
-_colInst = instance_place(x,y,oClient)
 
-if (_colInst != noone) && (_colInst.m_ClientId != creator) 
+_colInst = instance_place(x,y,oNinja)
+
+if (_colInst != noone) && (_colInst.parentClientId != creator) 
 {
 	with (_colInst)
 	{

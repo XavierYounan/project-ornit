@@ -1,12 +1,11 @@
 ///@desc Init
-
 if (!assert_singleton()) return;
 
 m_GameConsole = instance_create_depth(-10,-10,-100,O_GameConsole)
 
-MAX_PLAYERS = 1;
+global.MAX_PLAYERS = 2;
 
-var result = gnet_start_network(MAX_PLAYERS,PROTOCOL_ID,-1, "Client")
+var result = gnet_start_network(global.MAX_PLAYERS,PROTOCOL_ID,-1, "Client")
 
 if (!result)
 {
@@ -20,7 +19,11 @@ else
 }
 
 result = gnet_connect(global.IP,global.PORT) 
+
+instance_create_depth(0,0,0,TCP_manager)
+
 fConsoleAddMessage(string(result))
+
 if (result[0] == null)
 {
 	show_message(result[1]);
@@ -43,29 +46,26 @@ m_imputPacketSent = 1 //the first imput packet is already defined by the server
 m_unreadImputs = []
 
 PLAYING = 0
-SENDINGINFO = 1
+DEAD = 1
+SENDINGINFO = 2
 ERROR = 3
 
 managerState = SENDINGINFO
 
-NULL = 0
-NINJA = 1
-GUNNER = 2
+enum CHARACTER
+{
+	NULL,
+	NINJA,
+	MAGNET_BOI
+}
 
-m_character = GUNNER
+m_character = CHARACTER.NINJA
 
 m_gunAngle = 0
 
 m_username = "Big Chungus"
 
 packet_number = 0 //keeps count for sever reconsiliation
-
-//loading functions
-m_repeatTimes = 10
-m_repeatFrequency = game_get_speed(gamespeed_fps)
-m_timeLeft = m_repeatFrequency
-m_repeatLeft = m_repeatTimes
-
 
 enum UNREAD_IMPUTS
 {
@@ -83,3 +83,5 @@ enum LOCAL_LATEST_POSITION
 	HSP,
 	VSP,
 }
+
+sent_tcp_info = false

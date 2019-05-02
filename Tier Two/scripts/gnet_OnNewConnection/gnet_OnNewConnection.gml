@@ -15,7 +15,7 @@ var _connectionId = argument0;
 
 f_ConsoleAddMessage("New client has connected : " + string(_connectionId))
 
-with (instance_create_depth(-100,-100,-100,oClient))
+with (instance_create_depth(0,0,0,oClient))
 {
 	m_ClientId = _connectionId;	
 }

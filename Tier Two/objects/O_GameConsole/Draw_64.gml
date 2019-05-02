@@ -10,7 +10,8 @@ switch controllerState
 		draw_set_colour(c_white)
 		for (var i = _listSize - 1; i > -1; i--)
 		{
-			draw_set_alpha(1 - ((_listSize - i - 1)/m_maxMessages))
+			//just want alpha to be one for now
+			//draw_set_alpha(1 - ((_listSize - i - 1)/m_maxMessages))
 			draw_text(10, _yAnchor - ((_listSize - i) * _spacing), m_messageList[| i]);
 		}
 		draw_set_alpha(1)

@@ -5,7 +5,7 @@
 
 var array = [argument0,argument1,argument2]
 
-with(oDebug)
+with(DebugHud)
 {
 	
 	ds_list_add(droppedPacketsList,array);
