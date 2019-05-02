@@ -42,7 +42,6 @@ else
 				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]
 				break;	
 			}
-		}
-		 
+		}		 
 	}
 }

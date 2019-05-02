@@ -12,7 +12,7 @@ else
 
 _colInst = instance_place(x,y,oNinja)
 
-if (_colInst != noone) && (_colInst.m_ClientId != creator) 
+if (_colInst != noone) && (_colInst.parentClientId != creator) 
 {
 	with (_colInst)
 	{

@@ -1,4 +1,4 @@
-serverState = parentClient.state
+serverState = parentId.state
 
 switch(serverState)
 {
@@ -76,9 +76,9 @@ switch(serverState)
 				{
 					direction = other.itemList[NINJA_ITEMS.GUN].image_angle	
 					image_angle = direction - 90
-					creator = other.m_ClientId 
+					creator = other.parentClientId
 					
-					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,other.m_ClientId,x,y,direction)
+					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,other.parentClientId,x,y,direction)
 					gnet_packet_send_to_list(buff,global.T1_CONNECTION_ID_LOADED_IN_LIST)
 				}
 			}
@@ -88,7 +88,7 @@ switch(serverState)
 				
 		if (hp <= 0)
 		{
-			parentClient.state = state.dead
+			parentId.state = state.dead
 		}
 		
 		#region //clear imput log
