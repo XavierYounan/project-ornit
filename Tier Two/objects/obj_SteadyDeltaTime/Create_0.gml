@@ -97,7 +97,7 @@ scale = 1.0; // Default: 1.0 -- Set higher to increase speed and lower to decrea
 // DON'T TOUCH //
 //***************
 // Internal calculated delta time
-dt = delta_time/1000000;
+dt = delta_time;
 // Previous value of internal delta time
 dtPrevious = dt;
 // Whether or not internal delta time has been restored to previous value

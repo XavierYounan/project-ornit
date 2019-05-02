@@ -7,32 +7,27 @@ switch(serverState)
 	{
 		#region Playing code
 		
+		vsp += grv * global.dt_unsteady / ONE_MILLION;	
+		
+		#region Loop through and apply imputs
 		var _arraySize = array_length_1d(m_imputLog)
-			
+		
 		for (var i = _arraySize - 1; i >= 0; i--)
 		{
-			#region Loop through all unprocessed imputs etc
 			var _currentImput = m_imputLog[i];
 		
 			var _deltaTime = _currentImput[IMPUTLIST.DELTA_TIME]
-		
-			#region //apply imputs and gravity
 	
 			hsp = _currentImput[IMPUTLIST.HORISONTAL_KEYS] * walksp * _deltaTime / ONE_MILLION;
 		
 			vMove = _currentImput[IMPUTLIST.VERTICAL_KEYS];
 		
-			vsp += grv * _deltaTime / ONE_MILLION;
-			
 			//Jump
 			if (place_meeting(x,y+1,oWall)) && (vMove = 1)
 			{
 				vsp = -jump_speed	
 			}
-
-			#endregion
 			
-			#region //Collisions
 			//Horisontal collision
 			if (place_meeting(x+hsp,y,oWall))
 			{
@@ -55,9 +50,6 @@ switch(serverState)
 			}
 			y += vsp;
 			
-			#endregion
-		
-			#region //Gun code (will be changed to single processed events such as sound etc.
 			with (itemList[NINJA_ITEMS.GUN])
 			{
 				x = other.x;
@@ -82,10 +74,32 @@ switch(serverState)
 					gnet_packet_send_to_list(buff,global.T1_CONNECTION_ID_LOADED_IN_LIST)
 				}
 			}
-			#endregion
-			#endregion
 		}
-				
+		
+		#endregion
+							
+		//Horisontal collision
+		if (place_meeting(x+hsp,y,oWall))
+		{
+			while (!place_meeting(x+sign(hsp),y,oWall))
+			{
+				x += sign(hsp);	
+			}
+			hsp = 0;
+		}
+		x += hsp;
+
+		//Vertical collision
+		if (place_meeting(x,y+vsp,oWall))
+		{
+			while (!place_meeting(x,y+sign(vsp),oWall))
+			{
+				y += sign(vsp);	
+			}
+			vsp = 0;
+		}
+		y += vsp;
+			
 		if (hp <= 0)
 		{
 			parentId.state = state.dead
