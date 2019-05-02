@@ -103,6 +103,14 @@
             }
         },
         {
+            "Key": "0fc8afe3-5442-46c4-b3f3-9b010d5d6202",
+            "Value": {
+                "id": "78926e2b-51b4-44bc-8090-74ff188307ba",
+                "resourcePath": "objects\\obj_SteadyDeltaTime\\obj_SteadyDeltaTime.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0fd67fd1-2a26-42d9-881e-66ef7185c69b",
             "Value": {
                 "id": "ab390382-aeae-4f66-ac42-76c6baf0cdd5",
@@ -812,6 +820,14 @@
                 "id": "e8fe8306-0173-4854-a818-8ce29d057ef2",
                 "resourcePath": "scripts\\gnet_get_username\\gnet_get_username.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "79ccc0bd-b92a-4fc3-8a0f-12a3a90044f5",
+            "Value": {
+                "id": "90746b10-fb91-4d13-a871-2cc07765dbc7",
+                "resourcePath": "views\\79ccc0bd-b92a-4fc3-8a0f-12a3a90044f5.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
