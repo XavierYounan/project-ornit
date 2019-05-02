@@ -41,6 +41,13 @@ switch managerState
 				packet_number ++
 				m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
 				m_unreadImputs[0] = [_hsp,_vsp,packet_number,_gunAngle,deltaTime];
+				
+				
+				with(global.predictionTest)
+				{
+					m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
+					m_unreadImputs[0] = [_hsp,_vsp,other.packet_number,_gunAngle,deltaTime];	
+				}
 			}
 		}
 		else

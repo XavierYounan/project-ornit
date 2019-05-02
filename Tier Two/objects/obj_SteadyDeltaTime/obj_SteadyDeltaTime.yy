@@ -1,28 +1,28 @@
 {
-    "id": "33cd29b6-3ec8-43b6-aa0e-78124b019fd4",
+    "id": "0fc8afe3-5442-46c4-b3f3-9b010d5d6202",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oLagger",
+    "name": "obj_SteadyDeltaTime",
     "eventList": [
         {
-            "id": "64aacbc6-0b21-4f7a-8c88-b6ae91f5a34c",
+            "id": "12f53025-81d6-488e-a7cb-a6eef92ffd97",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "33cd29b6-3ec8-43b6-aa0e-78124b019fd4"
+            "m_owner": "0fc8afe3-5442-46c4-b3f3-9b010d5d6202"
         },
         {
-            "id": "d497debe-7ee9-4e94-8631-f8b301b4f9a9",
+            "id": "cc89dbed-0662-4b08-a596-92cd64179b85",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 1,
             "eventtype": 3,
-            "m_owner": "33cd29b6-3ec8-43b6-aa0e-78124b019fd4"
+            "m_owner": "0fc8afe3-5442-46c4-b3f3-9b010d5d6202"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -38,8 +38,10 @@
     "physicsObject": false,
     "physicsRestitution": 0.1,
     "physicsSensor": false,
-    "physicsShape": 1,
-    "physicsShapePoints": null,
+    "physicsShape": 0,
+    "physicsShapePoints": [
+        
+    ],
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,

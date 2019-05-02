@@ -303,6 +303,14 @@
             }
         },
         {
+            "Key": "2d33d2b9-7f97-49bf-96ef-eea4a2697dea",
+            "Value": {
+                "id": "2a16f4ed-b118-4ec1-a2db-bfd12abee896",
+                "resourcePath": "sprites\\sPredictionTest\\sPredictionTest.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2f406c28-f6f0-4d2c-a4c8-d95b5059617b",
             "Value": {
                 "id": "b2a2700a-4f30-4672-9e07-86401cd5b781",
@@ -427,6 +435,14 @@
             "Value": {
                 "id": "f3316cc2-37e8-428d-85a4-7405cbdfbc78",
                 "resourcePath": "scripts\\gnet_packet_layouts\\gnet_packet_layouts.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "44680d49-eed2-4afc-9678-7de190990142",
+            "Value": {
+                "id": "d2dd75a5-cfa3-4172-ba0d-68e79f9f43f2",
+                "resourcePath": "scripts\\one_mil\\one_mil.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1071,6 +1087,14 @@
             }
         },
         {
+            "Key": "aede6a3f-7194-409c-a6ba-bb21cdff53c9",
+            "Value": {
+                "id": "bc48a2db-fc90-4fa4-b875-d35a48ade14b",
+                "resourcePath": "objects\\oPredictionTest\\oPredictionTest.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "af3233a4-429c-4a64-9441-36b6b801e535",
             "Value": {
                 "id": "8f49aad0-9cf9-4db3-b1b0-298c2f6abdd6",
@@ -1598,6 +1622,7 @@
         "dc041280-73ee-4122-93f1-b05b8dc6a7b4",
         "68058913-0ffc-4cae-9bc0-0e02a4bb64a9",
         "38492690-c498-4f68-badb-215b04c4aa61",
+        "44680d49-eed2-4afc-9678-7de190990142",
         "42063247-ae34-41bb-a0bd-359138d157ef",
         "5614828e-171b-41af-82b0-21175a9e8c29",
         "064a6fad-5cf2-4dc8-ac47-24ccffce2f4e",

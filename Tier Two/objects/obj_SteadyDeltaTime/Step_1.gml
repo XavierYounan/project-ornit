@@ -3,18 +3,16 @@
 // Store previous internal delta time
 dtPrevious = dt;
 // Update internal delta time
-dt = delta_time;
-
-
+dt = delta_time/1000000;
 // Set raw unsteady delta time affected by time scale
 global.dt_unsteady = dt*scale;
 
 // Prevent delta time from exhibiting sporadic behaviour
-if (dt > (1/minFPS) * 1000000)
+if (dt > 1/minFPS)
 {
     if (dtRestored) 
     { 
-        dt = 1/minFPS * 1000000; 
+        dt = 1/minFPS; 
     } 
     else 
     { 
@@ -26,9 +24,6 @@ else
 {
     dtRestored = false;
 }
-
-
-dt = clamp(dt,0,4294967295) //for sending packet across the internet
 
 // Assign internal delta time to global delta time affected by the time scale
 global.dt_steady = dt*scale;

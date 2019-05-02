@@ -6,7 +6,8 @@
     "children": [
         "51a93b63-e3b9-4b7f-94b4-5d845124faf0",
         "8e639800-5a2c-439b-b85f-1781cd4a133f",
-        "7d8d18f1-ec5d-4fe2-b7da-669e5237958b"
+        "7d8d18f1-ec5d-4fe2-b7da-669e5237958b",
+        "aede6a3f-7194-409c-a6ba-bb21cdff53c9"
     ],
     "filterType": "GMObject",
     "folderName": "Ninja",

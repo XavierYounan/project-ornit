@@ -31,13 +31,12 @@ enum PACKET_IDENTIFIER
 
 }
 
-gnet_packet_layout_create(PACKET_IDENTIFIER.T1_KEYS,cb_T1_Imputs,buffer_s8,buffer_s8,buffer_u64,buffer_u16,buffer_u16,buffer_bool,buffer_f32)
+gnet_packet_layout_create(PACKET_IDENTIFIER.T1_KEYS,cb_T1_Imputs,buffer_s8,buffer_s8,buffer_u64,buffer_u16,buffer_u16,buffer_bool,buffer_u32)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_OTHER_POSITION,cb_T2_OtherPosition,buffer_s32,buffer_s32,buffer_u8,buffer_u16)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SELF_POSITION,cb_T2_SelfPosition,buffer_s32,buffer_s32,buffer_u8,buffer_u64,buffer_s16,buffer_s16)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SEND_TIME,cb_T2_Time,buffer_u64)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_CREATE_BULLET,cb_T2_CreateBullet,buffer_u8,buffer_s32,buffer_s32,buffer_u16)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_HEALTH_UPDATE,cb_T2_HealthUpdate,buffer_u8,buffer_u8) 
-
 
 
 enum MAJOR_PACKET_IDENTIFIERS
