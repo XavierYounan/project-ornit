@@ -12,6 +12,9 @@ switch playerState
 	
 			var _x = latest_acknowleged_packet[LOCAL_LATEST_POSITION.X];
 			var _y = latest_acknowleged_packet[LOCAL_LATEST_POSITION.Y];
+			
+			global.predictionTest.serverPos = [_x,_y]
+			
 			var _hsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.HSP];
 			var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];			
 	
@@ -24,11 +27,11 @@ switch playerState
 		
 					var _deltaTime = _currentImput[UNREAD_IMPUTS.DELTA_TIME]
 		
-					_hsp = _currentImput[UNREAD_IMPUTS.HSP] * walksp * _deltaTime;
+					_hsp = _currentImput[UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
 		
 					vMove = _currentImput[UNREAD_IMPUTS.VSP];
 		
-					_vsp += grv * _deltaTime;
+					_vsp += grv * _deltaTime / ONE_MILLION;
 
 					//Jump
 					if (place_meeting(_x,_y+1,oWall)) && (vMove = 1)

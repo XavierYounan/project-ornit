@@ -40,9 +40,6 @@ with (timeManager)
 		show_error("There should only ever be one time manager created", true)	
 	}
 }
-
-m_imputPacketSent = 1 //the first imput packet is already defined by the server 
-
 m_unreadImputs = []
 
 PLAYING = 0
@@ -85,3 +82,5 @@ enum LOCAL_LATEST_POSITION
 }
 
 sent_tcp_info = false
+
+global.predictionTest = instance_create_depth(0,0,-200,oPredictionTest)

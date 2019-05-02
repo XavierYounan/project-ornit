@@ -18,11 +18,11 @@ switch(serverState)
 		
 			#region //apply imputs and gravity
 	
-			hsp = _currentImput[IMPUTLIST.HORISONTAL_KEYS] * walksp * _deltaTime;
+			hsp = _currentImput[IMPUTLIST.HORISONTAL_KEYS] * walksp * _deltaTime / ONE_MILLION;
 		
 			vMove = _currentImput[IMPUTLIST.VERTICAL_KEYS];
 		
-			vsp += grv * _deltaTime;
+			vsp += grv * _deltaTime / ONE_MILLION;
 			
 			//Jump
 			if (place_meeting(x,y+1,oWall)) && (vMove = 1)
