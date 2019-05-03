@@ -102,3 +102,11 @@ dt = delta_time;
 dtPrevious = dt;
 // Whether or not internal delta time has been restored to previous value
 dtRestored = false;
+
+global.dtCounter = [0,0]
+
+enum deltaCounter
+{
+	server,
+	client
+}

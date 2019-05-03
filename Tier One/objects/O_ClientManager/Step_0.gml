@@ -34,7 +34,13 @@ switch managerState
 			else
 			{
 				var _gunAngle = round(m_gunAngle)
-				var deltaTime = global.dt_steady
+				var deltaTime = global.dt_unsteady
+				var dt = clamp(deltaTime,0,4294967295)
+				
+				if (dt != deltaTime)
+				{
+					fConsoleAddMessage("clamped:not clamped " + string(dt) + ":" + string(deltaTime))	
+				}
 				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);
 				gnet_packet_send_to_id(_packet,_T2Id);
 				
@@ -48,6 +54,8 @@ switch managerState
 					m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
 					m_unreadImputs[0] = [_hsp,_vsp,other.packet_number,_gunAngle,deltaTime];	
 				}
+				
+				return;
 			}
 		}
 		else
@@ -61,3 +69,4 @@ switch managerState
 	
 }
 
+fConsoleAddMessage("Didnt send imputs")
