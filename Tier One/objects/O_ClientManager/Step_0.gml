@@ -45,8 +45,8 @@ switch managerState
 				gnet_packet_send_to_id(_packet,_T2Id);
 				
 				var file;
-				file = file_text_open_write(working_directory + "deltaTimes.txt");
-				file_text_write_string(file,string(current_time) + ": Sent delta time: " + string(deltaTime));
+				file = file_text_open_append(working_directory + "deltaTimes.txt");
+				file_text_write_string(file,string(current_time) + ": Sent delta time: " + string(deltaTime) + " \r\n\r\n");
 				file_text_close(file);
 				
 				packet_number ++
