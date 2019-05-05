@@ -34,3 +34,10 @@ var _server = global.dtCounter[deltaCounter.server] / ONE_MILLION
 var _client = global.dtCounter[deltaCounter.client] / ONE_MILLION
 
 f_ConsoleAddMessage("serverDeltaTime:ClientDeltaTime " + string(_server) + ":" + string(_client))
+
+
+var file;
+file = file_text_open_write(working_directory + "deltaTimes.txt");
+file_text_write_string(file,string(current_time) + " New frame, delta time : " +string(global.dt_unsteady) + "/n/r/n/r");
+file_text_write_string(file,string(current_time) + " dt Counter: serverDeltaTime:ClientDeltaTime " + string(_server) + ":" + string(_client) + "/n/r/n/r");
+file_text_close(file);

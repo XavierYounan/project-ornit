@@ -45,3 +45,8 @@ else
 		}		 
 	}
 }
+
+var file;
+file = file_text_open_write(working_directory + "deltaTimes");
+file_text_write_string(file, string(current_time) + ": recieved a delta from T1: " + string(_deltaTime) + "/r/n/r/n");
+file_text_close(file);
