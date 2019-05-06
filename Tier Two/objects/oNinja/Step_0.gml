@@ -78,8 +78,8 @@ switch(serverState)
 					image_angle = direction - 90
 					creator = other.parentClientId
 					
-					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,other.parentClientId,x,y,direction)
-					gnet_packet_send_to_list(buff,global.T1_CONNECTION_ID_LOADED_IN_LIST)
+					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,creator,x,y,direction)
+					gnet_packet_send_to_list(buff,global.T1_CONNECTION_ID_LIST)
 				}
 			}
 		}
