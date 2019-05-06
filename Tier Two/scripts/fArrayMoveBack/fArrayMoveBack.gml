@@ -19,8 +19,4 @@ if( _arrayLength != 0)
 	
 }
 
-
 return (_newArray)
-
-
-

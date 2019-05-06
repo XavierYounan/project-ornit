@@ -39,28 +39,42 @@ else
 		{
 			case CHOSEN_CHARACTER.NINJA:
 			{
+				var _arrayLength = array_length_1d(hero.m_imputLog)
 				
-				var file;
-				file = file_text_open_append(working_directory + "fArrayMoveBack.txt");
-				file_text_write_string(file,"array was " + string(hero.m_imputLog));
-
-				if (array_length_1d(hero.m_imputLog) != 0)
+				if (_arrayLength != 0)
 				{
-					hero.m_imputLog = fArrayMoveBack(m_imputLog,1)
+					var _newArray = []
+					
+					var moveBackAmount = 1
+					
+					for( var i = _arrayLength + moveBackAmount - 1; i >= moveBackAmount; i --)
+					{
+						_newArray[i] = hero.m_imputLog[i - moveBackAmount]	
+					}
+					hero.m_imputLog = _newArray
 				}
-				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]
-				
-				file_text_write_string(file," new array is " + string(hero.m_imputLog) + "\n\r");
-				file_text_close(file);
-				
+				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]				
 				break;	
 			}
 			
 			case CHOSEN_CHARACTER.MAGNET_BOI:
 			{
-				hero.m_imputLog = fArrayMoveBack(m_imputLog,1)
-				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]
-				break;	
+				var _arrayLength = array_length_1d(hero.m_imputLog)
+				
+				if (_arrayLength != 0)
+				{
+					var _newArray = []
+					
+					var moveBackAmount = 1
+					
+					for( var i = _arrayLength + moveBackAmount - 1; i >= moveBackAmount; i --)
+					{
+						_newArray[i] = hero.m_imputLog[i - moveBackAmount]	
+					}
+					hero.m_imputLog = _newArray
+				}
+				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]				
+				break;		
 			}
 		}		 
 	}
