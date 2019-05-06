@@ -46,9 +46,9 @@ switch managerState
 				
 				var file;
 				file = file_text_open_append(working_directory + "deltaTimes.txt");
-				file_text_write_string(file,string(current_time) + ": Sent delta time: " + string(deltaTime) + " \r\n\r\n");
+				file_text_write_string(file,string(current_hour) + ":" + string(current_minute) + ":" + string(current_second) + ": Sent delta time: " + string(deltaTime) + " \r\n\r\n");
 				file_text_close(file);
-				
+
 				packet_number ++
 				m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
 				m_unreadImputs[0] = [_hsp,_vsp,packet_number,_gunAngle,deltaTime];

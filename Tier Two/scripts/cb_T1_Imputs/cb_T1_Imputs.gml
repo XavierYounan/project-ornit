@@ -11,6 +11,12 @@ var _mouseY = _receivedData[4] //buffer_u16
 var _mouseLeftClicked = _receivedData[5] //buffer_bool
 var _deltaTime = _receivedData[6] //buffer_f16
 
+var file;
+file = file_text_open_append(working_directory + "deltaTimes.txt");
+file_text_write_string(file, string(current_hour) + ":" + string(current_minute) + ":" + string(current_second) + ": recieved a delta from T1: " + string(_deltaTime) + "\r\n");
+file_text_close(file);
+
+
 var _client = fGetClientById(_connectionId)
 
 if (_client == noone)
@@ -46,7 +52,3 @@ else
 	}
 }
 
-var file;
-file = file_text_open_write(working_directory + "deltaTimes");
-file_text_write_string(file, string(current_time) + ": recieved a delta from T1: " + string(_deltaTime) + "/r/n/r/n");
-file_text_close(file);
