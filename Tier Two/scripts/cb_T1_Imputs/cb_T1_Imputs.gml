@@ -37,8 +37,16 @@ else
 		{
 			case CHOSEN_CHARACTER.NINJA:
 			{
+				var file;
+				file = file_text_open_append(working_directory + "m_imputLog.txt");
+				file_text_write_string(file,"imput log was " + string(hero.m_imputLog));
+				
 				hero.m_imputLog = fArrayMoveBack(m_imputLog,1)
 				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]
+				
+				file_text_write_string(file," imput log now is " + string(hero.m_imputLog) + "\n\r");
+				
+				file_text_close(file);
 				break;	
 			}
 			
