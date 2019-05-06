@@ -31,11 +31,33 @@ with (instance_create_depth(0,0,0,oPlayer))
 		}
 	}
 	
-	with(hero)
+	with (hero)
 	{
 		isLocal = false
-		latest_acknowleged_packet = [0,0,0,0,0,current_time] //update most recent position knowledge	
+		latest_acknowleged_packet = [0,0,0,0,0,current_time] //update most recent position knowledge
+		parent = other.id
 		m_username = _username
 		m_character = _character
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
