@@ -5,10 +5,7 @@ switch(serverState)
 
 	case state.playing:
 	{
-		#region Playing code
-		
-		vsp += grv * global.dt_unsteady / ONE_MILLION;	
-		
+		#region Playing code		
 		#region Loop through and apply imputs
 		var _arraySize = array_length_1d(m_imputLog)
 		
@@ -28,6 +25,8 @@ switch(serverState)
 			hsp = _currentImput[IMPUTLIST.HORISONTAL_KEYS] * walksp * _deltaTime / ONE_MILLION;
 		
 			vMove = _currentImput[IMPUTLIST.VERTICAL_KEYS];
+			
+			vsp += grv * _deltaTime/ ONE_MILLION;	
 		
 			//Jump
 			if (place_meeting(x,y+1,oWall)) && (vMove = 1)
@@ -84,28 +83,6 @@ switch(serverState)
 		}
 		
 		#endregion
-							
-		//Horisontal collision
-		if (place_meeting(x+hsp,y,oWall))
-		{
-			while (!place_meeting(x+sign(hsp),y,oWall))
-			{
-				x += sign(hsp);	
-			}
-			hsp = 0;
-		}
-		x += hsp;
-
-		//Vertical collision
-		if (place_meeting(x,y+vsp,oWall))
-		{
-			while (!place_meeting(x,y+sign(vsp),oWall))
-			{
-				y += sign(vsp);	
-			}
-			vsp = 0;
-		}
-		y += vsp;
 			
 		if (hp <= 0)
 		{
