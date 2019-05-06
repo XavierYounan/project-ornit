@@ -6,10 +6,6 @@
 var _array = argument0; //import the array
 var _moveAmount = argument1; //import the move amount
 
-var file;
-file = file_text_open_append(working_directory + "fArrayMoveBack.txt");
-file_text_write_string(file,"array was " + string(_array));
-
 var _newArray = []
 
 var _arrayLength = array_length_1d(_array);
@@ -23,8 +19,6 @@ if( _arrayLength != 0)
 	
 }
 
-file_text_write_string(file," new array is " + string(_newArray) + "\n\r");
-file_text_close(file);
 
 return (_newArray)
 
