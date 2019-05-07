@@ -24,3 +24,5 @@ bulletDamage = 5;
 
 fireRate = 7 //per seccond
 canShoot = true
+
+m_imputLog = []

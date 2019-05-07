@@ -5,34 +5,35 @@ switch(serverState)
 
 	case state.playing:
 	{
-		#region Playing code
-		
+		#region Playing code		
+		#region Loop through and apply imputs
 		var _arraySize = array_length_1d(m_imputLog)
-			
+		
+		/*
+		var file;
+		file = file_text_open_append(working_directory + "deltaTimes.txt");
+		file_text_write_string(file, string(current_hour) + ":" + string(current_minute) + ":" + string(current_second) + ": processing unread imputs, length is " + string(_arraySize) + "\r\n");
+		file_text_close(file);
+		*/
+		
 		for (var i = _arraySize - 1; i >= 0; i--)
 		{
-			#region Loop through all unprocessed imputs etc
 			var _currentImput = m_imputLog[i];
 		
 			var _deltaTime = _currentImput[IMPUTLIST.DELTA_TIME]
-		
-			#region //apply imputs and gravity
 	
 			hsp = _currentImput[IMPUTLIST.HORISONTAL_KEYS] * walksp * _deltaTime / ONE_MILLION;
 		
 			vMove = _currentImput[IMPUTLIST.VERTICAL_KEYS];
-		
-			vsp += grv * _deltaTime / ONE_MILLION;
 			
+			vsp += grv * _deltaTime/ ONE_MILLION;	
+		
 			//Jump
 			if (place_meeting(x,y+1,oWall)) && (vMove = 1)
 			{
 				vsp = -jump_speed	
 			}
-
-			#endregion
 			
-			#region //Collisions
 			//Horisontal collision
 			if (place_meeting(x+hsp,y,oWall))
 			{
@@ -55,9 +56,6 @@ switch(serverState)
 			}
 			y += vsp;
 			
-			#endregion
-		
-			#region //Gun code (will be changed to single processed events such as sound etc.
 			with (itemList[NINJA_ITEMS.GUN])
 			{
 				x = other.x;
@@ -78,14 +76,14 @@ switch(serverState)
 					image_angle = direction - 90
 					creator = other.parentClientId
 					
-					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,other.parentClientId,x,y,direction)
-					gnet_packet_send_to_list(buff,global.T1_CONNECTION_ID_LOADED_IN_LIST)
+					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,creator,x,y,direction)
+					gnet_packet_send_to_list(buff,global.T1_CONNECTION_ID_LIST)
 				}
 			}
-			#endregion
-			#endregion
 		}
-				
+		
+		#endregion
+			
 		if (hp <= 0)
 		{
 			parentId.state = state.dead

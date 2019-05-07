@@ -1,8 +1,5 @@
 var socket = async_load[? "id"]
 
-//save the async load
-ds_map_secure_save(async_load, "async_load.txt");
-
 if socket != global.T2_TCP_socket
 {
 	return;

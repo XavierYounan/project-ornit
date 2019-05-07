@@ -11,6 +11,14 @@ var _mouseY = _receivedData[4] //buffer_u16
 var _mouseLeftClicked = _receivedData[5] //buffer_bool
 var _deltaTime = _receivedData[6] //buffer_f16
 
+/*
+var file;
+file = file_text_open_append(working_directory + "deltaTimes.txt");
+file_text_write_string(file, string(current_hour) + ":" + string(current_minute) + ":" + string(current_second) + ": recieved a delta from T1: " + string(_deltaTime) + "\r\n");
+file_text_close(file);
+*/
+
+
 var _client = fGetClientById(_connectionId)
 
 if (_client == noone)
@@ -31,17 +39,44 @@ else
 		{
 			case CHOSEN_CHARACTER.NINJA:
 			{
-				hero.m_imputLog = fArrayMoveBack(m_imputLog,1)
-				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]
+				var _arrayLength = array_length_1d(hero.m_imputLog)
+				
+				if (_arrayLength != 0)
+				{
+					var _newArray = []
+					
+					var moveBackAmount = 1
+					
+					for( var i = _arrayLength + moveBackAmount - 1; i >= moveBackAmount; i --)
+					{
+						_newArray[i] = hero.m_imputLog[i - moveBackAmount]	
+					}
+					hero.m_imputLog = _newArray
+				}
+				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]				
 				break;	
 			}
 			
 			case CHOSEN_CHARACTER.MAGNET_BOI:
 			{
-				hero.m_imputLog = fArrayMoveBack(m_imputLog,1)
-				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]
-				break;	
+				var _arrayLength = array_length_1d(hero.m_imputLog)
+				
+				if (_arrayLength != 0)
+				{
+					var _newArray = []
+					
+					var moveBackAmount = 1
+					
+					for( var i = _arrayLength + moveBackAmount - 1; i >= moveBackAmount; i --)
+					{
+						_newArray[i] = hero.m_imputLog[i - moveBackAmount]	
+					}
+					hero.m_imputLog = _newArray
+				}
+				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]				
+				break;		
 			}
 		}		 
 	}
 }
+

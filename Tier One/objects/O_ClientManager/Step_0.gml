@@ -34,20 +34,16 @@ switch managerState
 			else
 			{
 				var _gunAngle = round(m_gunAngle)
-				var deltaTime = global.dt_steady
+				var deltaTime = clamp(global.dt_unsteady,0,4294967295)
+
 				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);
 				gnet_packet_send_to_id(_packet,_T2Id);
-				
+
 				packet_number ++
 				m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
 				m_unreadImputs[0] = [_hsp,_vsp,packet_number,_gunAngle,deltaTime];
-				
-				
-				with(global.predictionTest)
-				{
-					m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
-					m_unreadImputs[0] = [_hsp,_vsp,other.packet_number,_gunAngle,deltaTime];	
-				}
+			
+				return;
 			}
 		}
 		else
@@ -60,4 +56,3 @@ switch managerState
 	}
 	
 }
-
