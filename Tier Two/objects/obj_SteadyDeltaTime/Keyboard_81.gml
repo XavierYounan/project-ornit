@@ -1,1 +1,0 @@
-global.dtCounter = [0,0]

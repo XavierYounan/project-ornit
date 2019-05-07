@@ -82,5 +82,3 @@ enum LOCAL_LATEST_POSITION
 }
 
 sent_tcp_info = false
-
-global.predictionTest = instance_create_depth(0,0,-200,oPredictionTest)

@@ -12,20 +12,20 @@ var _gunDir = _receivedData[3] //buffer_u16
 //Use connection id to find player
 var _client = fGetClientById(_player)
 
-fConsoleAddMessage("Recieved player positions other ")
-
 //if doesnt exist create a new player TODO: when player connect should be created
 if (_client == noone)
 {
 	fConsoleAddMessage("Recieved Position packet but could not find associated player. Are they loaded in?")
+	return;
 }
-else
+
+//update players x and y coords
+with (_client.hero)
 {
-	//update players x and y coords
-	with (_client.hero)
-	{
-		var _array = [_x,_y,_timePacketRecieved,_gunDir]
-		m_coordinateArray = fArrayMoveBack(m_coordinateArray,1)
-		m_coordinateArray[0] = _array
-	}
+	var _array = [_x,_y,_timePacketRecieved,_gunDir]
+	m_coordinateArray = fArrayMoveBack(m_coordinateArray,1)
+	m_coordinateArray[0] = _array
+	return;
 }
+
+fConsoleAddMessage("Couldnt fild _client.hero: CB_T2_OtherPosition")

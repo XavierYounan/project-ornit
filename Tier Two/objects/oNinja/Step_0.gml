@@ -21,8 +21,6 @@ switch(serverState)
 			var _currentImput = m_imputLog[i];
 		
 			var _deltaTime = _currentImput[IMPUTLIST.DELTA_TIME]
-			
-			global.dtCounter[deltaCounter.client] += _deltaTime
 	
 			hsp = _currentImput[IMPUTLIST.HORISONTAL_KEYS] * walksp * _deltaTime / ONE_MILLION;
 		

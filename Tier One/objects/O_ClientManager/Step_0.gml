@@ -34,32 +34,15 @@ switch managerState
 			else
 			{
 				var _gunAngle = round(m_gunAngle)
-				var deltaTime = global.dt_unsteady
-				var dt = clamp(deltaTime,0,4294967295)
-				
-				if (dt != deltaTime)
-				{
-					fConsoleAddMessage("clamped:not clamped " + string(dt) + ":" + string(deltaTime))	
-				}
+				var deltaTime = clamp(global.dt_unsteady,0,4294967295)
+
 				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);
 				gnet_packet_send_to_id(_packet,_T2Id);
-				
-				var file;
-				file = file_text_open_append(working_directory + "deltaTimes.txt");
-				file_text_write_string(file,string(current_hour) + ":" + string(current_minute) + ":" + string(current_second) + ": Sent delta time: " + string(deltaTime) + " \r\n\r\n");
-				file_text_close(file);
 
 				packet_number ++
 				m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
 				m_unreadImputs[0] = [_hsp,_vsp,packet_number,_gunAngle,deltaTime];
-				
-				
-				with(global.predictionTest)
-				{
-					m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
-					m_unreadImputs[0] = [_hsp,_vsp,other.packet_number,_gunAngle,deltaTime];	
-				}
-				
+			
 				return;
 			}
 		}
@@ -73,5 +56,3 @@ switch managerState
 	}
 	
 }
-
-fConsoleAddMessage("Didnt send imputs")
