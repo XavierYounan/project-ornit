@@ -26,8 +26,7 @@ switch state
 		#region Send info	
 		
 		with(oClient)
-		{
-			
+		{	
 			if (other.m_ClientId = m_ClientId)
 			{				
 				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_LOCAL_PLAYER_INFO,[m_ClientId,m_character,m_username])
@@ -36,6 +35,22 @@ switch state
 			else
 			{				
 				packet_tcp_send(other.m_ClientId,TCP_PACKETS.T2_PLAYER_INFO,[m_ClientId,m_character,m_username])
+				
+				switch(state)
+				{
+					case state.dead:
+					{
+						packet_tcp_send(other.m_ClientId,TCP_PACKETS.T2_STATE_UPDATE,[m_ClientId,t1state_DEAD])
+						break;
+					}
+					
+					case state.playing:
+					{
+						packet_tcp_send(other.m_ClientId,TCP_PACKETS.T2_STATE_UPDATE,[m_ClientId,t1state_PLAYING])
+						break;
+					}
+				}
+				
 				f_ConsoleAddMessage("Sent player info!")
 				
 				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_PLAYER_INFO,[other.m_ClientId,other.m_character,other.m_username])
