@@ -36,9 +36,7 @@ with(_client)
 	hero.hp = 100
 	hero.x  = _x 
 	hero.y = _y
-	m_imputLog = []
-		
-	middleRoom = [room_width/2,room_height/2]
+	hero.m_imputLog = []
 		
 	xMoveDir = sign(room_width/2 - x)
 	yMoveDir = sign(room_height/2 - y)
