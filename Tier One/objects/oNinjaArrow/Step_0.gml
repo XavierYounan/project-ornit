@@ -10,17 +10,19 @@ else
 	hitDelay--	
 }	
 
-_colInst = instance_place(x,y,oPlayer)
+_colInst = instance_place(x,y,oNinja)
 
-if (_colInst != noone) 
+if (_colInst == noone) 
 {
-	if(_colInst.m_PlayerId != creator) 
-	{
-		instance_destroy(self)	
-		return;
-	}
-	fConsoleAddMessage("Hit a player, id is same, Player's id:selfId "  +string(_colInst.m_PlayerId) + ":" + string(creator))
+	return;
 }
+
+if(_colInst.parent.m_PlayerId != creator) 
+{
+	instance_destroy(self)	
+	return;
+}
+
 /*
 if (_colInst != noone) && (_colInst.m_PlayerId != creator) 
 {
