@@ -23,9 +23,17 @@ if !position_meeting(_x,_y,oRespawn)
 	return;
 }
 
+
+
 with(_client)
 {
-	hp = 100
+	if (state != state.dead)
+	{
+		f_ConsoleAddMessage("Respawn request denied, you are already spawned!")	
+		return;
+	}
+	
+	hero.hp = 100
 	hero.x  = _x 
 	hero.y = _y
 	m_imputLog = []
@@ -41,6 +49,8 @@ with(_client)
 		y += yMoveDir
 	}
 		
+	f_ConsoleAddMessage("Completed the respawn request, State: " + string(state))
+		
 	state = state.playing
 		
 	var list = global.T1_CONNECTION_ID_LIST
@@ -50,5 +60,5 @@ with(_client)
 		packet_tcp_send(list[i],TCP_PACKETS.T2_STATE_UPDATE,[_clientId,t1state_PLAYING])
 	}	
 	
-	f_ConsoleAddMessage("Completed the respawn request")
+	
 }

@@ -33,6 +33,8 @@ else
 		if (state = state.sendingInfo)
 		{
 			state = state.dead
+			
+			f_ConsoleAddMessage("Made dead, reason: RECIEVED_T1_IMPUTS_STATE_WAS_SEDNING_INFO")
 		}
 		
 		switch (m_character)

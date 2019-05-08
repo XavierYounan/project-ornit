@@ -2,6 +2,8 @@ switch state
 {
 	case state.dead:
 	{
+		
+		
 		#region Dead code		
 		var list = global.T1_CONNECTION_ID_LIST
 		var _arrSize = array_length_1d(list)
@@ -42,6 +44,7 @@ switch state
 		}
 		
 		state = state.dead
+		f_ConsoleAddMessage("Made dead, reason: FIN_SENDING_INFO")
 		
 		#endregion
 		break;
