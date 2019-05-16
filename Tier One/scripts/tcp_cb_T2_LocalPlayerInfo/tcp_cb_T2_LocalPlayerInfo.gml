@@ -36,6 +36,7 @@ with (instance_create_depth(0,0,0,oPlayer))
 		parent = other.id
 		m_username = _username
 		m_character = _character
+		m_PlayerId = _clientId
 	}
 	
 	with (oCamera)
