@@ -1,5 +1,4 @@
 //cb_T2_LocalPlayerInfo()
-
 var _receivedData  = argument0;
 
 var _clientId = _receivedData[0]; //buffer_8
@@ -19,7 +18,8 @@ with (instance_create_depth(0,0,0,oPlayer))
 			hero = instance_create_depth(0,0,-100,oNinja)
 			hero.itemList[NINJA_ITEMS.GUN] = instance_create_depth(0,0,-101,oNinjaGun)
 			break;	
-		}
+		} 
+		
 		
 		default:
 		{
@@ -47,7 +47,6 @@ with (instance_create_depth(0,0,0,oPlayer))
 		state = CAMERA_STATE.FOLLOW_PLAYER_CREATE	
 	}
 }
-
 with (O_ClientManager)
 {
 	managerState = PLAYING
