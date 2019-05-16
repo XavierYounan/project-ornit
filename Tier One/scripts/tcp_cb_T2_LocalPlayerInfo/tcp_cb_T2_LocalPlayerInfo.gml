@@ -18,7 +18,8 @@ with (instance_create_depth(0,0,0,oPlayer))
 			hero = instance_create_depth(0,0,-100,oNinja)
 			hero.itemList[NINJA_ITEMS.GUN] = instance_create_depth(0,0,-101,oNinjaGun)
 			break;	
-		}
+		} 
+		
 		
 		default:
 		{
