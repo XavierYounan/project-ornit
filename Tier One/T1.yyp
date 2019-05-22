@@ -879,6 +879,14 @@
             }
         },
         {
+            "Key": "888dfd8f-d20c-4ada-87ec-009a5d79f71b",
+            "Value": {
+                "id": "318b9b60-defd-4152-9c57-fefcd6aa3f29",
+                "resourcePath": "objects\\oMagnetFistL\\oMagnetFistL.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "88ee514f-1177-4589-9144-ee4817067533",
             "Value": {
                 "id": "05618239-b6c4-4226-86fd-6f9e3aba9035",
@@ -1068,6 +1076,14 @@
                 "id": "88243191-3c79-4348-b379-919173df3f8e",
                 "resourcePath": "views\\a9485b18-3fda-4bcd-8f90-9c23cee1865e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "aa109748-25cb-4e4c-a24d-b55b6294376c",
+            "Value": {
+                "id": "a3ebde3a-37de-4875-a6bf-d636ef18c381",
+                "resourcePath": "objects\\oMagnetFistR\\oMagnetFistR.yy",
+                "resourceType": "GMObject"
             }
         },
         {

@@ -31,7 +31,10 @@ switch (state)
 								
 						if (localId != undefined)
 						{
-							packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.T1_REQUEST_RESPAWN,[mouse_x,mouse_y])
+							var character = get_string("1: Ninja, 2: Magnet Boi if you type it wrong you will get an error NO SPACES","1")
+							character = int64(character)
+							
+							packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.T1_REQUEST_RESPAWN,[character,mouse_x,mouse_y])
 							fConsoleAddMessage("Sent request respawn")
 						}	
 						else

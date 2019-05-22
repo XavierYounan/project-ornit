@@ -141,13 +141,6 @@ switch playerState
 					    x = x0 + (x1 - x0) * (render_timestamp - t0) / (t1 - t0);
 		  
 						y = y0 + (y1 - y0) * (render_timestamp - t0) / (t1 - t0);
-						
-						with (itemList[NINJA_ITEMS.GUN])
-						{
-								x = other.x;
-								y = other.y - 20;
-								image_angle = ga0 + (ga1 - ga0) * (render_timestamp - t0) / (t1 - t0);
-						}
 					
 				}
 			}

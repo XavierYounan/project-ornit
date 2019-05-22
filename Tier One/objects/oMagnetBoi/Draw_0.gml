@@ -1,6 +1,6 @@
 if (showingHitbox)
 {
-	draw_sprite(sPlayer,0,x,y)
+	draw_sprite(sMagnetBoi,0,x,y)
 }
 else
 {

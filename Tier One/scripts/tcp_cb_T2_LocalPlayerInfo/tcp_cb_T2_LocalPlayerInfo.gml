@@ -16,7 +16,6 @@ with (instance_create_depth(0,0,0,oPlayer))
 		case CHARACTER_LIST.NINJA:
 		{
 			hero = instance_create_depth(0,0,-100,oNinja)
-			hero.itemList[NINJA_ITEMS.GUN] = instance_create_depth(0,0,-101,oNinjaGun)
 			break;	
 		} 
 		
