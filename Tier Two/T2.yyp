@@ -271,6 +271,14 @@
             }
         },
         {
+            "Key": "2467ae33-b9f2-4f42-a0ca-b3c94d21728c",
+            "Value": {
+                "id": "cfdf5b2b-4271-4ed2-96ea-b56ca747759e",
+                "resourcePath": "sprites\\sMagnetFistR\\sMagnetFistR.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "25a63194-2349-4c3a-9008-c93720c18c65",
             "Value": {
                 "id": "5e66a8d6-a632-48fb-99f3-e77adf04262d",
@@ -474,7 +482,7 @@
             "Key": "4501baf9-5d7b-4cb1-b6a0-e271d8fd3d61",
             "Value": {
                 "id": "93feee3d-e1aa-4430-a2d8-a7dbfcfa354d",
-                "resourcePath": "sprites\\sprite7\\sprite7.yy",
+                "resourcePath": "sprites\\sMagnetBoi\\sMagnetBoi.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -695,6 +703,14 @@
             }
         },
         {
+            "Key": "66df0a6a-4a04-43b1-9cf8-27be6fe2d211",
+            "Value": {
+                "id": "92b45208-2a95-487e-8df5-8511df5ff9d5",
+                "resourcePath": "views\\66df0a6a-4a04-43b1-9cf8-27be6fe2d211.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "67f54a2c-59b6-4ee9-ac1b-c1f1a5eb57e9",
             "Value": {
                 "id": "1a6e0eb1-ce05-453e-8abf-1d31e0ccc518",
@@ -844,6 +860,14 @@
                 "id": "b5e269ce-7eb6-4177-bfc8-d24b8992ba87",
                 "resourcePath": "scripts\\priv_gnet_add_connection\\priv_gnet_add_connection.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7ce301e4-e512-4c15-abcc-a6331079b506",
+            "Value": {
+                "id": "4a14f665-fee0-4f9e-b658-2df006d6ebf4",
+                "resourcePath": "objects\\oMagnetFistL\\oMagnetFistL.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1327,11 +1351,27 @@
             }
         },
         {
+            "Key": "c966aaad-bbc0-4241-bb12-da268715f268",
+            "Value": {
+                "id": "dd1961c1-33e1-4ccf-95a3-e3f59891a01e",
+                "resourcePath": "objects\\oMagnetFistR\\oMagnetFistR.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ca85230a-c5a9-4f77-af64-94fe442fe6f6",
             "Value": {
                 "id": "99064262-f9e0-4653-84c0-932a57a55ad6",
                 "resourcePath": "views\\ca85230a-c5a9-4f77-af64-94fe442fe6f6.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "cc836e2d-f331-4a22-8a43-725a550e3907",
+            "Value": {
+                "id": "79699ad8-c764-4a42-bc4b-b38dff7053d8",
+                "resourcePath": "objects\\oMagnetBoi\\oMagnetBoi.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1455,6 +1495,14 @@
             }
         },
         {
+            "Key": "e41e377a-c5c6-4ad5-ad4d-c462a059b860",
+            "Value": {
+                "id": "9ace0441-d1bf-4903-bd9b-8f0e47804416",
+                "resourcePath": "sprites\\sMagnetFistL\\sMagnetFistL.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e443b1cf-2e63-428a-a4d2-bb5f7805f898",
             "Value": {
                 "id": "9510144c-f46a-4d26-a54e-5bf8fc1269be",
@@ -1572,14 +1620,6 @@
                 "id": "fe731c2e-363e-4541-9d98-5cdfce5626e0",
                 "resourcePath": "views\\f73fcdbe-c666-4e24-aa01-2b4d210c2dc7.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "f7b8805a-2d0b-4d9a-9a83-7bfbcfe0536d",
-            "Value": {
-                "id": "c8c50840-1e4c-4072-bbf1-9ac1597b7a37",
-                "resourcePath": "objects\\oMagnetBoi\\oMagnetBoi.yy",
-                "resourceType": "GMObject"
             }
         },
         {
