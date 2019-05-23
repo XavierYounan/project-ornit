@@ -40,8 +40,8 @@ with(client)
 			hero = instance_create_depth(0,0,-100,oMagnetBoi)
 		}
 		
-		hero.parentClientId = UDP_connectionId
 		hero.parentId = id
+		hero.parentClientId = m_ClientId
 		
 	
 		state = state.sendingInfo
