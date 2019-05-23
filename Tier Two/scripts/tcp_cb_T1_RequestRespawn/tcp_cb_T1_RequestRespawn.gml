@@ -2,8 +2,9 @@
 var socket = argument0;
 var _receivedData  = argument1;
 
-var _x = _receivedData[0]; //buffer_u32
-var _y = _receivedData[1]; //buffer_u32
+var _character = _receivedData[0] //buffer_u8
+var _x = _receivedData[1]; //buffer_u32
+var _y = _receivedData[2]; //buffer_u32
 
 var _clientId = TCP_manager.UDP_connectionIdMap[? socket]
 var _client = fGetClientById(_clientId)
@@ -32,19 +33,34 @@ with(_client)
 		f_ConsoleAddMessage("Respawn request denied, you are already spawned!")	
 		return;
 	}
-	
-	hero.hp = 100
-	hero.x  = _x 
-	hero.y = _y
-	hero.m_imputLog = []
+
+	//destroy the old player
+	instance_destroy(hero)
 		
-	xMoveDir = sign(room_width/2 - x)
-	yMoveDir = sign(room_height/2 - y)
-		
-	while(place_meeting(x,y,oWall))
+	if(_character = CHOSEN_CHARACTER.NINJA)
 	{
-		x += xMoveDir
-		y += yMoveDir
+		hero = instance_create_depth(_x,_y,-100,oNinja)
+			
+	}
+	
+	if(_character = CHOSEN_CHARACTER.MAGNET_BOI)
+	{
+		hero = instance_create_depth(_x,_y,-100,oMagnetBoi)
+	}
+		
+	hero.parentClientId = UDP_connectionId
+	hero.parentId = id
+
+	var xMoveDir = sign(room_width/2 - x)
+	var yMoveDir = sign(room_height/2 - y)
+		
+	with(hero)
+	{
+		while(place_meeting(x,y,oWall))
+		{
+			x += xMoveDir
+			y += yMoveDir
+		}
 	}
 		
 	f_ConsoleAddMessage("Completed the respawn request, State: " + string(state))
