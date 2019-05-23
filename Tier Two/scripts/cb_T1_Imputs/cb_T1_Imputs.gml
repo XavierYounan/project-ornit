@@ -40,6 +40,7 @@ else
 		
 		if(state = state.dead)
 		{
+			f_ConsoleAddMessage("State is dead, not reading data")
 			return;	
 		}
 		
@@ -62,7 +63,7 @@ else
 					hero.m_imputLog = _newArray
 				}
 				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]
-				f_ConsoleAddMessage("Recieved Imputs N)
+				f_ConsoleAddMessage("Recieved Imputs N")
 				break;	
 			}
 			
@@ -85,6 +86,9 @@ else
 				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]				
 				break;		
 			}
+			
+			default: f_ConsoleAddMessage("State was default, not reading data");
+			
 		}		 
 	}
 }

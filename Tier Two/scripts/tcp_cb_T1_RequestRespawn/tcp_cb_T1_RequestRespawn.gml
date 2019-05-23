@@ -46,7 +46,7 @@ with(_client)
 		hero = instance_create_depth(_x,_y,-100,oMagnetBoi)
 	}
 		
-	
+	m_character = _character
 	hero.parentId = id
 	hero.parentClientId = m_ClientId
 

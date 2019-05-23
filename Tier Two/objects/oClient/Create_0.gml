@@ -35,15 +35,10 @@ m_updateFrequencyFrames = m_FPS/m_updateFrequency
 
 m_framesTillUpdate = 0
 
-enum character
-{
-	nil,
-	ninja,
-	gunner
-}
+
 
 m_username = ""
-m_character = character.nil
+m_character = CHOSEN_CHARACTER.NULL
 
 //let there be no assigned player yet
 hero = undefined
