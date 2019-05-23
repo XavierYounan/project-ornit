@@ -51,8 +51,9 @@ with(_client)
 		hero = instance_create_depth(_x,_y,-100,oMagnetBoi)
 	}
 		
-	hero.parentClientId = UDP_connectionId
+	
 	hero.parentId = id
+	hero.parentClientId = m_ClientId
 
 	var xMoveDir = sign(room_width/2 - x)
 	var yMoveDir = sign(room_height/2 - y)
@@ -74,7 +75,7 @@ with(_client)
 	var _arrSize = array_length_1d(list)
 	for(var i = 0; i < _arrSize; i++)
 	{
-		packet_tcp_send(list[i],TCP_PACKETS.T2_STATE_UPDATE,[_clientId,t1state_PLAYING])
+		packet_tcp_send(list[i],TCP_PACKETS.T2_PLAYER_RESPAWN,[_clientId,_character])
 	}	
 	
 	

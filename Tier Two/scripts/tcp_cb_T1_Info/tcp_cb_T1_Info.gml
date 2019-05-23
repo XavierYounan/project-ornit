@@ -27,22 +27,7 @@ with(client)
 	if (state == state.waitingForInfo)
 	{
 		m_username = _username
-		m_character = _character
-
-		if(m_character = CHOSEN_CHARACTER.NINJA)
-		{
-			hero = instance_create_depth(0,0,-100,oNinja)
-			
-		}
-	
-		if(m_character = CHOSEN_CHARACTER.MAGNET_BOI)
-		{
-			hero = instance_create_depth(0,0,-100,oMagnetBoi)
-		}
-		
-		hero.parentId = id
-		hero.parentClientId = m_ClientId
-		
+		m_character = _character	
 	
 		state = state.sendingInfo
 	}	

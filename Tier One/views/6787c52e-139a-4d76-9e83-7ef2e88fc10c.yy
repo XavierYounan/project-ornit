@@ -9,7 +9,8 @@
         "65c8856c-5ac8-4a09-a8a0-43d20a692c02",
         "6b329260-454e-42f1-bba4-d04f69a813e1",
         "ee81109b-2932-445b-be40-d029ab3bdd97",
-        "4b3b5078-ddfd-4bba-bd02-8111536cd1ca"
+        "4b3b5078-ddfd-4bba-bd02-8111536cd1ca",
+        "2a5963a2-feb8-4681-8daf-bef838bcbf79"
     ],
     "filterType": "GMScript",
     "folderName": "callbacks",

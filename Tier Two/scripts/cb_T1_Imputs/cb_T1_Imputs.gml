@@ -29,12 +29,17 @@ if (_client == noone)
 else
 {
 	with (_client)
-	{	
+	{		
 		if (state = state.sendingInfo)
 		{
 			state = state.dead
 			
 			f_ConsoleAddMessage("Made dead, reason: RECIEVED_T1_IMPUTS_STATE_WAS_SEDNING_INFO")
+		}
+		
+		if(state = state.dead)
+		{
+			return;	
 		}
 		
 		switch (m_character)

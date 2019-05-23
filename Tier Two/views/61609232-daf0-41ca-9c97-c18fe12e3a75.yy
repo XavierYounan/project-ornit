@@ -9,7 +9,8 @@
         "11471fe5-4d4d-420d-b42d-b1db65ad6f0e",
         "1fa4b431-16a2-4e46-a588-654e5cf642d0",
         "af5fe71b-639f-47a6-950e-7746aa1e45a1",
-        "2b409c09-5491-464a-993c-d20b06648303"
+        "2b409c09-5491-464a-993c-d20b06648303",
+        "63abf1be-a15a-48f8-a543-0b18459bbd57"
     ],
     "filterType": "GMScript",
     "folderName": "Callbacks",
