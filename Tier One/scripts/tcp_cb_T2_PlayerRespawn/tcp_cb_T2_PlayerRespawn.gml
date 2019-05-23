@@ -6,6 +6,8 @@ var _character = _receivedData[1]; //buffer_u6
 
 var client = fGetClientById(_clientId)
 
+fConsoleAddMessage("recieved player respawn")
+
 with(client)
 {
 	switch _character

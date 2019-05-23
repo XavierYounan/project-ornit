@@ -163,4 +163,3 @@ switch playerState
 		break;
 	}
 }
-
