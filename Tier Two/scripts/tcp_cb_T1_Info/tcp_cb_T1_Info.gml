@@ -6,6 +6,8 @@ var port = _recievedData[0]; //buffer_u16
 var _username = _recievedData[1] //buffer_string
 var _character = _recievedData[2] //buffer_u8
 
+f_ConsoleAddMessage("Character is " + string(_character))
+
 var UDP_connectionId = gnet_get_connection_id(ip,port)
 		
 ds_map_add(TCP_manager.UDP_connectionIdMap,socket,UDP_connectionId)
@@ -40,6 +42,7 @@ with(client)
 		
 		hero.parentClientId = UDP_connectionId
 		hero.parentId = id
+		
 	
 		state = state.sendingInfo
 	}	

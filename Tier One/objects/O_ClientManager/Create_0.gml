@@ -56,7 +56,9 @@ enum CHARACTER
 	MAGNET_BOI
 }
 
-m_character = CHARACTER.NINJA
+var character = get_string("1: Ninja, 2: Magnet Boi if you type it wrong you will get an error NO SPACES","1")
+m_character = int64(character)
+
 
 m_gunAngle = 0
 

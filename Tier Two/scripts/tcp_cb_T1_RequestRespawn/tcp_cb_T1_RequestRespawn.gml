@@ -34,6 +34,9 @@ with(_client)
 		return;
 	}
 
+	//get the players UDP_connectionId
+	var UDP_connectionId = hero.parentClientId
+	
 	//destroy the old player
 	instance_destroy(hero)
 		

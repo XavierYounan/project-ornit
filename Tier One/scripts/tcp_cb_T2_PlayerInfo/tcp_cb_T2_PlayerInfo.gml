@@ -11,13 +11,19 @@ with (instance_create_depth(0,0,0,oPlayer))
 	playerState = PLAYER_STATE.DEAD
 	isLocal = false
 	
+	fConsoleAddMessage("character is " + string(_character))
+	
 	switch (_character)
-	{
-		case CHARACTER_LIST.NINJA:
+	{	
+		case CHARACTER.NINJA:
 		{
 			hero = instance_create_depth(0,0,-100,oNinja)
-			hero.itemList[NINJA_ITEMS.GUN] = instance_create_depth(0,0,-101,oNinjaGun)
-			fConsoleAddMessage("Character is NINJA")
+			break;
+		}
+		
+		case CHARACTER.MAGNET_BOI:
+		{
+			hero = instance_create_depth(0,0,-100,oMagnetBoi)
 			break;
 		}
 		

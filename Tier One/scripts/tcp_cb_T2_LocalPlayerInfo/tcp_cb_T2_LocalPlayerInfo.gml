@@ -11,15 +11,22 @@ with (instance_create_depth(0,0,0,oPlayer))
 	playerState = PLAYER_STATE.DEAD
 	isLocal = true
 	
+	fConsoleAddMessage("character is " + string(_character))
+	
 	switch _character
 	{
-		case CHARACTER_LIST.NINJA:
+		case CHARACTER.NINJA:
 		{
 			hero = instance_create_depth(0,0,-100,oNinja)
 			break;	
 		} 
 		
-		
+		case CHARACTER.MAGNET_BOI:
+		{
+			hero = instance_create_depth(0,0,-100,oMagnetBoi)
+			break;	
+		} 
+	
 		default:
 		{
 			show_error("Recieved info about a player connecting. Character no " + string(_character) + " but that does not exist",true)

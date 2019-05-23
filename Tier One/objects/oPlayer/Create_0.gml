@@ -8,14 +8,7 @@ enum PLAYER_STATE
 playerState = PLAYER_STATE.RECIEVING_INFO
 
 
-enum CHARACTER_LIST
-{
-	NULL,
-	NINJA,
-	GUNNER
-}
-
-m_character = CHARACTER_LIST.NULL
+m_character = CHARACTER.NULL
 
 
 m_username = ""
