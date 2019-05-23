@@ -34,8 +34,6 @@ with(_client)
 		return;
 	}
 	
-	//destroy the old player
-	instance_destroy(hero)
 		
 	if(_character = CHOSEN_CHARACTER.NINJA)
 	{

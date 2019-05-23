@@ -23,9 +23,11 @@ with (_client)
 {
 	if (isLocal)
 	{
+		if (hero = undefined) return;
+		
 		with(hero)
 		{
-			if (_lastRecievedPacket > latest_acknowleged_packet[2]) //make sure most recent server update
+			if (_lastRecievedPacket >= latest_acknowleged_packet[2]) //make sure most recent server update
 			{
 				latest_acknowleged_packet = [_x,_y,_hsp,_vsp] //update most recent position knowledge	
 		

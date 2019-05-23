@@ -18,6 +18,7 @@ file_text_write_string(file, string(current_hour) + ":" + string(current_minute)
 file_text_close(file);
 */
 
+f_ConsoleAddMessage("Imputs")
 
 var _client = fGetClientById(_connectionId)
 
@@ -60,7 +61,8 @@ else
 					}
 					hero.m_imputLog = _newArray
 				}
-				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]				
+				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]
+				f_ConsoleAddMessage("Recieved Imputs N)
 				break;	
 			}
 			
