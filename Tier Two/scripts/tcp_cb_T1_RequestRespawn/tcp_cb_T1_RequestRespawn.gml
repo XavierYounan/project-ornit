@@ -33,9 +33,6 @@ with(_client)
 		f_ConsoleAddMessage("Respawn request denied, you are already spawned!")	
 		return;
 	}
-
-	//get the players UDP_connectionId
-	var UDP_connectionId = hero.parentClientId
 	
 	//destroy the old player
 	instance_destroy(hero)

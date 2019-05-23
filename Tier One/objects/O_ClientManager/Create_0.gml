@@ -56,13 +56,10 @@ enum CHARACTER
 	MAGNET_BOI
 }
 
-var character = get_string("1: Ninja, 2: Magnet Boi if you type it wrong you will get an error NO SPACES","1")
-m_character = int64(character)
-
-
 m_gunAngle = 0
 
 m_username = "Big Chungus"
+m_character = 0
 
 packet_number = 0 //keeps count for sever reconsiliation
 
