@@ -37,9 +37,10 @@ with(client)
 		parent = other.id
 		m_username = other.m_username
 		m_PlayerId = _clientId
+		isLocal = other.isLocal
 	}
 	
-	hero.isLocal = isLocal
+	playerState = PLAYER_STATE.PLAYING
 
 	with (oCamera)
 	{

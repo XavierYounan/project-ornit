@@ -23,7 +23,11 @@ with (_client)
 {
 	if (isLocal)
 	{
-		if (hero = undefined) return;
+		if (hero = undefined)
+		{
+			fConsoleAddMessage("Hero was undefined, disregarding self position packet") 
+			return;
+		}
 		
 		with(hero)
 		{
@@ -45,11 +49,11 @@ with (_client)
 				return;
 			}
 		}
-		fConsoleAddMessage("Couldnt find hero")
 	}
 	else
 	{
 		fConsoleAddMessage("Not Local")	
+		return;
 	}
 }
-
+fConsoleAddMessage("Client couldnt be found")
