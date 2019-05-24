@@ -17,7 +17,6 @@ if (client == null)
 	f_ConsoleAddMessage("Dropping T1 Info client does not exist!")	
 }
 
-f_ConsoleAddMessage("Recieved T1_Info")
 
 with(client)
 {
