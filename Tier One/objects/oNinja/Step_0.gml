@@ -163,5 +163,3 @@ switch playerState
 		break;
 	}
 }
-
-fConsoleAddMessage("I am at x:y " +string(x) + ":" + string(y))

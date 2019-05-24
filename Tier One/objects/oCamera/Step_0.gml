@@ -1,5 +1,15 @@
 switch state
 {
+	case CAMERA_STATE.INIT:
+	{
+		state = CAMERA_STATE.SHOW_FULL_MAP	
+		
+		with (oRespawn)
+		{
+			state = RESPAWN_STATE.CLICKABLE
+		}
+		break;	
+	}
 	case CAMERA_STATE.FOLLOW_PLAYER:
 	{
 		#region Follow the player
@@ -7,7 +17,7 @@ switch state
 		x += (xTo - x)/25
 		y += (yTo - y)/25
 		
-		if (localPlayer != noone)
+		if (localPlayer != id)
 		{
 			xTo = localPlayer.hero.x + (mouse_x - other.x)/4 
 			yTo = localPlayer.hero.y + (mouse_y - other.y)/4 
@@ -36,6 +46,22 @@ switch state
 	case CAMERA_STATE.FOLLOW_PLAYER_CREATE:
 	{
 		#region Create event for following the player
+		
+		
+		//check local isnt undefined
+		if localPlayer == id
+		{
+			state = CAMERA_STATE.SHOW_FULL_MAP
+			fConsoleAddMessage("Coldnt follow the player, no local player has been set (camera)")
+		}
+		
+		//check hero isnt undefined
+		if localPlayer.hero == null
+		{
+			state = CAMERA_STATE.SHOW_FULL_MAP
+	
+		}
+		
 		//change projection to zoom in
 		cameraWidth = 1920;
 		cameraHeight = 1080;

@@ -15,12 +15,14 @@ with(client)
 		case CHARACTER.NINJA:
 		{
 			hero = instance_create_depth(0,0,-100,oNinja)
+			fConsoleAddMessage("hero" + string(hero))
 			break;	
 		} 
 		
 		case CHARACTER.MAGNET_BOI:
 		{
 			hero = instance_create_depth(0,0,-100,oMagnetBoi)
+			fConsoleAddMessage("hero" + string(hero))
 			break;	
 		} 
 	
@@ -38,14 +40,17 @@ with(client)
 		m_username = other.m_username
 		m_PlayerId = _clientId
 		isLocal = other.isLocal
+		
+		if (isLocal)
+		{
+			with (oCamera)
+			{
+				xTo = x = x + (mouse_x - x)/4 //snap x xoords
+				yTo = y = y + (mouse_y - y)/4 //snap y coords
+				state = CAMERA_STATE.FOLLOW_PLAYER_CREATE	
+			}	
+		}
 	}
 	
 	playerState = PLAYER_STATE.PLAYING
-
-	with (oCamera)
-	{
-		xTo = x = other.hero.x + (mouse_x - other.hero.x)/4 //snap x xoords
-		yTo = y = other.hero.y + (mouse_y - other.hero.y)/4 //snap y coords
-		state = CAMERA_STATE.FOLLOW_PLAYER_CREATE	
-	}
 }

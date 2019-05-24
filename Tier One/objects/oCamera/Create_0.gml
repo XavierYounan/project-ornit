@@ -38,12 +38,15 @@ enum CAMERA_STATE
 {
 	FOLLOW_PLAYER,
 	FOLLOW_PLAYER_CREATE,
-	SHOW_FULL_MAP
+	SHOW_FULL_MAP,
+	INIT
 }
 
-state = CAMERA_STATE.FOLLOW_PLAYER
-
+state = CAMERA_STATE.INIT
 localPlayer = noone;
 
 xTo = x
 yTo = y
+
+localPlayer = id
+localPlayer.hero = null

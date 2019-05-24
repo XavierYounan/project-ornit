@@ -71,6 +71,7 @@ with(_client)
 	for(var i = 0; i < _arrSize; i++)
 	{
 		packet_tcp_send(list[i],TCP_PACKETS.T2_PLAYER_RESPAWN,[_clientId,_character])
+		f_ConsoleAddMessage("Sent data to " + string(list[i]))
 	}	
 	
 	

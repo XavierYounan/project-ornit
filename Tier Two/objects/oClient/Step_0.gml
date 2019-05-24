@@ -46,15 +46,10 @@ switch state
 					
 					case state.playing:
 					{
-						packet_tcp_send(other.m_ClientId,TCP_PACKETS.T2_STATE_UPDATE,[m_ClientId,t1state_PLAYING])
+						packet_tcp_send(other.m_ClientId,TCP_PACKETS.T2_PLAYER_RESPAWN,[m_ClientId,m_character])
 						break;
 					}
 				}
-				
-				f_ConsoleAddMessage("Sent player info!")
-				
-				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_PLAYER_INFO,[other.m_ClientId,other.m_character,other.m_username])
-				f_ConsoleAddMessage("Sent player info!")
 			}
 		}
 		
