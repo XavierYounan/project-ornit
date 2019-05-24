@@ -4,9 +4,6 @@ var ip = argument2
 
 var port = _recievedData[0]; //buffer_u16 
 var _username = _recievedData[1] //buffer_string
-var _character = _recievedData[2] //buffer_u8
-
-f_ConsoleAddMessage("Character is " + string(_character))
 
 var UDP_connectionId = gnet_get_connection_id(ip,port)
 		
@@ -27,7 +24,6 @@ with(client)
 	if (state == state.waitingForInfo)
 	{
 		m_username = _username
-		m_character = _character	
 	
 		state = state.sendingInfo
 	}	
