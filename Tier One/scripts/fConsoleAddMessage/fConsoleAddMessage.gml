@@ -1,12 +1,50 @@
 /// @desc Add a message to our consoles list
 //@param {string} Message The message to display
+var numberArguments = argument_count
 
-with(O_GameConsole)
+if numberArguments == 1
 {
-	ds_list_add(m_messageList,argument0);
-	
-	if (ds_list_size(m_messageList) > m_maxMessages)
+	priv_console_add_message(argument[0])
+}
+else
+{
+	var message = argument[0]
+
+	var timeDelay = 1
+	var timeDelay = argument[1]
+
+	timeDelay = timeDelay * 1000 //convert to millisecconds
+
+	//clear displayable messages
+	var listSize = ds_list_size(spam_message_que)
+
+	for(var i = 0; i < listSize; i++)
 	{
-		ds_list_delete(m_messageList,0);	
+		var message = spam_message_que[| i]
+		var timeMessageExpires = spam_message[? message]
+	
+		if (current_time > timeMessageExpires) //message block is expired, remove block
+		{
+			ds_map_delete(spam_message,message)
+			ds_list_delete(spam_message_que,i)
+			i--
+		}
+		var listSize = ds_list_size(spam_message_que)
+		}
+		
+	//if can display message
+	with(O_GameConsole)
+	{
+		var timeCanDisplay = spam_message[? message]
+	
+		if timeCanDisplay == undefined //message is able to be displayed
+		{
+			priv_console_add_message(message)
+			with(O_GameConsole)
+			{
+				ds_map_add(spam_message,message,current_time + timeDelay)	
+				ds_list_add(spam_message_que,message)
+			}
+		}
 	}
 }
