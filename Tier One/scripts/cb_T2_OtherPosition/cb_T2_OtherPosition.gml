@@ -15,7 +15,7 @@ var _client = fGetClientById(_player)
 //if doesnt exist create a new player TODO: when player connect should be created
 if (_client == noone)
 {
-	fConsoleAddMessage("Recieved Position packet but could not find associated player. Are they loaded in?")
+	fConsoleAddMessage("Recieved Position packet but could not find associated player. Are they loaded in?",1)
 	return;
 }
 
@@ -24,7 +24,7 @@ with (_client)
 {
 	if (hero = undefined)
 	{
-		fConsoleAddMessage("Hero is undeifned, disregarding notlocal positon packet") 
+		fConsoleAddMessage("Hero is undeifned, disregarding notlocal positon packet",1) 
 		return;
 	}
 	
@@ -37,4 +37,4 @@ with (_client)
 	}
 }
 
-fConsoleAddMessage("Couldnt fild _client: cb_T2_OtherPosition")
+fConsoleAddMessage("Couldnt fild _client: cb_T2_OtherPosition",1)

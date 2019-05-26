@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "020232e5-0261-417c-bfcf-ae4b8f5b0445",
+            "Value": {
+                "id": "a8fca805-15f1-46f3-8182-e043abf1f0ab",
+                "resourcePath": "extensions\\ArrayFunctions\\ArrayFunctions.yy",
+                "resourceType": "GMExtension"
+            }
+        },
+        {
             "Key": "02dd7c5f-2972-4548-a9a1-9d4da9f3a602",
             "Value": {
                 "id": "427d69a6-f1c0-4007-901f-505315382bd5",
