@@ -18,7 +18,6 @@ file_text_write_string(file, string(current_hour) + ":" + string(current_minute)
 file_text_close(file);
 */
 
-
 var _client = fGetClientById(_connectionId)
 
 if (_client == noone)
@@ -29,12 +28,18 @@ if (_client == noone)
 else
 {
 	with (_client)
-	{	
+	{		
 		if (state = state.sendingInfo)
 		{
 			state = state.dead
 			
 			f_ConsoleAddMessage("Made dead, reason: RECIEVED_T1_IMPUTS_STATE_WAS_SEDNING_INFO")
+		}
+		
+		if(state = state.dead)
+		{
+			f_ConsoleAddMessage("State is dead, not reading data")
+			return;	
 		}
 		
 		switch (m_character)
@@ -55,7 +60,7 @@ else
 					}
 					hero.m_imputLog = _newArray
 				}
-				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]				
+				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]
 				break;	
 			}
 			
@@ -78,6 +83,9 @@ else
 				hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]				
 				break;		
 			}
+			
+			default: f_ConsoleAddMessage("State was default, not reading data");
+			
 		}		 
 	}
 }

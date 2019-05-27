@@ -4,7 +4,7 @@ switch managerState
 	{
 		if sent_tcp_info == false
 		{
-			packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.T1_INFO,[global.gnet_myPort,m_username,m_character])
+			packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.T1_INFO,[global.gnet_myPort,m_username])
 			sent_tcp_info = true;
 		}
 		break;
@@ -38,7 +38,7 @@ switch managerState
 
 				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_KEYS,_hsp,_vsp,packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);
 				gnet_packet_send_to_id(_packet,_T2Id);
-
+				
 				packet_number ++
 				m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
 				m_unreadImputs[0] = [_hsp,_vsp,packet_number,_gunAngle,deltaTime];

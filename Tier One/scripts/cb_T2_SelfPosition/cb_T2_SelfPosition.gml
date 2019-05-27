@@ -23,9 +23,15 @@ with (_client)
 {
 	if (isLocal)
 	{
+		if (hero = undefined)
+		{
+			fConsoleAddMessage("Hero was undefined, disregarding self position packet") 
+			return;
+		}
+		
 		with(hero)
 		{
-			if (_lastRecievedPacket > latest_acknowleged_packet[2]) //make sure most recent server update
+			if (_lastRecievedPacket >= latest_acknowleged_packet[2]) //make sure most recent server update
 			{
 				latest_acknowleged_packet = [_x,_y,_hsp,_vsp] //update most recent position knowledge	
 		
@@ -43,11 +49,11 @@ with (_client)
 				return;
 			}
 		}
-		fConsoleAddMessage("Couldnt find hero")
 	}
 	else
 	{
 		fConsoleAddMessage("Not Local")	
+		return;
 	}
 }
-
+fConsoleAddMessage("Client couldnt be found")

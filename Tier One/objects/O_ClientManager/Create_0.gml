@@ -56,11 +56,10 @@ enum CHARACTER
 	MAGNET_BOI
 }
 
-m_character = CHARACTER.NINJA
-
 m_gunAngle = 0
 
 m_username = "Big Chungus"
+m_character = 0
 
 packet_number = 0 //keeps count for sever reconsiliation
 

@@ -1,0 +1,1 @@
+fConsoleAddMessage("Message",2)

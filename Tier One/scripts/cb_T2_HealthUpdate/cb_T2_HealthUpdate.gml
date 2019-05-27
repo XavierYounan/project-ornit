@@ -5,10 +5,11 @@ var _receivedData  = argument1;
 var _clientId = _receivedData[0]; //buffer_u8
 var _health = _receivedData[1]; //buffer_u8
 
-var _client = fGetClientById(_clientId)
+var client = fGetClientById(_clientId)
 
-if _client != noone
+if client != noone
 {	
-	_client.hero.hp = _health
+	if (client.hero = undefined) return;
+	client.hero.hp = _health
 }
 

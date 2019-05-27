@@ -10,51 +10,6 @@ with (instance_create_depth(0,0,0,oPlayer))
 	m_PlayerId = _clientId
 	playerState = PLAYER_STATE.DEAD
 	isLocal = false
-	
-	switch (_character)
-	{
-		case CHARACTER_LIST.NINJA:
-		{
-			hero = instance_create_depth(0,0,-100,oNinja)
-			hero.itemList[NINJA_ITEMS.GUN] = instance_create_depth(0,0,-101,oNinjaGun)
-			fConsoleAddMessage("Character is NINJA")
-			break;
-		}
-		
-		default:
-		{
-			show_error("Recieved info about a player connecting. Character no " + string(_character) + " but that does not exist",true)
-			break;
-		}
-	}
-	
-	with (hero)
-	{
-		isLocal = false
-		latest_acknowleged_packet = [0,0,0,0,0,current_time] //update most recent position knowledge
-		parent = other.id
-		m_username = _username
-		m_character = _character
-	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+fConsoleAddMessage("recieved player info")
