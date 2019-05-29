@@ -38,7 +38,7 @@ else
 		
 		if(state = state.dead)
 		{
-			f_ConsoleAddMessage("State is dead, not reading data")
+			f_ConsoleAddMessage("State is dead, not reading data",//fix this)
 			return;	
 		}
 		
