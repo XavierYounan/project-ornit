@@ -30,21 +30,31 @@ with(_client)
 {
 	if (state != state.dead)
 	{
-		f_ConsoleAddMessage("Respawn request denied, you are already spawned!")	
+		f_ConsoleAddMessage("Respawn request denied, you are not dead!")	
 		return;
 	}
 	
+	switch(_character)
+	{
+		case CHOSEN_CHARACTER.NINJA:
+		{
+			hero = instance_create_depth(_x,_y,-100,oNinja)
+			break;
+		}
 		
-	if(_character = CHOSEN_CHARACTER.NINJA)
-	{
-		hero = instance_create_depth(_x,_y,-100,oNinja)
-			
+		case CHOSEN_CHARACTER.MAGNET_BOI:
+		{
+			hero = instance_create_depth(_x,_y,-100,oMagnetBoi)
+			break;
+		}
+		
+		default:
+		{
+			f_ConsoleAddMessage("Recieved respawn request but character was not known, REQUEST DENIED!")
+			return;
+		}
 	}
-	
-	if(_character = CHOSEN_CHARACTER.MAGNET_BOI)
-	{
-		hero = instance_create_depth(_x,_y,-100,oMagnetBoi)
-	}
+
 		
 	m_character = _character
 	hero.parentId = id
