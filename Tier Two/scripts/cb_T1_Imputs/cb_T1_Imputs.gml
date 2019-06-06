@@ -33,12 +33,12 @@ else
 		{
 			state = state.dead
 			
-			f_ConsoleAddMessage("Made dead, reason: RECIEVED_T1_IMPUTS_STATE_WAS_SEDNING_INFO")
+			fConsoleAddMessage("Made dead, reason: RECIEVED_T1_IMPUTS_STATE_WAS_SEDNING_INFO",1)
 		}
 		
 		if(state = state.dead)
 		{
-			f_ConsoleAddMessage("State is dead, not reading data",2)
+			fConsoleAddMessage("State is dead, not reading data",2)
 			return;	
 		}
 		
@@ -84,7 +84,7 @@ else
 				break;		
 			}
 			
-			default: f_ConsoleAddMessage("State was default, not reading data");
+			default: fConsoleAddMessage("State was default, not reading data",1);
 			
 		}		 
 	}

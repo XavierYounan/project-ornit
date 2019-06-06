@@ -1,7 +1,7 @@
 /// @desc Add a message to our consoles list
 //@param {string} Message The message to display
 
-if(!instance_exists(O_GameConsole))
+if(!instance_exists(oGameConsole))
 {
 	return;
 }
@@ -21,7 +21,7 @@ else
 
 	timeDelay = timeDelay * 1000 //convert to millisecconds
 
-	with(O_GameConsole)
+	with(oGameConsole)
 	{
 		//clear displayable messages
 		var listSize = ds_list_size(spam_message_que)

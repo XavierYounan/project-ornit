@@ -2,7 +2,7 @@
 
 if (!assert_singleton()) return;
 
-m_GameConsole = instance_create_depth(-10,-10,-100,O_GameConsole)
+m_GameConsole = instance_create_depth(-10,-10,-100,oGameConsole)
 
 MAX_PLAYERS = 8;
 
@@ -19,7 +19,7 @@ else
 {
 	//Connect to major server and log ip and port 
 	var result = gnet_connect("127.0.0.1",3002)
-	f_ConsoleAddMessage(string(result))
+	fConsoleAddMessage(string(result))
 	if (result[0] == null)
 	{
 		show_message(result[1]);

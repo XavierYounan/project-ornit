@@ -30,5 +30,3 @@ camera_set_proj_mat(camera,pm);
 view_camera[0] = camera;
 
 alarm[0] = veiwRefershTime;
-
-f_ConsoleAddMessage("Created")

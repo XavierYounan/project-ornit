@@ -41,7 +41,7 @@ switch (_connectionResult)
 		}
 		
 		//Log some information
-		f_ConsoleAddMessage("T3 Server Id is : " + string(_connectionId))
+		fConsoleAddMessage("T3 Server Id is : " + string(_connectionId))
 		
 		//Send server information
 		fUpdateStatus()

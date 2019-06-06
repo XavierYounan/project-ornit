@@ -1,9 +1,7 @@
 switch state
 {
 	case state.dead:
-	{
-		
-		
+	{	
 		#region Dead code		
 		var list = global.T1_CONNECTION_ID_LIST
 		var _arrSize = array_length_1d(list)
@@ -16,8 +14,9 @@ switch state
 	}
 	case state.waitingForInfo:
 	{
-		//do nothing just wait untill recieve info then state will be set to sending
-
+		#region do nothing just wait untill recieve info then state will be set to sending
+		
+		#endregion
 		break;
 	}
 	
@@ -30,7 +29,7 @@ switch state
 			if (other.m_ClientId = m_ClientId)
 			{				
 				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_LOCAL_PLAYER_INFO,[m_ClientId,m_character,m_username])
-				f_ConsoleAddMessage("Sent local player info!")
+				fConsoleAddMessage("Sent local player info!")
 			}
 			else
 			{				
@@ -56,7 +55,7 @@ switch state
 		}
 		
 		state = state.dead
-		f_ConsoleAddMessage("Made dead, reason: FIN_SENDING_INFO")
+		fConsoleAddMessage("Made dead, reason: FIN_SENDING_INFO")
 		
 		#endregion
 		break;
@@ -64,6 +63,7 @@ switch state
 		
 	case state.playing:
 	{		
+		#region Player 
 		if (m_framesTillUpdate <= 0)
 		{
 			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION, hero.x, hero.y, m_ClientId, hero.itemList[NINJA_ITEMS.GUN].image_angle)
@@ -75,7 +75,7 @@ switch state
 			var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SELF_POSITION,hero.x,hero.y,m_ClientId,m_lastProcessedImput[2],hero.hsp,hero.vsp)
 			gnet_packet_send_to_id(packet,m_ClientId)
 			
-			m_framesTillUpdate = m_updateFrequencyFrames + 1
+			m_framesTillUpdate = m_updateFrequencyFrames + 1;
 		}
 		else
 		{
@@ -84,16 +84,12 @@ switch state
 		
 		m_framesTillUpdate --;
 
+		#endregion
 		break;
 	}
 	
-	default:
-	{
-		f_ConsoleAddMessage("oClient is in default FIX THIS")
-		break;
-	}
+	default: fConsoleAddMessage("oClient is in default FIX THIS",2)
 }
-
 #region //Server send time for individual client
 
 if (m_updatePing = true)
@@ -103,7 +99,4 @@ if (m_updatePing = true)
 	var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SEND_TIME,_time)
 	gnet_packet_send_to_id(_packet,m_ClientId)
 }
-
 #endregion
-
-
