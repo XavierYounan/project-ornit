@@ -298,7 +298,7 @@
             "Key": "28cad671-7a11-4b87-9833-8b50219092c6",
             "Value": {
                 "id": "dd418092-aab9-4219-8072-5dcb1e32ccda",
-                "resourcePath": "scripts\\f_ConsoleAddMessage\\f_ConsoleAddMessage.yy",
+                "resourcePath": "scripts\\fConsoleAddMessage\\fConsoleAddMessage.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -340,6 +340,14 @@
                 "id": "775cbfb0-7a81-46d1-8a85-144809727e5b",
                 "resourcePath": "objects\\TCP_connection\\TCP_connection.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2c84c21b-b986-4f43-902a-5ed174bfaac5",
+            "Value": {
+                "id": "eca94a46-a62e-4b5a-b58e-90d988f842fd",
+                "resourcePath": "scripts\\priv_console_add_message\\priv_console_add_message.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -562,7 +570,7 @@
             "Key": "5722e01f-f37d-45fa-a2e5-09baf5b691a8",
             "Value": {
                 "id": "ddb488b1-d8be-47e5-8694-051c5b7cf738",
-                "resourcePath": "objects\\O_GameConsole\\O_GameConsole.yy",
+                "resourcePath": "objects\\oGameConsole\\oGameConsole.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -972,6 +980,14 @@
                 "id": "f975d22a-b7f4-4dd2-9a76-0baf5021270b",
                 "resourcePath": "objects\\o_gnet_TestNetwork\\o_gnet_TestNetwork.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "8a3de657-1939-4f12-b1e3-e97ea701af1f",
+            "Value": {
+                "id": "bc9fb240-f3d0-4577-800a-a7509126362c",
+                "resourcePath": "views\\8a3de657-1939-4f12-b1e3-e97ea701af1f.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1785,7 +1801,6 @@
         "20ff15c3-d787-4677-9168-79f5e7e3ee6d",
         "e8085ba7-eee4-4159-b9a2-41eadd4185bb",
         "930feab2-25f6-4342-a99a-22302ff49bf5",
-        "28cad671-7a11-4b87-9833-8b50219092c6",
         "63d4f71b-e647-48b6-9e30-826a2e64152b",
         "58cc1fbc-7099-4171-aa5e-6b681ff1fe31",
         "84f47b42-ec8b-42c4-afc9-0d8684543345",
@@ -1793,6 +1808,8 @@
         "ac15e46c-8386-4832-8646-2b1f371611c8",
         "197c4af6-79b3-46b9-9dd3-a5480ab95514",
         "a7a35d65-17ba-4b1a-8393-8107c418321c",
+        "28cad671-7a11-4b87-9833-8b50219092c6",
+        "2c84c21b-b986-4f43-902a-5ed174bfaac5",
         "dd45aa60-26b3-4c28-a0fe-cbfdd8b01afc",
         "836c3d77-5855-4d2a-a708-1f785de69390",
         "e657e910-fb47-420d-99f4-dd86094d97ef",
