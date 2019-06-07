@@ -27,8 +27,8 @@ else
 	else
 	{
 		//Open up TCP server
-		server_socket = network_create_server(network_socket_tcp,3003, MAX_PLAYERS);
-		if server_socket < 0
+		var socket = network_create_server(network_socket_tcp,3003, MAX_PLAYERS);
+		if socket < 0
 		{
 			show_message("The TCP port is not open, cannot start network!")
 		}
@@ -36,7 +36,7 @@ else
 		{
 			with(instance_create_depth(0,0,0,TCP_manager))
 			{
-				server_socket = server_socket	
+				server_socket = socket	
 			}
 			room_goto_next()
 		}
