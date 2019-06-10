@@ -1,15 +1,5 @@
 switch state
 {
-	case CAMERA_STATE.INIT:
-	{
-		state = CAMERA_STATE.SHOW_FULL_MAP	
-		
-		with (oRespawn)
-		{
-			state = RESPAWN_STATE.CLICKABLE
-		}
-		break;	
-	}
 	case CAMERA_STATE.FOLLOW_PLAYER:
 	{
 		#region Follow the player
@@ -24,12 +14,7 @@ switch state
 		}
 		else
 		{
-			state = CAMERA_STATE.SHOW_FULL_MAP	
-			
-			with (oRespawn)
-			{
-				state = RESPAWN_STATE.CLICKABLE
-			}
+			event_user(CAMERA_EVENT.FULL_SCREEN)
 		}
 		
 		//Dont let it go outside
@@ -43,51 +28,6 @@ switch state
 		break;
 	}
 	
-	case CAMERA_STATE.FOLLOW_PLAYER_CREATE:
-	{
-		#region Create event for following the player
-		
-		
-		//check local isnt undefined
-		if localPlayer == id
-		{
-			state = CAMERA_STATE.SHOW_FULL_MAP
-			fConsoleAddMessage("Coldnt follow the player, no local player has been set (camera)")
-		}
-		
-		//check hero isnt undefined
-		if localPlayer.hero == null
-		{
-			state = CAMERA_STATE.SHOW_FULL_MAP
-	
-		}
-		
-		//change projection to zoom in
-		cameraWidth = 1920;
-		cameraHeight = 1080;
-		var pm = matrix_build_projection_ortho(cameraWidth,cameraHeight,0,lookDistance);
-		camera_set_proj_mat(camera,pm);
-		
-		x = localPlayer.hero.x;
-		y = localPlayer.hero.y;
-		
-		//Dont let it go outside
-		x = clamp(x,xResolution/2,room_width - xResolution/2);
-		y = clamp(y,yResolution/2,room_height - yResolution/2);
-		
-		with (oRespawn)
-		{
-			state = RESPAWN_STATE.INACTIVE;
-			buttonState = BUTTON_STATE.NOTHING;
-		}
-			
-		
-		//Set the state
-		state = CAMERA_STATE.FOLLOW_PLAYER;
-		
-		#endregion
-		break;	
-	}
 	
 	case CAMERA_STATE.SHOW_FULL_MAP:
 	{

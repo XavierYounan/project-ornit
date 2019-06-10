@@ -11,5 +11,3 @@ with (instance_create_depth(0,0,0,oPlayer))
 	playerState = PLAYER_STATE.DEAD
 	isLocal = false
 }
-
-fConsoleAddMessage("recieved player info")
