@@ -4,9 +4,6 @@ switch state
 	{
 		#region Follow the player
 		
-		x += (xTo - x)/25
-		y += (yTo - y)/25
-		
 		if (localPlayer != id)
 		{
 			xTo = localPlayer.hero.x + (mouse_x - other.x)/4 
@@ -15,7 +12,11 @@ switch state
 		else
 		{
 			event_user(CAMERA_EVENT.FULL_SCREEN)
+			fConsoleAddMessage("There is no local player assigned to the camera!")
 		}
+		
+		x += (xTo - x)/25
+		y += (yTo - y)/25
 		
 		//Dont let it go outside
 		x = clamp(x,cameraWidth/2,room_width - cameraWidth/2)

@@ -1,10 +1,17 @@
 /// @description Player died
-instance_destroy(hero)
-hero = null
-
-with(oCamera)
+if (hero != undefined)
 {
-	event_user(CAMERA_EVENT.FULL_SCREEN)	
+	instance_destroy(hero)
+	hero = undefined
 }
 
-event_user(PLAYER_STATE.DEAD)
+if (isLocal)
+{
+	with(oCamera)
+	{	
+		event_user(CAMERA_EVENT.FULL_SCREEN)
+		fConsoleAddMessage("Recieved state update of dead and player is local, making camera full screen",2)
+	}
+}
+
+playerState = PLAYER_STATE.DEAD

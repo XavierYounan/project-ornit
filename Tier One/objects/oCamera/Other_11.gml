@@ -7,7 +7,7 @@ if localPlayer == id
 }
 		
 //check hero isnt undefined
-if localPlayer.hero == null
+if localPlayer.hero == undefined
 {
 	event_user(CAMERA_EVENT.FULL_SCREEN)
 	fConsoleAddMessage("Coldnt follow the player, no player to follow")

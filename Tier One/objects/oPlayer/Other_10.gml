@@ -1,3 +1,3 @@
 /// @desc Playing user event
 
-state = PLAYER_STATE.PLAYING
+playerState = PLAYER_STATE.PLAYING

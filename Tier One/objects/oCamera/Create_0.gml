@@ -52,6 +52,7 @@ xTo = x
 yTo = y
 
 localPlayer = id
-localPlayer.hero = null
+localPlayer.hero = undefined
 
+state = undefined
 event_user(CAMERA_EVENT.FULL_SCREEN)
