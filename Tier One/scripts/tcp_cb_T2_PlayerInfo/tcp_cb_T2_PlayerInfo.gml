@@ -8,8 +8,6 @@ var _username = _receivedData[2]; //buffer_string
 with (instance_create_depth(0,0,0,oPlayer))
 {
 	m_PlayerId = _clientId
-	playerState = PLAYER_STATE.DEAD
+	event_user(PLAYER_EVENT.DEAD)
 	isLocal = false
 }
-
-fConsoleAddMessage("recieved player info")

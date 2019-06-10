@@ -15,7 +15,7 @@ if (instance_exists(TCP_manager))
 	}
 	else
 	{
-		show_error("That socket doesnt not have a connection established with it",true)
+		fConsoleAddMessage("Tried to send packet but couldnt because TCP - UDP link is not established!",2)
 	}
 }
 else

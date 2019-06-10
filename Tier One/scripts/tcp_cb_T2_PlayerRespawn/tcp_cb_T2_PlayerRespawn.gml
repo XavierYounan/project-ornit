@@ -47,10 +47,10 @@ with(client)
 			{
 				xTo = x = x + (mouse_x - x)/4 //snap x xoords
 				yTo = y = y + (mouse_y - y)/4 //snap y coords
-				state = CAMERA_STATE.FOLLOW_PLAYER_CREATE	
+				event_user(CAMERA_EVENT.FOLLOW_PLAYER)	
 			}	
 		}
 	}
 	
-	playerState = PLAYER_STATE.PLAYING
+	event_user(PLAYER_EVENT.PLAYING)
 }

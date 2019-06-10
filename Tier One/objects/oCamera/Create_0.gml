@@ -37,16 +37,22 @@ view_camera[0] = camera;
 enum CAMERA_STATE
 {
 	FOLLOW_PLAYER,
-	FOLLOW_PLAYER_CREATE,
 	SHOW_FULL_MAP,
-	INIT
 }
 
-state = CAMERA_STATE.INIT
+enum CAMERA_EVENT
+{
+	FULL_SCREEN,
+	FOLLOW_PLAYER
+}
+
 localPlayer = noone;
 
 xTo = x
 yTo = y
 
 localPlayer = id
-localPlayer.hero = null
+localPlayer.hero = undefined
+
+state = undefined
+event_user(CAMERA_EVENT.FULL_SCREEN)

@@ -5,6 +5,9 @@ for (var i=0; i<_arrayLength ; i++)
 	instance_destroy(itemList[i])
 }
 
-fConsoleAddMessage("Ninja has been destroyed at x:y" + string(x) + ":" + string(y))
+with (parent)
+{
+	hero = null	
+}
 
 instance_destroy(self)

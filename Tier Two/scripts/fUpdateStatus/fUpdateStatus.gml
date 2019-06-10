@@ -5,9 +5,9 @@ if (instance_exists(oT3))
 {
 	var packet = gnet_packet_build(MAJOR_PACKET_IDENTIFIERS.T2_STATUS,array_length_1d(global.T1_CONNECTION_ID_LIST),1) //TODO SERVER STATE
 	gnet_packet_send_to_id(packet,oT3.m_connectionId)
-	f_ConsoleAddMessage("Sent number of connected players to Tier Three")
+	fConsoleAddMessage("Sent number of connected players to Tier Three")
 }
 
 
-f_ConsoleAddMessage("Number of connected players is : " + string(array_length_1d(global.T1_CONNECTION_ID_LIST)))
+fConsoleAddMessage("Number of connected players is : " + string(array_length_1d(global.T1_CONNECTION_ID_LIST)))
 

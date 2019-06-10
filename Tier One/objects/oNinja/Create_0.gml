@@ -13,6 +13,8 @@ hasControl = true;
 
 showingHitbox = false
 
+parent = null
+
 enum NINJA_ITEMS
 {
 	GUN	

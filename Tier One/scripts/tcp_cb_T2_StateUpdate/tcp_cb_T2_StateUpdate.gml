@@ -9,5 +9,8 @@ var _client = fGetClientById(_clientId)
 
 if (_client) != noone
 {
-	_client.playerState = _state
-}
+	with (_client)
+	{
+		event_user(_state)	
+	}
+} 

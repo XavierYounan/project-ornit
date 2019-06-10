@@ -1,3 +1,8 @@
+// Establish a fake connection to get the user to accept
+
+gnet_start_network(1,PROTOCOL_ID,3111, "temp connection")
+gnet_stop_network()
+
 /// @description get ip and port and init
 clicked = false; //init
 image_speed = 0; //init

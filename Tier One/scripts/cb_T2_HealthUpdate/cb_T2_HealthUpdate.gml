@@ -8,8 +8,9 @@ var _health = _receivedData[1]; //buffer_u8
 var client = fGetClientById(_clientId)
 
 if client != noone
+with(client)
 {	
-	if (client.hero = undefined) return;
-	client.hero.hp = _health
+	if (hero = undefined) return;
+	hero.hp = _health	
 }
 

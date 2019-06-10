@@ -9,18 +9,18 @@ var _y = _receivedData[2]; //buffer_u32
 var _clientId = TCP_manager.UDP_connectionIdMap[? socket]
 var _client = fGetClientById(_clientId)
 
-f_ConsoleAddMessage("Recieved Respawn request")
+fConsoleAddMessage("Recieved Respawn request")
 
 if(_client == null)
 {
-	f_ConsoleAddMessage("Recieved a respawn request for an undefined client")	
+	fConsoleAddMessage("Recieved a respawn request for an undefined client")	
 	return;
 }
 
 
 if !position_meeting(_x,_y,oRespawn)
 {
-	f_ConsoleAddMessage("The Click was not on the Respawn point, Hacking?")
+	fConsoleAddMessage("The Click was not on the Respawn point, Hacking?")
 	return;
 }
 
@@ -30,21 +30,31 @@ with(_client)
 {
 	if (state != state.dead)
 	{
-		f_ConsoleAddMessage("Respawn request denied, you are already spawned!")	
+		fConsoleAddMessage("Respawn request denied, you are not dead!")	
 		return;
 	}
 	
+	switch(_character)
+	{
+		case CHOSEN_CHARACTER.NINJA:
+		{
+			hero = instance_create_depth(_x,_y,-100,oNinja)
+			break;
+		}
 		
-	if(_character = CHOSEN_CHARACTER.NINJA)
-	{
-		hero = instance_create_depth(_x,_y,-100,oNinja)
-			
+		case CHOSEN_CHARACTER.MAGNET_BOI:
+		{
+			hero = instance_create_depth(_x,_y,-100,oMagnetBoi)
+			break;
+		}
+		
+		default:
+		{
+			fConsoleAddMessage("Recieved respawn request but character was not known, REQUEST DENIED!")
+			return;
+		}
 	}
-	
-	if(_character = CHOSEN_CHARACTER.MAGNET_BOI)
-	{
-		hero = instance_create_depth(_x,_y,-100,oMagnetBoi)
-	}
+
 		
 	m_character = _character
 	hero.parentId = id
@@ -62,7 +72,7 @@ with(_client)
 		}
 	}
 		
-	f_ConsoleAddMessage("Completed the respawn request, State: " + string(state))
+	fConsoleAddMessage("Completed the respawn request, State: " + string(state))
 		
 	state = state.playing
 		
@@ -71,7 +81,7 @@ with(_client)
 	for(var i = 0; i < _arrSize; i++)
 	{
 		packet_tcp_send(list[i],TCP_PACKETS.T2_PLAYER_RESPAWN,[_clientId,_character])
-		f_ConsoleAddMessage("Sent data to " + string(list[i]))
+		fConsoleAddMessage("Sent data to " + string(list[i]))
 	}	
 	
 	

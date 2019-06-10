@@ -92,7 +92,8 @@ switch(serverState)
 		if (hp <= 0)
 		{
 			parentId.state = state.dead
-			f_ConsoleAddMessage("Made dead, reason: HP_EQUAL_ZERO")
+			fConsoleAddMessage("Made dead, reason: HP_EQUAL_ZERO")
+			instance_destroy(self)
 		}
 		
 		#region //clear imput log
