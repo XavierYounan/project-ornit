@@ -911,14 +911,6 @@
             }
         },
         {
-            "Key": "7ce301e4-e512-4c15-abcc-a6331079b506",
-            "Value": {
-                "id": "4a14f665-fee0-4f9e-b658-2df006d6ebf4",
-                "resourcePath": "objects\\oMagnetFistL\\oMagnetFistL.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "7dd72427-bd18-4a5f-b94b-c2b242ebfedd",
             "Value": {
                 "id": "9effe774-0d14-4f24-8f81-9f9a3a519660",
@@ -1444,14 +1436,6 @@
                 "id": "0dd4c55b-3295-4b77-a2d1-868f148b9afe",
                 "resourcePath": "scripts\\gnet_get_my_socket\\gnet_get_my_socket.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "c966aaad-bbc0-4241-bb12-da268715f268",
-            "Value": {
-                "id": "dd1961c1-33e1-4ccf-95a3-e3f59891a01e",
-                "resourcePath": "objects\\oMagnetFistR\\oMagnetFistR.yy",
-                "resourceType": "GMObject"
             }
         },
         {

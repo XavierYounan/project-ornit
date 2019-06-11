@@ -1,3 +1,4 @@
+//magnet boi
 serverState = parentId.state
 
 switch(serverState)

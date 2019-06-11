@@ -66,7 +66,7 @@ switch state
 		#region Player 
 		if (m_framesTillUpdate <= 0)
 		{
-			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION, hero.x, hero.y, m_ClientId, hero.itemList[NINJA_ITEMS.GUN].image_angle)
+			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION, hero.x, hero.y, m_ClientId, mouse_angle)
 			gnet_packet_send_to_list_exclude(_packet, global.T1_CONNECTION_ID_LIST, [m_ClientId])
 			
 			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_HEALTH_UPDATE,m_ClientId,round(hero.hp))
