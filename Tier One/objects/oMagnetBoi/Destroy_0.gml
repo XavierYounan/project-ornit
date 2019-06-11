@@ -5,7 +5,21 @@ for (var i=0; i<_arrayLength ; i++)
 	instance_destroy(itemList[i])
 }
 
-var parts = [[sMagnetArmL,0,0],[sMagnetArmR,0,0]]
+var parts = [
+[sMagnetArmL,12,-68],
+[sMagnetArmR,-13,-68],
+[sMagnetChest,-13,-69],
+[sMagnetCrotch,-6,-43],
+//[sMagnetElectricity,0,0], // not doing this one obviosult
+[sMagnetFistL,13,-36],
+[sMagnetFistR,-20,-35],
+[sMagnetFootL,-10,-5],
+[sMagnetFootR,6,-6],
+[sMagnetHead,-11,-80],
+[sMagnetLegL,6,-76],
+[sMagnetLegR,-9,-37]
+]
+
 
 var instanceNumber = array_length_1d(parts)
 
@@ -20,6 +34,10 @@ for(var i = 0; i < instanceNumber; i++)
 		y = other.y + arr[2]
 	}
 }
+
+
+
+
 
 
 instance_destroy(self)

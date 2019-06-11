@@ -14,7 +14,7 @@ walksp = 240 ;
 jump_speed = 15;
 hasControl = true;
 
-hp = 100;
+hp = 200;
 bulletDamage = 5;
 
 fireRate = 7 //per seccond

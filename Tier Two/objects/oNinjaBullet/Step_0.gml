@@ -20,3 +20,15 @@ if (_colInst != noone) && (_colInst.parentClientId != creator)
 		instance_destroy(other)
 	}
 }
+
+
+_colInst = instance_place(x,y,oMagnetBoi)
+
+if (_colInst != noone) && (_colInst.parentClientId != creator) 
+{
+	with (_colInst)
+	{
+		hp -= bulletDamage;
+		instance_destroy(other)
+	}
+}

@@ -7,3 +7,9 @@ if (dissapear = true)
 		instance_destroy(self)	
 	}
 }
+
+x += xVel
+y += yVel
+
+xVel = 3 * xVel /4
+yVel += grav
