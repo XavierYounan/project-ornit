@@ -11,5 +11,5 @@ if (dissapear = true)
 x += xVel
 y += yVel
 
-xVel = 3 * xVel /4
+xVel = 99 * xVel/100
 yVel += grav
