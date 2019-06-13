@@ -10,7 +10,7 @@ else
 	hitDelay--	
 }	
 
-_colInst = instance_place(x,y,oNinja)
+_colInst = instance_place(x,y,oCharacter)
 
 if (_colInst == noone) 
 {
@@ -23,9 +23,3 @@ if(_colInst.parent.m_PlayerId != creator)
 	return;
 }
 
-/*
-if (_colInst != noone) && (_colInst.m_PlayerId != creator) 
-{
-	instance_destroy(self)	
-}
-*/
