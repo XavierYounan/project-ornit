@@ -10,4 +10,6 @@ with (instance_create_depth(0,0,0,oPlayer))
 	m_PlayerId = _clientId
 	event_user(PLAYER_EVENT.DEAD)
 	isLocal = false
+	username = _username
 }
+

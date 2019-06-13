@@ -21,3 +21,16 @@ fireRate = 7 //per seccond
 canShoot = true
 
 m_imputLog = []
+
+enum PLAYERSTATE
+{
+	FREE,
+	ATTACK_SLASH,
+	ATTACK_COMBO
+}
+
+playerState = PLAYERSTATE.FREE
+
+//hitting code
+hitByAttack = ds_list_create()
+swingObject = undefined

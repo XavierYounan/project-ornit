@@ -37,7 +37,7 @@ with(client)
 	{
 		latest_acknowleged_packet = [0,0,0,0,0,current_time] //update most recent position knowledge
 		parent = other.id
-		m_username = other.m_username
+		username = other.username
 		m_PlayerId = _clientId
 		isLocal = other.isLocal
 		

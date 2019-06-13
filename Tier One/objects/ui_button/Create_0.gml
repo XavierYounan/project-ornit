@@ -50,3 +50,5 @@ while (global.IP == "")
 
 global.PORT = get_integer("WHAT IS YOUR PORT",3001)
 
+global.USERNAME = "harry is bad at brawl stars"
+global.USERNAME = get_string("USERNAME", "harry is bad at brawl stars")

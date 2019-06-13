@@ -58,7 +58,7 @@ enum CHARACTER
 
 m_gunAngle = 0
 
-m_username = "Big Chungus"
+m_username = global.USERNAME
 m_character = 0
 
 packet_number = 0 //keeps count for sever reconsiliation

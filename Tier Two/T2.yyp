@@ -223,6 +223,14 @@
             }
         },
         {
+            "Key": "19d4aa74-660c-4f28-9b62-646331c30e16",
+            "Value": {
+                "id": "b1916ad4-a8b5-4591-af0d-2517eb8543c0",
+                "resourcePath": "objects\\oMagnetBoiSlash\\oMagnetBoiSlash.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1d6894b3-8020-44d3-a1e3-649d7f5c84cc",
             "Value": {
                 "id": "4eb4a4a2-974b-4384-8257-b6366906d03d",
@@ -356,6 +364,14 @@
                 "id": "6807530a-7ac0-43d9-a944-987de723db2e",
                 "resourcePath": "sprites\\sMagnetArmL\\sMagnetArmL.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3006d98f-bfa5-43ab-919d-3cbf04afd732",
+            "Value": {
+                "id": "19d9e5ad-edf6-4114-9689-ad133d700948",
+                "resourcePath": "scripts\\animation_end\\animation_end.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -815,14 +831,6 @@
             }
         },
         {
-            "Key": "6e41ff15-41bd-4636-b433-654af506b288",
-            "Value": {
-                "id": "27d49f50-a153-46a6-8687-c1d8e95a09d6",
-                "resourcePath": "sprites\\sMagnetSwingHitbox\\sMagnetSwingHitbox.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "6eec198c-5d59-4cbe-8690-0b3238a9292e",
             "Value": {
                 "id": "bc609989-8162-472c-9429-d350eef27f7e",
@@ -1156,6 +1164,14 @@
                 "id": "757216e5-6949-4de3-9a28-b04205267e8f",
                 "resourcePath": "rooms\\r_Play\\r_Play.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "9dbfd3ff-1ee9-4bcd-93cf-065d48fd88bb",
+            "Value": {
+                "id": "e58a86ba-67d9-4cb9-ad37-6442909f2fe8",
+                "resourcePath": "objects\\oDamageHitable\\oDamageHitable.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1898,6 +1914,7 @@
         "a7a35d65-17ba-4b1a-8393-8107c418321c",
         "28cad671-7a11-4b87-9833-8b50219092c6",
         "2c84c21b-b986-4f43-902a-5ed174bfaac5",
+        "3006d98f-bfa5-43ab-919d-3cbf04afd732",
         "dd45aa60-26b3-4c28-a0fe-cbfdd8b01afc",
         "836c3d77-5855-4d2a-a708-1f785de69390",
         "e657e910-fb47-420d-99f4-dd86094d97ef",
