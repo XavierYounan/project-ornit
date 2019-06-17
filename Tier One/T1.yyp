@@ -999,6 +999,14 @@
             }
         },
         {
+            "Key": "8bc3710b-d6a1-4993-8712-6cd368dbf5c9",
+            "Value": {
+                "id": "e55e615b-6106-4bb7-a1e4-ef57d495d0f0",
+                "resourcePath": "sprites\\sMagnetSwing\\sMagnetSwing.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8cad5a6a-833a-4e69-acb0-00b197e2b5ce",
             "Value": {
                 "id": "c0aa08df-88a1-4f0d-bfa1-756ab2568684",
@@ -1204,6 +1212,14 @@
                 "id": "c6edbc3e-8f39-48ec-ab9c-c6629ce90f80",
                 "resourcePath": "sprites\\sRespawn\\sRespawn.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ac5c7b43-252e-450f-8d27-8f50d1ea4e4c",
+            "Value": {
+                "id": "87a8e29a-41e5-4045-8c99-7cc2771a2b30",
+                "resourcePath": "objects\\oMagnetSlash\\oMagnetSlash.yy",
+                "resourceType": "GMObject"
             }
         },
         {

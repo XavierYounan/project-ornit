@@ -123,7 +123,7 @@ switch(serverState)
 					var _arrSize = array_length_1d(list)
 					for(var i = 0; i < _arrSize; i++)
 					{
-						packet_tcp_send(list[i],TCP_PACKETS.T2_HERO_STATE_UPDATE,[m_ClientId, t1_magnetBoiState_SWING])
+						packet_tcp_send(list[i],TCP_PACKETS.T2_HERO_STATE_UPDATE,[parentId.m_ClientId, t1_magnetBoiState.SWING])
 					}	
 					#endregion
 				}
@@ -150,14 +150,15 @@ switch(serverState)
 							
 							with(hitID)
 							{
-								if (hitID != id)
+								if (hitID != other.id)
 								{
-									hp -= swingDamage	
+									hp -= other.swingDamage	
 								}
 							}
 						}
 					}
 				}
+				
 				ds_list_destroy(hitByAttackNow)
 				#endregion
 								
@@ -172,6 +173,13 @@ switch(serverState)
 					instance_destroy(swingObject)	
 					swingObject = undefined
 					playerState = PLAYERSTATE.FREE
+					
+					var list = global.T1_CONNECTION_ID_LIST
+					var _arrSize = array_length_1d(list)
+					for(var i = 0; i < _arrSize; i++)
+					{
+						packet_tcp_send(list[i],TCP_PACKETS.T2_HERO_STATE_UPDATE,[parentId.m_ClientId, t1_magnetBoiState.FREE])
+					}	
 				}
 				
 				#endregion

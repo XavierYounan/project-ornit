@@ -29,9 +29,11 @@ enum PLAYERSTATE
 	ATTACK_COMBO
 }
 
-t1_magnetBoiState_FREE = 0
-t1_magnetBoiState_SWING = 1
-
+enum t1_magnetBoiState
+{
+	FREE = 0,
+	SWING
+}
 
 
 playerState = PLAYERSTATE.FREE
