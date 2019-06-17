@@ -91,10 +91,17 @@ switch(serverState)
 			
 			case PLAYERSTATE.ATTACK_COMBO:
 			{
+				#region Attack slash code
+				#endregion
+				break;
+			}
+			
+			case PLAYERSTATE.ATTACK_SLASH:
+			{
 				#region Attack combo code
-				
 				#region clear imput log
 		
+				var _arraySize = array_length_1d(m_imputLog)
 				if (_arraySize > 0)
 				{	
 					parentId.m_lastProcessedImput = m_imputLog[0]
@@ -107,10 +114,18 @@ switch(serverState)
 				//create event
 				if (swingObject = undefined)
 				{
-					swingObject = instance_create_depth(x,y,-200,oMagnetBoiSlash)	
-					fConsoleAddMessage("Created swing object")
-					ds_list_clear(hitByAttack)
+					swingObject = instance_create_depth(x + (20 * slash_dirX),y,-200,oMagnetBoiSlash)	
 					swingObject.image_xscale = slash_dirX
+					ds_list_clear(hitByAttack)
+					
+					#region Send state update
+					var list = global.T1_CONNECTION_ID_LIST
+					var _arrSize = array_length_1d(list)
+					for(var i = 0; i < _arrSize; i++)
+					{
+						packet_tcp_send(list[i],TCP_PACKETS.T2_HERO_STATE_UPDATE,[m_ClientId, t1_magnetBoiState_SWING])
+					}	
+					#endregion
 				}
 				#endregion
 				
@@ -120,7 +135,7 @@ switch(serverState)
 				
 				with(swingObject)
 				{
-					other.hits = instance_place_list(x, y, oDamageHitable, hitByAttackNow, false)
+					hits = instance_place_list(x, y, oDamageHitable, hitByAttackNow, false)
 				}
 				
 				if (hits > 0)
@@ -133,16 +148,19 @@ switch(serverState)
 						{
 							ds_list_add(hitByAttack,hitID)
 							
-							with( hitID)
+							with(hitID)
 							{
-								yeetous += 1 //remove health	
+								if (hitID != id)
+								{
+									hp -= swingDamage	
+								}
 							}
 						}
 					}
 				}
 				ds_list_destroy(hitByAttackNow)
 				#endregion
-				
+								
 				#region check swing animation ended
 				with(swingObject)
 				{
@@ -157,18 +175,6 @@ switch(serverState)
 				}
 				
 				#endregion
-				
-				#endregion
-				break;
-			}
-			
-			case PLAYERSTATE.ATTACK_SLASH:
-			{
-				#region Attack slash code
-				
-				
-				
-					
 				#endregion
 				break;
 			}

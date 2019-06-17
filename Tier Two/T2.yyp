@@ -1663,6 +1663,14 @@
             }
         },
         {
+            "Key": "e9d4de9e-f261-4c35-a9fe-c53e17905b76",
+            "Value": {
+                "id": "a134837d-d061-4a21-9a2c-7d6f2d1c205c",
+                "resourcePath": "scripts\\tcp_cb_T2_HeroStateUpdate\\tcp_cb_T2_HeroStateUpdate.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ead61a99-6476-4238-b3b2-d5e6fc23dc80",
             "Value": {
                 "id": "6b5f2981-1dc5-44d0-9259-b69a3da8ec11",
@@ -1934,7 +1942,8 @@
         "1fa4b431-16a2-4e46-a588-654e5cf642d0",
         "af5fe71b-639f-47a6-950e-7746aa1e45a1",
         "2b409c09-5491-464a-993c-d20b06648303",
-        "63abf1be-a15a-48f8-a543-0b18459bbd57"
+        "63abf1be-a15a-48f8-a543-0b18459bbd57",
+        "e9d4de9e-f261-4c35-a9fe-c53e17905b76"
     ],
     "tutorial": ""
 }
