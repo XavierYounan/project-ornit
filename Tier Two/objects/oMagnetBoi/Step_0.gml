@@ -1,7 +1,7 @@
 //magnet boi
-serverState = parentId.state
+State = parentId.state
 
-switch(serverState)
+switch(State)
 {
 
 	case state.playing:
@@ -123,7 +123,7 @@ switch(serverState)
 					var _arrSize = array_length_1d(list)
 					for(var i = 0; i < _arrSize; i++)
 					{
-						packet_tcp_send(list[i],TCP_PACKETS.T2_HERO_STATE_UPDATE,[parentId.m_ClientId, t1_magnetBoiState.SWING])
+						packet_tcp_send(list[i],TCP_PACKETS.T2_HERO_STATE_UPDATE,[parentId.m_ClientId, PLAYERSTATE.ATTACK_SLASH])
 					}	
 					#endregion
 				}
@@ -178,7 +178,7 @@ switch(serverState)
 					var _arrSize = array_length_1d(list)
 					for(var i = 0; i < _arrSize; i++)
 					{
-						packet_tcp_send(list[i],TCP_PACKETS.T2_HERO_STATE_UPDATE,[parentId.m_ClientId, t1_magnetBoiState.FREE])
+						packet_tcp_send(list[i],TCP_PACKETS.T2_HERO_STATE_UPDATE,[parentId.m_ClientId, PLAYERSTATE.FREE])
 					}	
 				}
 				

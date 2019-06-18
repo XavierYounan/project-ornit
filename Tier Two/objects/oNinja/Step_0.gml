@@ -1,9 +1,8 @@
 //ninja
-serverState = parentId.state
+State = parentId.state
 
-switch(serverState)
+switch(State)
 {
-
 	case state.playing:
 	{
 		#region Playing code		

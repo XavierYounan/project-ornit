@@ -6,105 +6,88 @@ switch playerState
 	{
 		if(isLocal)
 		{
-			#region Local code
-			var _unreadList = O_ClientManager.m_unreadImputs
-			var _unreadListSize = array_length_1d(_unreadList)
-	
-			var _x = latest_acknowleged_packet[LOCAL_LATEST_POSITION.X];
-			var _y = latest_acknowleged_packet[LOCAL_LATEST_POSITION.Y];
-
-			var _hsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.HSP];
-			var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];			
-	
-			if (_unreadListSize != 0)
+			switch(state)
 			{
-				for (var i = _unreadListSize - 1; i >= 0; i--)
+				case PLAYERSTATE.FREE:
 				{
-					#region Loop through each unread imput and calucate a new position
-					var _currentImput = _unreadList[i];
-		
-					var _deltaTime = _currentImput[UNREAD_IMPUTS.DELTA_TIME]
-		
-					_hsp = _currentImput[UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
-		
-					vMove = _currentImput[UNREAD_IMPUTS.VSP];
-		
-					_vsp += grv * _deltaTime / ONE_MILLION;
+					#region Local code
+					var _unreadList = O_ClientManager.m_unreadImputs
+					var _unreadListSize = array_length_1d(_unreadList)
+	
+					var _x = latest_acknowleged_packet[LOCAL_LATEST_POSITION.X];
+					var _y = latest_acknowleged_packet[LOCAL_LATEST_POSITION.Y];
 
-					//Jump
-					if (place_meeting(_x,_y+1,oWall)) && (vMove = 1)
+					var _hsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.HSP];
+					var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];			
+	
+					if (_unreadListSize != 0)
 					{
-						_vsp = -jump_speed	
-					}
-
-					//Horisontal collision
-					if (place_meeting(_x+_hsp,_y,oWall))
-					{
-						while (!place_meeting(_x+sign(_hsp),_y,oWall))
+						for (var i = _unreadListSize - 1; i >= 0; i--)
 						{
-							_x += sign(_hsp);	
-						}
-						_hsp = 0;
-					}
-					_x += _hsp;
+							#region Loop through each unread imput and calucate a new position
+							var _currentImput = _unreadList[i];
+		
+							var _deltaTime = _currentImput[UNREAD_IMPUTS.DELTA_TIME]
+		
+							_hsp = _currentImput[UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
+		
+							vMove = _currentImput[UNREAD_IMPUTS.VSP];
+		
+							_vsp += grv * _deltaTime / ONE_MILLION;
 
-					//Vertical collision
+							//Jump
+							if (place_meeting(_x,_y+1,oWall)) && (vMove = 1)
+							{
+								_vsp = -jump_speed	
+							}
+
+							//Horisontal collision
+							if (place_meeting(_x+_hsp,_y,oWall))
+							{
+								while (!place_meeting(_x+sign(_hsp),_y,oWall))
+								{
+									_x += sign(_hsp);	
+								}
+								_hsp = 0;
+							}
+							_x += _hsp;
+
+							//Vertical collision
 				
-					if (place_meeting(_x,_y+_vsp,oWall))
-					{
-						while (!place_meeting(_x,_y+sign(_vsp),oWall))
-						{
-							_y += sign(_vsp);	
-						}
-						_vsp = 0;
-					}
-					_y += _vsp;
-				
-				
+							if (place_meeting(_x,_y+_vsp,oWall))
+							{
+								while (!place_meeting(_x,_y+sign(_vsp),oWall))
+								{
+									_y += sign(_vsp);	
+								}
+								_vsp = 0;
+							}
+							_y += _vsp;
 
-					/*
-					var _bulletsTouching;
-					_bulletsTouching = instance_place(x, y, oBullet);
-					if (_bulletsTouching != noone)
-					{   
-						hp -= O_Client.bulletDamage;
-						with (oBullet) instance_destroy();
-					}
-
-					*/
-		
-					/*
-					  //Animation
-					if (!place_meeting(x,y+1,oWall))
-					{
-						sprite_index = sPlayerAir;
-						image_speed = 0;
-						if (sign(vsp) > 0) image_index = 1; else image_index = 0;
-					}
-					else
-					{
-						image_speed = 1;
-						if (hsp == 0)
-						{
-							sprite_index = sPlayer;	
-						}
-						else
-						{
-							sprite_index = sPlayerRun;	
+							if (_hsp != 0) image_xscale = sign(_hsp);								
+							#endregion
 						}
 					}
-
-					*/
-
-					if (_hsp != 0) image_xscale = sign(_hsp);
+	
+					x = _x;
+					y = _y;
+			
 					#endregion
+					break;	
+				}
+				
+				case PLAYERSTATE.ATTACK_SLASH:
+				{
+				
+					break;
+				}
+				
+				case PLAYERSTATE.ATTACK_COMBO:
+				{
+					
+					break;	
 				}
 			}
-	
-			x = _x;
-			y = _y;
-			
-			#endregion
 		}
 		else
 		{

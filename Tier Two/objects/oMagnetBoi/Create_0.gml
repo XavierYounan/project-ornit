@@ -29,11 +29,6 @@ enum PLAYERSTATE
 	ATTACK_COMBO
 }
 
-enum t1_magnetBoiState
-{
-	FREE = 0,
-	SWING
-}
 
 
 playerState = PLAYERSTATE.FREE

@@ -8,10 +8,22 @@ jump_speed = 13;
 
 hp = 200;
 
-fistDamage = 30;
-
 hasControl = true;
 
 showingHitbox = false
 
 itemList = []
+
+enum PLAYERSTATE
+{
+	FREE,
+	ATTACK_SLASH,
+	ATTACK_COMBO
+}
+
+state = PLAYERSTATE.FREE
+
+//hitting code
+hitByAttack = ds_list_create()
+swingObject = undefined
+swingDamage = 25

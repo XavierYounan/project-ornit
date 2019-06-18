@@ -9,6 +9,7 @@ var _clientId = _receivedData[2] //buffer_u8
 var _lastRecievedPacket = _receivedData[3] //buffer_u64
 var _hsp = _receivedData[4] //buffer_s16
 var _vsp = _receivedData[5] //buffer_s16
+var _state = _receivedData[6] //buffer_u8
 
 var _client = fGetClientById(_clientId)
 
@@ -33,7 +34,7 @@ with (_client)
 		{
 			if (_lastRecievedPacket >= latest_acknowleged_packet[2]) //make sure most recent server update
 			{
-				latest_acknowleged_packet = [_x,_y,_hsp,_vsp] //update most recent position knowledge	
+				latest_acknowleged_packet = [_x,_y,_hsp,_vsp, _state] //update most recent position knowledge	
 		
 				O_ClientManager.m_unreadImputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadImputs,2,_lastRecievedPacket) //cull unread imput array
 				return;
