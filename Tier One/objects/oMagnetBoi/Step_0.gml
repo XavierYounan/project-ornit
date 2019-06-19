@@ -18,7 +18,9 @@ switch playerState
 					var _y = latest_acknowleged_packet[LOCAL_LATEST_POSITION.Y];
 
 					var _hsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.HSP];
-					var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];			
+					var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];	
+					
+					var _state = latest_acknowleged_packet[LOCAL_LATEST_POSITION.STATE]
 	
 					if (_unreadListSize != 0)
 					{

@@ -29,4 +29,4 @@ m_imputLog = []
 
 
 //Eventaully add a enum
-state = 0
+playerState = 0

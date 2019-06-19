@@ -78,6 +78,7 @@ enum LOCAL_LATEST_POSITION
 	Y,
 	HSP,
 	VSP,
+	STATE,
 }
 
 sent_tcp_info = false
