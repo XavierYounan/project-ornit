@@ -1,1 +1,0 @@
-fConsoleAddMessage("Recieved position update, must not have been logged as a T3 server yet. If lasts for longer than one minuet after a new client connection an error is present")

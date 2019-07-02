@@ -37,14 +37,3 @@ gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SELF_POSITION,cb_T2_SelfPosition,
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SEND_TIME,cb_T2_Time,buffer_u64)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_CREATE_BULLET,cb_T2_CreateBullet,buffer_u8,buffer_s32,buffer_s32,buffer_u16)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_HEALTH_UPDATE,cb_T2_HealthUpdate,buffer_u8,buffer_u8) 
-
-
-enum MAJOR_PACKET_IDENTIFIERS
-{
-	T2_STATUS = 20,	
-
-}
-
-gnet_packet_layout_create(MAJOR_PACKET_IDENTIFIERS.T2_STATUS,cb_T2_Status,buffer_u8,buffer_u8)
-
-

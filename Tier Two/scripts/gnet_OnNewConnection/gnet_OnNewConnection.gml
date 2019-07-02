@@ -24,6 +24,3 @@ global.T1_CONNECTION_ID_LIST = fArrayAppend(global.T1_CONNECTION_ID_LIST,_connec
 
 //reset update frequency
 oClientUpdateSpreader.alarm[0] = 0
-
-//Resend Game stats to Tier Three
-fUpdateStatus()
