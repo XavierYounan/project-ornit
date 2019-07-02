@@ -51,3 +51,6 @@ m_repeatLeft = m_repeatTimes
 
 
 showingHitbox = false //for the debug hud
+
+mouse_angle = 0 //right
+

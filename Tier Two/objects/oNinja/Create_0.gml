@@ -26,3 +26,7 @@ fireRate = 7 //per seccond
 canShoot = true
 
 m_imputLog = []
+
+
+//Eventaully add a enum
+playerState = 0

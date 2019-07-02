@@ -8,6 +8,7 @@ var _y = _receivedData[1]; //buffer_s32
 var _player = _receivedData[2]; //buffer_u8
 var _timePacketRecieved = current_time //not set
 var _gunDir = _receivedData[3] //buffer_u16
+var _state = _receivedData[4] //buffer_u8
 
 //Use connection id to find player
 var _client = fGetClientById(_player)
@@ -30,7 +31,7 @@ with (_client)
 	
 	with(hero)
 	{
-		var _array = [_x,_y,_timePacketRecieved,_gunDir]
+		var _array = [_x,_y,_timePacketRecieved,_gunDir,_state]
 		m_coordinateArray = fArrayMoveBack(m_coordinateArray,1)
 		m_coordinateArray[0] = _array
 		return;

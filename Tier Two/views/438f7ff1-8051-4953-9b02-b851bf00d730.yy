@@ -4,9 +4,9 @@
     "mvc": "1.1",
     "name": "438f7ff1-8051-4953-9b02-b851bf00d730",
     "children": [
-        "4501baf9-5d7b-4cb1-b6a0-e271d8fd3d61",
-        "e41e377a-c5c6-4ad5-ad4d-c462a059b860",
-        "2467ae33-b9f2-4f42-a0ca-b3c94d21728c"
+        "70a4da57-4176-4d7a-b8f5-acffc1f0c2b0",
+        "8bc3710b-d6a1-4993-8712-6cd368dbf5c9",
+        "d91ae1ec-3e44-4fa0-b156-c60b8ab9604f"
     ],
     "filterType": "GMSprite",
     "folderName": "Magnet Boi",

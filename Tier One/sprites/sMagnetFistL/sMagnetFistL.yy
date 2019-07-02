@@ -1,5 +1,5 @@
 {
-    "id": "1af3d5dc-0f68-4b58-aab2-6d13f96ac0da",
+    "id": "9c274f9c-ddd3-4827-9d9a-5e5651b6fcd1",
     "modelName": "GMSprite",
     "mvc": "1.12",
     "name": "sMagnetFistL",
@@ -7,54 +7,54 @@
     "HTile": false,
     "VTile": false,
     "bbox_bottom": 14,
-    "bbox_left": 4,
-    "bbox_right": 15,
-    "bbox_top": 1,
-    "bboxmode": 2,
+    "bbox_left": 0,
+    "bbox_right": 9,
+    "bbox_top": 0,
+    "bboxmode": 0,
     "colkind": 1,
     "coltolerance": 0,
     "edgeFiltering": false,
     "frames": [
         {
-            "id": "8b09e9dd-fd2e-40a9-818e-1bb15dd23fcb",
+            "id": "8fdcb04a-673c-4011-b9cc-bd6f3f9c30d1",
             "modelName": "GMSpriteFrame",
             "mvc": "1.0",
-            "SpriteId": "1af3d5dc-0f68-4b58-aab2-6d13f96ac0da",
+            "SpriteId": "9c274f9c-ddd3-4827-9d9a-5e5651b6fcd1",
             "compositeImage": {
-                "id": "1eedf541-6b2d-4926-a508-fcf5d76c111e",
+                "id": "119a7208-ede6-49f3-aca3-5d89a8ab2264",
                 "modelName": "GMSpriteImage",
                 "mvc": "1.0",
-                "FrameId": "8b09e9dd-fd2e-40a9-818e-1bb15dd23fcb",
+                "FrameId": "8fdcb04a-673c-4011-b9cc-bd6f3f9c30d1",
                 "LayerId": "00000000-0000-0000-0000-000000000000"
             },
             "images": [
                 {
-                    "id": "52205adb-7580-47c5-a188-122148896cec",
+                    "id": "9305de1d-ff2d-42c9-809a-2882b13bf72d",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
-                    "FrameId": "8b09e9dd-fd2e-40a9-818e-1bb15dd23fcb",
-                    "LayerId": "85dc9ee3-3123-4ea2-8c81-2f7cfb9e48c8"
+                    "FrameId": "8fdcb04a-673c-4011-b9cc-bd6f3f9c30d1",
+                    "LayerId": "52880fa6-c55b-4324-ab10-8076c236fc04"
                 }
             ]
         }
     ],
     "gridX": 0,
     "gridY": 0,
-    "height": 16,
+    "height": 15,
     "layers": [
         {
-            "id": "85dc9ee3-3123-4ea2-8c81-2f7cfb9e48c8",
+            "id": "52880fa6-c55b-4324-ab10-8076c236fc04",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
-            "SpriteId": "1af3d5dc-0f68-4b58-aab2-6d13f96ac0da",
+            "SpriteId": "9c274f9c-ddd3-4827-9d9a-5e5651b6fcd1",
             "blendMode": 0,
-            "isLocked": false,
-            "name": "default",
+            "isLocked": true,
+            "name": "Left Hand",
             "opacity": 100,
             "visible": true
         }
     ],
-    "origin": 3,
+    "origin": 0,
     "originLocked": true,
     "playbackSpeed": 15,
     "playbackSpeedType": 0,
@@ -64,7 +64,7 @@
     "swfPrecision": 2.525,
     "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
     "type": 0,
-    "width": 16,
+    "width": 10,
     "xorig": 0,
-    "yorig": 8
+    "yorig": 0
 }

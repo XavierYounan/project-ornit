@@ -1,8 +1,8 @@
-serverState = parentId.state
+//ninja
+State = parentId.state
 
-switch(serverState)
+switch(State)
 {
-
 	case state.playing:
 	{
 		#region Playing code		
@@ -62,6 +62,8 @@ switch(serverState)
 				y = other.y - 20;
 	
 				image_angle = point_direction(x,y,_currentImput[IMPUTLIST.MOUSE_X],_currentImput[IMPUTLIST.MOUSE_Y])
+				
+				other.parentId.mouse_angle = image_angle
 			}
 				
 			if ((_currentImput[IMPUTLIST.MOUSE_LEFT_CLICKED]) && (!_currentImput[IMPUTLIST.PROCESSED]) && (canShoot)) //if mouse left clicked and this frame hasnt been processed yet and can shoot
