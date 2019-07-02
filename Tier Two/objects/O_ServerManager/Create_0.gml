@@ -17,39 +17,26 @@ if (!result)
 }
 else
 {
-	//Connect to major server and log ip and port 
-	var result = gnet_connect("127.0.0.1",3002)
-	fConsoleAddMessage(string(result))
-	if (result[0] == null)
+	//Open up TCP server
+	var socket = network_create_server(network_socket_tcp,3003, MAX_PLAYERS);
+	if socket < 0
 	{
-		show_message(result[1]);
+		show_message("The TCP port is not open, cannot start network!")
 	}
 	else
 	{
-		//Open up TCP server
-		var socket = network_create_server(network_socket_tcp,3003, MAX_PLAYERS);
-		if socket < 0
+		with(instance_create_depth(0,0,0,TCP_manager))
 		{
-			show_message("The TCP port is not open, cannot start network!")
+			server_socket = socket	
 		}
-		else
-		{
-			with(instance_create_depth(0,0,0,TCP_manager))
-			{
-				server_socket = socket	
-			}
-			room_goto_next()
-		}
-	}
-	
+		room_goto_next()
+	}	
 }
 
 //create Client Update Spreader object
 m_ClientUpdateSpreader = instance_create_depth(-10,-10,0,oClientUpdateSpreader)
 
 //create connection type lists
-global.T3_CONNECTION_ID_LIST = []
 global.T1_CONNECTION_ID_LIST = []
 global.T1_CONNECTION_ID_LOADED_IN_LIST = []
 global.SPECTATOR_ID_LIST = [] //TODO create spectator functionality
-
