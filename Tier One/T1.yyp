@@ -1082,7 +1082,7 @@
             "Key": "91d00497-a507-436c-bc0c-843a745d305a",
             "Value": {
                 "id": "a69e2f93-5514-428d-b91d-cbbbd6bc7ad2",
-                "resourcePath": "scripts\\cb_T2_HealthUpdate\\cb_T2_HealthUpdate.yy",
+                "resourcePath": "scripts\\cb_T2_HealthStunUpdate\\cb_T2_HealthStunUpdate.yy",
                 "resourceType": "GMScript"
             }
         },
