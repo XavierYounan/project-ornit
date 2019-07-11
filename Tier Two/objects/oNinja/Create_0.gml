@@ -30,3 +30,7 @@ m_imputLog = []
 
 //Eventaully add a enum
 playerState = 0
+
+stunned = false
+slowed = false
+slow_percentage = 0.5 

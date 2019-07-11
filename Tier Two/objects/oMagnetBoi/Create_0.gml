@@ -37,3 +37,8 @@ playerState = PLAYERSTATE.FREE
 hitByAttack = ds_list_create()
 swingObject = undefined
 swingDamage = 25
+
+
+stunned = false
+slowed = false
+slow_percentage = 0.5 
