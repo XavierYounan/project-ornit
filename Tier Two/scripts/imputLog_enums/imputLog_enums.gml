@@ -1,0 +1,26 @@
+///Establish imputlog enums for all the characters
+//Ninja
+enum NINJA_IMPUT_LOG
+{
+	H_MOVE,
+	V_MOVE,
+	PACKET_NUMBER,
+	MOUSE_X,
+	MOUSE_Y,
+	MOUSE_LEFT_CLICKED,
+	PROCESSED,
+	DELTA_TIME
+}
+
+//MagnetBoi
+enum MAGNET_BOY_IMPUT_LOG
+{
+	H_MOVE,
+	V_MOVE,
+	PACKET_NUMBER,
+	MOUSE_X,
+	MOUSE_Y,
+	MOUSE_LEFT_CLICKED,
+	PROCESSED,
+	DELTA_TIME
+}	
