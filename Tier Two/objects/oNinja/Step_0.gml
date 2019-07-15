@@ -78,7 +78,7 @@ switch(State)
 					image_angle = direction - 90
 					creator = other.parentClientId
 					
-					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_BULLET,creator,x,y,direction)
+					var buff = gnet_packet_build(PACKET_IDENTIFIER.T2_CREATE_ENTITY,creator,x,y,direction,ENTITY.NINJA_ARROW)
 					gnet_packet_send_to_list(buff,global.T1_CONNECTION_ID_LIST)
 				}
 			}
@@ -91,7 +91,7 @@ switch(State)
 			parentId.state = state.dead
 			fConsoleAddMessage("Made dead, reason: HP_EQUAL_ZERO")
 			
-			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_HEALTH_UPDATE,parentClientId,0)
+			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_HEALTH_STUN_UPDATE,parentClientId,0,0,0)
 			gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
 			
 			instance_destroy(self)

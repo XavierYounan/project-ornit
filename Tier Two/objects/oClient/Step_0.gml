@@ -69,7 +69,7 @@ switch state
 			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION, hero.x, hero.y, m_ClientId, mouse_angle, hero.playerState)
 			gnet_packet_send_to_list_exclude(_packet, global.T1_CONNECTION_ID_LIST, [m_ClientId])
 			
-			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_HEALTH_UPDATE,m_ClientId,round(hero.hp))
+			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_HEALTH_STUN_UPDATE,m_ClientId,round(hero.hp),hero.stunned,hero.slowed)
 			gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
 			
 			var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SELF_POSITION,hero.x,hero.y,m_ClientId,m_lastProcessedImput[2],hero.hsp,hero.vsp, hero.playerState)

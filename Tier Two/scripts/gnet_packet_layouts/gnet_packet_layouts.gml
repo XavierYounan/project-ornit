@@ -21,19 +21,25 @@
 			
 enum PACKET_IDENTIFIER
 {
-	T1_KEYS = 1,	
+	T1_NINJA,
+	T1_MAGNET_BOI,
+	
+	T2_CREATE_ENTITY,
+	T2_HEALTH_STUN_UPDATE,
+	
 	T2_OTHER_POSITION,
 	T2_SELF_POSITION,
-	T2_SEND_TIME,
-	T2_CREATE_BULLET,
-	T2_HEALTH_UPDATE,
-	T1_REQUEST_RESPAWN,
-
+	
+	T2_SEND_TIME,	
 }
 
-gnet_packet_layout_create(PACKET_IDENTIFIER.T1_KEYS,cb_T1_Imputs,buffer_s8,buffer_s8,buffer_u64,buffer_u16,buffer_u16,buffer_bool,buffer_u32)
+gnet_packet_layout_create(PACKET_IDENTIFIER.T1_NINJA, cb_T1_Ninja, buffer_s8,buffer_s8,buffer_u64,buffer_u16,buffer_u16,buffer_bool,buffer_f16)
+gnet_packet_layout_create(PACKET_IDENTIFIER.T1_MAGNET_BOI, cb_T1_MagnetBoi, buffer_s8, buffer_s8, buffer_u64, buffer_u16, buffer_u16, buffer_bool, buffer_f16)
+
+gnet_packet_layout_create(PACKET_IDENTIFIER.T2_CREATE_ENTITY, cb_T2_CreateEntity, buffer_u8, buffer_s32, buffer_s32, buffer_u16, buffer_u8)
+gnet_packet_layout_create(PACKET_IDENTIFIER.T2_HEALTH_STUN_UPDATE,cb_T2_HealthStunUpdate,buffer_u8,buffer_u8, buffer_bool, buffer_bool) 
+
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_OTHER_POSITION,cb_T2_OtherPosition,buffer_s32,buffer_s32,buffer_u8,buffer_u16, buffer_u8)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SELF_POSITION,cb_T2_SelfPosition,buffer_s32,buffer_s32,buffer_u8,buffer_u64,buffer_s16,buffer_s16, buffer_u8)
+
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SEND_TIME,cb_T2_Time,buffer_u64)
-gnet_packet_layout_create(PACKET_IDENTIFIER.T2_CREATE_BULLET,cb_T2_CreateBullet,buffer_u8,buffer_s32,buffer_s32,buffer_u16)
-gnet_packet_layout_create(PACKET_IDENTIFIER.T2_HEALTH_UPDATE,cb_T2_HealthUpdate,buffer_u8,buffer_u8) 
