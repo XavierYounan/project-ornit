@@ -5,7 +5,8 @@
     "name": "567a48b1-5f12-49d9-8b87-13f93d3db17d",
     "children": [
         "d180f5b5-05be-49a4-b18f-37d48dca7d79",
-        "9987d409-6974-4d00-92f9-327099f92cc1"
+        "9987d409-6974-4d00-92f9-327099f92cc1",
+        "b9d47f5a-aca6-416b-9bbc-ca8eb64ce0ec"
     ],
     "filterType": "GMScript",
     "folderName": "Networking Enums ",

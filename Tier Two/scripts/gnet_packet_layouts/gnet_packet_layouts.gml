@@ -44,6 +44,6 @@ gnet_packet_layout_create(PACKET_IDENTIFIER.T2_NINJA,cb_T2_MagnetBoi,buffer_s32,
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_NINJA_LOCAL,cb_T2_MagnetBoiLocal,buffer_s32,buffer_s32,buffer_u8,buffer_u64,buffer_s16,buffer_s16, buffer_u8)
 
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_CREATE_ENTITY, cb_T2_CreateEntity, buffer_u8, buffer_s32, buffer_s32, buffer_u16, buffer_u8)
-gnet_packet_layout_create(PACKET_IDENTIFIER.T2_HEALTH_STUN_UPDATE,cb_T2_HealthStunUpdate,buffer_u8,buffer_u8, buffer_bool, buffer_bool) 
+gnet_packet_layout_create(PACKET_IDENTIFIER.T2_HEALTH_STUN_UPDATE,cb_T2_HealthStunUpdate,buffer_u8,buffer_u8, buffer_bool, buffer_bool) 	
 
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_SEND_TIME,cb_T2_Time,buffer_u64)
