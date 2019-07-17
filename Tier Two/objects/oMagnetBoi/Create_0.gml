@@ -29,8 +29,6 @@ enum PLAYERSTATE
 	ATTACK_COMBO
 }
 
-
-
 playerState = PLAYERSTATE.FREE
 
 //hitting code
