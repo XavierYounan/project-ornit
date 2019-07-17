@@ -66,14 +66,44 @@ switch state
 		#region Player 
 		if (m_framesTillUpdate <= 0)
 		{
-			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_OTHER_POSITION, hero.x, hero.y, m_ClientId, mouse_angle, hero.playerState)
-			gnet_packet_send_to_list_exclude(_packet, global.T1_CONNECTION_ID_LIST, [m_ClientId])
+			switch(character)
+			{
+				case CHOSEN_CHARACTER.NINJA:
+				{
+					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_NINJA, hero.x, hero.y, m_ClientId, mouse_angle, hero.playerState)
+					gnet_packet_send_to_list_exclude(_packet, global.T1_CONNECTION_ID_LIST, [m_ClientId])
 			
-			var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_HEALTH_STUN_UPDATE,m_ClientId,round(hero.hp),hero.stunned,hero.slowed)
-			gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
+					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_HEALTH_STUN_UPDATE,m_ClientId,round(hero.hp),hero.stunned,hero.slowed)
+					gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
 			
-			var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_SELF_POSITION,hero.x,hero.y,m_ClientId,m_lastProcessedImput[2],hero.hsp,hero.vsp, hero.playerState)
-			gnet_packet_send_to_id(packet,m_ClientId)
+					var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_NINJA_LOCAL,hero.x,hero.y,m_ClientId,m_lastProcessedImput[2],hero.hsp,hero.vsp, hero.playerState)
+					gnet_packet_send_to_id(packet,m_ClientId)
+					break;
+				}
+				
+				case CHOSEN_CHARACTER.MAGNET_BOI:
+				{
+					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_MAGNET_BOI, hero.x, hero.y, m_ClientId, mouse_angle, hero.playerState)
+					gnet_packet_send_to_list_exclude(_packet, global.T1_CONNECTION_ID_LIST, [m_ClientId])
+			
+					var _packet = gnet_packet_build(PACKET_IDENTIFIER.T2_HEALTH_STUN_UPDATE,m_ClientId,round(hero.hp),hero.stunned,hero.slowed)
+					gnet_packet_send_to_list(_packet,global.T1_CONNECTION_ID_LIST)
+			
+					var packet = gnet_packet_build(PACKET_IDENTIFIER.T2_MAGNET_BOI_LOCAL,hero.x,hero.y,m_ClientId,m_lastProcessedImput[2],hero.hsp,hero.vsp, hero.playerState)
+					gnet_packet_send_to_id(packet,m_ClientId)
+					break;
+				}
+				
+				case CHOSEN_CHARACTER.NULL:
+				{
+					fConsoleAddMessage("Cannot send position update because oClient doesnt know which character has been chosen",2)
+					break;
+					
+				}
+				
+				default: fConsoleAddMessage("Character is in default, FIX THIS!")
+				
+			}
 			
 			m_framesTillUpdate = m_updateFrequencyFrames + 1;
 		}

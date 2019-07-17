@@ -1,1 +1,0 @@
-dropped_packets_log("cb_T2_SelfPosition",argument0,argument1)

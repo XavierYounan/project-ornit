@@ -38,7 +38,7 @@ m_framesTillUpdate = 0
 
 
 m_username = ""
-m_character = CHOSEN_CHARACTER.NULL
+character = CHOSEN_CHARACTER.NULL
 
 //let there be no assigned player yet
 hero = undefined

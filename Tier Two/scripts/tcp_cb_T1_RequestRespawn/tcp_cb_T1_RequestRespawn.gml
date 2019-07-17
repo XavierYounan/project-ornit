@@ -34,6 +34,8 @@ with(_client)
 		return;
 	}
 	
+	character = _character
+	
 	switch(_character)
 	{
 		case CHOSEN_CHARACTER.NINJA:
