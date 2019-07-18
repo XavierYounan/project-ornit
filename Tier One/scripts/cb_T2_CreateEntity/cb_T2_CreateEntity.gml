@@ -23,5 +23,5 @@ switch (_entityId)
 		break;
 	}
 	
-	default: fConsoleAddMessage("Recieved create entity request but couldnt find associated entity")
+	default: fConsoleAddMessage("Recieved create entity request but couldnt find associated entity, connectionId: " + string(_connectionId))
 }

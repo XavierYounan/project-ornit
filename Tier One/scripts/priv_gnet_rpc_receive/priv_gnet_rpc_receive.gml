@@ -5,7 +5,7 @@
 
 var _buff = argument0;
 
-var _buffBeginPos = buffer_tell(_buff);
+//var _buffBeginPos = buffer_tell(_buff); //is this necessary?
 
 var _scrId    = buffer_read(_buff, buffer_u16); // Script Id
 var _argCount = buffer_read(_buff, buffer_u8);  // Argument Count

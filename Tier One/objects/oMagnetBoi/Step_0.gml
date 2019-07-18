@@ -56,7 +56,7 @@ switch playerState
 				{
 					packet_number ++
 					m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
-					m_unreadImputs[0] = [_hsp,_vsp,packet_number,_gunAngle,deltaTime];	
+					m_unreadImputs[0] = [_hsp,_vsp,packet_number,deltaTime];	
 				}
 				
 				#endregion
@@ -184,8 +184,11 @@ switch playerState
 						var y0 = old_position[1];
 						var y1 = new_position[1];
 		
+		
+						/* Gun angle stuff but might use for player angle
 						var ga0 = old_position[3];
 						var ga1 = new_position[3];
+						*/
 						
 					    var t0 = old_position[2];
 					    var t1 = new_position[2];
@@ -193,6 +196,7 @@ switch playerState
 					    x = x0 + (x1 - x0) * (render_timestamp - t0) / (t1 - t0);
 		  
 						y = y0 + (y1 - y0) * (render_timestamp - t0) / (t1 - t0);
+						
 					
 				}
 			}

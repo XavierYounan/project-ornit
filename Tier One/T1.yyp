@@ -1183,6 +1183,14 @@
             }
         },
         {
+            "Key": "a27f7b19-b2af-4aea-b9fa-1388426c4e83",
+            "Value": {
+                "id": "f973f9fb-2264-4eba-91e7-f4ebbb1eefcd",
+                "resourcePath": "scripts\\tcp_cb_T2_EventNotification\\tcp_cb_T2_EventNotification.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a28bd896-338f-4031-a51d-0f46f33c372b",
             "Value": {
                 "id": "7b6e7c2e-21d6-4fcd-9bc7-b3779d4d2d76",
@@ -1849,6 +1857,7 @@
         "4b3b5078-ddfd-4bba-bd02-8111536cd1ca",
         "2a5963a2-feb8-4681-8daf-bef838bcbf79",
         "d9de3c11-5305-4c6c-8370-3ee708f0628a",
+        "a27f7b19-b2af-4aea-b9fa-1388426c4e83",
         "8bb632ee-302b-41f4-99a8-d406cbebabca",
         "bebb5883-e5f4-4967-aecf-692b6b8cf054",
         "341d8fb9-7bbd-4da1-b810-a1a9df152790",

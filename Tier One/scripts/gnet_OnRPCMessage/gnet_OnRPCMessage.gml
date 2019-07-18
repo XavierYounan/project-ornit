@@ -7,7 +7,7 @@
 @param {[Argument]} Arguments An array of arguments that should be executed with the script
 */
 
-var _buffer    = argument0; // Received Buffer (Packet) This can be forwarded to another connection if needed
+//var _buffer    = argument0; // Received Buffer (Packet) This can be forwarded to another connection if needed 
 var _script    = argument1; // Script to execute
 var _arguments = argument2; // Arguments for the script
 
