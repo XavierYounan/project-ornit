@@ -13,4 +13,4 @@
 
 var _connectionId = argument0;
 
-show_error("A client should not be recieving a connection", true)
+show_error("A client should not be recieving a connection, connection id: " + string(_connectionId), true)

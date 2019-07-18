@@ -19,7 +19,7 @@ if (_result == ConnectionAddResult.AlreadyConnected)
 else if (_result == ConnectionAddResult.MaxPlayer) 
 {
 	show_message_async("This connection is all full. Cannot connect");
-	with (_connectionInst) { EVENT_CONNECTION_RESULT_FAILED }
+	with (_connectionInst) { EVENT_CONNECTION_RESULT_FAILED; }
 }
 else if (_result == ConnectionAddResult.Success) 
 {
@@ -30,7 +30,7 @@ else if (_result == ConnectionAddResult.Success)
 	
 	with (_connectionInst) { 
 		username = _receivedData[1];
-		EVENT_CONNECTION_RESULT_SUCCESS 
+		EVENT_CONNECTION_RESULT_SUCCESS;
 	};
 }
 		

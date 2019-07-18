@@ -38,11 +38,11 @@ with (NetworkManager)
 	if (_isOutgoingRequest)
 	{
 		// Execute a user event that starts connection process	
-		with (connectionSlots[_connId]) { EVENT_CONNECTION_SEND }  
+		with (connectionSlots[_connId]) { EVENT_CONNECTION_SEND; }  
 	}
 	else 
 	{
-		with (connectionSlots[_connId]) { EVENT_CONNECTION_RECEIVED }  
+		with (connectionSlots[_connId]) { EVENT_CONNECTION_RECEIVED; }  
 	}
 
 	log_info("Connection Added With id {} and key {}", _connId, _connectionKey);
