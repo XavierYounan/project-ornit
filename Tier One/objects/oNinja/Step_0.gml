@@ -72,11 +72,11 @@ switch playerState
 			var _unreadList = O_ClientManager.m_unreadImputs
 			var _unreadListSize = array_length_1d(_unreadList)
 	
-			var _x = latest_acknowleged_packet[LOCAL_LATEST_POSITION.X];
-			var _y = latest_acknowleged_packet[LOCAL_LATEST_POSITION.Y];
+			var _x = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.X];
+			var _y = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.Y];
 
-			var _hsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.HSP];
-			var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];			
+			var _hsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.HSP];
+			var _vsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.VSP];			
 	
 			if (_unreadListSize != 0)
 			{
@@ -85,11 +85,11 @@ switch playerState
 					#region Loop through each unread imput and calucate a new position
 					var _currentImput = _unreadList[i];
 		
-					var _deltaTime = _currentImput[UNREAD_IMPUTS.DELTA_TIME]
+					var _deltaTime = _currentImput[NINJA_UNREAD_IMPUTS.DELTA_TIME]
 		
-					_hsp = _currentImput[UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
+					_hsp = _currentImput[NINJA_UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
 		
-					vMove = _currentImput[UNREAD_IMPUTS.VSP];
+					vMove = _currentImput[NINJA_UNREAD_IMPUTS.VSP];
 		
 					_vsp += grv * _deltaTime / ONE_MILLION;
 
