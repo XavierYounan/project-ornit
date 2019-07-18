@@ -1,0 +1,9 @@
+
+enum LOCAL_LATEST_POSITION
+{
+	X = 0,
+	Y,
+	HSP,
+	VSP,
+	STATE,
+}

@@ -68,26 +68,26 @@ switch playerState
 
 			#endregion 
 			
-			
-			switch(state)
-			{
-				case PLAYERSTATE.FREE:
-				{
-					#region Local code
-					var _unreadList = O_ClientManager.m_unreadImputs
-					var _unreadListSize = array_length_1d(_unreadList)
 	
-					var _x = latest_acknowleged_packet[LOCAL_LATEST_POSITION.X];
-					var _y = latest_acknowleged_packet[LOCAL_LATEST_POSITION.Y];
+			#region Local code
+			var _unreadList = O_ClientManager.m_unreadImputs
+			var _unreadListSize = array_length_1d(_unreadList)
+	
+			var _x = latest_acknowleged_packet[LOCAL_LATEST_POSITION.X];
+			var _y = latest_acknowleged_packet[LOCAL_LATEST_POSITION.Y];
 
-					var _hsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.HSP];
-					var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];	
+			var _hsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.HSP];
+			var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];	
 					
-					var _state = latest_acknowleged_packet[LOCAL_LATEST_POSITION.STATE]
+			var state = latest_acknowleged_packet[LOCAL_LATEST_POSITION.STATE]
 	
-					if (_unreadListSize != 0)
+			if (_unreadListSize != 0)
+			{
+				for (var i = _unreadListSize - 1; i >= 0; i--)
+				{			
+					switch(state)
 					{
-						for (var i = _unreadListSize - 1; i >= 0; i--)
+						case  MAGNET_BOI_STATE.FREE:
 						{
 							#region Loop through each unread imput and calucate a new position
 							var _currentImput = _unreadList[i];
@@ -136,28 +136,32 @@ switch playerState
 
 							if (_hsp != 0) image_xscale = sign(_hsp);								
 							#endregion
+							break;	
 						}
+						
+						case  MAGNET_BOI_STATE.FREE:
+						{
+							
+							break;	
+						}
+						
+						case  MAGNET_BOI_STATE.FREE:
+						{
+							
+							break;	
+						}
+						
+						default: fConsoleAddMessage("oMagnetBoi state is in default. ERROR", 2)
 					}
-	
-					x = _x;
-					y = _y;
-			
-					#endregion
-					break;	
-				}
-				
-				case PLAYERSTATE.ATTACK_SLASH:
-				{
-				
-					break;
-				}
-				
-				case PLAYERSTATE.ATTACK_COMBO:
-				{
-					
-					break;	
+							
 				}
 			}
+	
+			x = _x;
+			y = _y;
+			
+			#endregion
+			break;	
 		}
 		else
 		{

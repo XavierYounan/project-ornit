@@ -1047,6 +1047,14 @@
             }
         },
         {
+            "Key": "8bb632ee-302b-41f4-99a8-d406cbebabca",
+            "Value": {
+                "id": "ddc5d3a8-8f79-4d3c-b359-a08f42c4fe2f",
+                "resourcePath": "scripts\\characterSpecificUnreadImputs_enum\\characterSpecificUnreadImputs_enum.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8bc3710b-d6a1-4993-8712-6cd368dbf5c9",
             "Value": {
                 "id": "e55e615b-6106-4bb7-a1e4-ef57d495d0f0",
@@ -1427,6 +1435,14 @@
             "Value": {
                 "id": "bc5c5fd5-5215-45a5-b489-b82acf29435b",
                 "resourcePath": "scripts\\stringSplit\\stringSplit.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "bebb5883-e5f4-4967-aecf-692b6b8cf054",
+            "Value": {
+                "id": "a7a14c62-7d7e-41e8-9ece-9f58120bcbcb",
+                "resourcePath": "scripts\\characterSpecificKnownLatestPosition\\characterSpecificKnownLatestPosition.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1886,7 +1902,12 @@
         "62d2207e-ecc4-4df8-a85b-cd356bc0f1a1",
         "0aa34886-3328-4b34-b768-76381dd4e070",
         "341d8fb9-7bbd-4da1-b810-a1a9df152790",
+<<<<<<< Updated upstream
         "a5d258f9-78e9-4260-8e9d-93db4fb83f52",
+=======
+        "8bb632ee-302b-41f4-99a8-d406cbebabca",
+        "bebb5883-e5f4-4967-aecf-692b6b8cf054",
+>>>>>>> Stashed changes
         "43bdeae2-98fa-42a5-bb99-a9cdefb4008f",
         "08a8558c-99c3-44b9-b710-bd45ce6b07e9",
         "29200892-91f8-4594-aca7-8623bb57bcdf",

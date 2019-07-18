@@ -1,0 +1,9 @@
+enum UNREAD_IMPUTS
+{
+	HSP = 0,
+	VSP,
+	PACKET_NUMBER,
+	GUN_ANGLE,
+	DELTA_TIME
+}
+

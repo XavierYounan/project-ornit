@@ -14,7 +14,7 @@ showingHitbox = false
 
 itemList = []
 
-enum PLAYERSTATE
+enum MAGNET_BOI_STATE
 {
 	FREE,
 	ATTACK_SLASH,
