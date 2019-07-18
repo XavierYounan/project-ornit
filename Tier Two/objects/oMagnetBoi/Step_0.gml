@@ -123,8 +123,7 @@ switch(State)
 					var _arrSize = array_length_1d(list)
 					for(var i = 0; i < _arrSize; i++)
 					{
-						packet_tcp_send(list[i], TCP_PACKETS.T2_HERO_STATE_UPDATE,[parentId.m_ClientId, PLAYERSTATE.ATTACK_SLASH])
-						packet_tcp_send(list[i], TCP_PACKETS.T2_EVENT_NOTIFICATION,[parentId.m_ClientId, EVENT_NOTIFICATION.MAGNET_BOI_ATTACK_SLASH])
+						packet_tcp_send(list[i],TCP_PACKETS.T2_HERO_STATE_UPDATE,[parentId.m_ClientId, PLAYERSTATE.ATTACK_SLASH])
 					}	
 					#endregion
 				}

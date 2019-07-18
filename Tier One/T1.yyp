@@ -127,14 +127,6 @@
             }
         },
         {
-            "Key": "0aa34886-3328-4b34-b768-76381dd4e070",
-            "Value": {
-                "id": "ebc49a87-fb15-4430-b52f-982b89a0cdbe",
-                "resourcePath": "scripts\\eventNotificationCreate\\eventNotificationCreate.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "0fc8afe3-5442-46c4-b3f3-9b010d5d6202",
             "Value": {
                 "id": "81b4908a-3834-40fa-8876-3c68b6d735c0",
@@ -655,14 +647,6 @@
             }
         },
         {
-            "Key": "62d2207e-ecc4-4df8-a85b-cd356bc0f1a1",
-            "Value": {
-                "id": "87c5ccb5-b23f-474c-8b8f-6e2ee7af67c6",
-                "resourcePath": "scripts\\evnt_noti_magnetBoiAttackCombo\\evnt_noti_magnetBoiAttackCombo.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "65c8856c-5ac8-4a09-a8a0-43d20a692c02",
             "Value": {
                 "id": "e541b68a-b57b-412d-a341-984a4deffba3",
@@ -915,14 +899,6 @@
             "Value": {
                 "id": "c278ce3c-d64b-4b7d-a310-aefcb98a95b4",
                 "resourcePath": "scripts\\priv_gnet_add_connection\\priv_gnet_add_connection.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "7bbc76d3-df9f-457e-b0ed-bf998747cc2a",
-            "Value": {
-                "id": "74172e1a-abb0-4ef0-989c-a751b04387e3",
-                "resourcePath": "scripts\\tcp_cb_T2_EventNotification\\tcp_cb_T2_EventNotification.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1247,14 +1223,6 @@
             }
         },
         {
-            "Key": "a5d258f9-78e9-4260-8e9d-93db4fb83f52",
-            "Value": {
-                "id": "d1f1095a-b39c-4132-bd54-429d2f4361ed",
-                "resourcePath": "scripts\\eventNotification_enum\\eventNotification_enum.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "2f3aef11-e6cf-41f8-8397-5d31e1702c0f",
@@ -1268,14 +1236,6 @@
                 "id": "88243191-3c79-4348-b379-919173df3f8e",
                 "resourcePath": "views\\a9485b18-3fda-4bcd-8f90-9c23cee1865e.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "a9d57677-d623-4a6d-a004-5b01f70def35",
-            "Value": {
-                "id": "30e970bc-0598-46e9-8c0b-ec557c92ab0d",
-                "resourcePath": "scripts\\evnt_noti_magnetBoiAttackSlash\\evnt_noti_magnetBoiAttackSlash.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -1492,14 +1452,6 @@
                 "id": "befa985c-eb8b-4165-9038-af12c31d3ae4",
                 "resourcePath": "scripts\\gnet_get_my_socket\\gnet_get_my_socket.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "c98d6de7-2880-46dd-9e64-d72835cb3b57",
-            "Value": {
-                "id": "efa8bf54-495b-4226-be3d-3df15964ebf0",
-                "resourcePath": "views\\c98d6de7-2880-46dd-9e64-d72835cb3b57.yy",
-                "resourceType": "GMFolder"
             }
         },
         {
@@ -1897,17 +1849,11 @@
         "4b3b5078-ddfd-4bba-bd02-8111536cd1ca",
         "2a5963a2-feb8-4681-8daf-bef838bcbf79",
         "d9de3c11-5305-4c6c-8370-3ee708f0628a",
-        "7bbc76d3-df9f-457e-b0ed-bf998747cc2a",
-        "a9d57677-d623-4a6d-a004-5b01f70def35",
-        "62d2207e-ecc4-4df8-a85b-cd356bc0f1a1",
-        "0aa34886-3328-4b34-b768-76381dd4e070",
         "341d8fb9-7bbd-4da1-b810-a1a9df152790",
 <<<<<<< Updated upstream
         "a5d258f9-78e9-4260-8e9d-93db4fb83f52",
-=======
         "8bb632ee-302b-41f4-99a8-d406cbebabca",
         "bebb5883-e5f4-4967-aecf-692b6b8cf054",
->>>>>>> Stashed changes
         "43bdeae2-98fa-42a5-bb99-a9cdefb4008f",
         "08a8558c-99c3-44b9-b710-bd45ce6b07e9",
         "29200892-91f8-4594-aca7-8623bb57bcdf",

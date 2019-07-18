@@ -3,8 +3,6 @@ if (!assert_singleton()) return;
 packetLayoutMap = ds_map_create()
 packetCallbackMap = ds_map_create()
 
-eventNotificationCallbackMap = ds_map_create()
-
 packet_types() //init the different packet types
 
 global.TCP_INDENTIFER = 69 

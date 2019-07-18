@@ -93,11 +93,6 @@ switch playerState
 							var _currentImput = _unreadList[i];
 		
 							var _deltaTime = _currentImput[UNREAD_IMPUTS.DELTA_TIME]
-							
-							switch (_state)
-							{
-								case STATE.	
-							}
 		
 							_hsp = _currentImput[UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
 		
