@@ -26,4 +26,3 @@ state = PLAYERSTATE.FREE
 //hitting code
 hitByAttack = ds_list_create()
 swingObject = undefined
-swingDamage = 25

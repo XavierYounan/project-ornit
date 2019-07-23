@@ -45,7 +45,6 @@ m_unreadImputs = []
 PLAYING = 0
 DEAD = 1
 SENDINGINFO = 2
-ERROR = 3
 
 managerState = SENDINGINFO
 

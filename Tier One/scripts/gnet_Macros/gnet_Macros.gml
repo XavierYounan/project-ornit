@@ -8,7 +8,7 @@
 #macro LOG_LEVEL LogLevel.Debug
 
 // Type of value the seq number uses.
-#macro SEQ_NUM_TYPE buffer_u32
+//#macro SEQ_NUM_TYPE buffer_u32 NOT USED
 
 // Length off possible packet types
 #macro GNET_ARRAY_COUNT 125
