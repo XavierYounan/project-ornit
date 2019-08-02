@@ -133,19 +133,7 @@ switch playerState
 							#endregion
 							break;	
 						}
-						
-						case  MAGNET_BOI_STATE.FREE:
-						{
-							
-							break;	
-						}
-						
-						case  MAGNET_BOI_STATE.FREE:
-						{
-							
-							break;	
-						}
-						
+												
 						default: fConsoleAddMessage("oMagnetBoi state is in default. ERROR", 2)
 					}
 							
