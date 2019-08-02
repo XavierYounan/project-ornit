@@ -35,6 +35,7 @@ enum PACKET_IDENTIFIER
 	T2_SEND_TIME,	
 }
 
+
 gnet_packet_layout_create(PACKET_IDENTIFIER.T1_NINJA, cb_T1_Ninja, buffer_s8,buffer_s8,buffer_u64,buffer_u16,buffer_u16,buffer_bool,buffer_f16)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_NINJA,cb_T2_Ninja,buffer_s32,buffer_s32,buffer_u8,buffer_u16, buffer_u8)
 gnet_packet_layout_create(PACKET_IDENTIFIER.T2_NINJA_LOCAL,cb_T2_NinjaLocal,buffer_s32,buffer_s32,buffer_u8,buffer_u64,buffer_s16,buffer_s16, buffer_u8)

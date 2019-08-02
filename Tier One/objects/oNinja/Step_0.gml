@@ -43,7 +43,7 @@ switch playerState
 					
 				#region Send information 
 				
-				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_NINJA,_hsp,_vsp,O_ClientManager.packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);
+				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_NINJA,_hsp,_vsp,O_ClientManager.packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);		
 				gnet_packet_send_to_id(_packet,_T2Id);
 				
 				#endregion
@@ -55,7 +55,7 @@ switch playerState
 				{
 					packet_number ++
 					m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
-					m_unreadImputs[0] = [_hsp,_vsp,packet_number,_gunAngle,deltaTime];	
+					m_unreadImputs[0] = [_hsp,_vsp,packet_number, m_gunAngle,deltaTime];	
 				}
 				
 				#endregion
