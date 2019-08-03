@@ -1319,6 +1319,14 @@
             }
         },
         {
+            "Key": "b1c03837-803e-4279-aa8e-266be78e4fca",
+            "Value": {
+                "id": "6fdf71bc-55c9-4b27-84b1-73490017666b",
+                "resourcePath": "scripts\\tcp_cb_T2_EventNotification\\tcp_cb_T2_EventNotification.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b2a3fafa-6cff-41f9-91b2-6f18a544e57f",
             "Value": {
                 "id": "f799a1ea-dca7-4e62-b8f3-2c0ebdc69035",
@@ -1372,6 +1380,14 @@
                 "id": "729dbe2c-615b-4830-8705-7f525555c40a",
                 "resourcePath": "views\\b70d2c64-b875-49a8-a8c5-02d87f42ef92.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "b9d47f5a-aca6-416b-9bbc-ca8eb64ce0ec",
+            "Value": {
+                "id": "58b7e6f1-cd53-4699-b816-611e6b5dfbf2",
+                "resourcePath": "scripts\\eventNotification_enum\\eventNotification_enum.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1960,8 +1976,10 @@
         "2b409c09-5491-464a-993c-d20b06648303",
         "63abf1be-a15a-48f8-a543-0b18459bbd57",
         "e9d4de9e-f261-4c35-a9fe-c53e17905b76",
+        "b1c03837-803e-4279-aa8e-266be78e4fca",
         "d180f5b5-05be-49a4-b18f-37d48dca7d79",
-        "9987d409-6974-4d00-92f9-327099f92cc1"
+        "9987d409-6974-4d00-92f9-327099f92cc1",
+        "b9d47f5a-aca6-416b-9bbc-ca8eb64ce0ec"
     ],
     "tutorial": ""
 }

@@ -1,7 +1,7 @@
 /// @description (Create) Send Connection
 /// Used in place of create event so we can use instance_create() -> assign variables -> then have it initialize
 
-#macro EVENT_CONNECTION_SEND event_user(0);
+#macro EVENT_CONNECTION_SEND event_user(0)
 
 // This event will send a connection message and repeat it 2 extra times if needed.
 

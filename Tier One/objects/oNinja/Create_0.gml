@@ -7,7 +7,6 @@ walksp = 240;
 jump_speed = 15;
 
 hp = 100;
-bulletDamage = 5;
 
 hasControl = true;
 

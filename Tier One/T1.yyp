@@ -1023,6 +1023,14 @@
             }
         },
         {
+            "Key": "8bb632ee-302b-41f4-99a8-d406cbebabca",
+            "Value": {
+                "id": "ddc5d3a8-8f79-4d3c-b359-a08f42c4fe2f",
+                "resourcePath": "scripts\\characterSpecificUnreadImputs_enum\\characterSpecificUnreadImputs_enum.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8bc3710b-d6a1-4993-8712-6cd368dbf5c9",
             "Value": {
                 "id": "e55e615b-6106-4bb7-a1e4-ef57d495d0f0",
@@ -1172,6 +1180,14 @@
                 "id": "d2eab11d-53e8-4159-bb1b-05672f40384a",
                 "resourcePath": "objects\\FunctionRepeater\\FunctionRepeater.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a27f7b19-b2af-4aea-b9fa-1388426c4e83",
+            "Value": {
+                "id": "f973f9fb-2264-4eba-91e7-f4ebbb1eefcd",
+                "resourcePath": "scripts\\tcp_cb_T2_EventNotification\\tcp_cb_T2_EventNotification.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1387,6 +1403,14 @@
             "Value": {
                 "id": "bc5c5fd5-5215-45a5-b489-b82acf29435b",
                 "resourcePath": "scripts\\stringSplit\\stringSplit.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "bebb5883-e5f4-4967-aecf-692b6b8cf054",
+            "Value": {
+                "id": "a7a14c62-7d7e-41e8-9ece-9f58120bcbcb",
+                "resourcePath": "scripts\\characterSpecificKnownLatestPosition\\characterSpecificKnownLatestPosition.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1833,6 +1857,9 @@
         "4b3b5078-ddfd-4bba-bd02-8111536cd1ca",
         "2a5963a2-feb8-4681-8daf-bef838bcbf79",
         "d9de3c11-5305-4c6c-8370-3ee708f0628a",
+        "a27f7b19-b2af-4aea-b9fa-1388426c4e83",
+        "8bb632ee-302b-41f4-99a8-d406cbebabca",
+        "bebb5883-e5f4-4967-aecf-692b6b8cf054",
         "341d8fb9-7bbd-4da1-b810-a1a9df152790",
         "43bdeae2-98fa-42a5-bb99-a9cdefb4008f",
         "08a8558c-99c3-44b9-b710-bd45ce6b07e9",

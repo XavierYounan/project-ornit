@@ -45,7 +45,6 @@ m_unreadImputs = []
 PLAYING = 0
 DEAD = 1
 SENDINGINFO = 2
-ERROR = 3
 
 managerState = SENDINGINFO
 
@@ -62,23 +61,5 @@ m_username = global.USERNAME
 m_character = CHARACTER.NULL
 
 packet_number = 0 //keeps count for sever reconsiliation
-
-enum UNREAD_IMPUTS
-{
-	HSP = 0,
-	VSP,
-	PACKET_NUMBER,
-	GUN_ANGLE,
-	DELTA_TIME
-}
-
-enum LOCAL_LATEST_POSITION
-{
-	X = 0,
-	Y,
-	HSP,
-	VSP,
-	STATE,
-}
 
 sent_tcp_info = false

@@ -1,0 +1,17 @@
+enum NINJA_LOCAL_LATEST_POSITION
+{
+	X = 0,
+	Y,
+	HSP,
+	VSP,
+	STATE,
+}
+
+enum MAGNET_BOI_LOCAL_LATEST_POSITION
+{
+	X = 0,
+	Y,
+	HSP,
+	VSP,
+	STATE,
+}
