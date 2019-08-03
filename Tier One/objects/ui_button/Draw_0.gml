@@ -1,4 +1,6 @@
-/// @description Draw Button
+
+///@desc DEPRICATED OBJECT
+// @description Draw Button
 
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, m_Color, 1);
 
