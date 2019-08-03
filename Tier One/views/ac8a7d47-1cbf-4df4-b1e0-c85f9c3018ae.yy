@@ -8,7 +8,8 @@
         "2abc8c33-af58-4d23-acca-ddd3d931a5a6",
         "6284b78b-3636-4837-99a1-2d754cb55ff6",
         "1376a3b5-9f11-4d3e-ab99-963544e06b2d",
-        "050b2119-c6d4-4e0c-8c5e-939719a66595"
+        "050b2119-c6d4-4e0c-8c5e-939719a66595",
+        "67250b4b-5608-458d-aed6-af9195a561a9"
     ],
     "filterType": "GMObject",
     "folderName": "User Interface",

@@ -671,6 +671,14 @@
             }
         },
         {
+            "Key": "67250b4b-5608-458d-aed6-af9195a561a9",
+            "Value": {
+                "id": "4f6713e8-d749-4534-b271-4b1b98d55ee7",
+                "resourcePath": "views\\67250b4b-5608-458d-aed6-af9195a561a9.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "6787c52e-139a-4d76-9e83-7ef2e88fc10c",
             "Value": {
                 "id": "6affa999-a793-4220-822c-37296a621f48",
@@ -1316,6 +1324,14 @@
                 "id": "9cb87946-e0f0-49b4-a129-e6807e034e0d",
                 "resourcePath": "sprites\\sMagnetFistR\\sMagnetFistR.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b9b944b2-3176-437d-bf60-204e0e733302",
+            "Value": {
+                "id": "447b45bf-2489-4894-aea6-ae8dcef0b5ae",
+                "resourcePath": "objects\\oPlayButton\\oPlayButton.yy",
+                "resourceType": "GMObject"
             }
         },
         {
