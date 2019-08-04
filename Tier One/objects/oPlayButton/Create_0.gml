@@ -14,8 +14,26 @@ enum FONT_STATE
 	SHRINKING
 }
 
+/*
+	would use an enum like below:
+
+	enum BUTTON_STATE
+	{
+		HOVER,
+		CLICKED,
+		NOTHING
+	}
+	
+	however, this enum has already been defined in the object oRespawn
+	The highlighting and clicking code is alot cleaner because it utilises game maker features
+	This one used bounding boxes (more confusing), there is no know performance boost for either option
+
+*/
+
 backgroundColourChangeTime = 2 * game_get_speed(gamespeed_fps)
 backgroundColourChangeTimeLeft = 0
+tooCloseColourRange = 20
+originalBackgroundColour = undefined
 
 titleFontSizeMin = 150
 titleFontSizeMax = 300
@@ -24,6 +42,9 @@ titleFontState = FONT_STATE.GROWING
 
 titleBoxCenterOffset = 150
 titleBoxThickness = [300,80]
+buttonHoverDarkness = 10
+buttonClickDarkness = 20
+buttonState = BUTTON_STATE.NOTHING
 
 roomHeightStart = room_height
 roomWidthStart = room_width

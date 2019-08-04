@@ -12,8 +12,8 @@
 draw_set_colour(backgroundColour)
 draw_rectangle(0, 0, room_width, room_height, false)
 
-//Draw play button
-draw_set_color(titleColour)
+//Draw button
+draw_set_color(buttonColour)
 draw_rectangle(boxCoords[0], boxCoords[1], boxCoords[2], boxCoords[3], false)
 
 //Draw play text
