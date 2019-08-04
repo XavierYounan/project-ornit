@@ -162,31 +162,26 @@ if buttonState = BUTTON_STATE.CLICKED
 				{
 		            if mousePos[1] < boxCoords[3]
 					{
-						scr_OnButtonJoinClick()
-						log_info("Ran script")
+						scr_OnButtonJoinClick(id)
 					}
 					else
 					{
 						buttonState = BUTTON_STATE.NOTHING
-						log_info("Made nothin, reason 1")
 					}
 				}
 				else
 				{
 					buttonState = BUTTON_STATE.NOTHING
-					log_info("Made nothin, reason 2")
 				}
 			}
 			else
 			{
 				buttonState = BUTTON_STATE.NOTHING
-				log_info("Made nothin, reason 3")
 			}
 		}
 		else
 		{
 			buttonState = BUTTON_STATE.NOTHING
-			log_info("Made nothin, reason 4")
 		}		
 	}
 }

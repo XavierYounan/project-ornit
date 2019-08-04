@@ -24,6 +24,7 @@ unAckedPackets = ds_map_create();						// Map used to hold all unacknowledged pa
 
 // Create Sub Objects
 instance_create_depth(x, y, 10000, FunctionRepeater);
+log_debug("FunctionRepeater has been created!")
 
 // Register packet layouts
 m_packetCallbackMap = ds_map_create();

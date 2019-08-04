@@ -1,4 +1,5 @@
 // Establish a fake connection to get the user to accept
+var _id = argument0
 
 gnet_start_network(1,PROTOCOL_ID,3111, "temp connection")
 gnet_stop_network()
@@ -53,7 +54,11 @@ global.PORT = get_integer("WHAT IS YOUR PORT",3001)
 global.USERNAME = "harry is bad at brawl stars"
 global.USERNAME = get_string("USERNAME", "harry is bad at brawl stars")
 
-
-instance_create_depth(0,0,0,O_ClientManager)
-
 room_goto(rConnecting)
+
+
+instance_create_depth(-10, -10, 0, O_ClientManager)
+
+
+
+instance_destroy(_id)
