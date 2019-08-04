@@ -26,6 +26,18 @@ draw_text_transformed(boxCoords[0]/2 + boxCoords[2]/2 , boxCoords[1]/2 + boxCoor
 
 //Draw title text
 draw_set_color(titleColour)
-scale = titleFontSize/20
+scale = titleFontSize/200
+
+/*
+	200 is the size of the font in the fonts section.
+	This means that the font size max and min variables in the create section are accurate 
+	200 was chosen so could be the highest quality
+	On the texture page only the leters from brawlers were imported (b,r,a,w,l,r and s)
+	Texture page will not be full
+	Might be affected if more texts are added
+*/
+
+draw_set_font(fFirstMenuTitle)
 draw_text_transformed(room_width/2, room_height/2 - 100, "Brawlers", scale, scale, 0);
+draw_set_font(fMain)
        

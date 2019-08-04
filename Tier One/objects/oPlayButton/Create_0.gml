@@ -35,8 +35,8 @@ backgroundColourChangeTimeLeft = 0
 tooCloseColourRange = 20
 originalBackgroundColour = undefined
 
-titleFontSizeMin = 150
-titleFontSizeMax = 300
+titleFontSizeMin = 50
+titleFontSizeMax = 175
 titleFontSize = titleFontSizeMin
 titleFontState = FONT_STATE.GROWING
 
