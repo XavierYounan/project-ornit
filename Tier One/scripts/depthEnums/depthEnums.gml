@@ -1,0 +1,9 @@
+enum DEPTH
+{
+	GUI = 0,
+	INIVISBLE = 100,
+	WEAPONS = 200,
+	PLAYERS = 300,
+	WALLS = 400,
+	BACKGROUND = 500
+}
