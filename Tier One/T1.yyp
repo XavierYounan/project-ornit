@@ -186,7 +186,7 @@
             "Key": "16a526e0-6dac-44cf-9edb-36bd31f133b3",
             "Value": {
                 "id": "2fb1433a-dadf-45c1-b812-517147c3b1fe",
-                "resourcePath": "rooms\\r_MainMenu\\r_MainMenu.yy",
+                "resourcePath": "rooms\\rFirstMenu\\rFirstMenu.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1015,6 +1015,14 @@
             }
         },
         {
+            "Key": "84db1403-6d5e-4f90-b3de-03e2b372622f",
+            "Value": {
+                "id": "9fda1f37-89b5-49a4-b982-4554d42e4f45",
+                "resourcePath": "scripts\\cbFirstMenuButton\\cbFirstMenuButton.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "852ceacd-d440-4d9e-b263-fcf28b04b698",
             "Value": {
                 "id": "65e4bbbe-3289-4196-be27-26f6bc1ef9fd",
@@ -1292,6 +1300,14 @@
                 "id": "3ea980fe-5eef-4a07-baae-16f38a1f073e",
                 "resourcePath": "scripts\\gnet_OnRPCMessage\\gnet_OnRPCMessage.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a7d0f75e-bbc0-42c2-a74e-49d330645064",
+            "Value": {
+                "id": "fd340e5e-6fa8-433b-981c-404611974bd4",
+                "resourcePath": "rooms\\rSeccondMenu\\rSeccondMenu.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -1690,7 +1706,7 @@
             "Key": "dc041280-73ee-4122-93f1-b05b8dc6a7b4",
             "Value": {
                 "id": "820bfe81-9f4c-49fe-9edb-d54c824d480f",
-                "resourcePath": "scripts\\scr_OnButtonJoinClick\\scr_OnButtonJoinClick.yy",
+                "resourcePath": "scripts\\cbSeccondMenuButton\\cbSeccondMenuButton.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1796,6 +1812,14 @@
                 "id": "0e597800-c117-4403-9201-c11805a5da99",
                 "resourcePath": "scripts\\gnet_connect\\gnet_connect.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f0d4ebc6-6b7e-45eb-8ae2-09d46c26ff20",
+            "Value": {
+                "id": "cbe699d9-a60d-4c4b-8fc2-76948b9f3298",
+                "resourcePath": "objects\\oPlay\\oPlay.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1921,6 +1945,7 @@
         "91d00497-a507-436c-bc0c-843a745d305a",
         "1c78918b-490c-4ebf-ab75-78c035c0373f",
         "dc041280-73ee-4122-93f1-b05b8dc6a7b4",
+        "84db1403-6d5e-4f90-b3de-03e2b372622f",
         "68058913-0ffc-4cae-9bc0-0e02a4bb64a9",
         "38492690-c498-4f68-badb-215b04c4aa61",
         "44680d49-eed2-4afc-9678-7de190990142",

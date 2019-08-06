@@ -36,3 +36,5 @@ if(clicked)
 		keyboard_string = message
 	}
 }
+
+ds_map_replace(parent.textboxValues, title, message);

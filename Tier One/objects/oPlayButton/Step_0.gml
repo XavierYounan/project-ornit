@@ -162,7 +162,7 @@ if buttonState = BUTTON_STATE.CLICKED
 				{
 		            if mousePos[1] < boxCoords[3]
 					{
-						scr_OnButtonJoinClick(id)
+						cbFirstMenuButton(id)
 					}
 					else
 					{
