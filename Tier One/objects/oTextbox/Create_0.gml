@@ -10,5 +10,7 @@ alarm[0] = delay
 
 clicked = false
 
+error_message = ""
+
 image_speed = 0
 image_index = 0

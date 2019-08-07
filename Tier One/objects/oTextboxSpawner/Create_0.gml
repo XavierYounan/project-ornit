@@ -10,6 +10,8 @@ xSpriteOrigin = 16
 xSpriteSize = 256
 xShift = -xSpriteSize/2 + xSpriteOrigin
 
+
+
 ySpacing = room_height/(size + 2) //One for the play button one cause number of spaces = number of objects + 1
 xPos = room_width/2 + xShift
 
@@ -26,8 +28,12 @@ for(var _i = 0; _i < size; _i++)
 		
 		ds_map_add(other.textboxValues, title, message)	
 		
-		
 		parent = other.id
+		
+		if title = "Ip"
+		{
+			other.ip_button_id = id	
+		}
 	}
 }
 
