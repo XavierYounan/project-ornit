@@ -25,23 +25,30 @@ if(position_meeting(mouse_x,mouse_y,id))
 			errorNumber = IP_ERROR_CODE.MISSING_SECTION
 			values = [ip, _arrayLength]
 		}
-	
-		//Loop through each of the entries and make sure it is in the propper range, if not give an error
-		for (var i = 0; i <= 3; i++)
+		else  // Else statement is included because we dont want to loop through if there is only 3 sections
 		{
-			var _current = real(array[i])
-		
-			if !(0 <= _current <= 255)
+			//Loop through each of the entries and make sure it is in the propper range, if not give an error
+			for (var i = 0; i <= 3; i++)
 			{
-				errorNumber = IP_ERROR_CODE.NOT_IN_RANGE
-				values = [ip, i+1]
-				break; //Is broken to hopefully give an error at the first instance of an error 
 				/*
-					For example:
-					192.a.10.a
-					This should say that number 2 is an error rather than number 4
+					String digits removes any letters from the ip
+					Eventually make it so you cant type letters when typing your ip
 				*/
-			}
+				var stringDigits = string_digits(array[i]);			
+				var _current = real(stringDigits)
+		
+				if !(0 <= _current <= 255)
+				{
+					errorNumber = IP_ERROR_CODE.NOT_IN_RANGE
+					values = [ip, i+1]
+					break; //Is broken to hopefully give an error at the first instance of an error 
+					/*
+						For example:
+						192.a.10.a
+						This should say that number 2 is an error rather than number 4
+					*/
+				}
+		}
 		}
 	
 		//If there are no errors process the ip and start the game
