@@ -7,7 +7,7 @@
         "b9b944b2-3176-437d-bf60-204e0e733302"
     ],
     "filterType": "GMObject",
-    "folderName": "FirstMenu",
+    "folderName": "First Menu",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

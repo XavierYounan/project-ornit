@@ -6,8 +6,9 @@ image_index = 0
 _x = sprite_width/2 - 16
 
 
-enum IP_ERROR_CODE
+enum SECCOND_MENU_ERROR
 {
 	NOT_IN_RANGE,
-	MISSING_SECTION
+	MISSING_SECTION,
+	PORT_NOT_IN_RANGE
 }

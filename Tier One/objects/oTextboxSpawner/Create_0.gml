@@ -34,6 +34,11 @@ for(var _i = 0; _i < size; _i++)
 		{
 			other.ip_button_id = id	
 		}
+		
+		if title = "Port"
+		{
+			other.port_button_id = id	
+		}
 	}
 }
 

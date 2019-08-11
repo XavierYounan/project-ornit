@@ -1,3 +1,6 @@
+error = false //begin checks
+
+
 if(position_meeting(mouse_x,mouse_y,id))
 {
 	if(mouse_check_button_released(mb_left))
@@ -22,8 +25,11 @@ if(position_meeting(mouse_x,mouse_y,id))
 		//Check that there are four, if not give an error
 		if (_arrayLength != 4)
 		{
-			errorNumber = IP_ERROR_CODE.MISSING_SECTION
+			errorNumber = SECCOND_MENU_ERROR.MISSING_SECTION
 			values = [ip, _arrayLength]
+			
+			error = true
+			cbSeccondMenuButtonError(errorNumber,values)
 		}
 		else  // Else statement is included because we dont want to loop through if there is only 3 sections
 		{
@@ -39,34 +45,42 @@ if(position_meeting(mouse_x,mouse_y,id))
 		
 				if !(0 <= _current <= 255)
 				{
-					errorNumber = IP_ERROR_CODE.NOT_IN_RANGE
+					errorNumber = SECCOND_MENU_ERROR.NOT_IN_RANGE
 					values = [ip, i+1]
+					
+					error = true
+					cbSeccondMenuButtonError(errorNumber,values)
 					break; //Is broken to hopefully give an error at the first instance of an error 
 					/*
 						For example:
 						192.a.10.a
 						This should say that number 2 is an error rather than number 4
 					*/
+		
 				}
-		}
-		}
-	
-		//If there are no errors process the ip and start the game
-		if (errorNumber = 0)
-		{
-			for (var i = 0; i <=2; i++)
-			{
-				ip += string(array[i]) + "."
 			}
-			ip += string(array[3])
-			cbSeccondMenuButton(username, ip, port)
 		}
-		else //If there are errors show a message in the top that details the issue
+		#endregion
+		
+		#region Check that the port is valid
+		var stringDigits = string_digits(port);			
+		var numPort = real(stringDigits)
+		
+		if !(0<= numPort <= 65535)
 		{
+			error = true
+			errorNumber = SECCOND_MENU_ERROR.PORT_NOT_IN_RANGE
+			values = [numPort, port]
 			cbSeccondMenuButtonError(errorNumber,values)
 		}
+		#endregion
 		
-		#endregion		
+	
+		//If there are no errors process the ip and start the game
+		if (error = false)
+		{
+			cbSeccondMenuButton(username, ip, numPort)
+		}			
 	}	
 }	
 
