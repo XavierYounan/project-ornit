@@ -2,7 +2,7 @@ textboxList = ds_list_create()
 textboxObjectList = ds_list_create()
 textboxValues = ds_map_create()
 
-ds_list_add(textboxList, "Username:xyrexy", "Ip:127.0.0.1", "Port:3000")
+ds_list_add(textboxList, "Username:xyrexy", "Ip:127.0.0.1", "Port:3001")
 
 size = ds_list_size(textboxList)
 

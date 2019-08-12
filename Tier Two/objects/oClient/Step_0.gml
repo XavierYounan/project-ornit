@@ -28,14 +28,14 @@ switch state
 		{	
 			if (other.m_ClientId = m_ClientId)
 			{				
-				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_LOCAL_PLAYER_INFO,[m_ClientId,m_character,m_username])
+				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_LOCAL_PLAYER_INFO,[m_ClientId,character,m_username])
 				fConsoleAddMessage("Sent local player info!")
 			}
 			else
 			{				
-				packet_tcp_send(other.m_ClientId,TCP_PACKETS.T2_PLAYER_INFO,[m_ClientId,m_character,m_username])
+				packet_tcp_send(other.m_ClientId,TCP_PACKETS.T2_PLAYER_INFO,[m_ClientId,character,m_username])
 				
-				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_PLAYER_INFO,[other.m_ClientId,m_character,m_username])
+				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_PLAYER_INFO,[other.m_ClientId,character,m_username])
 				
 				switch(state)
 				{
@@ -47,7 +47,7 @@ switch state
 					
 					case state.playing:
 					{
-						packet_tcp_send(other.m_ClientId,TCP_PACKETS.T2_PLAYER_RESPAWN,[m_ClientId,m_character])
+						packet_tcp_send(other.m_ClientId,TCP_PACKETS.T2_PLAYER_RESPAWN,[m_ClientId,character])
 						break;
 					}
 				}

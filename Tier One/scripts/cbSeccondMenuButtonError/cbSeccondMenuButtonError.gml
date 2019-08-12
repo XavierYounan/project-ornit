@@ -9,7 +9,7 @@ switch(errorNumber)
 		var ip = values[0]
 		var num_sections = values[1]
 		
-		var str = string_build("Your ip only has {} sections!", num_sections)
+		var str = string_build("Your ip should have 4 secions, it has {}", num_sections)
 		
 		with(oTextboxSpawner)
 		{
@@ -27,7 +27,7 @@ switch(errorNumber)
 		var ip = values[0]
 		var sectionNumber = values[1]
 		
-		var str = string_build("Your ip for section {} is invalid!", sectionNumber)
+		var str = string_build("Your ip for section {} is not in the range 0 to 255!", sectionNumber)
 		
 		with(oTextboxSpawner)
 		{
@@ -42,9 +42,8 @@ switch(errorNumber)
 	case SECCOND_MENU_ERROR.PORT_NOT_IN_RANGE:
 	{
 		var numPort = values[0]
-		var strPort = values[1]
 		
-		var str = string_build("Your port is not in range 0 to 65535, your original port {}, your adjusted port {}!",strPort,numPort)
+		var str = string_build("Your port is not in range 0 to 65535, your port {}!",numPort)
 		
 		with(oTextboxSpawner)
 		{

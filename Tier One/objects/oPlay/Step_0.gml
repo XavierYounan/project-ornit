@@ -31,49 +31,58 @@ if(position_meeting(mouse_x,mouse_y,id))
 			error = true
 			cbSeccondMenuButtonError(errorNumber,values)
 		}
-		else  // Else statement is included because we dont want to loop through if there is only 3 sections
+		
+		//Loop through each of the entries and make sure it is in the propper range, if not give an error
+		for (var i = 0; i <= _arrayLength-1; i++)
 		{
-			//Loop through each of the entries and make sure it is in the propper range, if not give an error
-			for (var i = 0; i <= 3; i++)
+			/*
+				String digits removes any letters from the ip
+				Eventually make it so you cant type letters when typing your ip
+			*/
+			var stringDigits = string_digits(array[i]);			
+			var _current = real(stringDigits)
+		
+			if(0 <= _current && _current <= 255)
 			{
-				/*
-					String digits removes any letters from the ip
-					Eventually make it so you cant type letters when typing your ip
-				*/
-				var stringDigits = string_digits(array[i]);			
-				var _current = real(stringDigits)
+				//Do nothing is valid
 		
-				if !(0 <= _current <= 255)
-				{
-					errorNumber = SECCOND_MENU_ERROR.NOT_IN_RANGE
-					values = [ip, i+1]
+			}
+			else
+			{
+				errorNumber = SECCOND_MENU_ERROR.NOT_IN_RANGE
+				values = [ip, i+1]
 					
-					error = true
-					cbSeccondMenuButtonError(errorNumber,values)
-					break; //Is broken to hopefully give an error at the first instance of an error 
-					/*
-						For example:
-						192.a.10.a
-						This should say that number 2 is an error rather than number 4
-					*/
-		
-				}
+				error = true
+				cbSeccondMenuButtonError(errorNumber,values)
+				break; //Is broken to hopefully give an error at the first instance of an error 
+				/*
+					For example:
+					192.a.10.a
+					This should say that number 2 is an error rather than number 4
+				*/
 			}
 		}
+		
 		#endregion
 		
 		#region Check that the port is valid
 		var stringDigits = string_digits(port);			
 		var numPort = real(stringDigits)
 		
-		if !(0<= numPort <= 65535)
+		if (0 <= numPort && numPort <= 65535)
+		{
+			//Do nothing is valid
+		}
+		else
 		{
 			error = true
 			errorNumber = SECCOND_MENU_ERROR.PORT_NOT_IN_RANGE
-			values = [numPort, port]
+			values = [numPort]
 			cbSeccondMenuButtonError(errorNumber,values)
 		}
+		
 		#endregion
+		
 		
 	
 		//If there are no errors process the ip and start the game
