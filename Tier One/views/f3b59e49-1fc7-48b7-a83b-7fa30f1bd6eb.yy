@@ -7,7 +7,7 @@
         "20bd5e62-c76e-4496-a931-4f88c8803b73"
     ],
     "filterType": "GMRoom",
-    "folderName": "SDT_Demo",
+    "folderName": "SDT TEST",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

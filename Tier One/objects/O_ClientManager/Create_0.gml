@@ -1,6 +1,10 @@
 ///@desc Init
 if (!assert_singleton()) return;
 
+//Make sure network can be created, get past firewall before connecting
+gnet_start_network(1,PROTOCOL_ID,3111, "temp connection")
+gnet_stop_network()
+
 m_GameConsole = instance_create_depth(-10,-10,-100,O_GameConsole)
 
 global.MAX_PLAYERS = 2;

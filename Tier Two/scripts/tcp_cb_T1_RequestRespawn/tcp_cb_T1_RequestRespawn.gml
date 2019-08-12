@@ -58,7 +58,7 @@ with(_client)
 	}
 
 		
-	m_character = _character
+	character = _character
 	hero.parentId = id
 	hero.parentClientId = m_ClientId
 

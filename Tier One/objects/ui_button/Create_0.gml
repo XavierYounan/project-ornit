@@ -3,7 +3,7 @@
 gnet_start_network(1,PROTOCOL_ID,3111, "temp connection")
 gnet_stop_network()
 
-/// @description get ip and port and init
+///@desc DEPRICATED OBJECT
 clicked = false; //init
 image_speed = 0; //init
 
