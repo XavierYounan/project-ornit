@@ -43,7 +43,7 @@ switch playerState
 					
 				#region Send information 
 				
-				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_NINJA,_hsp,_vsp,O_ClientManager.packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);
+				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_NINJA,_hsp,_vsp,O_ClientManager.packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);		
 				gnet_packet_send_to_id(_packet,_T2Id);
 				
 				#endregion
@@ -55,7 +55,7 @@ switch playerState
 				{
 					packet_number ++
 					m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
-					m_unreadImputs[0] = [_hsp,_vsp,packet_number,_gunAngle,deltaTime];	
+					m_unreadImputs[0] = [_hsp,_vsp,packet_number, m_gunAngle,deltaTime];	
 				}
 				
 				#endregion
@@ -72,11 +72,11 @@ switch playerState
 			var _unreadList = O_ClientManager.m_unreadImputs
 			var _unreadListSize = array_length_1d(_unreadList)
 	
-			var _x = latest_acknowleged_packet[LOCAL_LATEST_POSITION.X];
-			var _y = latest_acknowleged_packet[LOCAL_LATEST_POSITION.Y];
+			var _x = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.X];
+			var _y = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.Y];
 
-			var _hsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.HSP];
-			var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];			
+			var _hsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.HSP];
+			var _vsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.VSP];			
 	
 			if (_unreadListSize != 0)
 			{
@@ -85,11 +85,11 @@ switch playerState
 					#region Loop through each unread imput and calucate a new position
 					var _currentImput = _unreadList[i];
 		
-					var _deltaTime = _currentImput[UNREAD_IMPUTS.DELTA_TIME]
+					var _deltaTime = _currentImput[NINJA_UNREAD_IMPUTS.DELTA_TIME]
 		
-					_hsp = _currentImput[UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
+					_hsp = _currentImput[NINJA_UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
 		
-					vMove = _currentImput[UNREAD_IMPUTS.VSP];
+					vMove = _currentImput[NINJA_UNREAD_IMPUTS.VSP];
 		
 					_vsp += grv * _deltaTime / ONE_MILLION;
 

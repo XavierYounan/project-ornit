@@ -4,9 +4,11 @@
       already been read, and the buffer seek position will be placed at the first byte of your data.
 */
 
+/* NOT USED
 #macro PACKET_HEADER_SIZE 3
 #macro PACKET_PROTOCOL_POS 0
 #macro PACKET_CHANNEL_POS 2
+*/
 
 var _buffer = buffer_create(2, buffer_grow, 1);
 buffer_write(_buffer, buffer_u16, global.gnet_protocolId);  // Protocol Id

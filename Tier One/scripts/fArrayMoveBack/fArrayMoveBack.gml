@@ -1,19 +1,19 @@
 // fArrayMoveBack()
-//@desc creates a free spot in an array
+//@desc creates a free spot at the front of an array
 //@param the array to create the free spot
 //@param how many free spots to create
 
 
 
-var _array = argument0; //import the array
-var _moveAmount = argument1; //import the move amount
+var _oldArray = argument0; //get array
+var _moveAmount = argument1; //get move amount
 
-var _arrayLength = array_length_1d(_array);
-var _finalArrayIndex = _arrayLength - 1 + _moveAmount
+var _originalArrayLength = array_length_1d(_oldArray);
 var _newArray = []
 
-for(var i = _arrayLength; i > 0 ; i--)
+for(var i = _moveAmount; i < _originalArrayLength - 1 + _moveAmount ; i++)
 {
-	_newArray[i] = _array[i - _moveAmount]
+	_newArray[i] = _oldArray[i - _moveAmount]
 }
+
 return (_newArray)

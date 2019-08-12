@@ -19,8 +19,11 @@ connectionTimeoutTime = 13000;
 connectionSlots	= array_create(MAX_CONNECTIONS, null);  // Create the connection slots array
 m_connectionMap	= ds_map_create();						// Mapping the Ip and Port to correct slot id
 
+/* NOT INITIALISED YET
 signingId      = 0;										// Used to sign a reliable packet (increased with each use)
 unAckedPackets = ds_map_create();						// Map used to hold all unacknowledged packets
+*/
+
 
 // Create Sub Objects
 instance_create_depth(x, y, 10000, FunctionRepeater);

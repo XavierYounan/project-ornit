@@ -16,7 +16,7 @@ else
 	var cameraHeight = 0;
 }
 
-var bottom = window_get_height()
+//var bottom = window_get_height()
 var right = window_get_width()
 var top = 0
 var left = 0

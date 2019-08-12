@@ -44,7 +44,7 @@ switch playerState
 					
 				#region Send information 
 				
-				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_NINJA,_hsp,_vsp,O_ClientManager.packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);
+				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_MAGNET_BOI,_hsp,_vsp,O_ClientManager.packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);
 				gnet_packet_send_to_id(_packet,_T2Id);
 				
 				#endregion
@@ -56,7 +56,7 @@ switch playerState
 				{
 					packet_number ++
 					m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
-					m_unreadImputs[0] = [_hsp,_vsp,packet_number,_gunAngle,deltaTime];	
+					m_unreadImputs[0] = [_hsp,_vsp,packet_number,deltaTime];	
 				}
 				
 				#endregion
@@ -68,35 +68,35 @@ switch playerState
 
 			#endregion 
 			
-			
-			switch(state)
-			{
-				case PLAYERSTATE.FREE:
-				{
-					#region Local code
-					var _unreadList = O_ClientManager.m_unreadImputs
-					var _unreadListSize = array_length_1d(_unreadList)
 	
-					var _x = latest_acknowleged_packet[LOCAL_LATEST_POSITION.X];
-					var _y = latest_acknowleged_packet[LOCAL_LATEST_POSITION.Y];
+			#region Local code
+			var _unreadList = O_ClientManager.m_unreadImputs
+			var _unreadListSize = array_length_1d(_unreadList)
+	
+			var _x = latest_acknowleged_packet[MAGNET_BOI_LOCAL_LATEST_POSITION.X];
+			var _y = latest_acknowleged_packet[MAGNET_BOI_LOCAL_LATEST_POSITION.Y];
 
-					var _hsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.HSP];
-					var _vsp = latest_acknowleged_packet[LOCAL_LATEST_POSITION.VSP];	
+			var _hsp = latest_acknowleged_packet[MAGNET_BOI_LOCAL_LATEST_POSITION.HSP];
+			var _vsp = latest_acknowleged_packet[MAGNET_BOI_LOCAL_LATEST_POSITION.VSP];	
 					
-					var _state = latest_acknowleged_packet[LOCAL_LATEST_POSITION.STATE]
+			var state = latest_acknowleged_packet[MAGNET_BOI_LOCAL_LATEST_POSITION.STATE]
 	
-					if (_unreadListSize != 0)
+			if (_unreadListSize != 0)
+			{
+				for (var i = _unreadListSize - 1; i >= 0; i--)
+				{			
+					switch(state)
 					{
-						for (var i = _unreadListSize - 1; i >= 0; i--)
+						case  MAGNET_BOI_STATE.FREE:
 						{
 							#region Loop through each unread imput and calucate a new position
 							var _currentImput = _unreadList[i];
 		
-							var _deltaTime = _currentImput[UNREAD_IMPUTS.DELTA_TIME]
+							var _deltaTime = _currentImput[MAGNET_BOI_UNREAD_IMPUTS.DELTA_TIME]
 		
-							_hsp = _currentImput[UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
+							_hsp = _currentImput[MAGNET_BOI_UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
 		
-							vMove = _currentImput[UNREAD_IMPUTS.VSP];
+							vMove = _currentImput[MAGNET_BOI_UNREAD_IMPUTS.VSP];
 		
 							_vsp += grv * _deltaTime / ONE_MILLION;
 
@@ -131,28 +131,20 @@ switch playerState
 
 							if (_hsp != 0) image_xscale = sign(_hsp);								
 							#endregion
+							break;	
 						}
+												
+						default: fConsoleAddMessage("oMagnetBoi state is in default. ERROR", 2)
 					}
-	
-					x = _x;
-					y = _y;
-			
-					#endregion
-					break;	
-				}
-				
-				case PLAYERSTATE.ATTACK_SLASH:
-				{
-				
-					break;
-				}
-				
-				case PLAYERSTATE.ATTACK_COMBO:
-				{
-					
-					break;	
+							
 				}
 			}
+	
+			x = _x;
+			y = _y;
+			
+			#endregion
+			break;	
 		}
 		else
 		{
@@ -180,8 +172,11 @@ switch playerState
 						var y0 = old_position[1];
 						var y1 = new_position[1];
 		
+		
+						/* Gun angle stuff but might use for player angle
 						var ga0 = old_position[3];
 						var ga1 = new_position[3];
+						*/
 						
 					    var t0 = old_position[2];
 					    var t1 = new_position[2];
@@ -189,6 +184,7 @@ switch playerState
 					    x = x0 + (x1 - x0) * (render_timestamp - t0) / (t1 - t0);
 		  
 						y = y0 + (y1 - y0) * (render_timestamp - t0) / (t1 - t0);
+						
 					
 				}
 			}

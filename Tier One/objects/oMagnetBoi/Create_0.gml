@@ -14,7 +14,7 @@ showingHitbox = false
 
 itemList = []
 
-enum PLAYERSTATE
+enum MAGNET_BOI_STATE
 {
 	FREE,
 	ATTACK_SLASH,
@@ -26,4 +26,3 @@ state = PLAYERSTATE.FREE
 //hitting code
 hitByAttack = ds_list_create()
 swingObject = undefined
-swingDamage = 25

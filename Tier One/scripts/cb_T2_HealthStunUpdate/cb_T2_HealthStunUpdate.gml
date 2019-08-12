@@ -10,11 +10,16 @@ var _slowed = _receivedData[3]; //buffer_bool
 var client = fGetClientById(_clientId)
 
 if client != noone
-with(client)
-{	
-	if (hero = undefined) return;
-	hero.hp = _health	
-	hero.stunned = _stunned
-	hero.slowed = _slowed
+{
+	with(client)
+	{	
+		if (hero = undefined) return;
+		hero.hp = _health	
+		hero.stunned = _stunned
+		hero.slowed = _slowed
+	}
 }
-
+else
+{
+	fConsoleAddMessage("Couldnt process the health/stun update, cant find the client. ConnectionId: " + string(_connectionId))	
+}
