@@ -215,11 +215,27 @@
             }
         },
         {
+            "Key": "1bdf12f8-c819-4129-a8e1-dae047f0c647",
+            "Value": {
+                "id": "95d7868f-7ae5-4be2-bd71-65091003d017",
+                "resourcePath": "views\\1bdf12f8-c819-4129-a8e1-dae047f0c647.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1c78918b-490c-4ebf-ab75-78c035c0373f",
             "Value": {
                 "id": "dc3646d2-7a89-4ebd-be98-a13db0854910",
                 "resourcePath": "scripts\\cb_T2_Time\\cb_T2_Time.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "20a9ba07-e2ef-4360-b194-999de33c2977",
+            "Value": {
+                "id": "9fadd431-1751-4e78-acc9-45f20e0c12eb",
+                "resourcePath": "objects\\oBasePlayer\\oBasePlayer.yy",
+                "resourceType": "GMObject"
             }
         },
         {
