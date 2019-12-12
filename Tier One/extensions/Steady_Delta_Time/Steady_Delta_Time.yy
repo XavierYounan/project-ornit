@@ -1,7 +1,7 @@
 {
     "id": "ccadc31b-ee2d-4cfa-98fe-e4dbc5131346",
     "modelName": "GMExtension",
-    "mvc": "1.0",
+    "mvc": "1.2",
     "name": "Steady_Delta_Time",
     "IncludedResources": [
         "Sprites\\SDT_Demo\\spr_SDT_DemoSubject",
@@ -24,6 +24,7 @@
     "copyToTargets": -1,
     "date": "2018-04-09 10:03:10",
     "description": "",
+    "exportToGame": true,
     "extensionName": "",
     "files": [
         
@@ -44,9 +45,12 @@
     "maccompilerflags": "",
     "maclinkerflags": "",
     "macsourcedir": "",
+    "options": null,
+    "optionsFile": "options.json",
     "packageID": "com.8bitwarrior.steadydeltatime",
     "productID": "F79C97955FD1AF4686EB4EF4EF90F0DB",
     "sourcedir": "",
+    "supportedTargets": -1,
     "tvosProps": false,
     "tvosSystemFrameworkEntries": [
         

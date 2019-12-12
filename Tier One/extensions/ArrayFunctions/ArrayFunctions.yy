@@ -1,7 +1,7 @@
 {
     "id": "020232e5-0261-417c-bfcf-ae4b8f5b0445",
     "modelName": "GMExtension",
-    "mvc": "1.0",
+    "mvc": "1.2",
     "name": "ArrayFunctions",
     "IncludedResources": [
         
@@ -20,6 +20,7 @@
     "copyToTargets": -1,
     "date": "2019-10-26 07:05:10",
     "description": "",
+    "exportToGame": true,
     "extensionName": "",
     "files": [
         {
@@ -63,9 +64,12 @@
     "maccompilerflags": "",
     "maclinkerflags": "",
     "macsourcedir": "",
+    "options": null,
+    "optionsFile": "options.json",
     "packageID": "",
     "productID": "",
     "sourcedir": "",
+    "supportedTargets": -1,
     "tvosProps": false,
     "tvosSystemFrameworkEntries": [
         
