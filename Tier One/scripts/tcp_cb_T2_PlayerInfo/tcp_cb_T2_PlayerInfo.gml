@@ -10,5 +10,6 @@ with (instance_create_depth(0,0,0,oPlayer))
 	event_user(PLAYER_EVENT.DEAD)
 	isLocal = false
 	username = _username
+	fConsoleAddMessage("recieved player info and created a non local player, client id " + string(m_PlayerId))
 }
 

@@ -83,7 +83,7 @@ with(_client)
 	for(var i = 0; i < _arrSize; i++)
 	{
 		packet_tcp_send(list[i],TCP_PACKETS.T2_PLAYER_RESPAWN,[_clientId,_character])
-		fConsoleAddMessage("Sent data to " + string(list[i]))
+		fConsoleAddMessage("Sent respawn data to " + string(list[i]))
 	}	
 	
 	
