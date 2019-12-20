@@ -14,21 +14,21 @@ with(client)
 	{
 		case CHARACTER.NINJA:
 		{
-			hero = instance_create_depth(0,0,-100,oNinja)
+			hero = instance_create_depth(room_width/2,room_height/2,-100,oNinja)
 			fConsoleAddMessage("hero" + string(hero))
 			break;	
 		} 
 		
 		case CHARACTER.MAGNET_BOI:
 		{
-			hero = instance_create_depth(0,0,-100,oMagnetBoi)
+			hero = instance_create_depth(room_width/2,room_height/2,DEPTH.PLAYERS,oMagnetBoi)
 			fConsoleAddMessage("hero" + string(hero))
 			break;	
 		} 
 	
 		default:
 		{
-			show_error("Recieved info about a player connecting. Character no " + string(_character) + " but that does not exist",true)
+			show_error("Recieved info about a player respawning. Character no " + string(_character) + " but that character does not exist",true)
 			break;
 		}	
 	}
