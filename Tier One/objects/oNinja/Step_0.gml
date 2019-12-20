@@ -178,6 +178,50 @@ switch playerState
   
 			var buff_length = array_length_1d(m_coordinateArray)
 
+			if(buff_length > 0)
+			{
+				var newPos = m_coordinateArray[0]
+				
+				var _x = newPos[0]
+				var _y = newPos[1]
+				var _ga = newPos[3]
+				
+
+
+
+
+
+
+
+
+
+			if(buff_length > 0)
+			{
+				var newPos = m_coordinateArray[0]
+			
+				var _x = newPos[0]
+				var _y = newPos[1]
+				var _t = newPos[2]
+				var _ga = newPos[3]
+			
+				x = _x
+				y = _y
+			
+				with (itemList[NINJA_ITEMS.GUN])
+				{
+					x = other.x;
+					y = other.y - 20;
+					image_angle = _ga
+				}	
+				m_coordinateArray = []
+				fConsoleAddMessage("Non local coordinate is full and player has been moved")
+			}
+			else
+			{
+				fConsoleAddMessage("Non local coordinate array is empty")	
+			}
+
+			/*
 			if (buff_length >= 2)
 			{
 				m_coordinateArray = fArrayTrim(m_coordinateArray,2)
@@ -213,6 +257,7 @@ switch playerState
 					
 				}
 			}
+			*/
 			#endregion
 		}
 		break;

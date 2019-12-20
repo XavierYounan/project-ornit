@@ -11,7 +11,7 @@ if (_client) != noone
 {
 	with (_client)
 	{
-		if (hero = undefined) return;
+		if (hero = undefined) fConsoleAddMessage(string_build("Recieved state update but hero was undefined, clientId {}, state {}", _clientId, _state)); return;
 		with(hero)
 		{
 			event_user(_state)	
