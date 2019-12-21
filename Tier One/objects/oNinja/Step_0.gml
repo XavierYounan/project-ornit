@@ -43,14 +43,7 @@ switch playerState
 				#region Move player
 				
 				
-				//Move gun
-				with (itemList[NINJA_ITEMS.GUN])
-				{
-					x = other.x;
-					y = other.y - 20;
-					image_angle = point_direction(x,y,mouse_x,mouse_y)
-					m_gunAngle = image_angle
-				}
+				
 				#endregion
 				
 				#region Increment packet number and record sent inputs
@@ -72,104 +65,40 @@ switch playerState
 			#endregion 
 			
 
-			#region Local code
+			#region Move Player
 			var _unreadList = O_ClientManager.m_unreadInputs
 			var _unreadListSize = array_length_1d(_unreadList)
 	
-			var _x = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.X];
-			var _y = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.Y];
+			//Move player to last known position
+			x = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.X];
+			y = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.Y];
 
-			var _hsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.HSP];
-			var _vsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.VSP];			
+			//Currently depreciated but support will be added later
+			hsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.HSP];
+			
+			vsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.VSP];			
 	
+			//Loop through all unread inputs and calculate the new position
 			if (_unreadListSize != 0)
 			{
 				for (var i = _unreadListSize - 1; i >= 0; i--)
 				{
-					#region Loop through each unread input and calucate a new position
-					var _currentInput = _unreadList[i];
-		
-					var _deltaTime = _currentInput[NINJA_UNREAD_INPUTS.DELTA_TIME]
-		
-					_hsp = _currentInput[NINJA_UNREAD_INPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
-		
-					VBUTTON = _currentInput[NINJA_UNREAD_INPUTS.VSP];
-		
-					_vsp += grv * _deltaTime / ONE_MILLION;
-
-					//Jump
-					if (place_meeting(_x,_y+1,oWall)) && (VBUTTON = 1)
-					{
-						_vsp = -jump_speed	
-					}
-
-					//Horisontal collision
-					if (place_meeting(_x+_hsp,_y,oWall))
-					{
-						while (!place_meeting(_x+sign(_hsp),_y,oWall))
-						{
-							_x += sign(_hsp);	
-						}
-						_hsp = 0;
-					}
-					_x += _hsp;
-
-					//Vertical collision
-				
-					if (place_meeting(_x,_y+_vsp,oWall))
-					{
-						while (!place_meeting(_x,_y+sign(_vsp),oWall))
-						{
-							_y += sign(_vsp);	
-						}
-						_vsp = 0;
-					}
-					_y += _vsp;
-				
-				
-
-					/*
-					var _bulletsTouching;
-					_bulletsTouching = instance_place(x, y, oBullet);
-					if (_bulletsTouching != noone)
-					{   
-						hp -= O_Client.bulletDamage;
-						with (oBullet) instance_destroy();
-					}
-
-					*/
-		
-					/*
-					  //Animation
-					if (!place_meeting(x,y+1,oWall))
-					{
-						sprite_index = sPlayerAir;
-						image_speed = 0;
-						if (sign(vsp) > 0) image_index = 1; else image_index = 0;
-					}
-					else
-					{
-						image_speed = 1;
-						if (hsp == 0)
-						{
-							sprite_index = sPlayer;	
-						}
-						else
-						{
-							sprite_index = sPlayerRun;	
-						}
-					}
-
-					*/
-
-					if (_hsp != 0) image_xscale = sign(_hsp);
-					#endregion
+					movePlayer(id, _unreadList[i]);
 				}
 			}
-	
-			x = _x;
-			y = _y;
+
 			
+			#endregion
+			
+			#region Move Gun
+
+			with (itemList[NINJA_ITEMS.GUN])
+			{
+				x = other.x;
+				y = other.y - 20;
+				image_angle = point_direction(x,y,mouse_x,mouse_y)
+				m_gunAngle = image_angle
+			}
 			#endregion
 		}
 		else
@@ -181,23 +110,6 @@ switch playerState
 			var render_timestamp = now - (1000.0 / SERVER_FPS);
   
 			var buff_length = array_length_1d(m_coordinateArray)
-
-			if(buff_length > 0)
-			{
-				var newPos = m_coordinateArray[0]
-				
-				var _x = newPos[0]
-				var _y = newPos[1]
-				var _ga = newPos[3]
-				
-
-
-
-
-
-
-
-
 
 			if(buff_length > 0)
 			{
