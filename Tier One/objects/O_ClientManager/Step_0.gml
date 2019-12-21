@@ -15,7 +15,7 @@ switch managerState
 	{
 		/* 
 			Do nothing
-			Previously sent imputs but now individual characters do (oMagnetBoi, oNinja)
+			Previously sent inputs but now individual characters do (oMagnetBoi, oNinja)
 		*/
 		
 		break;

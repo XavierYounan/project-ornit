@@ -36,7 +36,7 @@ with (_client)
 			{
 				latest_acknowleged_packet = [_x,_y,_hsp,_vsp, _state] //update most recent position knowledge	
 		
-				O_ClientManager.m_unreadImputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadImputs,2,_lastRecievedPacket) //cull unread imput array
+				O_ClientManager.m_unreadInputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadInputs,2,_lastRecievedPacket) //cull unread input array
 				return;
 			}
 			else

@@ -44,7 +44,7 @@ with (timeManager)
 		show_error("There should only ever be one time manager created", true)	
 	}
 }
-m_unreadImputs = []
+m_unreadInputs = []
 
 PLAYING = 0
 DEAD = 1

@@ -6,7 +6,7 @@ switch playerState
 	{
 		if(isLocal)
 		{
-			#region Send Imputs
+			#region Send Inputs
 			
 			if (instance_exists(oT2))
 			{
@@ -50,13 +50,13 @@ switch playerState
 				#endregion
 				
 				
-				#region Update packet number and unread imputs (needs improvment see notes)
+				#region Update packet number and unread inputs (needs improvment see notes)
 				
 				with(O_ClientManager)
 				{
 					packet_number ++
-					m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
-					m_unreadImputs[0] = [_hsp,_vsp,packet_number,deltaTime];	
+					m_unreadInputs = fArrayMoveBack(m_unreadInputs,1);
+					m_unreadInputs[0] = [_hsp,_vsp,packet_number,deltaTime];	
 				}
 				
 				#endregion
@@ -70,7 +70,7 @@ switch playerState
 			
 	
 			#region Local code
-			var _unreadList = O_ClientManager.m_unreadImputs
+			var _unreadList = O_ClientManager.m_unreadInputs
 			var _unreadListSize = array_length_1d(_unreadList)
 	
 			var _x = latest_acknowleged_packet[MAGNET_BOI_LOCAL_LATEST_POSITION.X];
@@ -89,19 +89,19 @@ switch playerState
 					{
 						case  MAGNET_BOI_STATE.FREE:
 						{
-							#region Loop through each unread imput and calucate a new position
-							var _currentImput = _unreadList[i];
+							#region Loop through each unread input and calucate a new position
+							var _currentInput = _unreadList[i];
 		
-							var _deltaTime = _currentImput[MAGNET_BOI_UNREAD_IMPUTS.DELTA_TIME]
+							var _deltaTime = _currentInput[MAGNET_BOI_UNREAD_INPUTS.DELTA_TIME]
 		
-							_hsp = _currentImput[MAGNET_BOI_UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
+							_hsp = _currentInput[MAGNET_BOI_UNREAD_INPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
 		
-							vMove = _currentImput[MAGNET_BOI_UNREAD_IMPUTS.VSP];
+							VBUTTON = _currentInput[MAGNET_BOI_UNREAD_INPUTS.VSP];
 		
 							_vsp += grv * _deltaTime / ONE_MILLION;
 
 							//Jump
-							if (place_meeting(_x,_y+1,oWall)) && (vMove = 1)
+							if (place_meeting(_x,_y+1,oWall)) && (VBUTTON = 1)
 							{
 								_vsp = -jump_speed	
 							}

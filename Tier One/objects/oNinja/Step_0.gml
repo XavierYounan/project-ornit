@@ -6,7 +6,7 @@ switch playerState
 	{
 		if(isLocal)
 		{
-			#region //send imputs	
+			#region //send inputs	
 			if (instance_exists(oT2))
 			{
 				var _T2Id = oT2.m_connectionId
@@ -30,14 +30,6 @@ switch playerState
 			
 				var deltaTime = clamp(global.dt_unsteady,0,4294967295) //buffer_u32 max is 4294967295
 				
-				with (itemList[NINJA_ITEMS.GUN])
-				{
-					x = other.x;
-					y = other.y - 20;
-					image_angle = point_direction(x,y,mouse_x,mouse_y)
-					m_gunAngle = image_angle
-				}
-
 				#endregion
 					
 					
@@ -48,28 +40,40 @@ switch playerState
 				
 				#endregion
 				
+				#region Move player
 				
-				#region Update packet number and unread imputs (needs improvment see notes)
+				
+				//Move gun
+				with (itemList[NINJA_ITEMS.GUN])
+				{
+					x = other.x;
+					y = other.y - 20;
+					image_angle = point_direction(x,y,mouse_x,mouse_y)
+					m_gunAngle = image_angle
+				}
+				#endregion
+				
+				#region Increment packet number and record sent inputs
 				
 				with(O_ClientManager)
 				{
 					packet_number ++
-					m_unreadImputs = fArrayMoveBack(m_unreadImputs,1);
-					m_unreadImputs[0] = [_hsp,_vsp,packet_number, m_gunAngle,deltaTime];	
+					m_unreadInputs = fArrayMoveBack(m_unreadInputs,1);
+					m_unreadInputs[0] = [_hsp,_vsp,packet_number, m_gunAngle,deltaTime];	
 				}
 				
 				#endregion
 			}
 			else
 			{
-				fConsoleAddMessage("T2 is dead : " + string(oServerTime.m_serverTime))
+				fConsoleAddMessage("T2 object does not exist, oNinja, Local send inputs",2)
 			}
 
 			#endregion 
 			
 
 			#region Local code
-			var _unreadList = O_ClientManager.m_unreadImputs
+			var _unreadList = O_ClientManager.m_unreadInputs
 			var _unreadListSize = array_length_1d(_unreadList)
 	
 			var _x = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.X];
@@ -82,19 +86,19 @@ switch playerState
 			{
 				for (var i = _unreadListSize - 1; i >= 0; i--)
 				{
-					#region Loop through each unread imput and calucate a new position
-					var _currentImput = _unreadList[i];
+					#region Loop through each unread input and calucate a new position
+					var _currentInput = _unreadList[i];
 		
-					var _deltaTime = _currentImput[NINJA_UNREAD_IMPUTS.DELTA_TIME]
+					var _deltaTime = _currentInput[NINJA_UNREAD_INPUTS.DELTA_TIME]
 		
-					_hsp = _currentImput[NINJA_UNREAD_IMPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
+					_hsp = _currentInput[NINJA_UNREAD_INPUTS.HSP] * walksp * _deltaTime / ONE_MILLION;
 		
-					vMove = _currentImput[NINJA_UNREAD_IMPUTS.VSP];
+					VBUTTON = _currentInput[NINJA_UNREAD_INPUTS.VSP];
 		
 					_vsp += grv * _deltaTime / ONE_MILLION;
 
 					//Jump
-					if (place_meeting(_x,_y+1,oWall)) && (vMove = 1)
+					if (place_meeting(_x,_y+1,oWall)) && (VBUTTON = 1)
 					{
 						_vsp = -jump_speed	
 					}
