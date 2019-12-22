@@ -50,23 +50,17 @@ switch playerState
 				gnet_packet_send_to_id(_packet,_T2Id);
 				
 				#endregion
-				
-				#region Move player
-				
-				
-				
-				#endregion
+		
 				
 				#region Increment packet number and record sent inputs
 				
-				with(O_ClientManager)
-				{
-					packet_number ++
-					fConsoleAddMessage("Before " + string(m_unreadInputs))
-					m_unreadInputs = fArrayMoveBack(m_unreadInputs,1);
-					m_unreadInputs[0] = [_hsp,_vsp,packet_number, m_gunAngle,deltaTime];
-					fConsoleAddMessage("after " + string(m_unreadInputs))
-				}
+				fConsoleAddMessage("adding new input : " + string(ds_list_size(m_unreadInputs)))
+				fConsoleAddMessage("m_unreadInputs is equal to : " + string(ds_list_size(m_unreadInputs)))
+				
+				O_ClientManager.packet_number ++
+				ds_list_add(m_unreadInputs, ds_list_size(m_unreadInputs)-1,[_hsp,_vsp,O_ClientManager.packet_number, 0,deltaTime]) //gun angle set to 0, remove later it is redundant
+				
+				fConsoleAddMessage("input added : " + string(ds_list_size(m_unreadInputs)))
 				
 				#endregion
 			}
@@ -79,8 +73,7 @@ switch playerState
 			
 
 			#region Move Player
-			var _unreadList = O_ClientManager.m_unreadInputs
-			var _unreadListSize = array_length_1d(_unreadList)
+			var _unreadListSize = ds_list_size(m_unreadInputs)
 	
 			//Move player to last known position
 			x = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.X];
@@ -96,7 +89,7 @@ switch playerState
 			{
 				for (var i = _unreadListSize - 1; i >= 0; i--)
 				{
-					movePlayer(id, _unreadList[i]);
+					movePlayer(id, m_unreadInputs[| i]);
 				}
 			}
 

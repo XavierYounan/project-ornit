@@ -35,9 +35,20 @@ with (_client)
 			if (_lastRecievedPacket >= latest_acknowleged_packet[2]) //make sure most recent server update
 			{
 				latest_acknowleged_packet = [_x,_y,_hsp,_vsp, _state] //update most recent position knowledge	
-				fConsoleAddMessage("Culling unread inputs because recieved new server update: " + string(O_ClientManager.m_unreadInputs))
-				O_ClientManager.m_unreadInputs = fArrayRemoveAfterElement(O_ClientManager.m_unreadInputs,2,_lastRecievedPacket) //cull unread input array
-				fConsoleAddMessage("Culled: " + string(O_ClientManager.m_unreadInputs))
+				
+				fConsoleAddMessage("Culling Unread Inputs, Size: " + string(ds_list_size(m_unreadInputs)))
+				for(var i = 0; i < ds_list_size(m_unreadInputs); i++)
+				{
+					var input = m_unreadInputs[| i]
+					
+					if (_lastRecievedPacket >= input[NINJA_UNREAD_INPUTS.PACKET_NUMBER])
+					{
+						ds_list_delete(m_unreadInputs, i)
+						i--
+					}
+				}
+				
+				fConsoleAddMessage("Finished Culling Unread Inputs, Size: " + string(ds_list_size(m_unreadInputs)))
 				return;
 			}
 			else

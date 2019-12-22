@@ -11,3 +11,4 @@ with (parent)
 }
 
 instance_destroy(self)
+ds_list_destroy(m_unreadInputs)

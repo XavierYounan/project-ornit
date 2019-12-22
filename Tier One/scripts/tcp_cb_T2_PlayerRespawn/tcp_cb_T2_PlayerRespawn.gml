@@ -40,9 +40,9 @@ with(client)
 		username = other.username
 		m_PlayerId = _clientId
 		isLocal = other.isLocal
-		
+
 		if (isLocal)
-		{
+		{		
 			with (oCamera)
 			{
 				xTo = x = x + (mouse_x - x)/4 //snap x xoords

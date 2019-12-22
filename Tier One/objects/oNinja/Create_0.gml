@@ -23,3 +23,7 @@ enum NINJA_ITEMS
 itemList = []
 
 itemList[NINJA_ITEMS.GUN] = instance_create_depth(0,0,-101,oNinjaGun)
+
+m_unreadInputs = undefined
+
+m_unreadInputs = ds_list_create()
