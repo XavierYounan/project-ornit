@@ -27,6 +27,10 @@ with(_id)
 		vsp = -jump_speed	
 	}
 	
+	//clamp vsp
+	vsp = clamp(vsp, -maxVsp, maxVsp)
+	
+	
 	//Calculate vMove
 	var vMove = vsp * deltaTime / ONE_MILLION;
 
