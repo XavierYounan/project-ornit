@@ -53,15 +53,8 @@ switch playerState
 		
 				
 				#region Increment packet number and record sent inputs
-				
-				fConsoleAddMessage("adding new input : " + string(ds_list_size(m_unreadInputs)))
-				fConsoleAddMessage("m_unreadInputs is equal to : " + string(ds_list_size(m_unreadInputs)))
-				
 				O_ClientManager.packet_number ++
-				ds_list_add(m_unreadInputs, ds_list_size(m_unreadInputs)-1,[_hsp,_vsp,O_ClientManager.packet_number, 0,deltaTime]) //gun angle set to 0, remove later it is redundant
-				
-				fConsoleAddMessage("input added : " + string(ds_list_size(m_unreadInputs)))
-				
+				ds_list_add(m_unreadInputs,[_hsp,_vsp,O_ClientManager.packet_number, 0,deltaTime]) //gun angle set to 0, remove later it is redundant
 				#endregion
 			}
 			else
