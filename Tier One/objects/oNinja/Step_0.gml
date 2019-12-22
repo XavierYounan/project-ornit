@@ -62,8 +62,10 @@ switch playerState
 				with(O_ClientManager)
 				{
 					packet_number ++
+					fConsoleAddMessage("Before " + string(m_unreadInputs))
 					m_unreadInputs = fArrayMoveBack(m_unreadInputs,1);
-					m_unreadInputs[0] = [_hsp,_vsp,packet_number, m_gunAngle,deltaTime];	
+					m_unreadInputs[0] = [_hsp,_vsp,packet_number, m_gunAngle,deltaTime];
+					fConsoleAddMessage("after " + string(m_unreadInputs))
 				}
 				
 				#endregion
