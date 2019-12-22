@@ -14,10 +14,12 @@ itemList[NINJA_ITEMS.GUN] = instance_create_depth(x,y,-101,oNinjaGun)
 vMove = 0
 hsp = 0;
 vsp = 0;
-grv = 24;
-walksp = 240 ;
 
-jump_speed = 15;
+
+grv = 240;
+walksp = 240;
+jump_speed = 200;
+
 hasControl = true;
 
 hp = 100;

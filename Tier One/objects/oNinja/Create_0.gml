@@ -1,9 +1,9 @@
 m_coordinateArray = []
 
 //Changeable variables
-grv = 24;
+grv = 240;
 walksp = 240;
-jump_speed = 15;
+jump_speed = 200;
 
 
 
