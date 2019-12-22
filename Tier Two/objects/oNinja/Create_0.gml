@@ -15,10 +15,10 @@ vMove = 0
 hsp = 0;
 vsp = 0;
 
-
-grv = 240;
+grv = 6;
 walksp = 240;
-jump_speed = 200;
+jump_speed = 420;
+
 
 hasControl = true;
 
