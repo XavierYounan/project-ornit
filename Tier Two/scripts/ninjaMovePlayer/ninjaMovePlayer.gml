@@ -24,9 +24,6 @@ with(_id)
 	//Apply Gravity
 	vsp += grv * deltaTime / ONE_MILLION;
 	
-	//Clamp vsp
-	vsp = clamp(vsp, -maxVsp, maxVsp)
-
 	//Jump
 	if (place_meeting(x,y+1,oWall)) && (vKeys = 1)
 	{

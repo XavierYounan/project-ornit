@@ -5,7 +5,7 @@ grv = 24;
 walksp = 240;
 jump_speed = 15;
 
-maxVsp = 30;
+
 
 hp = 100;
 

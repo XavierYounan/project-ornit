@@ -16,7 +16,7 @@ hsp = 0;
 vsp = 0;
 grv = 24;
 walksp = 240 ;
-maxVsp = 30
+
 jump_speed = 15;
 hasControl = true;
 
