@@ -33,6 +33,17 @@ switch playerState
 				#endregion
 					
 					
+				if(keyboard_check(ord("O")))
+				{
+					localNinja = instance_create_depth(x,y,depth,oNinjaLocal)
+				}
+				
+				if(keyboard_check(ord("P")))
+				{
+					localNinja.x = x
+					localNinja.y = y
+				}
+					
 				#region Send information 
 				
 				var _packet = gnet_packet_build(PACKET_IDENTIFIER.T1_NINJA,_hsp,_vsp,O_ClientManager.packet_number,mouse_x,mouse_y,_mouseLeftClicked,deltaTime);		

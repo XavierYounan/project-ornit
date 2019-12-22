@@ -1999,6 +1999,14 @@
             }
         },
         {
+            "Key": "fe654566-cfe7-4470-b649-ee7a4471f4f1",
+            "Value": {
+                "id": "71dfc382-6d0d-4110-84f9-cb65b171ac96",
+                "resourcePath": "objects\\oNinjaLocal\\oNinjaLocal.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ffeaf4de-5b63-44c6-88c1-9753896e0034",
             "Value": {
                 "id": "26eab6c9-0929-42f7-9311-f391697fc93f",

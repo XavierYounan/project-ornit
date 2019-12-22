@@ -7,9 +7,10 @@ with(_id)
 	
 	var hButton = _currentInput[NINJA_UNREAD_INPUTS.HBUTTON]
 	var vButton = _currentInput[NINJA_UNREAD_INPUTS.VBUTTON]
+	var packetNumber= _currentInput[NINJA_UNREAD_INPUTS.PACKET_NUMBER]
 	var gunAngle = _currentInput[NINJA_UNREAD_INPUTS.GUN_ANGLE]
 	var deltaTime = _currentInput[NINJA_UNREAD_INPUTS.DELTA_TIME]
-	var packetNumber= _currentInput[NINJA_UNREAD_INPUTS.PACKET_NUMBER]
+		
 	
 	#endregion
 
