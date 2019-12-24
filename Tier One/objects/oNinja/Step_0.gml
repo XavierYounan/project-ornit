@@ -75,8 +75,8 @@ switch playerState
 			//Currently depreciated but support will be added later
 			hsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.HSP];
 			
-			vsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.VSP];			
-	
+			vsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.VSP];	
+				
 			//Loop through all unread inputs and calculate the new position
 
 			if (_unreadListSize != 0)
@@ -86,6 +86,7 @@ switch playerState
 					movePlayer(id, m_unreadInputs[| i]);
 				}
 			}
+
 
 			
 			#endregion
