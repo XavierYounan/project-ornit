@@ -78,6 +78,7 @@ switch playerState
 			vsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.VSP];			
 	
 			//Loop through all unread inputs and calculate the new position
+
 			if (_unreadListSize != 0)
 			{
 				for (var i = _unreadListSize - 1; i >= 0; i--)

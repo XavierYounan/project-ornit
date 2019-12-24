@@ -34,7 +34,7 @@ with (_client)
 		{
 			if (_lastRecievedPacket >= latest_acknowleged_packet[2]) //make sure most recent server update
 			{
-				latest_acknowleged_packet = [_x,_y,_hsp,_vsp, _state] //update most recent position knowledge	
+				latest_acknowleged_packet = [_x,_y,_hsp,_vsp, _state,_lastRecievedPacket] //update most recent position knowledge	
 	
 				for(var i = 0; i < ds_list_size(m_unreadInputs); i++)
 				{
