@@ -60,6 +60,7 @@ with(_id)
 	}
 	y += vMove;
 	
+	if (hMove != 0) image_xscale = sign(hMove);
 				
 	with (itemList[NINJA_ITEMS.GUN])
 	{
