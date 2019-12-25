@@ -32,8 +32,8 @@ with (_client)
 	with(hero)
 	{
 		var _array = [_x,_y,_timePacketRecieved,_gunDir,_state]
-		m_coordinateArray = fArrayMoveBack(m_coordinateArray,1)
-		m_coordinateArray[0] = _array
+		ds_list_add(m_coordinateArray, _array)
+
 		return;
 	}
 }

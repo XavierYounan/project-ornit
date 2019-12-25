@@ -1,4 +1,10 @@
-m_coordinateArray = []
+m_coordinateArray = ds_list_create() //Non local
+
+var _array = [0,0, current_time,0,0]
+ds_list_add(m_coordinateArray, _array)
+		
+		
+m_unreadInputs = ds_list_create() //Local
 
 //Changeable variables
 grv = 480;
@@ -23,6 +29,4 @@ itemList = []
 
 itemList[NINJA_ITEMS.GUN] = instance_create_depth(0,0,-101,oNinjaGun)
 
-m_unreadInputs = undefined
 
-m_unreadInputs = ds_list_create()

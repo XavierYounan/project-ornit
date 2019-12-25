@@ -75,9 +75,10 @@ switch playerState
 			//Currently depreciated but support will be added later
 			hsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.HSP];
 			
-			vsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.VSP];			
-	
+			vsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.VSP];	
+				
 			//Loop through all unread inputs and calculate the new position
+
 			if (_unreadListSize != 0)
 			{
 				for (var i = _unreadListSize - 1; i >= 0; i--)
@@ -85,6 +86,7 @@ switch playerState
 					movePlayer(id, m_unreadInputs[| i]);
 				}
 			}
+
 
 			
 			#endregion
@@ -103,76 +105,118 @@ switch playerState
 		else
 		{
 			#region Interpolation code
-			// Compute render timestamp.
-
+			// Compute render timestamp
 			var now = current_time
-			var render_timestamp = now - (1000.0 / SERVER_FPS);
-  
-			var buff_length = array_length_1d(m_coordinateArray)
-
-			if(buff_length > 0)
+			var render_timestamp = now - global.INTERPOLATION_TIME;
+			
+			//Copy the old list into a new one
+			if !ds_list_empty(m_coordinateArray)
+		    {
+			    temp_list = ds_list_create();
+			    ds_list_copy(temp_list, m_coordinateArray);
+		    }
+			else
 			{
-				var newPos = m_coordinateArray[0]
+				//coordinate array is empty
+				fConsoleAddMessage("Coordinate array is empty")
+				temp_list = ds_list_create()
+				var array = [0,0,0,0,0]
+				array[NINJA_NON_LOCAL_POSITION.PACKET_TIME] = current_time
+				ds_list_add(temp_list,array,array)
+			}
+
+			#region Drop older positions
+			if(ds_list_size(temp_list) >= 2)
+			{
+				var seccondEntry = temp_list[| 1]
+				var seccondEntryTime = seccondEntry[NINJA_NON_LOCAL_POSITION.PACKET_TIME]
 			
-				var _x = newPos[0]
-				var _y = newPos[1]
-				var _t = newPos[2]
-				var _ga = newPos[3]
+				while(ds_list_size(temp_list) > 2 && seccondEntryTime <= render_timestamp)
+				{
+				
+					ds_list_delete(temp_list,0)
+				
+					//re establish seccond entry time
+					var seccondEntry = temp_list[| 1]
+					var seccondEntryTime = seccondEntry[NINJA_NON_LOCAL_POSITION.PACKET_TIME]
+				}
+			}
+			#endregion
 			
-				x = _x
-				y = _y
-			
+			var list_length = ds_list_size(temp_list)
+			if( list_length >= 2)
+			{
+				//Interpolate between two surrounding authorative positions
+				//First check positions are surrounding
+				var entry0 = temp_list[| 0]
+				var entry1 = temp_list[| 1]
+				
+				var timestamp0 = entry0[NINJA_NON_LOCAL_POSITION.PACKET_TIME]
+				var timestamp1 = entry1[NINJA_NON_LOCAL_POSITION.PACKET_TIME]
+				
+				if(timestamp0 <= render_timestamp && render_timestamp <= timestamp1)
+				{
+					var x0 = entry0[NINJA_NON_LOCAL_POSITION.X];
+					var x1 = entry1[NINJA_NON_LOCAL_POSITION.X];
+					
+					var y0 = entry0[NINJA_NON_LOCAL_POSITION.Y];
+					var y1 = entry1[NINJA_NON_LOCAL_POSITION.Y];
+					
+					var ga0 = entry0[NINJA_NON_LOCAL_POSITION.GUN_DIRECTION];
+					var ga1 = entry1[NINJA_NON_LOCAL_POSITION.GUN_DIRECTION];
+						
+					var t0 = timestamp0;
+					var t1 = timestamp1;
+					  
+
+					x = x0 + (x1 - x0) * (render_timestamp - t0) / (t1 - t0);
+		  
+					y = y0 + (y1 - y0) * (render_timestamp - t0) / (t1 - t0);
+						
+					with (itemList[NINJA_ITEMS.GUN])
+					{
+							x = other.x;
+							y = other.y - 20;
+							image_angle = ga0 + (ga1 - ga0) * (render_timestamp - t0) / (t1 - t0);
+					}
+				}
+				else
+				{
+					//Positions dont surround the current time
+					//Take most recent position
+					fConsoleAddMessage("Positions dont surround current time")
+					var latest_position = m_coordinateArray[| ds_list_size(m_coordinateArray) - 1]
+				
+					x = latest_position[NINJA_NON_LOCAL_POSITION.X]
+					y = latest_position[NINJA_NON_LOCAL_POSITION.Y]
+				
+					with (itemList[NINJA_ITEMS.GUN])
+					{
+						x = other.x;
+						y = other.y - 20;
+						image_angle = latest_position[NINJA_NON_LOCAL_POSITION.GUN_DIRECTION]
+					}	
+					
+				}
+			}
+			else
+			{
+				//There isnt enough positions to interpolate with, take most recent position
+				fConsoleAddMessage("Not enough positions to interpolate")
+				var latest_position = m_coordinateArray[| 0]
+				
+				x = latest_position[NINJA_NON_LOCAL_POSITION.X]
+				y = latest_position[NINJA_NON_LOCAL_POSITION.Y]
+				
 				with (itemList[NINJA_ITEMS.GUN])
 				{
 					x = other.x;
 					y = other.y - 20;
-					image_angle = _ga
+					image_angle = latest_position[NINJA_NON_LOCAL_POSITION.GUN_DIRECTION]
 				}	
-				m_coordinateArray = []
-				fConsoleAddMessage("Non local coordinate is full and player has been moved")
 			}
-			else
-			{
-				fConsoleAddMessage("Non local coordinate array is empty")	
-			}
-
-			/*
-			if (buff_length >= 2)
-			{
-				m_coordinateArray = fArrayTrim(m_coordinateArray,2)
-				var old_position = m_coordinateArray[1]
-				var new_position = m_coordinateArray[0]
-				var buff_length = array_length_1d(m_coordinateArray)
-
-				// Interpolate between the two surrounding authoritative positions.
-				if ((buff_length >= 2) && (old_position[2] <= render_timestamp) && (render_timestamp <= new_position[2])) 
-				{
-					    var x0 = old_position[0];
-					    var x1 = new_position[0];
-		  
-						var y0 = old_position[1];
-						var y1 = new_position[1];
 		
-						var ga0 = old_position[3];
-						var ga1 = new_position[3];
-						
-					    var t0 = old_position[2];
-					    var t1 = new_position[2];
-
-					    x = x0 + (x1 - x0) * (render_timestamp - t0) / (t1 - t0);
-		  
-						y = y0 + (y1 - y0) * (render_timestamp - t0) / (t1 - t0);
-						
-						with (itemList[NINJA_ITEMS.GUN])
-						{
-								x = other.x;
-								y = other.y - 20;
-								image_angle = ga0 + (ga1 - ga0) * (render_timestamp - t0) / (t1 - t0);
-						}
-					
-				}
-			}
-			*/
+			ds_list_destroy(temp_list) //Make sure to clean up
 			#endregion
 		}
 		break;

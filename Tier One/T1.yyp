@@ -1935,6 +1935,14 @@
             }
         },
         {
+            "Key": "f41de161-3147-4107-8a08-6ab591a3b728",
+            "Value": {
+                "id": "9a2c49e0-b449-4bc5-ad79-25a5ece1aef4",
+                "resourcePath": "scripts\\characterSpecificNonLocalPositionEnum\\characterSpecificNonLocalPositionEnum.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f49766e0-3b0b-41a0-acc0-064401357085",
             "Value": {
                 "id": "58e85b84-1158-4efa-8d39-70fb418c8578",
@@ -2062,6 +2070,7 @@
         "a27f7b19-b2af-4aea-b9fa-1388426c4e83",
         "8bb632ee-302b-41f4-99a8-d406cbebabca",
         "bebb5883-e5f4-4967-aecf-692b6b8cf054",
+        "f41de161-3147-4107-8a08-6ab591a3b728",
         "341d8fb9-7bbd-4da1-b810-a1a9df152790",
         "43bdeae2-98fa-42a5-bb99-a9cdefb4008f",
         "08a8558c-99c3-44b9-b710-bd45ce6b07e9",
