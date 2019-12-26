@@ -44,7 +44,7 @@ with (timeManager)
 		show_error("There should only ever be one time manager created", true)	
 	}
 }
-m_unreadImputs = []
+
 
 PLAYING = 0
 DEAD = 1
@@ -63,6 +63,8 @@ m_gunAngle = 0
 
 m_username = global.USERNAME
 m_character = CHARACTER.NULL
+
+global.INTERPOLATION_TIME = 200; //200 ms interpolation time
 
 packet_number = 0 //keeps count for sever reconsiliation
 

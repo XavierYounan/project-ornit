@@ -57,7 +57,7 @@ else
 			}
 			hero.m_imputLog = _newArray
 		}
-		hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,false,_deltaTime]
+		hero.m_imputLog[0] = [_hMove,_vMove,_packetNumber,_mouseX,_mouseY,_mouseLeftClicked,_deltaTime]
 		break;		 
 	}
 }

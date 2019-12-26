@@ -1,3 +1,5 @@
+ds_list_destroy(m_coordinateArray)
+
 var _arrayLength = array_length_1d(itemList)
 
 for (var i=0; i<_arrayLength ; i++)
@@ -11,3 +13,4 @@ with (parent)
 }
 
 instance_destroy(self)
+ds_list_destroy(m_unreadInputs)

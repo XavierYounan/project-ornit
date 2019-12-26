@@ -131,7 +131,7 @@ switch(debugMode)
 		draw_text(right - xSpacing,ySpacing,"DEBUG MODE: SERVER_TIME");
 		draw_set_halign(fa_left);
 		
-		//fetch and draw the last know imput
+		//fetch and draw the last know input
 		with(oPlayer)
 		{
 			if(isLocal)
@@ -139,15 +139,15 @@ switch(debugMode)
 				var lastKnown = hero.latest_acknowleged_packet;
 			}
 		}
-		draw_text(left + xSpacing,top + ySpacing, "Last server imput is : " + string(lastKnown))
+		draw_text(left + xSpacing,top + ySpacing, "Last server input is : " + string(lastKnown))
 		
-		//fetch and draw the unread imputs
-		var unreadImputs = O_ClientManager.m_unreadImputs
-		var arraySize = array_length_1d(unreadImputs)
+		//fetch and draw the unread inputs
+		var unreadInputs = O_ClientManager.m_unreadInputs
+		var arraySize = array_length_1d(unreadInputs)
 		
 		for(i = 0; i < arraySize; i++)
 		{
-			draw_text(left + xSpacing,top + ((i + 2) * ySpacing),string(unreadImputs[i]))
+			draw_text(left + xSpacing,top + ((i + 2) * ySpacing),string(unreadInputs[i]))
 		}
 		
 		#endregion

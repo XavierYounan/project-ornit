@@ -1,5 +1,5 @@
 /// fArrayRemoveAfterElement()
-// @desc used when a T1 can clear acklonedged imputs
+// @desc used when a T1 can clear acklonedged inputs
 
 // @param {array} Array the array to shorten
 // @param {int} The sub array index number to check

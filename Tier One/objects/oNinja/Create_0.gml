@@ -1,10 +1,16 @@
-m_coordinateArray = []
+m_coordinateArray = ds_list_create() //Non local
 
+var _array = [0,0, current_time,0,0]
+ds_list_add(m_coordinateArray, _array)
+		
+		
+m_unreadInputs = ds_list_create() //Local
 
 //Changeable variables
-grv = 24;
+grv = 480;
 walksp = 240;
-jump_speed = 15;
+jump_speed = 400;
+maxVsp = grv
 
 hp = 100;
 
@@ -22,3 +28,5 @@ enum NINJA_ITEMS
 itemList = []
 
 itemList[NINJA_ITEMS.GUN] = instance_create_depth(0,0,-101,oNinjaGun)
+
+

@@ -359,6 +359,14 @@
             }
         },
         {
+            "Key": "2e625c8a-3f78-49b2-a360-fbc291f95bd6",
+            "Value": {
+                "id": "744aa8fb-015b-490e-a199-2420705ddb38",
+                "resourcePath": "scripts\\ninjaMovePlayer\\ninjaMovePlayer.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3006d98f-bfa5-43ab-919d-3cbf04afd732",
             "Value": {
                 "id": "19d9e5ad-edf6-4114-9689-ad133d700948",
@@ -1663,6 +1671,14 @@
             }
         },
         {
+            "Key": "e56c3030-4b92-4bcc-ac7d-c3637a713422",
+            "Value": {
+                "id": "48d6b1c3-dce9-4c2f-a919-a0ff9b274d77",
+                "resourcePath": "views\\e56c3030-4b92-4bcc-ac7d-c3637a713422.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "e657e910-fb47-420d-99f4-dd86094d97ef",
             "Value": {
                 "id": "f0667ba9-e6f1-4b05-bcac-3869da9598b4",
@@ -1979,7 +1995,8 @@
         "b1c03837-803e-4279-aa8e-266be78e4fca",
         "d180f5b5-05be-49a4-b18f-37d48dca7d79",
         "9987d409-6974-4d00-92f9-327099f92cc1",
-        "b9d47f5a-aca6-416b-9bbc-ca8eb64ce0ec"
+        "b9d47f5a-aca6-416b-9bbc-ca8eb64ce0ec",
+        "2e625c8a-3f78-49b2-a360-fbc291f95bd6"
     ],
     "tutorial": ""
 }

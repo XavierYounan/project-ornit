@@ -62,7 +62,7 @@ switch(State)
 					y += vsp;
 			
 					
-					if ((_currentImput[IMPUTLIST.MOUSE_LEFT_CLICKED]) && (!_currentImput[IMPUTLIST.PROCESSED]) ) //if mouse left clicked and this frame hasnt been processed yet
+					if (_currentImput[IMPUTLIST.MOUSE_LEFT_CLICKED])  //if mouse left clicked and this frame hasnt been processed yet
 					{
 				
 						playerState = PLAYERSTATE.ATTACK_SLASH

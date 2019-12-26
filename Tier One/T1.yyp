@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "16334bd8-485d-4828-ad3e-c458ca78aae6",
+            "Value": {
+                "id": "b4935210-a166-48fe-ba9e-900b21a278fa",
+                "resourcePath": "scripts\\movePlayer\\movePlayer.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1649defe-e22e-49ef-9ce1-161c0b710c00",
             "Value": {
                 "id": "0dfdccb9-844c-4ffe-ac2c-2681c55845aa",
@@ -1927,6 +1935,14 @@
             }
         },
         {
+            "Key": "f41de161-3147-4107-8a08-6ab591a3b728",
+            "Value": {
+                "id": "9a2c49e0-b449-4bc5-ad79-25a5ece1aef4",
+                "resourcePath": "scripts\\characterSpecificNonLocalPositionEnum\\characterSpecificNonLocalPositionEnum.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f49766e0-3b0b-41a0-acc0-064401357085",
             "Value": {
                 "id": "58e85b84-1158-4efa-8d39-70fb418c8578",
@@ -1948,6 +1964,14 @@
                 "id": "6581d840-ad78-48b3-b634-f27daa046db7",
                 "resourcePath": "scripts\\priv_gnet_send_conn_request\\priv_gnet_send_conn_request.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f9e352a3-97f8-410e-9fa3-d71b541bc9a2",
+            "Value": {
+                "id": "d895e7f0-9626-40c2-8552-16f49347906a",
+                "resourcePath": "views\\f9e352a3-97f8-410e-9fa3-d71b541bc9a2.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -1980,6 +2004,14 @@
                 "id": "216f39fc-8e16-4212-b185-064885259397",
                 "resourcePath": "scripts\\log_warn\\log_warn.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "fe654566-cfe7-4470-b649-ee7a4471f4f1",
+            "Value": {
+                "id": "71dfc382-6d0d-4110-84f9-cb65b171ac96",
+                "resourcePath": "objects\\oNinjaLocal\\oNinjaLocal.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2038,6 +2070,7 @@
         "a27f7b19-b2af-4aea-b9fa-1388426c4e83",
         "8bb632ee-302b-41f4-99a8-d406cbebabca",
         "bebb5883-e5f4-4967-aecf-692b6b8cf054",
+        "f41de161-3147-4107-8a08-6ab591a3b728",
         "341d8fb9-7bbd-4da1-b810-a1a9df152790",
         "43bdeae2-98fa-42a5-bb99-a9cdefb4008f",
         "08a8558c-99c3-44b9-b710-bd45ce6b07e9",
@@ -2093,7 +2126,8 @@
         "ffeaf4de-5b63-44c6-88c1-9753896e0034",
         "ddb54d02-bef3-460d-a8d2-29d9f0ab2c97",
         "dbad8e12-2591-4f5f-8686-5ee7a8d2d41f",
-        "8dd873a4-3466-4e6f-9568-97771d19b115"
+        "8dd873a4-3466-4e6f-9568-97771d19b115",
+        "16334bd8-485d-4828-ad3e-c458ca78aae6"
     ],
     "tutorial": ""
 }
