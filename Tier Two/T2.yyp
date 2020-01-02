@@ -1087,14 +1087,6 @@
             }
         },
         {
-            "Key": "84979855-7397-4bba-8ab3-a87afa3f6633",
-            "Value": {
-                "id": "06a9100f-d411-4c44-9c4a-80b202580747",
-                "resourcePath": "datafiles_yy\\catch_error_help.html.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "84f47b42-ec8b-42c4-afc9-0d8684543345",
             "Value": {
                 "id": "cbc6ce1f-731d-4e0d-89f1-e42df9b4fc30",

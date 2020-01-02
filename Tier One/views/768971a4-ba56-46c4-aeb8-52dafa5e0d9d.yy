@@ -5,7 +5,8 @@
     "name": "768971a4-ba56-46c4-aeb8-52dafa5e0d9d",
     "children": [
         "8c26d0b8-8759-4dac-8c4e-e537981d1ca7",
-        "f3b59e49-1fc7-48b7-a83b-7fa30f1bd6eb"
+        "f3b59e49-1fc7-48b7-a83b-7fa30f1bd6eb",
+        "6f0cf8c1-711f-495d-adda-eebe3ae84aca"
     ],
     "filterType": "GMRoom",
     "folderName": "TEST",
