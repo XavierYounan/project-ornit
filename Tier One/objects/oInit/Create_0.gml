@@ -13,7 +13,6 @@ if(! sentry_init("https://fe51e4b37356486da7f212bb61434516@sentry.io/1869212") >
 {
 	fConsoleAddMessage("sentry failed to initialise")
 }
-sentry_capture_message("Test message")
 
 instance_create_depth(-10, -10, DEPTH.GUI, oErrors)
 

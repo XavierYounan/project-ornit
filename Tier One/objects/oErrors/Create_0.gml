@@ -1,0 +1,1 @@
+sentry_capture_message("Phone notifications test number 2")
