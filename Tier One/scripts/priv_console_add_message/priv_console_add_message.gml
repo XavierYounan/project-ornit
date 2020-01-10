@@ -1,4 +1,4 @@
-with(O_GameConsole)
+with(oGameConsole)
 {
 	ds_list_add(m_messageList,argument0);
 	

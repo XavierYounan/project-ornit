@@ -434,7 +434,7 @@
             "Key": "2abc8c33-af58-4d23-acca-ddd3d931a5a6",
             "Value": {
                 "id": "b84ede32-d05f-485f-b253-d2c84782c554",
-                "resourcePath": "objects\\O_GameConsole\\O_GameConsole.yy",
+                "resourcePath": "objects\\oGameConsole\\oGameConsole.yy",
                 "resourceType": "GMObject"
             }
         },

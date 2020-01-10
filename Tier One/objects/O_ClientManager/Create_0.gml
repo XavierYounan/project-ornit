@@ -5,8 +5,6 @@ if (!assert_singleton()) return;
 gnet_start_network(1,PROTOCOL_ID,3111, "temp connection")
 gnet_stop_network()
 
-m_GameConsole = instance_create_depth(-10,-10,-100,O_GameConsole)
-
 global.MAX_PLAYERS = 2;
 
 var result = gnet_start_network(global.MAX_PLAYERS,PROTOCOL_ID,-1, "Client")

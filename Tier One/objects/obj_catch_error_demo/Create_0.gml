@@ -1,13 +1,20 @@
 catch_error_init();
+
 show_debug_message("ready? " + string(catch_error_is_ready()));
 catch_error_set_prompt(catch_error_prompt_question,
     @"This wonderful little demo encountered an error.
 Would you like to restart the program and view the error?",
     "Oh no,");
+	
+	
 catch_error_set_normal(catch_error_normal_queue);
 catch_error_set_fatal(catch_error_fatal_queue);
+
+
 error_file = "misc/error.log";
 catch_error_set_dump_path(error_file);
+
+
 // let the program restart itself on error
 var argv = "", argc = parameter_count();
 for (var i = 1; i < argc; i++) {

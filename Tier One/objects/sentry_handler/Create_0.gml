@@ -62,6 +62,7 @@ ds_map_add(app, "app_name", game_display_name);
 ds_map_add(app, "app_version", GM_version);
 ds_map_add(app, "debug_mode", debug_mode);
 ds_map_add(app, "app_build", sentry_datetime_string(GM_build_date));
+ds_map_add(app, "developer_mode", global.developer_mode);
 // disabled for privacy :)
 //var params = ds_list_create();
 //for (var i=0; i< parameter_count(); i++) {

@@ -1,19 +1,12 @@
-if(! catch_error_init() > 0)
-{
-	fConsoleAddMessage("catch error failed to initialise")
-}
-catch_error_set_prompt(catch_error_prompt_message,
-    "We regret to inform that the game encountered a fatal error and will now close.",
-    "Error");
+global.developer_mode = true
 
-
-
-
-if(! sentry_init("https://fe51e4b37356486da7f212bb61434516@sentry.io/1869212") > 0)
-{
-	fConsoleAddMessage("sentry failed to initialise")
-}
+instance_create_depth(-10,-10,-100,oGameConsole) //Fix depth later
 
 instance_create_depth(-10, -10, DEPTH.GUI, oErrors)
+
+
+instance_create_depth(0,0,0, oSentryCheck)
+
+
 
 room_goto_next()
