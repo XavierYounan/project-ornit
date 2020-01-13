@@ -599,14 +599,6 @@
             }
         },
         {
-            "Key": "42063247-ae34-41bb-a0bd-359138d157ef",
-            "Value": {
-                "id": "debf0b1f-d416-4c6c-bba6-e6b59715c08a",
-                "resourcePath": "scripts\\fConsoleAddMessage\\fConsoleAddMessage.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "438335e9-50fa-4693-bf41-4c76cb654457",
             "Value": {
                 "id": "ce69312d-f7c5-4588-8f34-90566145ea43",
@@ -1100,6 +1092,14 @@
                 "id": "dd105d87-c579-446b-9566-bbfe974598b1",
                 "resourcePath": "views\\70ac7151-dc9c-4c65-9da1-25b1dc45ffd9.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "732c3f99-e3f5-4380-94eb-f202d7f1b3e5",
+            "Value": {
+                "id": "d62f3997-42c7-4ef2-9595-fb39f73d030c",
+                "resourcePath": "scripts\\debug_log\\debug_log.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1887,6 +1887,14 @@
             }
         },
         {
+            "Key": "c86cd75d-4107-4417-bc20-883d7ea99bea",
+            "Value": {
+                "id": "daca65ef-208a-4b9e-ae31-2be05cb40fdd",
+                "resourcePath": "scripts\\priv_debug_log\\priv_debug_log.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c915e9f1-1583-4748-a41e-9dce8643431c",
             "Value": {
                 "id": "befa985c-eb8b-4165-9038-af12c31d3ae4",
@@ -2139,6 +2147,14 @@
             "Value": {
                 "id": "48fa4e98-1190-4627-8490-9921df19f1ce",
                 "resourcePath": "scripts\\sentry_browser_string\\sentry_browser_string.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e41b07b8-cf09-415e-ac7c-2a01287effe9",
+            "Value": {
+                "id": "c365081b-3dbe-42bd-8d06-ebaaae0bea92",
+                "resourcePath": "scripts\\fConsoleAddMessage\\fConsoleAddMessage.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2406,7 +2422,9 @@
         "be858763-e0ea-4fbe-b230-e855d787fbc0",
         "ec985c51-ff40-4ae1-a9c3-a22830fbb600",
         "bc42e7f7-e610-4f87-a02c-3f04c109a13e",
-        "42063247-ae34-41bb-a0bd-359138d157ef",
+        "732c3f99-e3f5-4380-94eb-f202d7f1b3e5",
+        "c86cd75d-4107-4417-bc20-883d7ea99bea",
+        "e41b07b8-cf09-415e-ac7c-2a01287effe9",
         "7069907b-9b7a-4830-8e25-a493977f7623",
         "d6cb287a-6c6c-4377-8f6a-694116de6743",
         "595c6887-5050-42b0-81ac-2483e7a9f8e2",

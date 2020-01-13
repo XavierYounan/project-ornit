@@ -41,5 +41,5 @@ if (file_exists(error_file)) {
 
 if(! sentry_init("https://fe51e4b37356486da7f212bb61434516@sentry.io/1869212") > 0)
 {
-	fConsoleAddMessage("sentry failed to initialise", ERROR_LEVEL.ERROR)
+	priv_console_add_message("sentry failed to initialise", ERROR_LEVEL.ERROR)
 }

@@ -59,7 +59,7 @@ switch playerState
 			}
 			else
 			{
-				fConsoleAddMessage("T2 object does not exist, oNinja, Local send inputs",2)
+				debug_log("T2 object does not exist, oNinja, Local send inputs",ERROR_LEVEL.DEBUG , 2)
 			}
 
 			#endregion 
@@ -118,7 +118,7 @@ switch playerState
 			else
 			{
 				//coordinate array is empty
-				fConsoleAddMessage("Coordinate array is empty")
+				debug_log("Coordinate array is empty", ERROR_LEVEL.DEBUG)
 				temp_list = ds_list_create()
 				var array = [0,0,0,0,0]
 				array[NINJA_NON_LOCAL_POSITION.PACKET_TIME] = current_time
@@ -184,7 +184,7 @@ switch playerState
 				{
 					//Positions dont surround the current time
 					//Take most recent position
-					fConsoleAddMessage("Positions dont surround current time")
+					debug_log("Positions dont surround current time", ERROR_LEVEL.DEBUG)
 					var latest_position = m_coordinateArray[| ds_list_size(m_coordinateArray) - 1]
 				
 					x = latest_position[NINJA_NON_LOCAL_POSITION.X]
@@ -202,7 +202,7 @@ switch playerState
 			else
 			{
 				//There isnt enough positions to interpolate with, take most recent position
-				fConsoleAddMessage("Not enough positions to interpolate")
+				debug_log("Not enough positions to interpolate",ERROR_LEVEL.INFO)
 				var latest_position = m_coordinateArray[| 0]
 				
 				x = latest_position[NINJA_NON_LOCAL_POSITION.X]

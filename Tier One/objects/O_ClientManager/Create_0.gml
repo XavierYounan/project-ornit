@@ -24,7 +24,7 @@ result = gnet_connect(global.IP,global.PORT)
 
 instance_create_depth(0,0,0,TCP_manager)
 
-fConsoleAddMessage(string(result))
+debug_log(string(result),ERROR_LEVEL.INFO)
 
 if (result[0] == null)
 {
@@ -39,7 +39,7 @@ with (timeManager)
 	
 	if (_res = false)
 	{
-		show_error("There should only ever be one time manager created", true)	
+		debug_log("There should only ever be one time manager created", ERROR_LEVEL.ERROR)	
 	}
 }
 

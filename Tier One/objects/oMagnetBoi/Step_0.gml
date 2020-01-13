@@ -63,7 +63,7 @@ switch playerState
 			}
 			else
 			{
-				fConsoleAddMessage("T2 is dead : " + string(oServerTime.m_serverTime))
+				debug_log("T2 is dead" , ERROR_LEVEL.SPAM)
 			}
 
 			#endregion 
@@ -134,7 +134,7 @@ switch playerState
 							break;	
 						}
 												
-						default: fConsoleAddMessage("oMagnetBoi state is in default. ERROR", 2)
+						default: debug_log("oMagnetBoi state is in default", ERROR_LEVEL.WARNING,2)
 					}
 							
 				}

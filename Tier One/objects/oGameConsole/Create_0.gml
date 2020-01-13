@@ -6,9 +6,6 @@ m_messageList = ds_list_create();
 
 displayingText = true
 
-spam_message = ds_map_create()
-spam_message_que = ds_list_create()
-
 display_level = ERROR_LEVEL.DEBUG
 
 enum ConsoleArray
@@ -24,11 +21,13 @@ ds_map_add(errorColours, ERROR_LEVEL.ERROR, c_red)
 ds_map_add(errorColours, ERROR_LEVEL.WARNING, c_orange)
 ds_map_add(errorColours, ERROR_LEVEL.INFO, c_white)
 ds_map_add(errorColours, ERROR_LEVEL.DEBUG, c_blue)
+ds_map_add(errorColours, ERROR_LEVEL.SPAM, c_gray)
 
 
-fConsoleAddMessage("Fatal", ERROR_LEVEL.FATAL)
-fConsoleAddMessage("Error", ERROR_LEVEL.ERROR)
-fConsoleAddMessage("Warning", ERROR_LEVEL.WARNING)
-fConsoleAddMessage("Info", ERROR_LEVEL.INFO)
-fConsoleAddMessage("Debug", ERROR_LEVEL.DEBUG)
+debug_log("Fatal", ERROR_LEVEL.FATAL)
+debug_log("Error", ERROR_LEVEL.ERROR)
+debug_log("Warning", ERROR_LEVEL.WARNING)
+debug_log("Info", ERROR_LEVEL.INFO)
+debug_log("Debug", ERROR_LEVEL.DEBUG)
+debug_log("SPAM", ERROR_LEVEL.SPAM)
 

@@ -4,5 +4,9 @@ enum ERROR_LEVEL
 	ERROR,
 	WARNING,
 	INFO,
-	DEBUG	
+	DEBUG,
+	SPAM
 }
+
+spam_message = ds_map_create()
+spam_message_que = ds_list_create()

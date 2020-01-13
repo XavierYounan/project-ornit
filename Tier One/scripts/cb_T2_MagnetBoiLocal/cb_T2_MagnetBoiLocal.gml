@@ -16,7 +16,7 @@ var _client = fGetClientById(_clientId)
 //if doesnt exist create a new player TODO: when player connect should be created
 if (_client == noone)
 {
-	fConsoleAddMessage("Recieving position packets for self even tho not created",2)
+	debug_log("Recieving position packets for self even tho not created",2)
 }
 
 
@@ -26,7 +26,7 @@ with (_client)
 	{
 		if (hero = undefined)
 		{
-			fConsoleAddMessage("Hero was undefined, disregarding self position packet",2) 
+			debug_log("Hero was undefined, disregarding self position packet",2) 
 			return;
 		}
 		
@@ -46,15 +46,15 @@ with (_client)
 											_lastRecievedPacket
 										)				
 				console_log_dropped_packet("cb_T2_SelfPosition",_connectionId,_receivedData,str)
-				fConsoleAddMessage(str,2)
+				debug_log(str,2)
 				return;
 			}
 		}
 	}
 	else
 	{
-		fConsoleAddMessage("Recieved position packet for player that was meant to be local but wasn't",2)	
+		debug_log("Recieved position packet for player that was meant to be local but wasn't",2)	
 		return;
 	}
 }
-fConsoleAddMessage("Recieved self position packet but couldn't find player",2)
+debug_log("Recieved self position packet but couldn't find player",2)

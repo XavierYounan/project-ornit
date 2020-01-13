@@ -6,7 +6,7 @@ var _character = _receivedData[1]; //buffer_u6
 
 var client = fGetClientById(_clientId)
 
-fConsoleAddMessage("recieved player respawn")
+debug_log("recieved player respawn")
 
 with(client)
 {
@@ -15,14 +15,14 @@ with(client)
 		case CHARACTER.NINJA:
 		{
 			hero = instance_create_depth(room_width/2,room_height/2,-100,oNinja)
-			fConsoleAddMessage("hero" + string(hero))
+			debug_log("hero" + string(hero))
 			break;	
 		} 
 		
 		case CHARACTER.MAGNET_BOI:
 		{
 			hero = instance_create_depth(room_width/2,room_height/2,DEPTH.PLAYERS,oMagnetBoi)
-			fConsoleAddMessage("hero" + string(hero))
+			debug_log("hero" + string(hero))
 			break;	
 		} 
 	

@@ -16,7 +16,7 @@ if (_result[0] == ConnectionAddResult.Success)
 }
 else
 {
-	fConsoleAddMessage("priv_gnet_add_connection returned a non 0 result, senderId: " + string(senderId))
+	debug_log("priv_gnet_add_connection returned a non 0 result, senderId: " + string(senderId))
 }
 
 var _buff = gnet_packet_build(Gnet_PacketId.connection_response, _result[0], NetworkManager.username);

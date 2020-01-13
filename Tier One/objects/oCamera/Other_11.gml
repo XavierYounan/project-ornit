@@ -3,14 +3,14 @@
 if localPlayer == id
 {
 	event_user(CAMERA_EVENT.FULL_SCREEN)
-	fConsoleAddMessage("Coldnt follow the player, no local player has been set (camera)")
+	debug_log("Coldnt follow the player, no local player has been set (camera)", ERROR_LEVEL.DEBUG)
 }
 		
 //check hero isnt undefined
 if localPlayer.hero == undefined
 {
 	event_user(CAMERA_EVENT.FULL_SCREEN)
-	fConsoleAddMessage("Coldnt follow the player, no player to follow")
+	debug_log("Coldnt follow the player, no player to follow", ERROR_LEVEL.DEBUG)
 	
 }
 		
@@ -37,4 +37,4 @@ with (oRespawn)
 //Set the state
 state = CAMERA_STATE.FOLLOW_PLAYER;
 
-fConsoleAddMessage("User event follow a player has been triggred")
+debug_log("User event follow a player has been triggred", ERROR_LEVEL.DEBUG)

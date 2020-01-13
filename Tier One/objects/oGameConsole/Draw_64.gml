@@ -1,7 +1,5 @@
-/// @description Init 
 if (displayingText)
 {
-
 
 	tempList = ds_list_create()
 
@@ -18,7 +16,7 @@ if (displayingText)
 	}
 
 
-	var _listSize = ds_list_size(temp_list);
+	var _listSize = ds_list_size(tempList);
 	var _yAnchor = window_get_height() - 10; //CHANGE TO VARIABLE PIXELS FROM LEFT
 	var _spacing = 30; //CHANGE TO FONT HEIGHT PLUS GAP
 
@@ -29,7 +27,7 @@ if (displayingText)
 	
 	for (var i = _listSize - 1; i > -1; i--)
 	{
-		var array = temp_list[| i]
+		var array = tempList[| i]
 		
 		//set colour based on level
 		var level = array[| ConsoleArray.Level]

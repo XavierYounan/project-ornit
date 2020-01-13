@@ -12,7 +12,7 @@ switch state
 		else
 		{
 			event_user(CAMERA_EVENT.FULL_SCREEN)
-			fConsoleAddMessage("There is no local player assigned to the camera!")
+			debug_log("There is no local player assigned to the camera!", ERROR_LEVEL.DEBUG)
 		}
 		
 		x += (xTo - x)/25
