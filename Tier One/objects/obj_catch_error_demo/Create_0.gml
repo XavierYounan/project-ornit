@@ -11,20 +11,42 @@ catch_error_set_normal(catch_error_normal_queue);
 catch_error_set_fatal(catch_error_fatal_queue);
 
 
+//Sets the fatal error log file to misc/error.log
 error_file = "misc/error.log";
 catch_error_set_dump_path(error_file);
 
 
-// let the program restart itself on error
-var argv = "", argc = parameter_count();
-for (var i = 1; i < argc; i++) {
-    if (i > 1) argv += " ";
+// Restarts the program on an error
+var str = "", 
+var p_count = parameter_count();
+
+for (var i = 1; i < p_count; i++) 
+{
+    if (i > 1) 
+	{
+		str += " ";
+	}
     var v = parameter_string(i);
-    if (string_pos(" ", v)) argv += @'"' + v + @'"'; else argv += v;
+	
+    if (string_pos(" ", v)) 
+	{
+		str += @'"' + v + @'"';
+	}
+	else 
+	{
+		str += v;
+	}
 }
-catch_error_set_exec(parameter_string(0), argv);
-//
-//show_message("?");
+catch_error_set_exec(parameter_string(0), str);
+
+/*
+	Finds out if an error file is present
+	If it has this means that a fatal error occured 
+	Read the messsage
+	Process it
+	Delete the file
+*/
+
 error_text = "";
 if (file_exists(error_file)) {
     var buf = buffer_load(error_file);

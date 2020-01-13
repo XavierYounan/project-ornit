@@ -855,14 +855,6 @@
             }
         },
         {
-            "Key": "6571ef69-54df-433e-90a9-7610e85fd8da",
-            "Value": {
-                "id": "6876ce09-b9f3-4ad4-944e-2aef4d2018f4",
-                "resourcePath": "objects\\oSentryCheck\\oSentryCheck.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "65c8856c-5ac8-4a09-a8a0-43d20a692c02",
             "Value": {
                 "id": "e541b68a-b57b-412d-a341-984a4deffba3",

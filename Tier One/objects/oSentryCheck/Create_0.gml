@@ -1,1 +1,0 @@
-show_error("Sentry Check", true)

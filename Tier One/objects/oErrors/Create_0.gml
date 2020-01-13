@@ -26,8 +26,8 @@ for (var i = 1; i < argc; i++) {
     if (string_pos(" ", v)) argv += @'"' + v + @'"'; else argv += v;
 }
 catch_error_set_exec(parameter_string(0), argv);
-//
-//show_message("?");
+
+
 error_text = "";
 if (file_exists(error_file)) {
     var buf = buffer_load(error_file);

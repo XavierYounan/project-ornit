@@ -4,50 +4,40 @@
 /// @param {integer} Debug_level The severity of the debug message
 /// @param {integer} Spam_limiter Pause time before same message is logged again
 
+var stack = debug_get_callstack() //preserves stack as much as possible whilst retaining automation
+
 if(!instance_exists(oDebug))
 {
-	var stack = debug_get_callstack()
+	
 	show_debug_message("Error logging," + string(stack))
 	return;
 }
 
-var numberArguments = argument_count
+//Unpack variables
+var message= argument[0]
 
-if (numberArguments < 2)
+if (argument_count > 1) 
 {
-	/*
-		Tempoary solution
-		Will go through and update old fConsole stuff
-		Focussing on system right now
-	
-	*/
-	
-	var message = argument[0]
-	var level = ERROR_LEVEL.DEBUG
-	debug_log("debug log was called with less than two arguments", ERROR_LEVEL.SPAM)	
-	return;
-}
-
-if (numberArguments > 3)
-{
-	debug_log("debug log was called with more than three arguments", ERROR_LEVEL.WARNING)	
-	return;
-}
-
-if (numberArguments = 2)
-{
-	var message = argument[0]
 	var level = argument[1]
-	priv_debug_log(message, level)	
+}
+else
+{
+	level = ERROR_LEVEL.DEBUG
+	message += " no level defined, set as DEBUG"
 }
 
+var variables = (argument_count > 2) ? argument[2] : undefined;
+var title = (argument_count > 3) ? argument[3] : undefined;
+var spamLimiter = (argument_count > 4) ? argument[4] : undefined;
 
-if (numberArguments = 3)
+
+
+if (spamLimiter = undefined)
 {
-	var message = argument[0]
-	var level = argument[1]
-	var spamLimiter = argument[2]
-	
+	priv_debug_log(message, level, variables, stack, title)	
+}
+else
+{
 	spamLimiter = spamLimiter * 1000 //convert to millisecconds
 
 	with(oDebug)
@@ -76,7 +66,7 @@ if (numberArguments = 3)
 	
 		if timeCanDisplay == undefined //message is able to be displayed
 		{
-			priv_debug_log(message,level)
+			priv_debug_log(message, level, variables, stack, title)
 			ds_map_add(spam_message,message,current_time + spamLimiter)	
 			ds_list_add(spam_message_que,message)
 		}
