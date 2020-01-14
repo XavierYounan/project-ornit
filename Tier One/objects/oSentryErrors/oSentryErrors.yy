@@ -2,7 +2,7 @@
     "id": "16134868-1c7f-41af-91c6-ba88e664f507",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "oErrors",
+    "name": "oSentryErrors",
     "eventList": [
         {
             "id": "0626a4a7-f873-4826-b805-376ce338105f",

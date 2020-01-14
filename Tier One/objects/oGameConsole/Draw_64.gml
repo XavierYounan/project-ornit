@@ -7,9 +7,9 @@ if (displayingText)
 	for(var i = 0; i < ds_list_size(m_messageList); i++)
 	{
 		var array = m_messageList[| i]
-		var level = array[| ConsoleArray.Level]
+		var level = array[ConsoleArray.Level]
 	
-		if(level >= display_level)
+		if(level <= display_level)
 		{
 			ds_list_add(tempList,array)
 		}	
@@ -31,11 +31,11 @@ if (displayingText)
 		var array = tempList[| i]
 		
 		//set colour based on level
-		var level = array[| ConsoleArray.Level]
+		var level = array[ConsoleArray.Level]
 		var colour = errorColours[? level]
 		draw_set_color(colour)
 		
-		var message = array[| ConsoleArray.Message]
+		var message = array[ConsoleArray.Message]
 		
 		draw_text(10, _yAnchor - ((_listSize - i) * _spacing), message);
 	}

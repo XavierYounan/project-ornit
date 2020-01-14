@@ -242,7 +242,7 @@
             "Key": "16134868-1c7f-41af-91c6-ba88e664f507",
             "Value": {
                 "id": "6cbac804-8e02-41fd-b05a-18fbe8d9957d",
-                "resourcePath": "objects\\oErrors\\oErrors.yy",
+                "resourcePath": "objects\\oSentryErrors\\oSentryErrors.yy",
                 "resourceType": "GMObject"
             }
         },
