@@ -8,10 +8,19 @@
 
 var stack = debug_get_callstack() //preserves stack as much as possible whilst retaining automation
 
+var stack_string = ""
+for (var i = 0; i <array_length_1d(stack) ; ++i) 
+{
+    stack_string += stack[i]
+}
+
+
+
+
 if(!instance_exists(oDebug))
 {
 	
-	show_debug_message("Error logging," + string(stack))
+	show_debug_message("Error logging," + string(stack_string))
 	return;
 }
 
@@ -36,7 +45,7 @@ var spamLimiter = (argument_count > 4) ? argument[4] : undefined;
 
 if (spamLimiter = undefined)
 {
-	priv_debug_log(message, level, variables, stack, title)	
+	priv_debug_log(message, level, variables, stack_string, title)	
 }
 else
 {
@@ -68,7 +77,7 @@ else
 	
 		if timeCanDisplay == undefined //message is able to be displayed
 		{
-			priv_debug_log(message, level, variables, stack, title)
+			priv_debug_log(message, level, variables, stack_string, title)
 			ds_map_add(spam_message,message,current_time + spamLimiter)	
 			ds_list_add(spam_message_que,message)
 		}
