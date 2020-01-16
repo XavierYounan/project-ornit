@@ -2,16 +2,16 @@
 /// @desc Handles a debug message based on its level
 /// @param {string} Message The message to display
 /// @param {integer} Debug_level The severity of the debug message
-/// @param {obejct reverence} the object should contain any variables wished to be recorded
-/// @param {string} the title of a breadcrumb
-/// @param {integer} Spam_limiter Pause time before same message is logged again
+/// @param {obejct_reference} variables the object should contain any variables wished to be recorded
+/// @param {string} title the title of a breadcrumb
+/// @param {integer} spam Pause time before same message is logged again
 
 var stack = debug_get_callstack() //preserves stack as much as possible whilst retaining automation
 
 var stack_string = ""
 for (var i = 0; i <array_length_1d(stack) ; ++i) 
 {
-    stack_string += stack[i]
+    stack_string += string(stack[i]);
 }
 
 

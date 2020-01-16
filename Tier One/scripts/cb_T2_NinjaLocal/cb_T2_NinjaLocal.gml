@@ -26,7 +26,7 @@ with (_client)
 	{
 		if (hero = undefined)
 		{
-			debug_log("Hero was undefined, disregarding self position packet",2) 
+			debug_log("Hero was undefined, disregarding self position packet",ERROR_LEVEL.INFO) 
 			return;
 		}
 		
