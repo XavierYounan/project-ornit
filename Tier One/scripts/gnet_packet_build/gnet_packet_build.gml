@@ -77,6 +77,7 @@ for (var _i = 1; _i < argument_count; _i++)
 
 // TODO Keep an eye on this
 buffer_resize(_buffer, buffer_tell(_buffer));
-log_debug("Buffer Size Sent: " + string(buffer_get_size(_buffer)));
+//removed message too spammy
+//log_debug("Buffer Size Sent: " + string(buffer_get_size(_buffer)));
 
 return _buffer;
