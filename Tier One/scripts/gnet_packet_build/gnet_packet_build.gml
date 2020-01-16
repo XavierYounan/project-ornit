@@ -10,7 +10,7 @@
 
 if (argument_count < 1)
 {
-	log_error("Cannot use gnet_send_registered() without a MessagePacketId identifier parameter");
+	log_warn("Cannot use gnet_send_registered() without a MessagePacketId identifier parameter");
 	return null;
 }
 

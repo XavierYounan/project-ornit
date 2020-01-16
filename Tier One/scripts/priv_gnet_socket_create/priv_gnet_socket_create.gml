@@ -12,7 +12,7 @@ if (!variable_global_exists("gnet_protocolId"))
 		
 	if (global.gnet_protocolId > 65535) 
 	{
-		log_error("Specified gnet_protocolId is too large. Maximum value is 65535. Using 65534. External connected applications might not work.");
+		log_warn("Specified gnet_protocolId is too large. Maximum value is 65535. Using 65534. External connected applications might not work.");
 		global.gnet_protocolId = 65534;
 	}
 }

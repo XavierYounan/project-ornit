@@ -31,7 +31,7 @@ with (NetworkManager)
 	connectionSlots[_connId] = priv_gnet_create_connection(_ip, _port, _connId); 
 	
 	if (!instance_exists(connectionSlots[_connId])) {
-		log_error("Uh Oh.. When creating a new Connection instance priv_gnet_create_connection did not return a valid instance");
+		log_warn("Uh Oh.. When creating a new Connection instance priv_gnet_create_connection did not return a valid instance");
 		return [ConnectionAddResult.Error, null];
 	}
 	

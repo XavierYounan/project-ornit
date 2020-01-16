@@ -12,10 +12,23 @@ with(sentry_handler) {
 	ds_map_add(crumb, "level", string(argument[1]));
 	ds_map_add(crumb, "message", string(argument[2]));
 	
-	if (argument_count > 3) {
+
+	/*
+		
+	must be performed cascading as using && all if statments are run at the same time
+	undefined check added by xavier
+		
+	*/
+		
+	if (argument_count > 3)
+	{
+		if (argument[3] != undefined) 
+		
+		{
 		var data = ds_map_create()
 		ds_map_copy(data, argument[3])
 		ds_map_add_map(crumb, "data", data);
+		}
 	}
 	
 	ds_list_add(breadcrumbsList, crumb);
