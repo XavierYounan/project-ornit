@@ -2,8 +2,8 @@
 if (!assert_singleton()) return;
 
 //Make sure network can be created, get past firewall before connecting
-gnet_start_network(1,PROTOCOL_ID,3111, "temp connection")
-gnet_stop_network()
+//gnet_start_network(1,PROTOCOL_ID,3111, "temp connection") //seems gnet_stop_network doesnt work
+//gnet_stop_network()
 
 global.MAX_PLAYERS = 2;
 
