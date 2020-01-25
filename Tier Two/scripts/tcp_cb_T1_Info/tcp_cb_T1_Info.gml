@@ -14,7 +14,7 @@ var client = fGetClientById(UDP_connectionId)
 
 if (client == null)
 {
-	fConsoleAddMessage("Dropping T1 Info client does not exist!",1)	
+	debug_log("Dropping T1 Info client does not exist!",1)	
 }
 
 

@@ -16,7 +16,7 @@
             else
             {
 				array[0] = string_delete(array[0],1,string_length("command_"))
-                fConsoleAddMessage("Unknown command " + string(array[0]));			//if the command cannot be round reurn unknown
+                debug_log("Unknown command " + string(array[0]));			//if the command cannot be round reurn unknown
             }
         }
     }

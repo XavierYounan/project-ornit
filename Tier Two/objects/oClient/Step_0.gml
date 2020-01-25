@@ -31,7 +31,7 @@ switch state
 
 				packet_tcp_send(m_ClientId,TCP_PACKETS.T2_LOCAL_PLAYER_INFO,[m_ClientId,m_username])
 
-				fConsoleAddMessage("Sent local player info!")
+				debug_log("Sent local player info!")
 			}
 			else
 			{				
@@ -59,7 +59,7 @@ switch state
 		}
 		
 		state = state.dead
-		fConsoleAddMessage("Made dead, reason: FIN_SENDING_INFO")
+		debug_log("Made dead, reason: FIN_SENDING_INFO")
 		
 		#endregion
 		break;
@@ -100,12 +100,12 @@ switch state
 				
 				case CHOSEN_CHARACTER.NULL:
 				{
-					fConsoleAddMessage("Cannot send position update because oClient doesnt know which character has been chosen",2)
+					debug_log("Cannot send position update because oClient doesnt know which character has been chosen",2)
 					break;
 					
 				}
 				
-				default: fConsoleAddMessage("Character is in default, FIX THIS!")
+				default: debug_log("Character is in default, FIX THIS!")
 				
 			}
 			
@@ -122,7 +122,7 @@ switch state
 		break;
 	}
 	
-	default: fConsoleAddMessage("oClient is in default FIX THIS",2)
+	default: debug_log("oClient is in default FIX THIS",2)
 }
 #region //Server send time for individual client
 
