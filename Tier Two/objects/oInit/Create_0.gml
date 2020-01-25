@@ -1,0 +1,6 @@
+global.developer_mode = true
+
+instance_create_depth(-10,-10,-100,oDebug) //Fix depth later
+
+
+room_goto_next()
