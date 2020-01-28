@@ -1,8 +1,10 @@
 /// @description Initialise
-if (!assert_singleton()) return;
+
 
 m_maxMessages = 120;
 m_messageList = ds_list_create();
+
+if (!assert_singleton()) return; //call after m_message list is created
 
 displayingText = true
 
