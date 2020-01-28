@@ -1167,6 +1167,14 @@
             }
         },
         {
+            "Key": "8540e8b8-a838-4fbb-bec5-53ccf1db7e4b",
+            "Value": {
+                "id": "776d202c-b1f6-4cbf-842e-6ebff6704f91",
+                "resourcePath": "scripts\\depthEnums\\depthEnums.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8662e97c-d489-4610-8489-2bf14131cd2c",
             "Value": {
                 "id": "9a441073-497b-453d-a583-1f69355775f4",
@@ -2385,7 +2393,8 @@
         "fc2d890f-8729-4628-8da2-bb7dfc13e2fb",
         "d0c0c2e9-1e09-49b0-9832-3675db815c35",
         "ecd7820d-5655-453b-ac8e-4f735a24c1c5",
-        "a3f00188-2f87-47ee-b932-6d76a58cfc2f"
+        "a3f00188-2f87-47ee-b932-6d76a58cfc2f",
+        "8540e8b8-a838-4fbb-bec5-53ccf1db7e4b"
     ],
     "tutorial": ""
 }
