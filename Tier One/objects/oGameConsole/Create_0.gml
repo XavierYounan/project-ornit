@@ -4,7 +4,7 @@ if (!assert_singleton()) return;
 m_maxMessages = 120;
 m_messageList = ds_list_create();
 
-displayingText = true
+displayingText = false
 
 display_level = ERROR_LEVEL.DEBUG
 
@@ -24,10 +24,4 @@ ds_map_add(errorColours, ERROR_LEVEL.DEBUG, c_blue)
 ds_map_add(errorColours, ERROR_LEVEL.SPAM, c_gray)
 
 
-debug_log("Fatal", ERROR_LEVEL.FATAL)
-debug_log("Error", ERROR_LEVEL.ERROR)
-debug_log("Warning", ERROR_LEVEL.WARNING)
-debug_log("Info", ERROR_LEVEL.INFO)
-debug_log("Debug", ERROR_LEVEL.DEBUG)
-debug_log("SPAM", ERROR_LEVEL.SPAM)
 
