@@ -30,14 +30,14 @@ switch (level)
 	
 	case ERROR_LEVEL.INFO:
 	{
-		sentry_add_breadcrumb(title , SENTRY_INFO, message, variables)
+		sentry_add_breadcrumb(title , SENTRY_INFO, message)
 		priv_console_add_message(message, level)
 		break;	
 	}
 	
 	case ERROR_LEVEL.DEBUG:
 	{
-		sentry_add_breadcrumb(title, SENTRY_DEBUG, message, variables)
+		sentry_add_breadcrumb(title, SENTRY_DEBUG, message)
 		priv_console_add_message(message, level)
 		break;	
 	}

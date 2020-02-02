@@ -21,5 +21,5 @@ if client != noone
 }
 else
 {
-	debug_log("Couldnt process the health/stun update, cant find the client. ConnectionId: " + string(_connectionId),2)	
+	debug_log("Couldnt process the health/stun update, cant find the client. ConnectionId: " + string(_connectionId),ERROR_LEVEL.DEBUG,id, "NETWORKING",2)	
 }
