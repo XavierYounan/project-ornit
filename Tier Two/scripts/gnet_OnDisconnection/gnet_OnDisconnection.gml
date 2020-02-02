@@ -3,7 +3,7 @@
 
 var _connectionId = argument0;   // The id of the connection that disconnected from us
 
-fConsoleAddMessage("Client " + string(_connectionId) + " has disconnected") //TODO shut down server
+debug_log("Client " + string(_connectionId) + " has disconnected") //TODO shut down server
 global.T1_CONNECTION_ID_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LIST,_connectionId)
 global.T1_CONNECTION_ID_LOADED_IN_LIST = fArrayRemoveElement(global.T1_CONNECTION_ID_LOADED_IN_LIST,_connectionId)
 	

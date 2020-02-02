@@ -1,5 +1,5 @@
 
-/// @description Draw Gui Info
+/// @description DEPRECIATED
 var connectionInfoX = 10;
 var dataStructsX = window_get_width() / 2;
 var ySpacing        = 15;

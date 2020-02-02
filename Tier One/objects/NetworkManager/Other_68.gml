@@ -18,7 +18,8 @@ if type == network_type_data
 	
 	// Check to make sure protocol ID is correct
 	if (_protoId != global.gnet_protocolId) {
-		log_warn("Recieved Network Message, but the protocolId was incorrect. Not parsing data. : {}", _protoId);
+		// Way too spammy tempoary removed
+		//log_warn("Recieved Network Message, but the protocolId was incorrect. Not parsing data. : {}", _protoId);
 		return;
 	}
 	

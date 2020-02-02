@@ -74,7 +74,7 @@ switch type
 				}
 				else
 				{
-					fConsoleAddMessage("Disregarded packet!, TCP_IDENTIFIER WRONG is " + string(_header))	
+					debug_log("Disregarded packet!, TCP_IDENTIFIER WRONG is " + string(_header))	
 				}
 			}
 		}

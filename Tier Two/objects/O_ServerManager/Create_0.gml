@@ -2,8 +2,6 @@
 
 if (!assert_singleton()) return;
 
-m_GameConsole = instance_create_depth(-10,-10,-100,oGameConsole)
-
 MAX_PLAYERS = 8;
 
 

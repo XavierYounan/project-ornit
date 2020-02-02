@@ -6,7 +6,7 @@ if( keyboard_check_pressed( vk_f1))
 		{
 			#region Console code
 			//Console destroy event
-			O_GameConsole.displayingText = false
+			oGameConsole.displayingText = false
 			
 			//Switch the state
 			debugMode = DEBUG_MODES.HITBOXES
@@ -100,7 +100,7 @@ if( keyboard_check_pressed( vk_f1))
 			debugMode = DEBUG_MODES.CONSOLE
 			
 			//Console create event
-			O_GameConsole.displayingText = true
+			oGameConsole.displayingText = true
 			
 			#endregion
 			break;

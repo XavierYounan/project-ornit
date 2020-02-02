@@ -1,7 +1,6 @@
 // Establish a fake connection to get the user to accept
-
-gnet_start_network(1,PROTOCOL_ID,3111, "temp connection")
-gnet_stop_network()
+//gnet_start_network(1,PROTOCOL_ID,3111, "temp connection") //better off in client manager create
+//gnet_stop_network()
 
 ///@desc DEPRICATED OBJECT
 clicked = false; //init

@@ -3,4 +3,4 @@
 
 var _connectionId = argument0;   // The id of the connection that disconnected from us
 
-fConsoleAddMessage("You have been disconnected from server : " + string(_connectionId))
+debug_log("You have been disconnected from server : " + string(_connectionId))

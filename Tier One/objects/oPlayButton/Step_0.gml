@@ -211,6 +211,6 @@ switch(buttonState)
 		break;	
 	}
 
-	default: log_error("buttonState is in defualt. This should not happen!")
+	default: log_warn("buttonState is in defualt. This should not happen!")
 }
 #endregion

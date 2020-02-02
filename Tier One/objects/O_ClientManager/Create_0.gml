@@ -2,10 +2,8 @@
 if (!assert_singleton()) return;
 
 //Make sure network can be created, get past firewall before connecting
-gnet_start_network(1,PROTOCOL_ID,3111, "temp connection")
-gnet_stop_network()
-
-m_GameConsole = instance_create_depth(-10,-10,-100,O_GameConsole)
+//gnet_start_network(1,PROTOCOL_ID,3111, "temp connection") //seems gnet_stop_network doesnt work
+//gnet_stop_network()
 
 global.MAX_PLAYERS = 2;
 
@@ -26,7 +24,7 @@ result = gnet_connect(global.IP,global.PORT)
 
 instance_create_depth(0,0,0,TCP_manager)
 
-fConsoleAddMessage(string(result))
+debug_log(string(result),ERROR_LEVEL.INFO)
 
 if (result[0] == null)
 {
@@ -41,7 +39,7 @@ with (timeManager)
 	
 	if (_res = false)
 	{
-		show_error("There should only ever be one time manager created", true)	
+		debug_log("There should only ever be one time manager created", ERROR_LEVEL.ERROR)	
 	}
 }
 

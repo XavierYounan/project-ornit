@@ -9,5 +9,5 @@ if (state != CAMERA_STATE.SHOW_FULL_MAP)
 		state = RESPAWN_STATE.CLICKABLE
 	}
 
-	fConsoleAddMessage("User event show the whole screen has been triggred")
+	debug_log("User event show the whole screen has been triggred", ERROR_LEVEL.DEBUG)
 }

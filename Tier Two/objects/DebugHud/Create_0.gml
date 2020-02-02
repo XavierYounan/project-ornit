@@ -1,4 +1,4 @@
-/// @description Hud for debugging
+/// @description DEPRECIATED
 
 if (!assert_singleton()) { return; }
 

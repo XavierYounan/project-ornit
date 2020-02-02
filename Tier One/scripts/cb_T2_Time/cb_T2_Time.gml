@@ -8,7 +8,7 @@ var _time = _receivedData[0]; //buffer_u64 value will not hit max untill 5849424
 
 if (!instance_exists(oServerTime))
 {
-	fConsoleAddMessage("Couldnt find oServerTime, NOT SYNCING TIME, connectionId: " + string(_connectionId))
+	debug_log("Couldnt find oServerTime, NOT SYNCING TIME, connectionId: " + string(_connectionId))
 }
 with (oServerTime) //oServerTime is singleton
 {

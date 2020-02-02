@@ -13,7 +13,7 @@
 
 var _connectionId = argument0;
 
-fConsoleAddMessage("New client has connected : " + string(_connectionId))
+debug_log("New client has connected : " + string(_connectionId))
 
 with (instance_create_depth(0,0,0,oClient))
 {

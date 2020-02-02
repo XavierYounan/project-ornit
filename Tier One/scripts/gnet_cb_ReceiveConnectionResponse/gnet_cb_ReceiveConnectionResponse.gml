@@ -24,7 +24,7 @@ else if (_result == ConnectionAddResult.MaxPlayer)
 else if (_result == ConnectionAddResult.Success) 
 {
 	if (_connectionInst == null) {
-		log_error("We received a ConnectionSuccess message from an address that we do not have a created Connection for: {}:{}, {}", _ip, _port, _connectionId);	
+		log_warn("We received a ConnectionSuccess message from an address that we do not have a created Connection for: {}:{}, {}", _ip, _port, _connectionId);	
 		return;
 	}
 	

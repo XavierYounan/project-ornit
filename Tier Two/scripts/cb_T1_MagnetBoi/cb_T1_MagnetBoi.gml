@@ -33,12 +33,12 @@ else
 		{
 			state = state.dead
 			
-			fConsoleAddMessage("Made dead, reason: RECIEVED_T1_IMPUTS_STATE_WAS_SEDNING_INFO",1)
+			debug_log("Made dead, reason: RECIEVED_T1_IMPUTS_STATE_WAS_SEDNING_INFO",1)
 		}
 		
 		if(state = state.dead)
 		{
-			fConsoleAddMessage("State is dead, not reading data",2)
+			debug_log("State is dead, not reading data",2)
 			return;	
 		}
 

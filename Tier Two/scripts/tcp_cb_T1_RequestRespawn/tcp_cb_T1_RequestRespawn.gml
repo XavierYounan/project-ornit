@@ -9,18 +9,18 @@ var _y = _receivedData[2]; //buffer_u32
 var _clientId = TCP_manager.UDP_connectionIdMap[? socket]
 var _client = fGetClientById(_clientId)
 
-fConsoleAddMessage("Recieved Respawn request")
+debug_log("Recieved Respawn request")
 
 if(_client == null)
 {
-	fConsoleAddMessage("Recieved a respawn request for an undefined client")	
+	debug_log("Recieved a respawn request for an undefined client")	
 	return;
 }
 
 
 if !position_meeting(_x,_y,oRespawn)
 {
-	fConsoleAddMessage("The Click was not on the Respawn point, Hacking?")
+	debug_log("The Click was not on the Respawn point, Hacking?")
 	return;
 }
 
@@ -30,7 +30,7 @@ with(_client)
 {
 	if (state != state.dead)
 	{
-		fConsoleAddMessage("Respawn request denied, you are not dead!")	
+		debug_log("Respawn request denied, you are not dead!")	
 		return;
 	}
 	
@@ -52,7 +52,7 @@ with(_client)
 		
 		default:
 		{
-			fConsoleAddMessage("Recieved respawn request but character was not known, REQUEST DENIED!")
+			debug_log("Recieved respawn request but character was not known, REQUEST DENIED!")
 			return;
 		}
 	}
@@ -74,7 +74,7 @@ with(_client)
 		}
 	}
 		
-	fConsoleAddMessage("Completed the respawn request, State: " + string(state))
+	debug_log("Completed the respawn request, State: " + string(state))
 		
 	state = state.playing
 		
@@ -83,7 +83,7 @@ with(_client)
 	for(var i = 0; i < _arrSize; i++)
 	{
 		packet_tcp_send(list[i],TCP_PACKETS.T2_PLAYER_RESPAWN,[_clientId,_character])
-		fConsoleAddMessage("Sent respawn data to " + string(list[i]))
+		debug_log("Sent respawn data to " + string(list[i]))
 	}	
 	
 	

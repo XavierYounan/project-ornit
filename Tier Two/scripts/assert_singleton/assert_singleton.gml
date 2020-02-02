@@ -5,6 +5,7 @@
 if (instance_number(object_index) > 1)
 {
 	instance_destroy();
+	debug_log("Assert singleton destroyed an object", ERROR_LEVEL.WARNING, id)
 	return false;
 }
 

@@ -21,5 +21,5 @@ if client != noone
 }
 else
 {
-	fConsoleAddMessage("Couldnt process the health/stun update, cant find the client. ConnectionId: " + string(_connectionId))	
+	debug_log("Couldnt process the health/stun update, cant find the client. ConnectionId: " + string(_connectionId))	
 }

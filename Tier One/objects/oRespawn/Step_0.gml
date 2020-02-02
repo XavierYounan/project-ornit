@@ -14,18 +14,18 @@ switch (state)
 			
 						var localId = undefined
 								
-						fConsoleAddMessage("There are " + string(instance_number(TCP_connection)) + " many instances")
+						debug_log("There are " + string(instance_number(TCP_connection)) + " many instances", ERROR_LEVEL.DEBUG)
 								
 						with(oPlayer)
 						{
 							if isLocal
 							{
 								localId = m_PlayerId
-								fConsoleAddMessage("local")
+								debug_log("local", ERROR_LEVEL.INFO)
 							}
 							else
 							{
-								fConsoleAddMessage("Not Local")	
+								debug_log("not local", ERROR_LEVEL.INFO)
 							}
 						}
 								
@@ -39,11 +39,11 @@ switch (state)
 							character = int64(character)
 							
 							packet_tcp_send(global.T2_TCP_socket,TCP_PACKETS.T1_REQUEST_RESPAWN,[character,mouseX,mouseY])
-							fConsoleAddMessage("Sent request respawn")
+							debug_log("Sent request respawn", ERROR_LEVEL.INFO)
 						}	
 						else
 						{
-							fConsoleAddMessage("Local id is undefined")	
+							debug_log("Local id is undefined, cant respawn", ERROR_LEVEL.WARNING)
 						}
 					}
 					

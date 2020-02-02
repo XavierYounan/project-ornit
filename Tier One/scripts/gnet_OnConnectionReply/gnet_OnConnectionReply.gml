@@ -19,7 +19,7 @@ switch (_connectionResult)
 	break;
 	case ConnectionAddResult.MaxPlayer:
 		// Code Here. You got a response that the address you tried to connect to is full.
-		fConsoleAddMessage("Server says its full but try anywasy")
+		debug_log("Server says its full but try anywasy")
 	break;
 	case ConnectionAddResult.Success:
 		// Code Here. Your connection was successfull. _connectionId is populated with an id! Save it or something
