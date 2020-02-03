@@ -43,3 +43,5 @@ if(! sentry_init("https://fe51e4b37356486da7f212bb61434516@sentry.io/1869212") >
 {
 	priv_console_add_message("sentry failed to initialise", ERROR_LEVEL.ERROR)
 }
+
+sentry_add_tag("Version", "0.0111")

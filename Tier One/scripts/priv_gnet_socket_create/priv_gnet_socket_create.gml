@@ -18,7 +18,8 @@ if (!variable_global_exists("gnet_protocolId"))
 }
 else
 {
-	log_warn("gnet_create has already been called, or global.gnet_protocalId is initialized somewhere else");	
+	//log_warn("gnet_create has already been called, or global.gnet_protocalId is initialized somewhere else");	
+	// removed this warning because the network manager one works better
 }
 
 // Return true or false depending on if the initialization was successful

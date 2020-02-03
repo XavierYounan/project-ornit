@@ -34,7 +34,7 @@ var _username       = argument3;
 
 if (instance_exists(NetworkManager))
 {
-	show_message_async("ERROR: A network manager exists, and you are trying to initialize another one!");
+	debug_log("ERROR: A network manager exists, and you are trying to initialize another one!", ERROR_LEVEL.WARNING);
 	return false;
 }
 
