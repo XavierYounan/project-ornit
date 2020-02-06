@@ -1,9 +1,6 @@
 ///@desc Init
 if (!assert_singleton()) return;
 
-//Make sure network can be created, get past firewall before connecting
-//gnet_start_network(1,PROTOCOL_ID,3111, "temp connection") //seems gnet_stop_network doesnt work
-//gnet_stop_network()
 
 global.MAX_PLAYERS = 2;
 
@@ -11,7 +8,7 @@ var result = gnet_start_network(global.MAX_PLAYERS,PROTOCOL_ID,-1, "Client")
 
 if (!result)
 {
-	show_message("The provided port may not be open, could not initalise network!");
+	debug_log("The provided port may not be open, could not initalise network!", ERROR_LEVEL.FATAL);
 	instance_destroy();
 	return;
 }

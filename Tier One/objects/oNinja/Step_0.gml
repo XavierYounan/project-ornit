@@ -71,6 +71,14 @@ switch playerState
 			//Move player to last known position
 			x = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.X];
 			y = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.Y];
+			
+			
+			// DEBUG , check if supplied position is a collision positon
+			if (place_meeting(x,y,oWall))
+			{
+				debug_log("Player recienved a position from the server that was in a wall", ERROR_LEVEL.ERROR)	
+			}
+			
 
 			//Currently depreciated but support will be added later
 			hsp = latest_acknowleged_packet[NINJA_LOCAL_LATEST_POSITION.HSP];

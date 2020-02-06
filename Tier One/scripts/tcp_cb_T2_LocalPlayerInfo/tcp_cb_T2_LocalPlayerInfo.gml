@@ -15,9 +15,10 @@ with (instance_create_depth(0,0,0,oPlayer))
 	{
 		localPlayer = other.id //make the camera follow the local player
 	}
+	
+	debug_log("recieved player info and created a local player, client id " + string(m_PlayerId), ERROR_LEVEL.INFO, id, "NETWORKING")
 }
 with (O_ClientManager)
 {
 	managerState = PLAYING
 }
-
