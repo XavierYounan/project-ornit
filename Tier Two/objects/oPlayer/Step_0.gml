@@ -12,6 +12,20 @@ move = (key_right - key_left) * SPD_WALK
 hsp = move;
 vsp += SPD_GRAVITY;
 
+// Is my middle centre touching the floor at the start of this frame
+
+var grounded = (InFloor(tilemap, x, bbox_bottom+1) >= 0);
+
+//Jups
+if(grounded || (InFloor(tilemap,bbox_left,bbox_bottom+1) >= 0) || (InFloor(tilemap,bbox_right,bbox_bottom+1) >= 0))
+{
+	if(key_up)
+	{
+		vsp = -SPD_JUMP;
+		grounded = false;
+	}
+}
+
 
 //Re apply fractions
 hsp += hsp_fraction;
@@ -29,6 +43,7 @@ vsp -= vsp_fraction;
 if (hsp > 0) bbox_side = bbox_right; else bbox_side = bbox_left;
 p1 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_top);
 p2 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_bottom); 
+if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1) p2 = 0; //ignore bottom side tiles if on a slope
 //code goes here!
 if (p1 == 1) || (p2 == 1) //Inside a tile with collision
 {
@@ -40,16 +55,31 @@ x += hsp;
 
 //Vertical Collision
 //is this not a slope?
-if (vsp >= 0) bbox_side = bbox_bottom; else bbox_side = bbox_top;
-p1 = tilemap_get_at_pixel(tilemap,bbox_left,bbox_side+vsp) 
-p2 = tilemap_get_at_pixel(tilemap,bbox_right,bbox_side+vsp)
-if (p1 == 1) || (p2 == 1)
+if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+vsp) <=1)
 {
-	if (vsp >= 0) y = y - (y mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_bottom - y);
-	else y = y - (y mod TILE_SIZE) - (bbox_top - y);
-	vsp = 0;
+	if (vsp >= 0) bbox_side = bbox_bottom; else bbox_side = bbox_top;
+	p1 = tilemap_get_at_pixel(tilemap,bbox_left,bbox_side+vsp) 
+	p2 = tilemap_get_at_pixel(tilemap,bbox_right,bbox_side+vsp)
+	if (p1 == 1) || (p2 == 1)
+	{
+		if (vsp >= 0) y = y - (y mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_bottom - y);
+		else y = y - (y mod TILE_SIZE) - (bbox_top - y);
+		vsp = 0;
+	}
 }
-y += vsp;
+
+y += vsp; //moved this to the front
+
+var floorDist = InFloor(tilemap,x,bbox_bottom+vsp)
+
+if (floorDist >= 0)
+{
+	y -= (floorDist + 1); 
+	vsp = 0;
+	floorDist = -1;
+}
+
+
 
 //code goes here!
 //code goes here!

@@ -1015,14 +1015,6 @@
             }
         },
         {
-            "Key": "6d24e627-3cb1-46e8-bd75-0ea0d5629de4",
-            "Value": {
-                "id": "2a641c8d-c451-4b38-8f80-b36ffde1d3a3",
-                "resourcePath": "sprites\\sCol\\sCol.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "6d3d4e64-3da0-42fe-af37-75b85123d6ff",
             "Value": {
                 "id": "6761de3e-df4d-4c33-81fe-af3fe4e26761",
@@ -1051,6 +1043,14 @@
             "Value": {
                 "id": "bc609989-8162-472c-9429-d350eef27f7e",
                 "resourcePath": "scripts\\gnet_OnNewConnection\\gnet_OnNewConnection.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6f1e955b-aad8-44f8-9e73-1fd2e0099348",
+            "Value": {
+                "id": "74c71f0f-4e91-4306-9a2a-cb3a7bb39b75",
+                "resourcePath": "scripts\\InFloor\\InFloor.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1708,6 +1708,14 @@
                 "id": "69ef4f52-cd49-4f19-b104-acd2d197e683",
                 "resourcePath": "sprites\\sMagnetFistR\\sMagnetFistR.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b5db169e-e2cb-4e2b-ab99-b816295036d3",
+            "Value": {
+                "id": "3c6712f5-92f8-4a03-811a-f6d8b950499e",
+                "resourcePath": "views\\b5db169e-e2cb-4e2b-ab99-b816295036d3.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -2506,7 +2514,8 @@
         "d0c0c2e9-1e09-49b0-9832-3675db815c35",
         "ecd7820d-5655-453b-ac8e-4f735a24c1c5",
         "a3f00188-2f87-47ee-b932-6d76a58cfc2f",
-        "8540e8b8-a838-4fbb-bec5-53ccf1db7e4b"
+        "8540e8b8-a838-4fbb-bec5-53ccf1db7e4b",
+        "6f1e955b-aad8-44f8-9e73-1fd2e0099348"
     ],
     "tutorial": ""
 }
