@@ -9,6 +9,6 @@ if (tileIndex > 0)
 {
 	if (tileIndex == 1) return (argument2 mod TILE_SIZE);
 	
-	var theFloor = global.heights[(argument1 mod TILE_SIZE) + (tileIndex * TILE_SIZE)]
+	var theFloor = global.heightsFromTop[(argument1 mod TILE_SIZE) + (tileIndex * TILE_SIZE)]
 	return ((argument2 mod TILE_SIZE) - theFloor);
 } else return -(TILE_SIZE - (argument2 mod TILE_SIZE));
