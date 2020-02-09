@@ -13,9 +13,7 @@ for (var i = heightsToGet-1; i >= 0; i--)
 		if(surface_getpixel(application_surface, i, check) != c_black) break;
 		check ++;
 	}
-	//debug_log("Height is " + string(global.heights[i]) + " i is " + string(i), ERROR_LEVEL.INFO)
 }
 
-//debug_log("finished getting heights", ERROR_LEVEL.WARNING)
 
 room_goto_next();

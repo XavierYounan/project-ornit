@@ -7,7 +7,6 @@ instance_create_depth(-10,-10,-100,oDebug) //Fix depth later
 
 heightsToGet = sprite_get_width(sCollision);
 
-//debug_log("heights to get is " + string(heightsToGet), ERROR_LEVEL.WARNING)
 tiles = heightsToGet / TILE_SIZE;
 
 //create Tiles

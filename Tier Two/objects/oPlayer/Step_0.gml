@@ -24,8 +24,9 @@ if(grounded || (InFloor(tilemap,bbox_left,bbox_bottom+1) >= 0) || (InFloor(tilem
 		vsp = -SPD_JUMP;
 		grounded = false;
 	}
+	
 }
-
+ 
 
 //Re apply fractions
 hsp += hsp_fraction;
@@ -44,7 +45,6 @@ if (hsp > 0) bbox_side = bbox_right; else bbox_side = bbox_left;
 p1 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_top);
 p2 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_bottom); 
 if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1) p2 = 0; //ignore bottom side tiles if on a slope
-//code goes here!
 if (p1 == 1) || (p2 == 1) //Inside a tile with collision
 {
 	if (hsp > 0) x = x - (x mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_right - x);
@@ -54,7 +54,6 @@ if (p1 == 1) || (p2 == 1) //Inside a tile with collision
 x += hsp;
 
 //Vertical Collision
-//is this not a slope?
 if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+vsp) <=1)
 {
 	if (vsp >= 0) bbox_side = bbox_bottom; else bbox_side = bbox_top;
@@ -70,7 +69,7 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+vsp) <=1)
 
 y += vsp; //moved this to the front
 
-var floorDist = InFloor(tilemap,x,bbox_bottom+vsp)
+var floorDist = InFloor(tilemap,x,bbox_bottom)
 
 if (floorDist >= 0)
 {
@@ -80,9 +79,23 @@ if (floorDist >= 0)
 }
 
 
+//Walk down slope, bounce protection
 
-//code goes here!
-//code goes here!
+if(grounded)
+{
+	y += abs(floorDist) -1;
+	
+	//if base of current tile
+	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1)
+	{
+		//if the slope continues 
+		if(tilemap_get_at_pixel(tilemap,x,bbox_bottom+1) > 1)
+		{
+			//move there
+			y += abs(InFloor(tilemap,x,bbox_bottom+1));
+		}
+	}
+}
 
 
 
