@@ -41,10 +41,13 @@ vsp -= vsp_fraction;
 
 
 //Horizontal Collision
-if (hsp > 0) bbox_side = bbox_right; else bbox_side = bbox_left;
+if (hsp > 0) bbox_side = bbox_right; else bbox_side = bbox_left; //set the side to check for collisions based on direction moving
+
 p1 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_top);
 p2 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_bottom); 
+
 if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1) p2 = 0; //ignore bottom side tiles if on a slope
+
 if (p1 == 1) || (p2 == 1) //Inside a tile with collision
 {
 	if (hsp > 0) x = x - (x mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_right - x);
@@ -54,11 +57,13 @@ if (p1 == 1) || (p2 == 1) //Inside a tile with collision
 x += hsp;
 
 //Vertical Collision
-if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+vsp) <=1)
+if (vsp >= 0) bbox_side = bbox_bottom; else bbox_side = bbox_top;
+	
+if (tilemap_get_at_pixel(tilemap,x,bbox_side+vsp) <=1)
 {
-	if (vsp >= 0) bbox_side = bbox_bottom; else bbox_side = bbox_top;
 	p1 = tilemap_get_at_pixel(tilemap,bbox_left,bbox_side+vsp) 
 	p2 = tilemap_get_at_pixel(tilemap,bbox_right,bbox_side+vsp)
+	
 	if (p1 == 1) || (p2 == 1)
 	{
 		if (vsp >= 0) y = y - (y mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_bottom - y);
@@ -69,11 +74,18 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+vsp) <=1)
 
 y += vsp; //moved this to the front
 
-
+/*
 if(sign(vsp) = -1)
 {
 	//going up
-	var roofDist = InRoof(tilemap,x,bbox_top)
+	var roofDistMid = InRoof(tilemap,x,bbox_top) 
+	var roofDistLeft = InRoof(tilemap,bbox_left,bbox_top) 
+	var roofDistRight = InRoof(tilemap,bbox_right,bbox_top)
+	
+	var roofDist = max(roofDistMid, roofDistLeft, roofDistRight)
+	
+	show_debug_message(string_build("L: {}, M: {}, R: {}, RD: {}",roofDistLeft, roofDistMid, roofDistRight, roofDist))
+	
 	
 	if (roofDist >= 0)
 	{
@@ -84,17 +96,30 @@ if(sign(vsp) = -1)
 }
 else
 {
+*/
 
 	//show_debug_message("inRoof: " + string(InRoof(tilemap,x,bbox_top)))
 	//going down
-	var floorDist = InFloor(tilemap,x,bbox_bottom)
+/*	
+var roofDist = InRoof(tilemap,x,bbox_top)
 
-	if (floorDist >= 0)
-	{
-		y -= (floorDist + 1); 
-		vsp = 0;
-		floorDist = -1;
-	}
+if (roofDist >=0)
+{
+	y += (roofDist + 1)
+	vsp = 0
+	roofDist = -1;
+}
+
+*/	
+	
+var floorDist = InFloor(tilemap,x,bbox_bottom)
+
+if (floorDist >= 0)
+{
+	y -= (floorDist + 1); 
+	vsp = 0;
+	floorDist = -1;
+}
 
 	/*
 		this bounce protection is only valid when vsp is going down, will be down due to gravity if walking down
@@ -102,27 +127,26 @@ else
 	*/
 
 	//Walk down slope, bounce protection
+	/*
 	if(grounded)
 	{
-		//if slope continues
-		
-		if(tilemap_get_at_pixel(tilemap,x,bbox_bottom + abs(floorDist)) > 1)
-		{
-			y += abs(floorDist) -1; //what is this?
+		y += abs(floorDist) -1; //what is this?
 	
-			//if base of current tile
-			if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1)
+		//if base of current tile
+		if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1)
+		{
+			
+			//if the slope continues 
+			if(tilemap_get_at_pixel(tilemap,x,bbox_bottom+1) > 1)
 			{
-				//if the slope continues 
-				if(tilemap_get_at_pixel(tilemap,x,bbox_bottom+1) > 1)
-				{
-					//move there
-					y += abs(InFloor(tilemap,x,bbox_bottom+1));
-				}
+				//move there
+				y += abs(InFloor(tilemap,x,bbox_bottom+1));
 			}
+			
 		}
 	}
-}
+	*/
+//}
 
 
 
