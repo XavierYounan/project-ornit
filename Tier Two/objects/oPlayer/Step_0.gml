@@ -69,20 +69,23 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+vsp) <=1)
 
 y += vsp; //moved this to the front
 
-if(abs(vsp) = -1)
+
+if(sign(vsp) = -1)
 {
 	//going up
 	var roofDist = InRoof(tilemap,x,bbox_top)
 	
 	if (roofDist >= 0)
 	{
-		y += (roofDist +1)
+		y += (roofDist + 1)
 		vsp = 0
 		roofDist = -1
 	}
 }
 else
 {
+
+	//show_debug_message("inRoof: " + string(InRoof(tilemap,x,bbox_top)))
 	//going down
 	var floorDist = InFloor(tilemap,x,bbox_bottom)
 

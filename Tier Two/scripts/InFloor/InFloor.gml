@@ -5,10 +5,15 @@
 
 var tileIndex = tilemap_get_at_pixel(argument0, argument1, argument2)
 
-if (tileIndex > 0)
+if (tileIndex > 0) //if pixel is in a tile
 {
-	if (tileIndex == 1) return (argument2 mod TILE_SIZE);
+	if (tileIndex == 1) return (argument2 mod TILE_SIZE); //solid tile
 	
 	var theFloor = global.heightsFromTop[(argument1 mod TILE_SIZE) + (tileIndex * TILE_SIZE)]
 	return ((argument2 mod TILE_SIZE) - theFloor);
-} else return -(TILE_SIZE - (argument2 mod TILE_SIZE));
+} 
+else //if pixel is not in a tile
+{	
+	return -(TILE_SIZE - (argument2 mod TILE_SIZE)); 
+}
+

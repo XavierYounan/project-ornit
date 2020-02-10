@@ -5,18 +5,20 @@
 
 var tileIndex = tilemap_get_at_pixel(argument0, argument1, argument2)
 
-if (tileIndex > 0)
+if (tileIndex > 0) //pixel is in a tile
 {
-	if (tileIndex == 1) return (argument2 mod TILE_SIZE);
+	if (tileIndex == 1) return (TILE_SIZE - (argument2 mod TILE_SIZE)); //pixel is in a solid tile
 	
-	var theFloor = global.heightsFromBottom[(argument1 mod TILE_SIZE) + (tileIndex * TILE_SIZE)]
+	var theRoof = global.heightsFromBottom[(argument1 mod TILE_SIZE) + (tileIndex * TILE_SIZE)]
 
-	return( TILE_SIZE - (argument2 mod TILE_SIZE) - theFloor)
+	//debug_log("InRoof: " + string(theRoof), ERROR_LEVEL.WARNING)
+	return( TILE_SIZE - (argument2 mod TILE_SIZE) - theRoof)
+	
 	
 	
 } 
 else 
 {
-	return (TILE_SIZE - (argument2 mod TILE_SIZE));
-
+	//debug_log("InRoof, tile1 : " + string(TILE_SIZE - (argument2 mod TILE_SIZE)), ERROR_LEVEL.WARNING)
+	return -(TILE_SIZE - (argument2 mod TILE_SIZE)); //how far below are we from this tile
 }
