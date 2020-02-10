@@ -14,6 +14,12 @@ if (tileIndex > 0) //if pixel is in a tile
 } 
 else //if pixel is not in a tile
 {	
-	return -(TILE_SIZE - (argument2 mod TILE_SIZE)); 
+	var distFromCurrentTile = -(TILE_SIZE - (argument2 mod TILE_SIZE))
+	if (distFromCurrentTile = 0)
+	{
+		distFromCurrentTile = -32	
+	}
+	return distFromCurrentTile
 }
+
 

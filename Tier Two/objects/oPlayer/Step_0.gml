@@ -74,51 +74,57 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_side+vsp) <=1)
 
 y += vsp; //moved this to the front
 
-/*
 if(sign(vsp) = -1)
 {
-	//going up
-	var roofDistMid = InRoof(tilemap,x,bbox_top) 
-	var roofDistLeft = InRoof(tilemap,bbox_left,bbox_top) 
-	var roofDistRight = InRoof(tilemap,bbox_right,bbox_top)
+	//Just moved up and need to check if in roof
+	var roofDist = InRoof(tilemap,x,bbox_top) 
+	//var roofDistLeft = InRoof(tilemap,bbox_left,bbox_top) 
+	//var roofDistRight = InRoof(tilemap,bbox_right,bbox_top)
 	
-	var roofDist = max(roofDistMid, roofDistLeft, roofDistRight)
+	//var roofDist = max(roofDistMid, roofDistLeft, roofDistRight)
 	
-	show_debug_message(string_build("L: {}, M: {}, R: {}, RD: {}",roofDistLeft, roofDistMid, roofDistRight, roofDist))
-	
-	
-	if (roofDist >= 0)
+	if(roofDist > -1)
 	{
-		y += (roofDist + 1)
+		show_debug_message(string_build("roofDist: {}", roofDist))
+		y += (roofDist + 2)
 		vsp = 0
 		roofDist = -1
 	}
+	
+	/*
+	var r = 0
+	while (roofDist >= 0) //sometimes will move player down and then will move him into a new tile
+	{
+		show_debug_message(string_build("L: {}, M: {}, R: {}, RD: {}, Round: {}",roofDistLeft, roofDistMid, roofDistRight, roofDist,r))
+	
+	
+		y += (roofDist + 1)
+		vsp = 0
+		roofDist = -1
+		
+		var roofDistMid = InRoof(tilemap,x,bbox_top) 
+		var roofDistLeft = InRoof(tilemap,bbox_left,bbox_top) 
+		var roofDistRight = InRoof(tilemap,bbox_right,bbox_top)
+	
+		var roofDist = max(roofDistMid, roofDistLeft, roofDistRight)
+		r++
+	}
+	*/
 }
 else
 {
-*/
+	//Going down and need to check if in floor	
 
-	//show_debug_message("inRoof: " + string(InRoof(tilemap,x,bbox_top)))
-	//going down
-/*	
-var roofDist = InRoof(tilemap,x,bbox_top)
+	var floorDist = InFloor(tilemap,x,bbox_bottom)
 
-if (roofDist >=0)
-{
-	y += (roofDist + 1)
-	vsp = 0
-	roofDist = -1;
-}
-
-*/	
-	
-var floorDist = InFloor(tilemap,x,bbox_bottom)
-
-if (floorDist >= 0)
-{
-	y -= (floorDist + 1); 
-	vsp = 0;
-	floorDist = -1;
+	if (floorDist >= 0)
+	{
+		
+		show_debug_message(string_build("InFloor: {}", floorDist))
+		y -= (floorDist + 1); 
+		vsp = 0;
+		floorDist = -1;
+	}
 }
 
 	/*

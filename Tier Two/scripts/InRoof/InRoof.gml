@@ -20,5 +20,5 @@ if (tileIndex > 0) //pixel is in a tile
 else 
 {
 	//debug_log("InRoof, tile1 : " + string(TILE_SIZE - (argument2 mod TILE_SIZE)), ERROR_LEVEL.WARNING)
-	return -(TILE_SIZE - (argument2 mod TILE_SIZE)); //how far below are we from this tile
+	return -(argument2 mod TILE_SIZE + 1); //how far below are we from this tile
 }
