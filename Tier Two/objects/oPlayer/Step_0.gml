@@ -61,7 +61,25 @@ if hsp = 0
 	var lb = tilemap_get_at_pixel(tilemap,bbox_left+hsp,bbox_bottom); 
 	var rb = tilemap_get_at_pixel(tilemap,bbox_right+hsp,bbox_bottom);
 	
-	if (tilemap_get_at_pixel
+	if (tilemap_get_at_pixel(tilemap,x+hsp,bbox_bottom+1) > 1)
+	{
+		// ignore bottom side tiles if on a slope
+		lb = 0;
+		rb = 0;
+	}
+	
+	if (tilemap_get_at_pixel(tilemap, x+hsp, bbox_top-1) > 1)
+	{
+		//ignore top side tiles if on a slope
+		lt = 0;
+		rt = 0;
+	}
+	
+	if (lb == 1) || (rb == 1) || (lt == 1) || (rt == 1) //inside a tile with a collision
+	{
+		
+	}
+	
 	
 }
 else
