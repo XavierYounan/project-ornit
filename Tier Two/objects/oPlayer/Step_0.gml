@@ -69,34 +69,52 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_bottom+vsp) <=1)
 
 y += vsp; //moved this to the front
 
-var floorDist = InFloor(tilemap,x,bbox_bottom)
-
-if (floorDist >= 0)
+if(abs(vsp) = -1)
 {
-	y -= (floorDist + 1); 
-	vsp = 0;
-	floorDist = -1;
-}
-
-
-//Walk down slope, bounce protection
-
-if(grounded)
-{
-	y += abs(floorDist) -1;
+	//going up
+	var roofDist = InRoof(tilemap,x,bbox_top)
 	
-	//if base of current tile
-	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1)
+	if (roofDist >= 0)
 	{
-		//if the slope continues 
-		if(tilemap_get_at_pixel(tilemap,x,bbox_bottom+1) > 1)
+		y += (roofDist +1)
+		vsp = 0
+		roofDist = -1
+	}
+}
+else
+{
+	//going down
+	var floorDist = InFloor(tilemap,x,bbox_bottom)
+
+	if (floorDist >= 0)
+	{
+		y -= (floorDist + 1); 
+		vsp = 0;
+		floorDist = -1;
+	}
+
+	/*
+		this bounce protection is only valid when vsp is going down, will be down due to gravity if walking down
+		Has to be this way because otherwise floorDist wont be defined (?havent confirmed tho)
+	*/
+
+	//Walk down slope, bounce protection
+	if(grounded)
+	{
+		y += abs(floorDist) -1;
+	
+		//if base of current tile
+		if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1)
 		{
-			//move there
-			y += abs(InFloor(tilemap,x,bbox_bottom+1));
+			//if the slope continues 
+			if(tilemap_get_at_pixel(tilemap,x,bbox_bottom+1) > 1)
+			{
+				//move there
+				y += abs(InFloor(tilemap,x,bbox_bottom+1));
+			}
 		}
 	}
 }
-
 
 
 

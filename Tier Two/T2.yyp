@@ -1959,6 +1959,14 @@
             }
         },
         {
+            "Key": "d42f5f6a-1df9-41c1-ac45-43ef186fa262",
+            "Value": {
+                "id": "074187c0-72d5-4a8a-bed8-bc785d2bc2ee",
+                "resourcePath": "scripts\\InRoof\\InRoof.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d6c23f86-7495-4b80-8e8e-5667067ab10d",
             "Value": {
                 "id": "e86a9b48-32a1-4214-bc65-61280a0f8ca0",
@@ -2515,7 +2523,8 @@
         "ecd7820d-5655-453b-ac8e-4f735a24c1c5",
         "a3f00188-2f87-47ee-b932-6d76a58cfc2f",
         "8540e8b8-a838-4fbb-bec5-53ccf1db7e4b",
-        "6f1e955b-aad8-44f8-9e73-1fd2e0099348"
+        "6f1e955b-aad8-44f8-9e73-1fd2e0099348",
+        "d42f5f6a-1df9-41c1-ac45-43ef186fa262"
     ],
     "tutorial": ""
 }
