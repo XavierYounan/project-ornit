@@ -1327,6 +1327,14 @@
             }
         },
         {
+            "Key": "8e37c849-fb05-41a0-962b-66b6e4d04e65",
+            "Value": {
+                "id": "f920a081-0e7e-4ce0-ae1b-ca2cb1975a60",
+                "resourcePath": "rooms\\rVerification\\rVerification.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "8e3fa43e-14f7-4a2c-ada8-f39fa2c1d584",
             "Value": {
                 "id": "bb76ef88-f156-4936-b9bd-b2d65c6bf676",
@@ -1708,6 +1716,14 @@
                 "id": "69ef4f52-cd49-4f19-b104-acd2d197e683",
                 "resourcePath": "sprites\\sMagnetFistR\\sMagnetFistR.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b57cdfa8-ef6c-4f95-b603-bff2743f5132",
+            "Value": {
+                "id": "f9255063-eb84-4dcd-90ae-c52066f08904",
+                "resourcePath": "objects\\oInFloorCheck\\oInFloorCheck.yy",
+                "resourceType": "GMObject"
             }
         },
         {
