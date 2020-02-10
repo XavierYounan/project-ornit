@@ -13,19 +13,31 @@ hsp = move;
 vsp += SPD_GRAVITY;
 
 // Is my middle centre touching the floor at the start of this frame
+var grounded = tilemap_get_at_pixel(tilemap,x,bbox_bottom+1)
+if (grounded < 2)
+{
+	//hit square or in the air
+	//Jups
+	if(grounded || (InFloor(tilemap,bbox_left,bbox_bottom+1) >= 0) || (InFloor(tilemap,bbox_right,bbox_bottom+1) >= 0))
+	{
+		var canJump = true
+	}
+}
+else
+{
+	//hit ramp tile
+	canJump = true
+}
 
-var grounded = (InFloor(tilemap, x, bbox_bottom+1) >= 0);
-
-//Jups
-if(grounded || (InFloor(tilemap,bbox_left,bbox_bottom+1) >= 0) || (InFloor(tilemap,bbox_right,bbox_bottom+1) >= 0))
+if(canJump)
 {
 	if(key_up)
 	{
 		vsp = -SPD_JUMP;
 		grounded = false;
 	}
-	
 }
+
  
 
 //Re apply fractions
@@ -41,20 +53,35 @@ vsp -= vsp_fraction;
 
 
 //Horizontal Collision
-if (hsp > 0) bbox_side = bbox_right; else bbox_side = bbox_left; //set the side to check for collisions based on direction moving
-
-p1 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_top);
-p2 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_bottom); 
-
-if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1) p2 = 0; //ignore bottom side tiles if on a slope
-
-if (p1 == 1) || (p2 == 1) //Inside a tile with collision
-{
-	if (hsp > 0) x = x - (x mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_right - x);
-	else x = x - (x mod TILE_SIZE) - (bbox_left - x);
-	hsp = 0;
+if hsp = 0
+{ 
+	var lt = tilemap_get_at_pixel(tilemap,bbox_left+hsp,bbox_top);
+	var rt = tilemap_get_at_pixel(tilemap,bbox_right+hsp,bbox_top);
+	
+	var lb = tilemap_get_at_pixel(tilemap,bbox_left+hsp,bbox_bottom); 
+	var rb = tilemap_get_at_pixel(tilemap,bbox_right+hsp,bbox_bottom);
+	
+	if (tilemap_get_at_pixel
+	
 }
-x += hsp;
+else
+{
+	if (hsp > 0) bbox_side = bbox_right; else bbox_side = bbox_left; //set the side to check for collisions based on direction moving
+
+
+	p1 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_top);
+	p2 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_bottom); 
+
+	if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1) p2 = 0; //ignore bottom side tiles if on a slope
+
+	if (p1 == 1) || (p2 == 1) //Inside a tile with collision
+	{
+		if (hsp > 0) x = x - (x mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_right - x);
+		else x = x - (x mod TILE_SIZE) - (bbox_left - x);
+		hsp = 0;
+	}
+	x += hsp;
+}
 
 //Vertical Collision
 if (vsp >= 0) bbox_side = bbox_bottom; else bbox_side = bbox_top;
@@ -73,6 +100,10 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_side+vsp) <=1)
 }
 
 y += vsp; //moved this to the front
+
+
+
+
 
 if(sign(vsp) = -1)
 {
