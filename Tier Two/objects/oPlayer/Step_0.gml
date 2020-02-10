@@ -104,16 +104,21 @@ else
 	//Walk down slope, bounce protection
 	if(grounded)
 	{
-		y += abs(floorDist) -1;
-	
-		//if base of current tile
-		if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1)
+		//if slope continues
+		
+		if(tilemap_get_at_pixel(tilemap,x,bbox_bottom + abs(floorDist)) > 1)
 		{
-			//if the slope continues 
-			if(tilemap_get_at_pixel(tilemap,x,bbox_bottom+1) > 1)
+			y += abs(floorDist) -1; //what is this?
+	
+			//if base of current tile
+			if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1)
 			{
-				//move there
-				y += abs(InFloor(tilemap,x,bbox_bottom+1));
+				//if the slope continues 
+				if(tilemap_get_at_pixel(tilemap,x,bbox_bottom+1) > 1)
+				{
+					//move there
+					y += abs(InFloor(tilemap,x,bbox_bottom+1));
+				}
 			}
 		}
 	}
