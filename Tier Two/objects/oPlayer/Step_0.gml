@@ -12,26 +12,12 @@ move = (key_right - key_left) * SPD_WALK
 hsp = move;
 vsp += SPD_GRAVITY;
 
-
-var canJump = false
-// Is my middle centre touching the floor at the start of this frame
 var grounded = tilemap_get_at_pixel(tilemap,x,bbox_bottom+1)
-if (grounded < 2)
-{
-	//hit square or in the air
-	//Jups
-	if(grounded || (InFloor(tilemap,bbox_left,bbox_bottom+1) >= 0) || (InFloor(tilemap,bbox_right,bbox_bottom+1) >= 0))
-	{
-		var canJump = true
-	}
-}
-else
-{
-	//hit ramp tile
-	canJump = true
-}
 
-if(canJump)
+var left = InFloor(tilemap,bbox_left,bbox_bottom+1)
+var right = InFloor(tilemap,bbox_right,bbox_bottom+1)
+
+if(grounded || right >= 0 || left >= 0)
 {
 	if(key_up)
 	{
@@ -41,7 +27,6 @@ if(canJump)
 }
 
  
-
 //Re apply fractions
 hsp += hsp_fraction;
 vsp += vsp_fraction;
@@ -54,79 +39,25 @@ vsp_fraction = vsp - (floor(abs(vsp)) * sign(vsp));
 vsp -= vsp_fraction;
 
 
-//Horizontal Collision
-if hsp = 0
-{ 
-	#region not moving
-	var lt = tilemap_get_at_pixel(tilemap,bbox_left+hsp,bbox_top);
-	var rt = tilemap_get_at_pixel(tilemap,bbox_right+hsp,bbox_top);
+//Horisontal collision
+bbox_side = hsp>0 ? bbox_right : bbox_left;
+
+var p1 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_top);
+var p2 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_bottom);
+
+if(tilemap_get_at_pixel(tilemap,x+hsp,bbox_bottom+1) > 1) p2 = 0; //if on a slope ignore collision
+
+
 	
-	var lb = tilemap_get_at_pixel(tilemap,bbox_left+hsp,bbox_bottom); 
-	var rb = tilemap_get_at_pixel(tilemap,bbox_right+hsp,bbox_bottom);
-	
-	if (tilemap_get_at_pixel(tilemap,x+hsp,bbox_bottom+1) > 1)
-	{
-		// ignore bottom side tiles if on a slope
-		lb = 0;
-		rb = 0;
-	}
-	
-	if (tilemap_get_at_pixel(tilemap, x+hsp, bbox_top-1) > 1)
-	{
-		//ignore top side tiles if on a slope
-		lt = 0;
-		rt = 0;
-	}
-	
-	if (lb == 1) || (rb == 1) || (lt == 1) || (rt == 1) //inside a tile with a collision
-	{
-		debug_log("Not moving yet in wall", ERROR_LEVEL.WARNING)
-	}
-	#endregion
-}
-else
+if (p1 == 1) || (p2 == 1) //inside a tile with a collision
 {
-	#region moving
-	var lt = tilemap_get_at_pixel(tilemap,bbox_left+hsp,bbox_top);
-	var rt = tilemap_get_at_pixel(tilemap,bbox_right+hsp,bbox_top);
-	
-	var lb = tilemap_get_at_pixel(tilemap,bbox_left+hsp,bbox_bottom); 
-	var rb = tilemap_get_at_pixel(tilemap,bbox_right+hsp,bbox_bottom);
-	
-	if (tilemap_get_at_pixel(tilemap,x+hsp,bbox_bottom+1) > 1)
-	{
-		// ignore bottom side tiles if on a slope
-		lb = 0;
-		rb = 0;
-	}
-	
-	if (tilemap_get_at_pixel(tilemap, x+hsp, bbox_top-1) > 1)
-	{
-		//ignore top side tiles if on a slope
-		lt = 0;
-		rt = 0;
-		
-	
-		var inRoof = true;;
-		
-	}
-	else
-	{
-		var inRoof = false	;
-	}
-	
-	if (lb == 1) || (rb == 1) || (lt == 1) || (rt == 1) //inside a tile with a collision
-	{
-		if (hsp > 0) x = x - (x mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_right - x);
-		else x = x - (x mod TILE_SIZE) - (bbox_left - x);
-		hsp = 0;
-	}
-	
-	x += hsp;
+	if (hsp > 0) x = x - (x mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_right - x);
+	else x = x - (x mod TILE_SIZE) - (bbox_left - x);
+	hsp = 0;
 }
-	#endregion
 	
-		
+x += hsp;
+
 
 //Vertical Collision
 if (vsp >= 0) bbox_side = bbox_bottom; else bbox_side = bbox_top;
@@ -147,56 +78,16 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_side+vsp) <=1)
 y += vsp; //moved this to the front
 
 
+	
+var floorDist = InFloor(tilemap,x,bbox_bottom)
 
-if(sign(vsp) = -1)
+if (floorDist >= 0)
 {
-	//Just moved up and need to check if in roof
-	var roofDist = InRoof(tilemap,x,bbox_top-1) 
-	
-	var r = 0
-	while(roofDist > -1) //sometimes will move player down and into a new tile
-	{
-		show_debug_message(string_build("roofDist: {}, Repeat: {}", roofDist, r))
-		y += (roofDist + 1)
-		vsp = 0
-		roofDist = InRoof(tilemap,x,bbox_top-1)
-		r++
-	}
-	
-	/*
-	var r = 0
-	while (roofDist >= 0) //sometimes will move player down and then will move him into a new tile
-	{
-		show_debug_message(string_build("L: {}, M: {}, R: {}, RD: {}, Round: {}",roofDistLeft, roofDistMid, roofDistRight, roofDist,r))
-	
-	
-		y += (roofDist + 1)
-		vsp = 0
-		roofDist = -1
 		
-		var roofDistMid = InRoof(tilemap,x,bbox_top) 
-		var roofDistLeft = InRoof(tilemap,bbox_left,bbox_top) 
-		var roofDistRight = InRoof(tilemap,bbox_right,bbox_top)
-	
-		var roofDist = max(roofDistMid, roofDistLeft, roofDistRight)
-		r++
-	}
-	*/
-}
-else
-{
-	//Going down and need to check if in floor	
-
-	var floorDist = InFloor(tilemap,x,bbox_bottom)
-
-	if (floorDist >= 0)
-	{
-		
-		show_debug_message(string_build("InFloor: {}", floorDist))
-		y -= (floorDist + 1); 
-		vsp = 0;
-		floorDist = -1;
-	}
+	show_debug_message(string_build("InFloor: {}", floorDist))
+	y -= (floorDist + 1); 
+	vsp = 0;
+	floorDist = -1;
 }
 
 	/*
@@ -204,29 +95,23 @@ else
 		Has to be this way because otherwise floorDist wont be defined (?havent confirmed tho)
 	*/
 
-	//Walk down slope, bounce protection
-	/*
-	if(grounded)
-	{
-		y += abs(floorDist) -1; //what is this?
+//Walk down slope, bounce protection
 	
-		//if base of current tile
-		if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1)
+if(grounded)
+{
+	y += abs(floorDist) -1; //what is this?
+	
+	//if base of current tile
+	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1)
+	{
+			
+		//if the slope continues 
+		if(tilemap_get_at_pixel(tilemap,x,bbox_bottom+1) > 1)
 		{
-			
-			//if the slope continues 
-			if(tilemap_get_at_pixel(tilemap,x,bbox_bottom+1) > 1)
-			{
-				//move there
-				y += abs(InFloor(tilemap,x,bbox_bottom+1));
-			}
-			
+			//move there
+			y += abs(InFloor(tilemap,x,bbox_bottom+1));
 		}
+			
 	}
-	*/
-//}
-
-
-
-
+}
 
