@@ -12,7 +12,7 @@ move = (key_right - key_left) * SPD_WALK
 hsp = move;
 vsp += SPD_GRAVITY;
 
-var grounded = tilemap_get_at_pixel(tilemap,x,bbox_bottom+1)
+var grounded = (InFloor(tilemap,x,bbox_bottom+1) >= 0)
 
 var left = InFloor(tilemap,bbox_left,bbox_bottom+1)
 var right = InFloor(tilemap,bbox_right,bbox_bottom+1)
@@ -45,10 +45,8 @@ bbox_side = hsp>0 ? bbox_right : bbox_left;
 var p1 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_top);
 var p2 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_bottom);
 
-if(tilemap_get_at_pixel(tilemap,x+hsp,bbox_bottom+1) > 1) p2 = 0; //if on a slope ignore collision
+if(tilemap_get_at_pixel(tilemap,x,bbox_bottom+1) > 1) p2 = 0; //if on a slope ignore collision
 
-
-	
 if (p1 == 1) || (p2 == 1) //inside a tile with a collision
 {
 	if (hsp > 0) x = x - (x mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_right - x);
@@ -61,7 +59,7 @@ x += hsp;
 
 //Vertical Collision
 if (vsp >= 0) bbox_side = bbox_bottom; else bbox_side = bbox_top;
-	
+var oldPos = [x,y]
 if (tilemap_get_at_pixel(tilemap,x,bbox_side+vsp) <=1)
 {
 	p1 = tilemap_get_at_pixel(tilemap,bbox_left,bbox_side+vsp) 
@@ -72,10 +70,14 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_side+vsp) <=1)
 		if (vsp >= 0) y = y - (y mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_bottom - y);
 		else y = y - (y mod TILE_SIZE) - (bbox_top - y);
 		vsp = 0;
+		
+		var newPos = [x,y]
+		show_debug_message(string_build("Collied with tile 1, old: {}, new: {}", oldPos, newPos))
 	}
 }
 
 y += vsp; //moved this to the front
+
 
 
 	
@@ -99,19 +101,23 @@ if (floorDist >= 0)
 	
 if(grounded)
 {
-	y += abs(floorDist) -1; //what is this?
+	y += abs(floorDist) - 1 //moves to base of tileset
 	
-	//if base of current tile
-	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1)
+		
+	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1) //if at base of current tile
 	{
 			
 		//if the slope continues 
-		if(tilemap_get_at_pixel(tilemap,x,bbox_bottom+1) > 1)
+		var tmap = tilemap_get_at_pixel(tilemap,x,bbox_bottom+1)
+		if(tmap > 1)
 		{
 			//move there
-			y += abs(InFloor(tilemap,x,bbox_bottom+1));
+			var dis = abs(InFloor(tilemap,x,bbox_bottom+1));
+			show_debug_message(string_build("Stayed grounded, Tile: {} distance: {} ",dis,tmap))
+			y += dis
 		}
 			
 	}
+	
 }
 
