@@ -12,6 +12,8 @@ move = (key_right - key_left) * SPD_WALK
 hsp = move;
 vsp += SPD_GRAVITY;
 
+
+var canJump = false
 // Is my middle centre touching the floor at the start of this frame
 var grounded = tilemap_get_at_pixel(tilemap,x,bbox_bottom+1)
 if (grounded < 2)
@@ -55,6 +57,7 @@ vsp -= vsp_fraction;
 //Horizontal Collision
 if hsp = 0
 { 
+	#region not moving
 	var lt = tilemap_get_at_pixel(tilemap,bbox_left+hsp,bbox_top);
 	var rt = tilemap_get_at_pixel(tilemap,bbox_right+hsp,bbox_top);
 	
@@ -77,29 +80,53 @@ if hsp = 0
 	
 	if (lb == 1) || (rb == 1) || (lt == 1) || (rt == 1) //inside a tile with a collision
 	{
-		
+		debug_log("Not moving yet in wall", ERROR_LEVEL.WARNING)
 	}
-	
-	
+	#endregion
 }
 else
 {
-	if (hsp > 0) bbox_side = bbox_right; else bbox_side = bbox_left; //set the side to check for collisions based on direction moving
-
-
-	p1 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_top);
-	p2 = tilemap_get_at_pixel(tilemap,bbox_side+hsp,bbox_bottom); 
-
-	if (tilemap_get_at_pixel(tilemap,x,bbox_bottom) > 1) p2 = 0; //ignore bottom side tiles if on a slope
-
-	if (p1 == 1) || (p2 == 1) //Inside a tile with collision
+	#region moving
+	var lt = tilemap_get_at_pixel(tilemap,bbox_left+hsp,bbox_top);
+	var rt = tilemap_get_at_pixel(tilemap,bbox_right+hsp,bbox_top);
+	
+	var lb = tilemap_get_at_pixel(tilemap,bbox_left+hsp,bbox_bottom); 
+	var rb = tilemap_get_at_pixel(tilemap,bbox_right+hsp,bbox_bottom);
+	
+	if (tilemap_get_at_pixel(tilemap,x+hsp,bbox_bottom+1) > 1)
+	{
+		// ignore bottom side tiles if on a slope
+		lb = 0;
+		rb = 0;
+	}
+	
+	if (tilemap_get_at_pixel(tilemap, x+hsp, bbox_top-1) > 1)
+	{
+		//ignore top side tiles if on a slope
+		lt = 0;
+		rt = 0;
+		
+	
+		var inRoof = true;;
+		
+	}
+	else
+	{
+		var inRoof = false	;
+	}
+	
+	if (lb == 1) || (rb == 1) || (lt == 1) || (rt == 1) //inside a tile with a collision
 	{
 		if (hsp > 0) x = x - (x mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_right - x);
 		else x = x - (x mod TILE_SIZE) - (bbox_left - x);
 		hsp = 0;
 	}
+	
 	x += hsp;
 }
+	#endregion
+	
+		
 
 //Vertical Collision
 if (vsp >= 0) bbox_side = bbox_bottom; else bbox_side = bbox_top;
@@ -121,23 +148,19 @@ y += vsp; //moved this to the front
 
 
 
-
-
 if(sign(vsp) = -1)
 {
 	//Just moved up and need to check if in roof
-	var roofDist = InRoof(tilemap,x,bbox_top) 
-	//var roofDistLeft = InRoof(tilemap,bbox_left,bbox_top) 
-	//var roofDistRight = InRoof(tilemap,bbox_right,bbox_top)
+	var roofDist = InRoof(tilemap,x,bbox_top-1) 
 	
-	//var roofDist = max(roofDistMid, roofDistLeft, roofDistRight)
-	
-	if(roofDist > -1)
+	var r = 0
+	while(roofDist > -1) //sometimes will move player down and into a new tile
 	{
-		show_debug_message(string_build("roofDist: {}", roofDist))
-		y += (roofDist + 2)
+		show_debug_message(string_build("roofDist: {}, Repeat: {}", roofDist, r))
+		y += (roofDist + 1)
 		vsp = 0
-		roofDist = -1
+		roofDist = InRoof(tilemap,x,bbox_top-1)
+		r++
 	}
 	
 	/*
