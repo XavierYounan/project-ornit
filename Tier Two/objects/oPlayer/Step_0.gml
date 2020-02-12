@@ -72,7 +72,15 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_side+vsp) <=1)
 		vsp = 0;
 		
 		var newPos = [x,y]
-		show_debug_message(string_build("Collied with tile 1, old: {}, new: {}", oldPos, newPos))
+		
+		var difference = newPos[1] - oldPos[1]
+		
+		if(abs(difference) > 0)
+		{
+			show_debug_message(string_build("Full tile collsion, difference: {}", difference))
+		}	
+		
+		//show_debug_message(string_build("Collied with tile 1, old: {}, new: {}", oldPos, newPos))
 	}
 }
 
@@ -102,18 +110,18 @@ if (floorDist >= 0)
 if(grounded)
 {
 	y += abs(floorDist) - 1 //moves to base of tileset
-	
+	sh
 		
 	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1) //if at base of current tile
 	{
 			
 		//if the slope continues 
-		var tmap = tilemap_get_at_pixel(tilemap,x,bbox_bottom+1)
+		var tmap = tilemap_get_at_pixel(tilemap,x,bbox_bottom + abs(floorDist))
 		if(tmap > 1)
 		{
 			//move there
 			var dis = abs(InFloor(tilemap,x,bbox_bottom+1));
-			show_debug_message(string_build("Stayed grounded, Tile: {} distance: {} ",dis,tmap))
+			show_debug_message(string_build("Stayed grounded, Tile: {} distance: {} ",tmap,dis))
 			y += dis
 		}
 			
