@@ -148,4 +148,34 @@ if(roofDist > 0)
 	}
 
 }	
+else
+{
+	var left = InRoof(tilemap,bbox_left,bbox_top-1)
+	var right = InRoof(tilemap,bbox_right,bbox_top-1)
+
+	var dis = max(left,right)
+
+	var floorDistL = InFloor(tilemap,bbox_left,bbox_top-1)
+	var floorDistR = InFloor(tilemap,bbox_right,bbox_top-1)
+	
+	var floorDist = max(floorDistL, floorDistR)
+	
+	if(floorDist >= 0) //if floorDist < 0 likely that the player is standing at the very bottom of a ramp
+	{
+		var r = 0
+		while(dis > -1) //sometimes will move player down and into a new tile
+		{
+			show_debug("Moved down and out of the roof (side), roofDist: {}, x,y: {},{}, r: {}", dis,x,y,r)
+			y += (dis + 1)
+			vsp = 0
+			
+			//redefine dis
+			var left = InRoof(tilemap,bbox_left,bbox_top-1)
+			var right = InRoof(tilemap,bbox_right,bbox_top-1)
+	
+			var dis = max(left,right)
+			r++
+		}
+	}
+}
 
