@@ -59,7 +59,6 @@ x += hsp;
 
 //Vertical Collision
 if (vsp >= 0) bbox_side = bbox_bottom; else bbox_side = bbox_top;
-var oldPos = [x,y]
 if (tilemap_get_at_pixel(tilemap,x,bbox_side+vsp) <=1)
 {
 	p1 = tilemap_get_at_pixel(tilemap,bbox_left,bbox_side+vsp) 
@@ -70,20 +69,14 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_side+vsp) <=1)
 		if (vsp >= 0) y = y - (y mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_bottom - y);
 		else y = y - (y mod TILE_SIZE) - (bbox_top - y);
 		vsp = 0;
-		
-		var newPos = [x,y]
-		
-		var difference = newPos[1] - oldPos[1]
-		
-		if(abs(difference) > 0)
-		{
-			show_debug_message(string_build("Full tile collsion, difference: {}", difference))
-		}	
-		
-		//show_debug_message(string_build("Collied with tile 1, old: {}, new: {}", oldPos, newPos))
 	}
 }
 
+if (bbox_side = bbox_bottom) //edge collisions detection
+{
+	if(tilemap_get_at_pixel(tilemap,x,
+		
+}
 y += vsp; //moved this to the front
 
 
@@ -93,25 +86,18 @@ var floorDist = InFloor(tilemap,x,bbox_bottom)
 
 if (floorDist >= 0)
 {
-		
-	show_debug_message(string_build("InFloor: {}", floorDist))
 	y -= (floorDist + 1); 
 	vsp = 0;
 	floorDist = -1;
 }
 
-	/*
-		this bounce protection is only valid when vsp is going down, will be down due to gravity if walking down
-		Has to be this way because otherwise floorDist wont be defined (?havent confirmed tho)
-	*/
 
 //Walk down slope, bounce protection
-	
+
 if(grounded)
 {
 	y += abs(floorDist) - 1 //moves to base of tileset
-	sh
-		
+	
 	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1) //if at base of current tile
 	{
 			
@@ -120,12 +106,10 @@ if(grounded)
 		if(tmap > 1)
 		{
 			//move there
-			var dis = abs(InFloor(tilemap,x,bbox_bottom+1));
-			show_debug_message(string_build("Stayed grounded, Tile: {} distance: {} ",tmap,dis))
-			y += dis
+			var dis = InFloor(tilemap,x,bbox_bottom+1);
+			y += abs(dis)
 		}
 			
 	}
 	
 }
-
