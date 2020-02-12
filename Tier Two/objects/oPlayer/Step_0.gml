@@ -127,18 +127,25 @@ if(grounded)
 }
 #endregion
 
-/*
-//Just moved up and need to check if in roof
-var roofDist = InRoof(tilemap,x,bbox_top-1) 
-	
-var r = 0
-while(roofDist > -1) //sometimes will move player down and into a new tile
+
+var roofDist = InRoof(tilemap,x,bbox_top-1)
+
+if(roofDist > 0)
 {
-	show_debug("Moved down and out of the roof, roofDist: {}, x,y: {},{}, r: {}", roofDist,x,y,r)
-	y += (roofDist + 1)
-	vsp = 0
-	roofDist = InRoof(tilemap,x,bbox_top-1)
-	r++
-}
-	
-*/
+	//check isnt just tile below
+	var floorDist = InFloor(tilemap,x,bbox_top-1)
+	if(floorDist >= 0) //if floorDist < 0 likely that the player is standing at the very bottom of a ramp
+	{
+		var r = 0
+		while(roofDist > -1) //sometimes will move player down and into a new tile
+		{
+			show_debug("Moved down and out of the roof, roofDist: {}, x,y: {},{}, r: {}", roofDist,x,y,r)
+			y += (roofDist + 1)
+			vsp = 0
+			roofDist = InRoof(tilemap,x,bbox_top-1)
+			r++
+		}
+	}
+
+}	
+

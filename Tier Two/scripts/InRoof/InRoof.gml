@@ -10,15 +10,12 @@ if (tileIndex > 0) //pixel is in a tile
 	if (tileIndex == 1) return (TILE_SIZE - (argument2 mod TILE_SIZE)); //pixel is in a solid tile
 	
 	var theRoof = global.heightsFromBottom[(argument1 mod TILE_SIZE) + (tileIndex * TILE_SIZE)]
-
-	//debug_log("InRoof: " + string(theRoof), ERROR_LEVEL.WARNING)
-	return( TILE_SIZE - (argument2 mod TILE_SIZE) - theRoof)
+	return(TILE_SIZE - (argument2 mod TILE_SIZE) - theRoof)
 	
 	
 	
 } 
 else 
 {
-	//debug_log("InRoof, tile1 : " + string(TILE_SIZE - (argument2 mod TILE_SIZE)), ERROR_LEVEL.WARNING)
 	return -(argument2 mod TILE_SIZE + 1); //how far below are we from this tile
 }
