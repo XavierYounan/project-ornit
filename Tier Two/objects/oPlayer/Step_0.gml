@@ -88,19 +88,19 @@ if(vsp != 0)
 
 
 
-	
 var floorDist = InFloor(tilemap,x,bbox_bottom)
 
 if (floorDist >= 0)
 {
-	y -= (floorDist + 1); 
+	y -= floorDist + 1; 
 	vsp = 0;
 	floorDist = -1;
 	show_debug("Moved up and out of the floor, floorDist: {}, x,y: {},{}",floorDist,x,y)
 }
+	
+#region Walk down slope, bounce protection
+	
 
-
-//Walk down slope, bounce protection
 
 if(grounded)
 {
@@ -122,5 +122,23 @@ if(grounded)
 			}
 			
 		}
-	}	
+	}
+		
 }
+#endregion
+
+/*
+//Just moved up and need to check if in roof
+var roofDist = InRoof(tilemap,x,bbox_top-1) 
+	
+var r = 0
+while(roofDist > -1) //sometimes will move player down and into a new tile
+{
+	show_debug("Moved down and out of the roof, roofDist: {}, x,y: {},{}, r: {}", roofDist,x,y,r)
+	y += (roofDist + 1)
+	vsp = 0
+	roofDist = InRoof(tilemap,x,bbox_top-1)
+	r++
+}
+	
+*/
