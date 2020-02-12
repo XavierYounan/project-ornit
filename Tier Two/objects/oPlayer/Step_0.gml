@@ -26,6 +26,8 @@ if(grounded || right >= 0 || left >= 0)
 	}
 }
 
+show_debug("Start of frame")
+show_debug("grounded: {}, vsp: {}, left: {}, right: {}, key up: {}",grounded, vsp, left, right, key_up)
  
 //Re apply fractions
 hsp += hsp_fraction;
@@ -56,6 +58,7 @@ if (p1 == 1) || (p2 == 1) //inside a tile with a collision
 	
 x += hsp;
 
+show_debug("Before vCol, x: {}, y: {}",x,y)
 
 //Vertical Collision
 if (vsp >= 0) bbox_side = bbox_bottom; else bbox_side = bbox_top;
@@ -64,20 +67,24 @@ if (tilemap_get_at_pixel(tilemap,x,bbox_side+vsp) <=1)
 	p1 = tilemap_get_at_pixel(tilemap,bbox_left,bbox_side+vsp) 
 	p2 = tilemap_get_at_pixel(tilemap,bbox_right,bbox_side+vsp)
 	
+	
 	if (p1 == 1) || (p2 == 1)
 	{
 		if (vsp >= 0) y = y - (y mod TILE_SIZE) + (TILE_SIZE-1) - (bbox_bottom - y);
 		else y = y - (y mod TILE_SIZE) - (bbox_top - y);
 		vsp = 0;
+		
+		
+		show_debug_message(string_build("Snapped to floor, p1: {}, p2: {}, x,y: {},{}", p1, p2,x,y))
 	}
 }
 
-if (bbox_side = bbox_bottom) //edge collisions detection
+y += vsp; 
+
+if(vsp != 0)
 {
-	if(tilemap_get_at_pixel(tilemap,x,
-		
+	show_debug_message(string_build("Moved, vsp: {}, x,y: {},{}", vsp,x,y))
 }
-y += vsp; //moved this to the front
 
 
 
@@ -89,6 +96,7 @@ if (floorDist >= 0)
 	y -= (floorDist + 1); 
 	vsp = 0;
 	floorDist = -1;
+	show_debug("Moved up and out of the floor, floorDist: {}, x,y: {},{}",floorDist,x,y)
 }
 
 
@@ -96,20 +104,23 @@ if (floorDist >= 0)
 
 if(grounded)
 {
-	y += abs(floorDist) - 1 //moves to base of tileset
-	
-	if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1) //if at base of current tile
+	if(abs(floorDist) < 10) //snap limit of 10 if greater then obv not moving onto next tile
 	{
-			
-		//if the slope continues 
-		var tmap = tilemap_get_at_pixel(tilemap,x,bbox_bottom + abs(floorDist))
-		if(tmap > 1)
+		y += abs(floorDist) - 1 //moves to base of tileset
+		
+		if((bbox_bottom mod TILE_SIZE) == TILE_SIZE-1) //if at base of current tile
 		{
-			//move there
-			var dis = InFloor(tilemap,x,bbox_bottom+1);
-			y += abs(dis)
-		}
 			
-	}
-	
+			//if the slope continues 
+			var tmap = tilemap_get_at_pixel(tilemap,x,bbox_bottom + 1)
+			if(tmap > 1)
+			{
+				//move there
+				var dis = InFloor(tilemap,x,bbox_bottom+1);
+				y += abs(dis)
+				show_debug("Is grounded and end of tile, floorDist: {}, dis: {}, x: {}, y: {}", floorDist, dis, x, y)
+			}
+			
+		}
+	}	
 }
