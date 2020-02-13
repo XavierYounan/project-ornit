@@ -319,6 +319,14 @@
             }
         },
         {
+            "Key": "1ac4c1a1-ab30-4077-ae64-caf80b67c638",
+            "Value": {
+                "id": "2bdd1495-e053-47b6-8c76-472bbab6ddf9",
+                "resourcePath": "objects\\oPlayerSloped\\oPlayerSloped.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1bdf12f8-c819-4129-a8e1-dae047f0c647",
             "Value": {
                 "id": "95d7868f-7ae5-4be2-bd71-65091003d017",
