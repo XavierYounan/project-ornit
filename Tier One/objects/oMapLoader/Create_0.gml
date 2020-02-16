@@ -1,4 +1,4 @@
-/// @desc load the map
+/// @desc load the map DEPRECIATED
 
 _fname = "TEST"
 
