@@ -583,14 +583,6 @@
             }
         },
         {
-            "Key": "3b57c139-42d1-4387-8999-01469c498ea1",
-            "Value": {
-                "id": "cf669a3b-0eb9-470a-85c2-d410b233f03b",
-                "resourcePath": "sprites\\sNinjaCollisionHitbox\\sNinjaCollisionHitbox.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "3bb1160a-47fc-4c80-b3a6-967191005c37",
             "Value": {
                 "id": "541c674b-7ce5-46ab-9ac2-7d8acf3189f0",
@@ -1284,6 +1276,14 @@
                 "id": "c278ce3c-d64b-4b7d-a310-aefcb98a95b4",
                 "resourcePath": "scripts\\priv_gnet_add_connection\\priv_gnet_add_connection.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "7a12722b-3c73-4fd8-8a8b-a64035707cff",
+            "Value": {
+                "id": "1480e75c-a392-4bec-a11b-ae94737bcb77",
+                "resourcePath": "sprites\\sNinjaCollisionHitbox\\sNinjaCollisionHitbox.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
