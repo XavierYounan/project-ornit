@@ -11,7 +11,7 @@ instance_create_depth(-10,-10,DEPTH.GUI,oDebug)
  
 #macro TILE_SIZE 32
 
-heightsToGet = sprite_get_width(sCollision);
+heightsToGet = sprite_get_width(sTilemap);
 
 tiles = heightsToGet / TILE_SIZE;
 

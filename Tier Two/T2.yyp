@@ -327,6 +327,14 @@
             }
         },
         {
+            "Key": "1ff2afcb-b99d-427f-aa42-40a0975fa375",
+            "Value": {
+                "id": "21e7e70b-1225-44be-b4dd-d459e4fd77a6",
+                "resourcePath": "datafiles_yy\\example.tmx.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "219eeda7-b409-42f4-adc5-672e8280575a",
             "Value": {
                 "id": "2b225007-6d94-41ae-8e4b-8592ad5e531a",
@@ -1476,14 +1484,6 @@
                 "id": "bc25207f-2ce9-44f4-af8c-9ef4ad6378ce",
                 "resourcePath": "tilesets\\tl_dungeon_sheet\\tl_dungeon_sheet.yy",
                 "resourceType": "GMTileSet"
-            }
-        },
-        {
-            "Key": "97e45e88-445b-405f-85ec-9c3ff31d012e",
-            "Value": {
-                "id": "4cdfdb97-f568-4f3f-b4ce-17066edf7ffa",
-                "resourcePath": "datafiles_yy\\example.tmx.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {

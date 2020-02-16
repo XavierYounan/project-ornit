@@ -20,7 +20,7 @@
     "copyToTargets": -1,
     "date": "2019-53-16 09:08:29",
     "description": "",
-    "exportToGame": false,
+    "exportToGame": true,
     "extensionName": "",
     "files": [
         {
