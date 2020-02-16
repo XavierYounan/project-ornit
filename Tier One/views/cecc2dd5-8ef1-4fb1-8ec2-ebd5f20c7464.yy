@@ -6,7 +6,8 @@
     "children": [
         "c82ce39f-d448-4ee3-8efb-0ccffbf5efa5",
         "ab57af8e-74b5-4a1a-a97d-b69fcebc7437",
-        "1649defe-e22e-49ef-9ce1-161c0b710c00"
+        "1649defe-e22e-49ef-9ce1-161c0b710c00",
+        "3b57c139-42d1-4387-8999-01469c498ea1"
     ],
     "filterType": "GMSprite",
     "folderName": "Ninja",

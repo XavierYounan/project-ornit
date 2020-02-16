@@ -330,7 +330,7 @@
             "Key": "1ac4c1a1-ab30-4077-ae64-caf80b67c638",
             "Value": {
                 "id": "2bdd1495-e053-47b6-8c76-472bbab6ddf9",
-                "resourcePath": "objects\\oPlayer\\oPlayer.yy",
+                "resourcePath": "objects\\oSlopedTiles\\oSlopedTiles.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -580,6 +580,14 @@
                 "id": "2d675cf8-552b-42b9-abb0-6e3832a5ecc1",
                 "resourcePath": "scripts\\gnet_set_connection_timeout\\gnet_set_connection_timeout.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3b57c139-42d1-4387-8999-01469c498ea1",
+            "Value": {
+                "id": "cf669a3b-0eb9-470a-85c2-d410b233f03b",
+                "resourcePath": "sprites\\sNinjaCollisionHitbox\\sNinjaCollisionHitbox.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -954,7 +962,7 @@
             "Key": "642b31e5-086d-4fff-a9fd-099a626f55ef",
             "Value": {
                 "id": "0855f93a-ab90-4823-85e9-643c0af4fc0f",
-                "resourcePath": "rooms\\rColTest\\rColTest.yy",
+                "resourcePath": "rooms\\rPlay\\rPlay.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1207,14 +1215,6 @@
             }
         },
         {
-            "Key": "751b9abe-7de9-4dbd-a8e9-2df32d659a17",
-            "Value": {
-                "id": "329e6b86-c698-436b-86e8-f4ec8166f163",
-                "resourcePath": "rooms\\r_Play\\r_Play.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "75ac291e-7061-4bcb-8e8a-3b3545332d41",
             "Value": {
                 "id": "d1d3ed23-042d-4b2c-9853-d3733a6babb8",
@@ -1372,6 +1372,14 @@
                 "id": "f640588e-1576-4cc4-9f69-4a08e75920ec",
                 "resourcePath": "scripts\\gnet_cb_ReceiveConnectionRequest\\gnet_cb_ReceiveConnectionRequest.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "86a7464e-e332-4528-9f70-541975c86e3a",
+            "Value": {
+                "id": "a4b10d7a-6b55-41e0-b84c-151085cfe2da",
+                "resourcePath": "objects\\oNinjaCollisionHitbox\\oNinjaCollisionHitbox.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2386,7 +2394,7 @@
             "Key": "ec220bc1-7a8e-4db0-8953-2434a77746fc",
             "Value": {
                 "id": "9b5ff0e1-86d8-4b1d-9445-32908f31cfc9",
-                "resourcePath": "objects\\oPlayer1\\oPlayer1.yy",
+                "resourcePath": "objects\\oPlayer\\oPlayer.yy",
                 "resourceType": "GMObject"
             }
         },
