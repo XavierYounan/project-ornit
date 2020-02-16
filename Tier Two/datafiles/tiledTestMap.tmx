@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="2020.02.12" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="150" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="43">
+<map version="1.2" tiledversion="2020.02.12" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="150" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="55">
  <tileset firstgid="1" name="tCollision" tilewidth="32" tileheight="32" tilecount="26" columns="26">
   <image source="../sprites/sCollision/b7762dc9-0e1e-4983-8cc5-70644b861b32.png" width="832" height="32"/>
  </tileset>
@@ -8,26 +8,26 @@
    eJztm4ty3CAMRUmySdv0/UrSfm0/vd6ZaKoSSQiMCGuuZ85M4128II4FBvc6pXQNQACjjivQiz+N7CnrBl5dLOFuwKslae3zPWXh1fGBV+yYoD+OArxixwT9cRTgFTsm6I+jMMqrpvqRVyNiAa/gVQTwaqhXr1o/eAUigFcgAngFIoBXIAJ4BSKAVyACeAUigFcgAnhV5uPGJxar9xsfJqjXzMArEAG8kjklOzfxHHYzQX1nA17J3LLYEG823grn7yao72zAq/855ynKP5JbmlO8HIBXHBr7+NhmuXVnlFudkV7NDHcjd0TzqlRuZZCvZDd4XFo+W90t5Kt/fN74ktq9+rrxbYJ2zMDK+UpbS+B+nf+W5lg0t5J8whrEul5JY5+1js7d0tYV8nX5lcfEFb3KnaJ8Q3mqdp+GfMqvs7Jbq3mVOxW5ppmPnyu5tZJX3Clrjq2NZxpWfstz1ypureIVdyrPUfRZ3ufSeFZ6/tOuxXPXCm6t4BX1teWBlXtyv6TrSDnO8vTobnly+aV7ZbnWOr5pLq2+RqrFJNKvNLiNHnesHNQyDpbKHNU57z0W4Vca2E7Lqdp1cc84WFP+SG7VPuNE+JUGtVVbn/KWfbdx72g7xZS+7/XjCOtbXp9GvJuWBvzG2YuWfTqKE4+Dtk6ar4PS+VvhuzWeXZpbGvzZV4qx9H7knvyVBreP5y3KKVJ+KLn4uPHEyv7a+K18V3LEW4+ZkfIT+SE5wb2qeU+yxa8U2G5pPmXlYM9+3x6815diPZNrtePdKb30KrpNaYI4gTjo3r5KL73K3bLGxNr8lQLbIt0T/F7j449U15OzDRb0e3vr8Zp5q5SftLGP1zv3StpryPM0n4dIzzVW36TOMdDWEmr6w9rfaaF1v6ZHW3r7VOpr6f1+/l4an7dH7GPxI9qpVnrOsTzz0xpmmm9Z/cBjmHvFz9W0SRsvKX/R0btd1ppj/uylnY+et3vroeWKCPL8ZD3beZzSHNK8Kv1m7fp9ei6X2L9bYhG131T6f85WnSLySu8279lvKc21S171rJ/Hr7y+eZu+b/yoaP9epzzXj37n2Irvz40H4bs97v9e8W0d7/bOGXgebP3caj+5mPeBdt4zX/PW58bxe9r5mvj2jF9Pv2rmvj3rCC6XGg/+Al1Ew2c=
   </data>
  </layer>
- <objectgroup id="6" name="Instances" offsetx="32" offsety="0">
-  <object id="12" name="oRespawn" gid="2" x="2336" y="544" width="32" height="32"/>
-  <object id="13" name="oRespawn" gid="2" x="2336" y="1376" width="32" height="32"/>
-  <object id="15" name="oRespawn" gid="2" x="160" y="1120" width="32" height="32"/>
-  <object id="16" name="oRespawn" gid="2" x="32" y="1504" width="32" height="32"/>
-  <object id="17" name="oRespawn" gid="2" x="672" y="1376" width="32" height="32"/>
-  <object id="18" name="oRespawn" gid="2" x="1184" y="1472" width="32" height="32"/>
-  <object id="19" name="oRespawn" gid="2" x="1408" y="1280" width="32" height="32"/>
-  <object id="20" name="oRespawn" gid="2" x="1600" y="1120" width="32" height="32"/>
-  <object id="21" name="oRespawn" gid="2" x="1824" y="928" width="32" height="32"/>
-  <object id="22" name="oRespawn" gid="2" x="2048" y="704" width="32" height="32"/>
-  <object id="33" name="oRespawn" gid="1073741826" x="2400" y="512" width="32" height="32" rotation="180"/>
-  <object id="34" name="oRespawn" gid="1073741826" x="2400" y="1344" width="32" height="32" rotation="180"/>
-  <object id="35" name="oRespawn" gid="1073741826" x="4576" y="1088" width="32" height="32" rotation="180"/>
-  <object id="36" name="oRespawn" gid="1073741826" x="4704" y="1472" width="32" height="32" rotation="180"/>
-  <object id="37" name="oRespawn" gid="1073741826" x="4064" y="1344" width="32" height="32" rotation="180"/>
-  <object id="38" name="oRespawn" gid="1073741826" x="3552" y="1440" width="32" height="32" rotation="180"/>
-  <object id="39" name="oRespawn" gid="1073741826" x="3328" y="1248" width="32" height="32" rotation="180"/>
-  <object id="40" name="oRespawn" gid="1073741826" x="3136" y="1088" width="32" height="32" rotation="180"/>
-  <object id="41" name="oRespawn" gid="1073741826" x="2912" y="896" width="32" height="32" rotation="180"/>
-  <object id="42" name="oRespawn" gid="1073741826" x="2688" y="672" width="32" height="32" rotation="180"/>
+ <objectgroup id="6" name="Instances">
+  <object id="12" name="oRespawn" gid="2" x="2368" y="544" width="32" height="32"/>
+  <object id="13" name="oRespawn" gid="2" x="2368" y="1376" width="32" height="32"/>
+  <object id="15" name="oRespawn" gid="2" x="192" y="1120" width="32" height="32"/>
+  <object id="16" name="oRespawn" gid="2" x="64" y="1504" width="32" height="32"/>
+  <object id="17" name="oRespawn" gid="2" x="704" y="1376" width="32" height="32"/>
+  <object id="18" name="oRespawn" gid="2" x="1216" y="1472" width="32" height="32"/>
+  <object id="19" name="oRespawn" gid="2" x="1440" y="1280" width="32" height="32"/>
+  <object id="20" name="oRespawn" gid="2" x="1632" y="1120" width="32" height="32"/>
+  <object id="21" name="oRespawn" gid="2" x="1856" y="928" width="32" height="32"/>
+  <object id="22" name="oRespawn" gid="2" x="2080" y="704" width="32" height="32"/>
+  <object id="45" name="oRespawn" gid="2" x="2400" y="544" width="32" height="32"/>
+  <object id="46" name="oRespawn" gid="2" x="2688" y="704" width="32" height="32"/>
+  <object id="47" name="oRespawn" gid="2" x="2400" y="1376" width="32" height="32"/>
+  <object id="48" name="oRespawn" gid="2" x="2912" y="928" width="32" height="32"/>
+  <object id="49" name="oRespawn" gid="2" x="3136" y="1120" width="32" height="32"/>
+  <object id="50" name="oRespawn" gid="2" x="3328" y="1280" width="32" height="32"/>
+  <object id="51" name="oRespawn" gid="2" x="3552" y="1472" width="32" height="32"/>
+  <object id="52" name="oRespawn" gid="2" x="4064" y="1376" width="32" height="32"/>
+  <object id="53" name="oRespawn" gid="2" x="4704" y="1504" width="32" height="32"/>
+  <object id="54" name="oRespawn" gid="2" x="4576" y="1120" width="32" height="32"/>
  </objectgroup>
 </map>
