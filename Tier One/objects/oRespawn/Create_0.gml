@@ -14,8 +14,8 @@ enum BUTTON_STATE
 buttonState = BUTTON_STATE.NOTHING
 
 rWidth = 32
-rHeight = 32
+rHeight = 16
 
-colours = [c_green,c_lime,c_red]
+colours = [c_lime,c_green,c_red]
 
 state = RESPAWN_STATE.INACTIVE
