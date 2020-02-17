@@ -9,13 +9,7 @@ switch(State)
 		#region Loop through and apply imputs
 		var _arraySize = array_length_1d(m_imputLog)
 		
-		/*
-		var file;
-		file = file_text_open_append(working_directory + "deltaTimes.txt");
-		file_text_write_string(file, string(current_hour) + ":" + string(current_minute) + ":" + string(current_second) + ": processing unread imputs, length is " + string(_arraySize) + "\r\n");
-		file_text_close(file);
-		*/
-		
+
 		for (var i = _arraySize - 1; i >= 0; i--)
 		{			
 			ninjaMovePlayer(id,m_imputLog[i]);	

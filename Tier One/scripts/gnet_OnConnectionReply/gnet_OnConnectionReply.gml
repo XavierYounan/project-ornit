@@ -31,7 +31,7 @@ switch (_connectionResult)
 		
 		}
 		
-		room_goto(r_Play)
+		room_goto(rPlay)
 		
 	break;
 }
