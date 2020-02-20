@@ -15,8 +15,8 @@ if localPlayer.hero == undefined
 }
 		
 //change projection to zoom in
-cameraWidth = 1920;
-cameraHeight = 1080;
+cameraWidth = 3*1920/4;
+cameraHeight = 3*1080/4;
 var pm = matrix_build_projection_ortho(cameraWidth,cameraHeight,0,lookDistance);
 camera_set_proj_mat(camera,pm);
 		

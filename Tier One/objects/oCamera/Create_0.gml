@@ -5,7 +5,6 @@ view_enabled = true;
 xResolution = display_get_width()/2
 yResolution = display_get_height()/2
 
-cameraWidth = xResolution
 
 //Make view 0 visible
 view_set_visible(0, true);
